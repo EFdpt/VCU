@@ -30,6 +30,7 @@ void loop() {
   CAN_FRAME BUTTONs;
   CAN_FRAME PEDALIERA;
   CAN_FRAME TORQUE;
+  CAN_FRAME INVERTER;
   
   while(!AIR){
   Can1.watchFor(0xA0); //lascia passare solo i pacchetti con identificativo A0
@@ -61,22 +62,35 @@ void loop() {
   while(analogRead(SC)>400 && RTD){
     Can1.watchFor(0xA1);
     if(Can1.available()>0){
-      Can1.read(PEDALIERA); //i segnali th1,th2,bk1 e bk2 arriveranno già opportunamente mappati da 0 a 100
+      Can1.read(PEDALIERA);
+      if(PEDALIERA.id==0xA1){
+      //i segnali th1,th2,bk1 e bk2 arriveranno già opportunamente mappati da 0 a 100
       th1=PEDALIERA.data.byte[0];
       th2=PEDALIERA.data.byte[1];
       bk1=PEDALIERA.data.byte[2];
       bk2=PEDALIERA.data.byte[3];
       
-    }
-    while((th1-th2)<10 && (bk1-bk2)<10 ){ //quanto la plausibiltà sugli acceleratori è verificata,richiedo coppia
-      if(th1>25 && bk1>5){} //se freno con più del 25% dell'acceleratore è implausibilità quindi non richiedo coppia 
-      else{
-        
-        
       }
     }
   }
-}
+    while((th1-th2)<10 && (bk1-bk2)<10 ){ //quanto la plausibiltà sugli acceleratori è verificata,richiedo coppia
+      if(th1>25 && bk1>5){} //se freno con più del 25% dell'acceleratore è implausibilità quindi non richiedo coppia 
+      else{
+        INVERTER.id=0x01;
+        INVERTER.extended = false;
+        INVERTER.priority = 0;
+        INVERTER.data.byte[0]=th1;
+        INVERTER.data.byte[1]=th2;
+        INVERTER.data.byte[2]=bk1;
+        Can0.sendFrame(INVERTER);
+      }
+    }
+  }
+                 
+        
+        
+              
+  
   
     
    
