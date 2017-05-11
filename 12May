@@ -1,44 +1,57 @@
-
 #include "variant.h"
 
 #include "due_can.h"
-int a=0;
+int a = 0;
 
 
 
 //Leave defined if you use native port, comment if using programming port
 //#define Serial SerialUSB
 
-void setup(){  Can0.begin(1000000);
-Can1.begin(1000000);
+void setup() {
+  Can0.begin(1000000);
+  Can1.begin(1000000);
 
-Serial.begin(9600);}
-void loop(){
+  Serial.begin(9600);
+}
+void loop() {
   CAN_FRAME output;
   CAN_FRAME incoming;
-int a=analogRead(A0);
+  int a = analogRead(A0);
 
 
 
   output.id = 0xFF;
-  output.extended=false;
+  output.extended = false;
 
-  output.data.low=a;
-  output.data.high=0xFF;
-  
+  output.data.low = a;
+  output.data.high = 0xFF;
+
 
   Can0.sendFrame(output);
-  
-Can1.watchFor(0xFF);
-  while(Can1.available()>0){
+
+  Can1.watchFor(0xFF);
+  while (Can1.available() > 0) {
     Can1.read(incoming);
     Serial.print("\n MESSAGE ID= ");
-    Serial.print(incoming.id,HEX);
+    Serial.print(incoming.id, HEX);
     Serial.print("\nDATA= ");
     Serial.print(incoming.data.byte[0], DEC);
-    Serial.print(incoming.data.high,HEX);
-    delay(50);  
+    Serial.print(incoming.data.high, HEX);
+    delay(50);
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
