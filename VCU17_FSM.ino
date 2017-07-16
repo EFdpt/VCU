@@ -1,10 +1,7 @@
 /*
  *stati:
  *STAND: lo stato di accensione, si ritorna qui ogni volta che casca l'SC
- *HVON: si accede solo da STAND tramite */
-
-
- /*
+ *HVON: si accede solo da STAND tramite
  *      AIRbutton e SC>3V
  *DRIVE: lo stato di guida sicura, accedibile 
  *      tramite procedura RTD ma anche con lo 
@@ -41,6 +38,17 @@ int th2 = 0;
 int bk = 0;
 int plaus2=0;
 int plaus1=0;
+
+/* valori dei pedali in milliVolt
+ * analogReadResolution(12) ==> 4096=3300mV
+ * 
+ */
+int th1Low=2540;
+int th1Up=3150;
+int th2Low=3100;
+int th2Up=3400;
+int bkLow=2330;
+int bkUp=2900;
 
 /*
 *stato 0, accensione della vettura
@@ -193,6 +201,7 @@ void setup() {
   pinMode(RTDB, INPUT_PULLUP);
 //  Serial.begin(9600);
   analogWriteResolution(12);
+  analogReadResolution(12);
 }
 
 void loop() {
