@@ -49,6 +49,30 @@ int th2Low=3100;
 int th2Up=3400;
 int bkLow=2330;
 int bkUp=2900;
+int Upper=0;
+int Lower=0;
+
+int RunTH=0; //25% della corsa del pedale
+int RunTH5=0;
+int RunBK=0;//10% della corsa del freno
+
+
+void setup() {
+  // put your setup code here, to run once:
+  pinMode(AIRcc, OUTPUT);
+  pinMode(AIRGnd, OUTPUT);
+  pinMode(PRE, OUTPUT);
+  pinMode(BUZZ, OUTPUT);
+  pinMode(AIRB, INPUT);
+  pinMode(RTDB, INPUT);
+  pinMode(BrakeIN, INPUT);
+  pinMode(AIRB, INPUT_PULLUP);
+  pinMode(RTDB, INPUT_PULLUP);
+  Serial.begin(9600);
+  analogWriteResolution(12);
+  analogReadResolution(12);
+}
+
 
 /*
 *stato 0, accensione della vettura
@@ -131,15 +155,15 @@ void DRIVE(){
       prevMillis = currMillis;
    
       /*
-       *th1-th2 <= Upper bound && th1-th2 >= Lower bound && bk < 10%
+       *th1-th2 <= Upper bound && th1-th2 >= Lower bound
        **/
-      if (th1 - th2 > 50 && th1-th2 <10) plaus1=0;   
+      if (th1 - th2 > Upper || th1-th2 < Lower) plaus1=0;   
     }
   
     /*
     * APPS >25% && brake attuato scatta seconda plausibilità
     */
-    if(th1>25 && bk > 10) plaus2=0;
+    if(th1> RunTH && bk > RunBK) plaus2=0;
     
     /*drive!!*/
     if(plaus1 && plaus2){
@@ -160,7 +184,7 @@ void DRIVE(){
    * 
    */
   if(!plaus2){
-    while(analogRead(TPS1)>5);    
+    while(analogRead(TPS1)>RunTH5);    
     plaus2=1;    
   }
 }
@@ -178,7 +202,7 @@ void NOTDRIVE(){
  /*
   *th1-th2 <= Upper bound && th1-th2 >= Lower bound && bk < 10%
   **/
-  if (th1-th2 > 50 && th1-th2 <10 && bk > 10){ plaus1=1; current_state=2;} 
+  if (th1-th2 > Upper && th1-th2 <Lower && bk < RunBK){ plaus1=1; current_state=2;} 
     
  }
 
@@ -188,26 +212,11 @@ void NOTDRIVE(){
  */
 void(*state_table[])(void) = {STAND, HVON, DRIVE, NOTDRIVE};
 
-void setup() {
-  // put your setup code here, to run once:
-  pinMode(AIRcc, OUTPUT);
-  pinMode(AIRGnd, OUTPUT);
-  pinMode(PRE, OUTPUT);
-  pinMode(BUZZ, OUTPUT);
-  pinMode(AIRB, INPUT);
-  pinMode(RTDB, INPUT);
-  pinMode(BrakeIN, INPUT);
-  pinMode(AIRB, INPUT_PULLUP);
-  pinMode(RTDB, INPUT_PULLUP);
-//  Serial.begin(9600);
-  analogWriteResolution(12);
-  analogReadResolution(12);
-}
-
 void loop() {
 
   state_table[current_state]();
   //delay(5);
+  Serial.print("TH1: ");Serial.print(analogRead(TPS1));Serial.print("     TH2: ");Serial.print(analogRead(TPS2));Serial.print("    BK: ");Serial.println(analogRead(BrakeIN));
 }
 
 
