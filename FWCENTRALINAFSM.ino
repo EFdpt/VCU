@@ -53,12 +53,12 @@ int th2Low = 2230;  //3100
 int th2Up = 2930; //3400
 int bkLow = 730;
 int bkUp = 980;
-int Upper = 500;
-int Lower = 100;
+int Upper = 1500;
+int Lower = 0;
 
 int RunTH = 2110; //25% della corsa del pedale
 int RunTH5 = 1958;
-int RunBK = 770; //10% della corsa del freno
+int RunBK = 800; //10% della corsa del freno
 
 
 void setup() {
@@ -76,6 +76,10 @@ void setup() {
   Serial.begin(9600);
   analogWriteResolution(12);
   analogReadResolution(12);
+
+  //azzeramento TORQUE OUT and BRAKE OUT
+  analogWrite(DAC0, 0);
+  analogWrite(DAC1, 0);
 }
 
 
@@ -124,7 +128,7 @@ void HVON() {
     Il segnale dello SC è maggiore di 1,28 V
     suono RTD 2 secondi
   */
-  if (analogRead(SC) > 200 && analogRead(BRAKEIN) > RunBK && digitalRead(RTDB) == LOW) { //brake >770
+  if (analogRead(SC) > 200 && analogRead(BRAKEIN) > RunBK && digitalRead(RTDB) == LOW) { //brake >800
 
     digitalWrite(BUZZ, HIGH);
     delay(2000);
@@ -212,14 +216,14 @@ void DRIVE() {
     while (analogRead(TPS1) > RunTH5) {
 
 Serial.println("!plaus2");
-      //BYPASS BSPD
-      if (analogRead(BRAKEIN) > 870) {
-        digitalWrite(AIRGnd, LOW);
-        digitalWrite(AIRcc, LOW);
-        BSPD = 0;
-        current_state = 0;
-      }
-      //END BYPASS BSPD
+//      //BYPASS BSPD
+//      if (analogRead(BRAKEIN) > 870) {
+//        digitalWrite(AIRGnd, LOW);
+//        digitalWrite(AIRcc, LOW);
+//        BSPD = 0;
+//        current_state = 0;
+//      }
+//      //END BYPASS BSPD
     }
 
     plaus2 = 1;
@@ -266,11 +270,11 @@ void loop() {
   if (currMillis2 - prevMillis2 >= plaus1Millis2) {
     prevMillis2 = currMillis2;
     Serial.print("Stato corrente: "); Serial.print(current_state); Serial.print("  TPS1: "); Serial.print(analogRead(TPS1)); Serial.print("    TPS2: "); Serial.print(analogRead(TPS2)); Serial.print("    Brake IN: "); Serial.println(analogRead(BRAKEIN));
-    Serial.print("   SC= "); Serial.print(analogRead(SC));
-    Serial.print("AIRMENO:  ");Serial.println(AIRGnd);
+    Serial.print("   SC= "); Serial.print(analogRead(SC)); Serial.print("  ");
 
   }
 }
+
 
 
 
