@@ -13,6 +13,7 @@
 */
 
 uint8_t current_state = 0;
+int i;
 
 unsigned long prevMillis = 0;
 unsigned long currMillis = 0;
@@ -55,10 +56,14 @@ int bkLow = 730;
 int bkUp = 980;
 int Upper = 1500;
 int Lower = 0;
+int SCthr = 600;
+
+int lunghezza = 32; //lunghezza array di acquisizione
+uint8_t lun = 5; //2^lun = lunghezza
 
 int RunTH = 2110; //25% della corsa del pedale
 int RunTH5 = 1958;
-int RunBK = 800; //10% della corsa del freno
+int RunBK = 770; //10% della corsa del freno
 
 
 void setup() {
@@ -78,8 +83,8 @@ void setup() {
   analogReadResolution(12);
 
   //azzeramento TORQUE OUT and BRAKE OUT
-  analogWrite(DAC0, 0);
-  analogWrite(DAC1, 0);
+  analogWrite(DAC0, 0); //brake
+  analogWrite(DAC1, 0); //torque
 }
 
 
@@ -100,7 +105,7 @@ void STAND() {
   /*lettura bottone (chiuso = GND) e SC maggiore di 1.28V
     transizione per stato HVON
   */
-  if ( digitalRead(AIRB) == LOW && analogRead(SC) > 200) {
+  if ( digitalRead(AIRB) == LOW && analogRead(SC) > SCthr) {
     digitalWrite(PRE, HIGH);
     digitalWrite(AIRGnd, HIGH);
     delay(3000);
@@ -124,24 +129,47 @@ void HVON() {
   plaus2 = 0;
   plaus1 = 0;
 
+  for (i = 0; i < lunghezza; i++) {
+    bk = analogRead(BRAKEIN);
+  }
+  bk >>= lun;
+
+
   /*transizione verso stato DRIVE
     Il segnale dello SC è maggiore di 1,28 V
     suono RTD 2 secondi
   */
-  if (analogRead(SC) > 200 && analogRead(BRAKEIN) > RunBK && digitalRead(RTDB) == LOW) { //brake >800
+  if (analogRead(SC) > SCthr && bk > RunBK && digitalRead(RTDB) == LOW) { //brake >770
 
     digitalWrite(BUZZ, HIGH);
-    delay(2000);
+    delay(400);
     digitalWrite(BUZZ, LOW);
+    delay(100);
+    digitalWrite(BUZZ, HIGH);
+    delay(400);
+    digitalWrite(BUZZ, LOW);
+    delay(100);
+    digitalWrite(BUZZ, HIGH);
+    delay(400);
+    digitalWrite(BUZZ, LOW);
+    delay(100);
+    digitalWrite(BUZZ, HIGH);
+    delay(400);
+    digitalWrite(BUZZ, LOW);
+    delay(100);
+    digitalWrite(BUZZ, HIGH);
+    delay(400);
+    digitalWrite(BUZZ, LOW);
+    delay(100);
+
     //if(feedback RTD){
     RTD = 1;
     current_state = 2;
     //}else RTD=0
   }
   /*ritorno allo stato STAND*/
-  if (analogRead(SC) < 200)  current_state = 0;
+  if (analogRead(SC) < SCthr)  current_state = 0;
 }
-
 
 
 
@@ -157,19 +185,22 @@ void DRIVE() {
 
     appena scattano le plausibilità si esce dal while di guida plausibile
   */
-  while (analogRead(SC) > 200 && RTD && plaus1 && plaus2) {
-    //    int [] arr = new arr[10];
+  while (analogRead(SC) > SCthr && RTD && plaus1 && plaus2) {
 
-    th1 = analogRead(TPS1);
-    //    for(int i=0, i<10,i++){
-    //      arr[i]=analogRead(TPS1);
-    //    }
-    //    int med=med(arr);
+    for (i = 0; i < lunghezza; i++) {
+      th1 += analogRead(TPS1);
+    }
+    th1 >>= lun;
 
-    th2 = analogRead(TPS2);
+    for (i = 0; i < lunghezza; i++) {
+      th2 += analogRead(TPS2);
+    }
+    th2 >>= lun;
 
-    bk = analogRead(BRAKEIN);
-
+    for (i = 0; i < lunghezza; i++) {
+      bk = analogRead(BRAKEIN);
+    }
+    bk >>= lun;
 
     //check plausibilità throttle
     currMillis = millis();
@@ -198,7 +229,7 @@ void DRIVE() {
   }// end while
 
   /*ritorno allo stato STAND*/
-  if (analogRead(SC) < 200)  current_state = 0;
+  if (analogRead(SC) < SCthr)  current_state = 0;
 
   /*scatto plausibilità TPS o scollegamento BRAKE*/
   if (!plaus1 || bk < 500) {
@@ -213,24 +244,34 @@ void DRIVE() {
 
   */
   if (!plaus2) {
-    while (analogRead(TPS1) > RunTH5) {
+  
+    while (th1 > RunTH5) {
+      
+      for (i = 0; i < lunghezza; i++) {
+        th1 += analogRead(TPS1);
+      }
+      th1 >>= lun;
 
-Serial.println("!plaus2");
-//      //BYPASS BSPD
-//      if (analogRead(BRAKEIN) > 870) {
-//        digitalWrite(AIRGnd, LOW);
-//        digitalWrite(AIRcc, LOW);
-//        BSPD = 0;
-//        current_state = 0;
-//      }
-//      //END BYPASS BSPD
+      for (i = 0; i < lunghezza; i++) {
+        bk += analogRead(BRAKEIN);
+      }
+      bk >>= lun;
+      Serial.println("!plaus2");
+      //      //BYPASS BSPD
+      //      if (analogRead(BRAKEIN) > 870) {
+      //        digitalWrite(AIRGnd, LOW);
+      //        digitalWrite(AIRcc, LOW);
+      //        BSPD = 0;
+      //        current_state = 0;
+      //      }
+      //      //END BYPASS BSPD
     }
 
     plaus2 = 1;
   }
 
-   /*ritorno allo stato STAND*/
-  if (analogRead(SC) < 200)  current_state = 0;
+  /*ritorno allo stato STAND*/
+  if (analogRead(SC) < SCthr)  current_state = 0;
 
 }
 
@@ -238,12 +279,23 @@ Serial.println("!plaus2");
    errore con la pedaliera, i sensori dei pedali sono scollegati o fuori range
 */
 void NOTDRIVE() {
-  if (analogRead(SC) < 200) current_state = 0;
+  if (analogRead(SC) < SCthr) current_state = 0;
+   
+    for (i = 0; i < lunghezza; i++) {
+      th1 += analogRead(TPS1);
+    }
+    th1 >>= lun;
 
-  th1 = analogRead(TPS1);
-  th2 = analogRead(TPS2);
-  bk = analogRead(BRAKEIN);
+    for (i = 0; i < lunghezza; i++) {
+      th2 += analogRead(TPS2);
+    }
+    th2 >>= lun;
 
+    for (i = 0; i < lunghezza; i++) {
+      bk = analogRead(BRAKEIN);
+    }
+    bk >>= lun;
+    
   /*
     th1-th2 <= Upper bound && th1-th2 >= Lower bound && bk < 10%
    **/
