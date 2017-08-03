@@ -55,6 +55,8 @@ int bkLow = 730;
 int bkUp = 980;
 int Upper = 1500;
 int Lower = 0;
+int SCthr=600;
+
 
 int lunghezza = 64; //lunghezza array di acquisizione
 uint8_t lun = 6; //2^lun = lunghezza
@@ -156,7 +158,7 @@ void STAND() {
   /*lettura bottone (chiuso = GND) e SC maggiore di 1.28V
     transizione per stato HVON
   */
-  if ( digitalRead(AIRB) == LOW && analogRead(SC) > 200) {
+  if ( digitalRead(AIRB) == LOW && analogRead(SC) > SCthr) {
     digitalWrite(PRE, HIGH);
     digitalWrite(AIRGnd, HIGH);
     delay(3000);
@@ -190,7 +192,7 @@ void HVON() {
     Il segnale dello SC è maggiore di 1,28 V
     suono RTD 2 secondi
   */
-  if (analogRead(SC) > 600 && bk > RTDBK && digitalRead(RTDB) == LOW) { //brake >800
+  if (analogRead(SC) > SCthr && bk > RTDBK && digitalRead(RTDB) == LOW) { //brake >800
 
     digitalWrite(BUZZ, HIGH);
     delay(400);
@@ -219,7 +221,7 @@ void HVON() {
     //}else RTD=0
   }
   /*ritorno allo stato STAND*/
-  if (analogRead(SC) < 600)  current_state = 0;
+  if (analogRead(SC) < SCthr)  current_state = 0;
 }
 
 
@@ -236,7 +238,7 @@ void DRIVE() {
 
     appena scattano le plausibilità si esce dal while di guida plausibile
   */
-  while (analogRead(SC) > 600 && RTD && plaus1 && plaus2) {
+  while (analogRead(SC) > SCthr && RTD && plaus1 && plaus2) {
 
     acquisizioneTPS1();
     acquisizioneTPS2();
@@ -274,7 +276,7 @@ void DRIVE() {
   }// end while
 
   /*ritorno allo stato STAND*/
-  if (analogRead(SC) < 600)  current_state = 0;
+  if (analogRead(SC) < SCthr)  current_state = 0;
 
   /*scatto plausibilità TPS o scollegamento BRAKE*/
   if (!plaus1 || bk < 500) {
@@ -307,7 +309,7 @@ void DRIVE() {
   }
 
   /*ritorno allo stato STAND*/
-  if (analogRead(SC) < 600)  current_state = 0;
+  if (analogRead(SC) < SCthr)  current_state = 0;
 
 }
 
@@ -315,7 +317,7 @@ void DRIVE() {
    errore con la pedaliera, i sensori dei pedali sono scollegati o fuori range
 */
 void NOTDRIVE() {
-  if (analogRead(SC) < 600) current_state = 0;
+  if (analogRead(SC) < SCthr) current_state = 0;
   acquisizioneTPS1();
   acquisizioneTPS2();
   acquisizioneBSE();
@@ -351,8 +353,6 @@ void loop() {
     Serial.print("SC= "); Serial.print(analogRead(SC)); Serial.print("  ");
     Serial.print("Stato corrente: "); Serial.print(current_state); Serial.print("  TPS1: "); Serial.print(analogRead(TPS1));
     Serial.print("    TPS2: "); Serial.print(analogRead(TPS2)); Serial.print("    Brake IN: "); Serial.println(analogRead(BRAKEIN));
-
-
   }
 }
 
