@@ -1,4 +1,4 @@
-/*
+  /*
   stati:
   STAND: lo stato di accensione, si ritorna qui ogni volta che casca l'SC
   HVON: si accede solo da STAND tramite
@@ -13,7 +13,6 @@
 */
 
 uint8_t current_state = 0;
-int i;
 
 unsigned long prevMillis = 0;
 unsigned long currMillis = 0;
@@ -48,22 +47,80 @@ int BSPD = 1;
    analogReadResolution(12) ==> 4096=3300mV
 
 */
-int th1Low = 1920;//2540
-int th1Up = 2680;//3150
+int th1Low = 1960;//2540
+int th1Up = 2583;//3150
 int th2Low = 2230;  //3100
 int th2Up = 2930; //3400
 int bkLow = 730;
 int bkUp = 980;
 int Upper = 1500;
 int Lower = 0;
-int SCthr = 600;
+int SCthr=600;
 
-int lunghezza = 32; //lunghezza array di acquisizione
-uint8_t lun = 5; //2^lun = lunghezza
+
+int lunghezza = 64; //lunghezza array di acquisizione
+uint8_t lun = 6; //2^lun = lunghezza
 
 int RunTH = 2110; //25% della corsa del pedale
 int RunTH5 = 1958;
-int RunBK = 770; //10% della corsa del freno
+int RunBK = 800; //10% della corsa del freno
+int RTDBK = 800; //pressione freno per RTD
+
+/*
+ * inzializzazione array acquisizioni: 
+ * prima di 64 acquisizioni la dinamica sarà molto smorzata a causa di tutti questi zeri
+ */
+int ArrTh1[] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+int ArrTh2[] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+int ArrBk[] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+int posArrTh1, posArrTh2, posArrBk;
+
+//int* buckSort(int* arr){
+//  int sorted[]=arr;
+//  
+//  return sorted;
+//  }
+
+/*
+  ritorna la media di un array di <lunghezza> posizioni
+*/
+int media(int* ar) {
+  
+  int out = 0;
+
+  for (int i = 0; i < lunghezza; i++) {
+    out += ar[i];
+  }
+  return out >>= lun;
+}
+
+/*
+ * acquisizione ADC circolare su array da <lunghezza> posizioni
+ */
+void acquisizioneTPS1() {
+  if (posArrTh1 > (lunghezza - 1) )   posArrTh1 = 0;
+  ArrTh1[posArrTh1] = analogRead(TPS1);
+  posArrTh1++;
+}
+
+/*
+  acquisizione ADC circolare su array da <lunghezza> posizioni
+  */
+void acquisizioneTPS2() {
+  if (posArrTh2 > (lunghezza - 1) )    posArrTh2 = 0;
+  ArrTh2[posArrTh2] = analogRead(TPS2);
+  posArrTh2++;
+}
+
+/*
+  acquisizione ADC circolare su array da <lunghezza> posizioni
+*/
+void acquisizioneBSE() {
+  if (posArrBk > (lunghezza - 1) )    posArrBk = 0;
+  ArrBk[posArrBk] = analogRead(BRAKEIN);
+  posArrBk++;
+}
+
 
 
 void setup() {
@@ -81,10 +138,12 @@ void setup() {
   Serial.begin(9600);
   analogWriteResolution(12);
   analogReadResolution(12);
+  posArrTh1 = posArrTh2 = posArrBk = 0;
+
 
   //azzeramento TORQUE OUT and BRAKE OUT
   analogWrite(DAC0, 0); //brake
-  analogWrite(DAC1, 0); //torque
+  analogWrite(DAC1, map(th1Low+20, th1Low, th1Up, 0, 4095)); //torque
 }
 
 
@@ -129,17 +188,18 @@ void HVON() {
   plaus2 = 0;
   plaus1 = 0;
 
-  for (i = 0; i < lunghezza; i++) {
-    bk = analogRead(BRAKEIN);
+  //acquisizione mediata freno per RTD
+  for (int i = 0; i < lunghezza; i++) {
+    bk += analogRead(BRAKEIN);
   }
   bk >>= lun;
-
+Serial.print("bk ciclato: "); Serial.println(bk);  
 
   /*transizione verso stato DRIVE
     Il segnale dello SC è maggiore di 1,28 V
     suono RTD 2 secondi
   */
-  if (analogRead(SC) > SCthr && bk > RunBK && digitalRead(RTDB) == LOW) { //brake >770
+  if (analogRead(SC) > SCthr && bk > RTDBK && digitalRead(RTDB) == LOW) { //brake >800
 
     digitalWrite(BUZZ, HIGH);
     delay(400);
@@ -187,20 +247,12 @@ void DRIVE() {
   */
   while (analogRead(SC) > SCthr && RTD && plaus1 && plaus2) {
 
-    for (i = 0; i < lunghezza; i++) {
-      th1 += analogRead(TPS1);
-    }
-    th1 >>= lun;
-
-    for (i = 0; i < lunghezza; i++) {
-      th2 += analogRead(TPS2);
-    }
-    th2 >>= lun;
-
-    for (i = 0; i < lunghezza; i++) {
-      bk = analogRead(BRAKEIN);
-    }
-    bk >>= lun;
+    acquisizioneTPS1();
+    acquisizioneTPS2();
+    acquisizioneBSE();
+    th1 = media(ArrTh1);
+    th2 = media(ArrTh2);
+    bk = media(ArrBk);
 
     //check plausibilità throttle
     currMillis = millis();
@@ -224,6 +276,8 @@ void DRIVE() {
 
       analogWrite(DAC1, map(th1, th1Low, th1Up, 0, 4095));
       analogWrite(DAC0, 0);
+
+      Serial.print("TH1 media: "); Serial.print(th1); Serial.print("   BREAK media: "); Serial.println(bk);
     }
 
   }// end while
@@ -244,21 +298,12 @@ void DRIVE() {
 
   */
   if (!plaus2) {
-  
-    while (th1 > RunTH5) {
-      
-      for (i = 0; i < lunghezza; i++) {
-        th1 += analogRead(TPS1);
-      }
-      th1 >>= lun;
-
-      for (i = 0; i < lunghezza; i++) {
-        bk += analogRead(BRAKEIN);
-      }
-      bk >>= lun;
-      Serial.println("!plaus2");
+    while (media(ArrTh1) > RunTH5) {
+      acquisizioneTPS1();
+      acquisizioneBSE();
+      Serial.println("   FRENO + ACCELERATORE !!!");
       //      //BYPASS BSPD
-      //      if (analogRead(BRAKEIN) > 870) {
+      //      if (media(bk) > 870) {
       //        digitalWrite(AIRGnd, LOW);
       //        digitalWrite(AIRcc, LOW);
       //        BSPD = 0;
@@ -280,22 +325,13 @@ void DRIVE() {
 */
 void NOTDRIVE() {
   if (analogRead(SC) < SCthr) current_state = 0;
-   
-    for (i = 0; i < lunghezza; i++) {
-      th1 += analogRead(TPS1);
-    }
-    th1 >>= lun;
+  acquisizioneTPS1();
+  acquisizioneTPS2();
+  acquisizioneBSE();
 
-    for (i = 0; i < lunghezza; i++) {
-      th2 += analogRead(TPS2);
-    }
-    th2 >>= lun;
-
-    for (i = 0; i < lunghezza; i++) {
-      bk = analogRead(BRAKEIN);
-    }
-    bk >>= lun;
-    
+  th1 = media(ArrTh1);
+  th2 = media(ArrTh2);
+  bk = media(ArrBk);
   /*
     th1-th2 <= Upper bound && th1-th2 >= Lower bound && bk < 10%
    **/
@@ -321,9 +357,9 @@ void loop() {
 
   if (currMillis2 - prevMillis2 >= plaus1Millis2) {
     prevMillis2 = currMillis2;
-    Serial.print("Stato corrente: "); Serial.print(current_state); Serial.print("  TPS1: "); Serial.print(analogRead(TPS1)); Serial.print("    TPS2: "); Serial.print(analogRead(TPS2)); Serial.print("    Brake IN: "); Serial.println(analogRead(BRAKEIN));
-    Serial.print("   SC= "); Serial.print(analogRead(SC)); Serial.print("  ");
-
+    Serial.print("SC= "); Serial.print(analogRead(SC)); Serial.print("  ");
+    Serial.print("Stato corrente: "); Serial.print(current_state); Serial.print("  TPS1: "); Serial.print(analogRead(TPS1));
+    Serial.print("    TPS2: "); Serial.print(analogRead(TPS2)); Serial.print("    Brake IN: "); Serial.println(analogRead(BRAKEIN));
   }
 }
 
