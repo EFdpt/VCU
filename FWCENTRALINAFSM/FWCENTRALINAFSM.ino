@@ -3,7 +3,7 @@
  * Fast Charge in Formula SAE
  *  
  *  README: https://goo.gl/wGvLdF
- *  
+ *  SITE: https://www.facebook.com/SapienzaFastCharge
  *    
  * stati
  * STAND:  stato 0, accensione della vettura, si ritorna qui ogni volta che casca l'SC
