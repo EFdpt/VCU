@@ -1,4 +1,11 @@
-/* stati
+/* questo codice sviluppato da Valerio Dodet è dedicato al funzionamento di un arduino DUE
+ * che svolga la funzione di unità di controllo della vettura FastCharge per il team
+ * Fast Charge in Formula SAE
+ *  
+ *  README: https://goo.gl/wGvLdF
+ *  
+ *    
+ * stati
  * STAND:  stato 0, accensione della vettura, si ritorna qui ogni volta che casca l'SC
  *
  * HVON: stato 1, alta tensione attiva
