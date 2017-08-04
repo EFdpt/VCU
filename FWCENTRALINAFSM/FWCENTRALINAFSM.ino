@@ -1,16 +1,19 @@
-  /*
-  stati:
-  STAND: lo stato di accensione, si ritorna qui ogni volta che casca l'SC
-  HVON: si accede solo da STAND tramite
-        AIRbutton e SC>3V
-  DRIVE: lo stato di guida sicura, accedibile
-        tramite procedura RTD ma anche con lo
-        scatto delle plausibilità tramite procedura di rientro
-  NOTDRIVE: disabilitate richiesta di coppia e richiesta di frenata,
-          si entra solo tramite scatto delle plausibilità o
-          assenza del freno.
+/* stati
+ * STAND:  stato 0, accensione della vettura, si ritorna qui ogni volta che casca l'SC
+ *
+ * HVON: stato 1, alta tensione attiva
+ *    si accede solo da STAND tramite AIRbutton e SC>3V
+ *
+ * DRIVE:stato 2, lo stato di guida sicura, accedibile tramite procedura RTD ma anche con lo 
+ *    scatto delle plausibilità tramite procedura di rientro
+ *
+ * NOTDRIVE: stato 3, errore con la pedaliera, i sensori dei pedali sono scollegati o fuori
+ *        range. Disabilitate richiesta di coppia e richiesta di frenata, si entra solo
+ *        tramite scatto delle plausibilità o assenza del freno.
+ *
+ */
 
-*/
+
 
 uint8_t current_state = 0;
 
@@ -60,6 +63,7 @@ int SCthr=600;
 
 int lunghezza = 64; //lunghezza array di acquisizione
 uint8_t lun = 6; //2^lun = lunghezza
+int i=0;
 
 int RunTH = 2110; //25% della corsa del pedale
 int RunTH5 = 1958;
@@ -70,56 +74,8 @@ int RTDBK = 800; //pressione freno per RTD
  * inzializzazione array acquisizioni: 
  * prima di 64 acquisizioni la dinamica sarà molto smorzata a causa di tutti questi zeri
  */
-int ArrTh1[] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
-int ArrTh2[] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
-int ArrBk[] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+int ArrTh1[64], ArrTh2[64], ArrBk[64];
 int posArrTh1, posArrTh2, posArrBk;
-
-//int* buckSort(int* arr){
-//  int sorted[]=arr;
-//  
-//  return sorted;
-//  }
-
-/*
-  ritorna la media di un array di <lunghezza> posizioni
-*/
-int media(int* ar) {
-  
-  int out = 0;
-
-  for (int i = 0; i < lunghezza; i++) {
-    out += ar[i];
-  }
-  return out >>= lun;
-}
-
-/*
- * acquisizione ADC circolare su array da <lunghezza> posizioni
- */
-void acquisizioneTPS1() {
-  if (posArrTh1 > (lunghezza - 1) )   posArrTh1 = 0;
-  ArrTh1[posArrTh1] = analogRead(TPS1);
-  posArrTh1++;
-}
-
-/*
-  acquisizione ADC circolare su array da <lunghezza> posizioni
-  */
-void acquisizioneTPS2() {
-  if (posArrTh2 > (lunghezza - 1) )    posArrTh2 = 0;
-  ArrTh2[posArrTh2] = analogRead(TPS2);
-  posArrTh2++;
-}
-
-/*
-  acquisizione ADC circolare su array da <lunghezza> posizioni
-*/
-void acquisizioneBSE() {
-  if (posArrBk > (lunghezza - 1) )    posArrBk = 0;
-  ArrBk[posArrBk] = analogRead(BRAKEIN);
-  posArrBk++;
-}
 
 
 
@@ -144,12 +100,19 @@ void setup() {
   //azzeramento TORQUE OUT and BRAKE OUT
   analogWrite(DAC0, 0); //brake
   analogWrite(DAC1, map(th1Low+20, th1Low, th1Up, 0, 4095)); //torque
+
+//inizializzazione array acquisizioni
+  for(i=0; i< lunghezza; i++){
+    ArrTh1[i]=0;
+    ArrTh1[i]=0;
+    ArrBk[i]=0;
+    }
 }
 
 
 /*
-  stato 0, accensione della vettura
-*/
+ * stato 0, accensione della vettura
+ */
 void STAND() {
   //invio pacchetto VCU_OK su CAN
   while (!BSPD);
@@ -179,8 +142,8 @@ void STAND() {
 }
 
 /*
-   stato 1, alta tensione attiva
-*/
+ * stato 1, alta tensione attiva
+ */
 void HVON() {
 
   RTD = 0;
@@ -320,9 +283,9 @@ void DRIVE() {
 
 }
 
-/*
-   errore con la pedaliera, i sensori dei pedali sono scollegati o fuori range
-*/
+/* 
+ * errore con la pedaliera, i sensori dei pedali sono scollegati o fuori range
+ */
 void NOTDRIVE() {
   if (analogRead(SC) < SCthr) current_state = 0;
   acquisizioneTPS1();
@@ -343,14 +306,12 @@ void NOTDRIVE() {
 
 }
 
-
 /* Tabella dei possibili stati:
   la tabella punta alle funzioni in elenco (stati)
 */
 void(*state_table[])(void) = {STAND, HVON, DRIVE, NOTDRIVE};
 
 void loop() {
-
   state_table[current_state]();
   //delay(5);
   currMillis2 = millis();
