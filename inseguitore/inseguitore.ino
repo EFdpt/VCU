@@ -108,6 +108,11 @@ void setup() {
   analogReadResolution(12);
   posArrTh1 = posArrTh2 = posArrBk = 0;
 
+  for(i=0;i<lunghezza;i++){
+    ArrTh1[i]=0;
+    ArrTh2[i]=0;
+    ArrBk[i]=0;
+  }
 
   //azzeramento TORQUE OUT and BRAKE OUT
   analogWrite(DAC0, 0); //brake

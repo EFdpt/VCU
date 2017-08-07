@@ -118,6 +118,11 @@ void setup() {
   analogReadResolution(12);
   posArrTh1 = posArrTh2 = posArrBk = 0;
 
+  for(i=0;i<lunghezza;i++){
+    ArrTh1[i]=0;
+    ArrTh2[i]=0;
+    ArrBk[i]=0;
+  }
 
   //azzeramento TORQUE OUT and BRAKE OUT
   analogWrite(DAC0, 0); //brake
@@ -183,25 +188,25 @@ void HVON() {
   if (analogRead(SC) > SCthr && bk > RTDBK && digitalRead(RTDB) == LOW) { //brake >800
 
     digitalWrite(BUZZ, HIGH);
-    delay(400);
+    delay(300);
     digitalWrite(BUZZ, LOW);
-    delay(100);
+    delay(200);
     digitalWrite(BUZZ, HIGH);
-    delay(400);
+    delay(300);
     digitalWrite(BUZZ, LOW);
-    delay(100);
+    delay(200);
     digitalWrite(BUZZ, HIGH);
-    delay(400);
+    delay(300);
     digitalWrite(BUZZ, LOW);
-    delay(100);
+    delay(200);
     digitalWrite(BUZZ, HIGH);
-    delay(400);
+    delay(300);
     digitalWrite(BUZZ, LOW);
-    delay(100);
+    delay(200);
     digitalWrite(BUZZ, HIGH);
-    delay(400);
+    delay(300);
     digitalWrite(BUZZ, LOW);
-    delay(100);
+    delay(200);
 
     //if(feedback RTD){
     RTD = 1;

@@ -23,6 +23,7 @@ int* buckSort(int* arr)
   //ciclo di riempimento dell'hash table
   for (i = 0; i != lunghezza; i++)
   {
+    Serial.println("Se è l'ultima cosa che leggi, allora ho crashato");
     int bnum = HASH(arr[i]);
     lista_ptr bptr = Htable[bnum];
     lista_ptr belem = (lista_ptr)malloc(sizeof(lista));
