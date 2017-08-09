@@ -7,7 +7,8 @@
 
 */
 int HASH(int chiave) {
-  return (int)(lunghezza * (chiave * irr - (int)(chiave * irr)));
+  //  return (int)(lunghezza * (chiave * irr - (int)(chiave * irr)));
+  return ((double)(chiave - min) / ((max + 1) - min)) * 100;
 }
 
 /*
@@ -23,67 +24,85 @@ int* buckSort(int* arr)
   //ciclo di riempimento dell'hash table
   for (i = 0; i != lunghezza; i++)
   {
-    Serial.println("Se è l'ultima cosa che leggi, allora ho crashato");
+    //printf("Se è l'ultima cosa che leggi, allora ho crashato\n");
     int bnum = HASH(arr[i]);
+    printf("HASH(%d): %d\n", arr[i], bnum);
     lista_ptr bptr = Htable[bnum];
-    lista_ptr belem = (lista_ptr)malloc(sizeof(lista));
+    lista_ptr belem = (lista_ptr)malloc(sizeof(lista_t));
     belem->chiave = arr[i];
 
-  //inizio inserimento ordinato
-    if (bptr == NULL)
-    {
+    //inizio inserimento ordinato
+    if (!bptr)
+    { //la lista è vuota, inserisci in testa
       Htable[bnum] = belem;
       belem->next = NULL;
     }
     else if (arr[i] <= bptr->chiave)
-    {
+    { //il nuovo elemento è più piccolo del primo della lista, inserisci in testa
       belem->next = bptr;
       Htable[bnum] = belem;
     }
     else
     {
-      while (bptr != NULL)
-      {
+      while (bptr != 0)
+      { //
         if ((bptr->chiave <= arr[i]) && ((bptr->next == NULL) || (bptr->next->chiave > arr[i])))
-        {
+        { //il nuovo elemento è più grande di bprt->chiave && più piccolo del prossimo, che magari non esiste, inserisci
           belem->next = bptr->next;
           bptr->next = belem;
+          break;
         }
         bptr = bptr->next;
       }
     }
-  //fine inserimento ordinato
-  
-  }//fine riempimento hash table
+    //fine inserimento ordinato
 
-  //raccolta elementi dalla hash table
-  for (i = 0; i != lunghezza; i++)
-  {
-    lista_ptr bptr = Htable[i];
-    for(j=0; bptr!=NULL; j++)
+    //raccolta elementi dalla hash table
+    j = 0;
+
+    for (i = 0; i != 100; i++)
     {
-      lista_ptr optr = bptr;
-      out[j] = bptr->chiave;
-      bptr = bptr->next;
-      free(optr);
+      lista_ptr bptr = Htable[i];
+      while (bptr != NULL)
+      {
+        lista_ptr optr = bptr;
+        out[j] = bptr->chiave;
+        printf("out[%d]: %d\n", j, out[j]);
+        j++;
+        bptr = bptr->next;
+        free(optr);
+      }
     }
+    return out;
   }
-  return out;
 }
 
+/*
+  modifica le variabili globali "max", "min" con i valori
+  degli elementi più grande e più piccolo dell'array parametro
+*/
+void MaxMin(int* array) {
+  max = 0;
+  min = 4095;
+  for (i = 0; i != lunghezza; i++) {
+    if (max < array[i])	max = array[i];
+    if (min > array[i])	min = array[i];
+  }
+}
 
 /*
- *  ritorna la media degli elementi centrali 
- *  di un array di <lunghezza> posizioni
+    ritorna la media degli elementi centrali
+    di un array di <lunghezza> posizioni
 */
 int media(int* ar) {
-  int* media=buckSort(ar);
-  int out = 0;
+  MaxMin(ar);	//prendo le distanze per l'HASH function
+  int* media = buckSort(ar);
+  int res = 0;
 
-  for (i = lun-1; i != lunghezza-lun; i++) {
-    out += media[i];
+  for (i = lun - 2; i != lunghezza - lun; i++) {
+    res += media[i];
   }
-  return out >>= lun;
+  return res / (lunghezza - ((lun - 1) * 2));	//media degli elementi centrali
 }
 
 /*

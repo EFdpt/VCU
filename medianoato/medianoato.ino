@@ -19,7 +19,13 @@
           tramite scatto delle plausibilità o assenza del freno.
 
 */
-
+//void acquisizioneTPS1();
+//void acquisizioneTPS2();
+//void acquisizioneBSE();
+//int HASH(int);
+//int* buckSort(int*);
+//void MaxMin(int*);
+//int media(int*);
 
 
 uint8_t current_state = 0;
@@ -68,11 +74,17 @@ int Lower = 0;
 int SCthr = 600;
 
 
-int lunghezza = 64; //lunghezza array di acquisizione
-uint8_t lun = 6; //2^lun = lunghezza
+int lunghezza = 32; //lunghezza array di acquisizione
+uint8_t lun = 5; //2^lun = lunghezza
+int min, max; //variabili globali per la funzione HASH
+double irr; //numero per la funzione HASH
+
+/*i, j
+ *normali contatori per cicli for, inizializzare ad ogni ciclo
+ * e non utilizzare contemporaneamente in funzioni diverse
+ */
 int i = 0;
 int j=0;
-double irr; //numero per la funzione HASH
 
 int RunTH = 2110; //25% della corsa del pedale
 int RunTH5 = 1958;
@@ -83,21 +95,21 @@ int RTDBK = 800; //pressione freno per RTD
    inzializzazione array acquisizioni:
    prima di 64 acquisizioni la dinamica sarà molto smorzata a causa di tutti questi zeri
 */
-int ArrTh1[64]={0};
-int ArrTh2[64]={0};
-int ArrBk[64]={0};
+int ArrTh1[32]={0};
+int ArrTh2[32]={0};
+int ArrBk[32]={0};
 int posArrTh1, posArrTh2, posArrBk;
-int out[64]={0};
+int out[32]={0};
 
 /*struttura dati per la lista di trabocco dell'hash table per il bucket sort
  **/
 typedef struct lista {
   int chiave;
   struct lista *next;
-}*lista_ptr;
+}lista_t, *lista_ptr;
 
 //hash table
-lista_ptr Htable[64] = {0};
+lista_ptr Htable[100] = {0};
 
 
 
@@ -127,9 +139,6 @@ void setup() {
   //azzeramento TORQUE OUT and BRAKE OUT
   analogWrite(DAC0, 0); //brake
   analogWrite(DAC1, map(th1Low + 20, th1Low, th1Up, 0, 4095)); //torque
-
-  //inizializzazione del numero per la funzione hash
-  irr = (sqrt(5) - 1) * 0.5;
 }
 
 
