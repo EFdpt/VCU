@@ -19,14 +19,6 @@
           tramite scatto delle plausibilità o assenza del freno.
 
 */
-//void acquisizioneTPS1();
-//void acquisizioneTPS2();
-//void acquisizioneBSE();
-//int HASH(int);
-//int* buckSort(int*);
-//void MaxMin(int*);
-//int media(int*);
-
 
 uint8_t current_state = 0;
 
@@ -76,7 +68,7 @@ int SCthr = 600;
 
 int lunghezza = 32; //lunghezza array di acquisizione
 uint8_t lun = 5; //2^lun = lunghezza
-int min, max; //variabili globali per la funzione HASH
+int Min, Max; //variabili globali per la funzione HASH
 double irr; //numero per la funzione HASH
 
 /*i, j
@@ -120,9 +112,6 @@ void setup() {
   pinMode(AIRGnd, OUTPUT);
   pinMode(PRE, OUTPUT);
   pinMode(BUZZ, OUTPUT);
-  //pinMode(AIRB, INPUT);
-  // pinMode(RTDB, INPUT);
-  pinMode(BRAKEIN, INPUT);
   pinMode(AIRB, INPUT_PULLUP);
   pinMode(RTDB, INPUT_PULLUP);
   Serial.begin(9600);
