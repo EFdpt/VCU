@@ -24,38 +24,15 @@ int* buckSort(int* arr)
   //ciclo di riempimento dell'hash table
   for (i = 0; i != lunghezza; i++)
   {
-    //printf("Se è l'ultima cosa che leggi, allora ho crashato\n");
     int bnum = HASH(arr[i]);
     printf("HASH(%d): %d\n", arr[i], bnum);
     lista_ptr bptr = Htable[bnum];
     lista_ptr belem = (lista_ptr)malloc(sizeof(lista_t));
     belem->chiave = arr[i];
 
-    //inizio inserimento ordinato
-    if (!bptr)
-    { //la lista è vuota, inserisci in testa
-      Htable[bnum] = belem;
-      belem->next = NULL;
-    }
-    else if (arr[i] <= bptr->chiave)
-    { //il nuovo elemento è più piccolo del primo della lista, inserisci in testa
-      belem->next = bptr;
-      Htable[bnum] = belem;
-    }
-    else
-    {
-      while (bptr != 0)
-      { //
-        if ((bptr->chiave <= arr[i]) && ((bptr->next == NULL) || (bptr->next->chiave > arr[i])))
-        { //il nuovo elemento è più grande di bprt->chiave && più piccolo del prossimo, che magari non esiste, inserisci
-          belem->next = bptr->next;
-          bptr->next = belem;
-          break;
-        }
-        bptr = bptr->next;
-      }
-    }
-    //fine inserimento ordinato
+    //inserimento in testa nelle liste di trabocco
+    belem->next = bptr;
+    Htable[bnum] = belem;
 
     //raccolta elementi dalla hash table
     j = 0;

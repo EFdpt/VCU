@@ -1,22 +1,14 @@
 /* questo codice sviluppato da Valerio Dodet è dedicato alla calibrazione
-    dei valori dei sensori della pedaliera.
+   dei valori dei sensori della pedaliera con filtro:
+   MEDIANOATO
 
     README: https://goo.gl/wGvLdF
     SITE: https://www.facebook.com/SapienzaFastCharge
 
-   stati
-   STAND:  stato 0, accensione della vettura, si ritorna qui ogni volta che casca l'SC
-
-   HVON: stato 1, alta tensione attiva
-      si accede solo da STAND tramite AIRbutton e SC>3V
-
-   DRIVE:stato 2, lo stato di guida sicura, accedibile tramite procedura RTD ma anche con lo
-      scatto delle plausibilità tramite procedura di rientro
-
-   NOTDRIVE: stato 3, errore con la pedaliera, i sensori dei pedali sono scollegati o fuori
-          range. Disabilitate richiesta di coppia e richiesta di frenata, si entra solo
-          tramite scatto delle plausibilità o assenza del freno.
-
+   Il metodo di pulizia della lettura analogica deve essere lo stesso che
+   si utilizza in corsa. Altrimenti le soglie per le plausibilità saranno
+   diverse.
+   
 */
 
 unsigned long prevMillis = 0;
@@ -49,14 +41,56 @@ int minBk, maxBk;
 uint8_t calibrato = 0;
 
 
+int lunghezza = 32; //lunghezza array di acquisizione
+uint8_t lun = 5; //2^lun = lunghezza
+int Min, Max; //variabili globali per la funzione HASH
+
+
+/*i, j
+ *normali contatori per cicli for, inizializzare ad ogni ciclo
+ * e non utilizzare contemporaneamente in funzioni diverse
+ */
+int i = 0;
+int j=0;
+
+/*
+   inzializzazione array acquisizioni:
+   prima di 32 acquisizioni la dinamica sarà molto smorzata a causa di tutti questi zeri
+*/
+int ArrTh1[32]={0};
+int ArrTh2[32]={0};
+int ArrBk[32]={0};
+int posArrTh1, posArrTh2, posArrBk;
+int out[32]={0};
+
+/*struttura dati per la lista di trabocco dell'hash table per il bucket sort
+ **/
+typedef struct lista {
+  int chiave;
+  struct lista *next;
+}lista_t, *lista_ptr;
+
+//hash table
+lista_ptr Htable[100] = {0};
+
+
+
+
+
 void APPS() {
+   for(i=0;i!=lunghezza;i++){
+  acquisizioneTPS1();
+  acquisizioneTPS2();
+  }
   Serial.println();
   Serial.println();
   Serial.println();
   currMillis2 = prevMillis2 = millis();
   while (!calibrato) {
-    readTh1 = analogRead(TPS1);
-    readTh2 = analogRead(TPS2);
+    acquisizioneTPS1();
+    acquisizioneTPS2();
+    readTh1 = media(ArrTh1);
+    readTh2 = media(ArrTh2);
     if (minTh1 > readTh1)    minTh1 = readTh1;
     if (minTh2 > readTh2)    minTh2 = readTh2;
     if (maxTh1 < readTh1)    maxTh1 = readTh1;
@@ -87,12 +121,17 @@ void APPS() {
 
 
 void BRAKE() {
+ for(i=0;i!=lunghezza;i++){
+  acquisizioneBSE();
+  }
+  
   Serial.println();
   Serial.println();
   Serial.println();
   currMillis2 = prevMillis2 = millis();
   while (!calibrato) {
-    readBk = analogRead(BRAKEIN);
+    acquisizioneBSE();
+    readBk = media(ArrBk);
     if (minBk > readBk)    minBk = readBk;
     if (maxBk < readBk)    maxBk = readBk;
 
@@ -103,7 +142,7 @@ void BRAKE() {
       Serial.println();
       Serial.print("BRAKE =["); Serial.print(minBk); Serial.print(" - "); Serial.print(maxBk); Serial.println("]");
     }
-    currMillis = millis();
+    currMillis2 = millis();
     if (currMillis2 - prevMillis2 >= plaus1Millis2) {
       calibrato = 1;
       digitalWrite(BUZZ, HIGH);
@@ -156,6 +195,7 @@ void setup() {
 
   minTh1 = minTh2 = minBk = 4095;
   maxTh1 = maxTh2 = maxBk = 0;
+  posArrTh1 = posArrTh2 = posArrBk = 0;
 
   //azzeramento TORQUE OUT and BRAKE OUT
   analogWrite(DAC0, 0); //brake
