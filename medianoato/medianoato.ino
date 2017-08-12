@@ -1,24 +1,26 @@
 /* questo codice sviluppato da Valerio Dodet è dedicato al funzionamento di un arduino DUE
-   che svolga la funzione di unità di controllo della vettura FastCharge per il team
-   Fast Charge in Formula SAE
+ * che svolga la funzione di unità di controllo della vettura FastCharge per il team
+ * Fast Charge in Formula SAE
+ *  
+ *  README: https://goo.gl/wGvLdF
+ *  SITE: https://www.facebook.com/SapienzaFastCharge
+ *    
+ * stati
+ * STAND:  stato 0, accensione della vettura, si ritorna qui ogni volta che casca l'SC
+ *
+ * HVON: stato 1, alta tensione attiva
+ *    si accede solo da STAND tramite AIRbutton e SC>3V
+ *
+ * DRIVE:stato 2, lo stato di guida sicura, accedibile tramite procedura RTD ma anche con lo 
+ *    scatto delle plausibilità tramite procedura di rientro
+ *
+ * NOTDRIVE: stato 3, errore con la pedaliera, i sensori dei pedali sono scollegati o fuori
+ *        range. Disabilitate richiesta di coppia e richiesta di frenata, si entra solo
+ *        tramite scatto delle plausibilità o assenza del freno.
+ *
+ */
 
-    README: https://goo.gl/wGvLdF
-    SITE: https://www.facebook.com/SapienzaFastCharge
 
-   stati
-   STAND:  stato 0, accensione della vettura, si ritorna qui ogni volta che casca l'SC
-
-   HVON: stato 1, alta tensione attiva
-      si accede solo da STAND tramite AIRbutton e SC>3V
-
-   DRIVE:stato 2, lo stato di guida sicura, accedibile tramite procedura RTD ma anche con lo
-      scatto delle plausibilità tramite procedura di rientro
-
-   NOTDRIVE: stato 3, errore con la pedaliera, i sensori dei pedali sono scollegati o fuori
-          range. Disabilitate richiesta di coppia e richiesta di frenata, si entra solo
-          tramite scatto delle plausibilità o assenza del freno.
-
-*/
 
 uint8_t current_state = 0;
 
@@ -55,53 +57,37 @@ int BSPD = 1;
    analogReadResolution(12) ==> 4096=3300mV
 
 */
-int th1Low = 1960;//2540
-int th1Up = 2583;//3150
-int th2Low = 2230;  //3100
-int th2Up = 2930; //3400
-int bkLow = 730;
-int bkUp = 980;
+int th1Low = 2348;//2540
+int th1Up = 4080;//3150
+int th2Low = 2549;  //3100
+int th2Up = 4095; //3400
+int bkLow = 979;
+int bkUp = 1119;
 int Upper = 1500;
 int Lower = 0;
-int SCthr = 600;
+int SCthr=600;
 
 
 int lunghezza = 32; //lunghezza array di acquisizione
 uint8_t lun = 5; //2^lun = lunghezza
-int Min, Max; //variabili globali per la funzione HASH
-double irr; //numero per la funzione HASH
+int primo=0;
+int ultimo=31;
+int i,j,res;
 
-/*i, j
- *normali contatori per cicli for, inizializzare ad ogni ciclo
- * e non utilizzare contemporaneamente in funzioni diverse
- */
-int i = 0;
-int j=0;
-
-int RunTH = 2110; //25% della corsa del pedale
-int RunTH5 = 1958;
-int RunBK = 800; //10% della corsa del freno
-int RTDBK = 800; //pressione freno per RTD
+int RunTH = 2781; //25% della corsa del pedale
+int RunTH5 = 2435;
+int RunBK = 993; //10% della corsa del freno
+int RTDBK = 1000; //pressione freno per RTD
 
 /*
-   inzializzazione array acquisizioni:
-   prima di 64 acquisizioni la dinamica sarà molto smorzata a causa di tutti questi zeri
-*/
+ * inzializzazione array acquisizioni: 
+ * prima di 64 acquisizioni la dinamica sarà molto smorzata a causa di tutti questi zeri
+ */
 int ArrTh1[32]={0};
 int ArrTh2[32]={0};
 int ArrBk[32]={0};
-int posArrTh1, posArrTh2, posArrBk;
 int out[32]={0};
-
-/*struttura dati per la lista di trabocco dell'hash table per il bucket sort
- **/
-typedef struct lista {
-  int chiave;
-  struct lista *next;
-}lista_t, *lista_ptr;
-
-//hash table
-lista_ptr Htable[100] = {0};
+int posArrTh1, posArrTh2, posArrBk;
 
 
 
@@ -112,6 +98,9 @@ void setup() {
   pinMode(AIRGnd, OUTPUT);
   pinMode(PRE, OUTPUT);
   pinMode(BUZZ, OUTPUT);
+  //pinMode(AIRB, INPUT);
+  // pinMode(RTDB, INPUT);
+  pinMode(BRAKEIN, INPUT);
   pinMode(AIRB, INPUT_PULLUP);
   pinMode(RTDB, INPUT_PULLUP);
   Serial.begin(9600);
@@ -119,21 +108,17 @@ void setup() {
   analogReadResolution(12);
   posArrTh1 = posArrTh2 = posArrBk = 0;
 
-  for(i=0;i<lunghezza;i++){
-    ArrTh1[i]=0;
-    ArrTh2[i]=0;
-    ArrBk[i]=0;
-  }
 
   //azzeramento TORQUE OUT and BRAKE OUT
   analogWrite(DAC0, 0); //brake
-  analogWrite(DAC1, map(th1Low + 20, th1Low, th1Up, 0, 4095)); //torque
+  analogWrite(DAC1, map(th1Low+20, th1Low, th1Up, 0, 4095)); //torque
+
 }
 
 
 /*
-   stato 0, accensione della vettura
-*/
+ * stato 0, accensione della vettura
+ */
 void STAND() {
   //invio pacchetto VCU_OK su CAN
   while (!BSPD);
@@ -163,8 +148,8 @@ void STAND() {
 }
 
 /*
-   stato 1, alta tensione attiva
-*/
+ * stato 1, alta tensione attiva
+ */
 void HVON() {
 
   RTD = 0;
@@ -173,17 +158,17 @@ void HVON() {
   plaus1 = 0;
 
   //acquisizione mediata freno per RTD
-  for (i = 0; i < lunghezza; i++) {
+  for (int i = 0; i < lunghezza; i++) {
     bk += analogRead(BRAKEIN);
   }
   bk >>= lun;
-  Serial.print("bk ciclato: "); Serial.println(bk);
+Serial.print("bk ciclato: "); Serial.println(bk);  
 
   /*transizione verso stato DRIVE
     Il segnale dello SC è maggiore di 1,28 V
     suono RTD 2 secondi
   */
-  if (analogRead(SC) > SCthr && bk > RTDBK && digitalRead(RTDB) == LOW) { //brake >800
+  if (analogRead(SC) > SCthr && /*bk > RTDBK && */digitalRead(RTDB) == LOW) { //brake >800
 
     digitalWrite(BUZZ, HIGH);
     delay(300);
@@ -204,7 +189,6 @@ void HVON() {
     digitalWrite(BUZZ, HIGH);
     delay(300);
     digitalWrite(BUZZ, LOW);
-    delay(200);
 
     //if(feedback RTD){
     RTD = 1;
@@ -304,9 +288,9 @@ void DRIVE() {
 
 }
 
-/*
-   errore con la pedaliera, i sensori dei pedali sono scollegati o fuori range
-*/
+/* 
+ * errore con la pedaliera, i sensori dei pedali sono scollegati o fuori range
+ */
 void NOTDRIVE() {
   if (analogRead(SC) < SCthr) current_state = 0;
   acquisizioneTPS1();
