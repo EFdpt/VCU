@@ -54,14 +54,14 @@ int plaus1 = 0;
 int BSPD = 1;
 
 
-int th1Low = 2920;//2540
+int th1Low = 2820;//2540
 int th1Up = 4080;
-int th2Low = 3000;  //3100
-int th2Up = 4095; //3400
-int bkLow = 1090;
-int bkUp = 1180;
-int Upper = 1500;
-int Lower = 0;
+int th2Low = 3500;  //3100
+int th2Up = 4595; //3400
+int bkLow = 1450;
+int bkUp = 1780;
+int Upper = 1400; // 900 + offset
+int Lower = 500;
 int SCthr=600;
 int dinamica1 = 885;  //75% di th1Up-th1Low utilizzato per mappa pedale non lineare
 int dinamica2 = 944; //80% della corsa del pedale
@@ -72,9 +72,11 @@ int i=0;
 
 int RunTH = 3195; //25% della corsa del pedale
 int RunTH5 = 2959;
-int RunBK = 1160; //10% della corsa del freno
-int RTDBK = 1500; //pressione freno per RTD
-
+int RunBK = 170d0; //10% della corsa del freno
+int RTDBK = 1700; //pressione freno per RTD
+int percStartLaunch=10;
+int startLaunch=th1Low + ((th1Up - th1Low) / percStartLaunch);
+int launchInc = 10;
 
 void setup() {
   // put your setup code here, to run once:
@@ -153,6 +155,7 @@ Serial.print("bk ciclato: "); Serial.println(bk);
   */
   if (analogRead(SC) > SCthr && bk > RTDBK && digitalRead(RTDB) == LOW) { //brake >800
 
+    
     digitalWrite(BUZZ, HIGH);
     delay(270);
     digitalWrite(BUZZ, LOW);
@@ -189,6 +192,7 @@ void DRIVE() {
   AIR = 1;
   plaus2 = 1;
   plaus1 = 1;
+  int launch = startLaunch; // reinizializza la rampa
 
   /*
     il while permette un ciclo più veloce evitando di
@@ -200,9 +204,9 @@ void DRIVE() {
 
     /*acquisizione diretta pedali*/
     th1=analogRead(TPS1);
-    th2=analogRead(TPS2);
+    th2=analogRead(TPS2) + 500; // + offset per plaus1
     bk=analogRead(BRAKEIN);
-
+    {
 //    //check plausibilità throttle
 //    currMillis = millis();
 //
@@ -219,7 +223,9 @@ void DRIVE() {
 //      APPS >25% && brake attuato scatta seconda plausibilità
 //    */
 //    if (th1 > RunTH && bk > RunBK) plaus2 = 0;
-
+}
+    if(th1 > startLaunch && launch <= startLaunch && launch < 5000) launch += launchInc;
+    
     /*drive!!*/
     if (plaus1 && plaus2) {
       if(th1<th1Low)  th1=th1Low;
@@ -230,7 +236,8 @@ void DRIVE() {
 //        analogWrite(DAC1, map(th1, th1Low, dinamica2 + th1Low, 0, 2047));
 //      else
 //        analogWrite(DAC1, map(th1, dinamica2 + th1Low, th1Up, 2048, 4095));
-        analogWrite(DAC1, map(th1, th1Low, th1Up, 0, 4095));
+      if(th1>launch)      analogWrite(DAC1, map(launch, th1Low, th1Up, 0, 4095));
+      else  analogWrite(DAC1, map(th1, th1Low, th1Up, 0, 4095));
       analogWrite(DAC0, 0);
 
       Serial.print("TH1: "); Serial.print(th1); Serial.print("   BREAK: "); Serial.println(bk);
@@ -283,7 +290,7 @@ void DRIVE() {
 void NOTDRIVE() {
   if (analogRead(SC) < SCthr) current_state = 0;
   th1=analogRead(TPS1);
-  th2=analogRead(TPS2);
+  th2=analogRead(TPS2) + 500; // + offset 
   bk=analogRead(BRAKEIN);
   /*
     th1-th2 <= Upper bound && th1-th2 >= Lower bound && bk < 10%
