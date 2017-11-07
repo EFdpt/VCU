@@ -74,9 +74,6 @@ int RunTH = 3195; //25% della corsa del pedale
 int RunTH5 = 2959;
 int RunBK = 170d0; //10% della corsa del freno
 int RTDBK = 1700; //pressione freno per RTD
-int percStartLaunch=10;
-int startLaunch=th1Low + ((th1Up - th1Low) / percStartLaunch);
-int launchInc = 10;
 
 void setup() {
   // put your setup code here, to run once:
@@ -155,27 +152,14 @@ Serial.print("bk ciclato: "); Serial.println(bk);
   */
   if (analogRead(SC) > SCthr && bk > RTDBK && digitalRead(RTDB) == LOW) { //brake >800
 
+	//buzzer che suona
+    for (int count=0; count<4; count++;){
+    delay(100);
+    digitalWrite(BUZZ, HIGH);
+    delay(270);
+    digitalWrite(BUZZ, LOW);
+    }
     
-    digitalWrite(BUZZ, HIGH);
-    delay(270);
-    digitalWrite(BUZZ, LOW);
-    delay(100);
-    digitalWrite(BUZZ, HIGH);
-    delay(270);
-    digitalWrite(BUZZ, LOW);
-    delay(100);
-    digitalWrite(BUZZ, HIGH);
-    delay(270);
-    digitalWrite(BUZZ, LOW);
-    delay(100);
-    digitalWrite(BUZZ, HIGH);
-    delay(270);
-    digitalWrite(BUZZ, LOW);
-    delay(100);
-    digitalWrite(BUZZ, HIGH);
-    delay(270);
-    digitalWrite(BUZZ, LOW);
-
     //if(feedback RTD){
     RTD = 1;
     current_state = 2;
@@ -192,7 +176,6 @@ void DRIVE() {
   AIR = 1;
   plaus2 = 1;
   plaus1 = 1;
-  int launch = startLaunch; // reinizializza la rampa
 
   /*
     il while permette un ciclo più veloce evitando di
@@ -224,8 +207,7 @@ void DRIVE() {
 //    */
 //    if (th1 > RunTH && bk > RunBK) plaus2 = 0;
 }
-    if(th1 > startLaunch && launch <= startLaunch && launch < 5000) launch += launchInc;
-    
+     
     /*drive!!*/
     if (plaus1 && plaus2) {
       if(th1<th1Low)  th1=th1Low;
@@ -236,8 +218,8 @@ void DRIVE() {
 //        analogWrite(DAC1, map(th1, th1Low, dinamica2 + th1Low, 0, 2047));
 //      else
 //        analogWrite(DAC1, map(th1, dinamica2 + th1Low, th1Up, 2048, 4095));
-      if(th1>launch)      analogWrite(DAC1, map(launch, th1Low, th1Up, 0, 4095));
-      else  analogWrite(DAC1, map(th1, th1Low, th1Up, 0, 4095));
+
+      analogWrite(DAC1, map(th1, th1Low, th1Up, 0, 4095));
       analogWrite(DAC0, 0);
 
       Serial.print("TH1: "); Serial.print(th1); Serial.print("   BREAK: "); Serial.println(bk);
