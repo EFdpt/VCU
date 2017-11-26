@@ -119,8 +119,8 @@ void STAND() {
     digitalWrite(PRE, HIGH);
     digitalWrite(AIRGnd, HIGH);
     delay(3000);
-    digitalWrite(PRE, LOW);
     digitalWrite(AIRcc, HIGH);
+    digitalWrite(PRE, LOW);
     //if(ricevuto pacchetto AIR chiusi){
     AIR = 1;
     current_state = 1;
