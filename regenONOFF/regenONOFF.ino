@@ -219,8 +219,14 @@ void DRIVE() {
 //      else
 //        analogWrite(DAC1, map(th1, dinamica2 + th1Low, th1Up, 2048, 4095));
 
-      if (bk<3500)      analogWrite(DAC1, map(th1, th1Low, th1Up, 0, 4095));  //3500=2.82V IN
-      else  analogWrite(DAC0, 1296);  //1296=2.6V OUT
+      if (bk<3500){  //3500=2.82V IN
+        analogWrite(DAC1, map(th1, th1Low, th1Up, 0, 4095));
+        analogWrite(DAC0, 0);
+      }
+      else{
+        analogWrite(DAC1, 0);
+        analogWrite(DAC0, 1296);  //1296=2.6V OUT
+      }
 
       Serial.print("TH1: "); Serial.print(th1); Serial.print("   BREAK: "); Serial.println(bk);
     }
