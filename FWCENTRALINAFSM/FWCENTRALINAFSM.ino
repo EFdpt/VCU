@@ -72,7 +72,7 @@ int i=0;
 
 int RunTH = 3195; //25% della corsa del pedale
 int RunTH5 = 2959;
-int RunBK = 170d0; //10% della corsa del freno
+int RunBK = 1700; //10% della corsa del freno
 int RTDBK = 1700; //pressione freno per RTD
 
 void setup() {
@@ -153,7 +153,7 @@ Serial.print("bk ciclato: "); Serial.println(bk);
   if (analogRead(SC) > SCthr && bk > RTDBK && digitalRead(RTDB) == LOW) { //brake >800
 
 	//buzzer che suona
-    for (int count=0; count<4; count++;){
+    for (int count=0; count<4; count++){
     delay(100);
     digitalWrite(BUZZ, HIGH);
     delay(270);
