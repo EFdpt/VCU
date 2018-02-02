@@ -22,6 +22,8 @@
 
 #include <due_can.h>
 
+#define _USE_REGEN_			(1)
+
 uint8_t current_state = 0;
 
 unsigned long prevMillis = 0;
@@ -68,7 +70,7 @@ int dinamica2 = 944; //80% della corsa del pedale
 
 int lunghezza = 16; //lunghezza array di acquisizione
 uint8_t lun = 4; //2^lun = lunghezza
-int i=0;    //macheccazzo è stammerda
+int i=0;
 
 int RunTH = 3195; //25% della corsa del pedale
 int RunTH5 = 2959;
@@ -79,6 +81,7 @@ CAN_FRAME output, incoming, frame;
 #define CAN_FUNZ    Can1
 #define CAN_SERV    Can0
 
+inline void CANtorqReq(uint16_t torq);
 
 /* attendere il pacchetto di boot: ID:x710
  * scrivere il pacchetto chek vendorID= ID:x611 | DATA: x4018100100000000
@@ -142,9 +145,7 @@ void CanBegin(){
     output.data.low= 0x00000000;
     output.extended = 0;
     CAN_FUNZ.sendFrame(output);
-
-    
-  }
+}
 
 void setup() {
   // put your setup code here, to run once:
@@ -157,15 +158,22 @@ void setup() {
   pinMode(AIRB, INPUT_PULLUP);
   pinMode(RTDB, INPUT_PULLUP);
   Serial.begin(9600);
-// analogWriteResolution(12);
+  
+#if _USE_REGEN_
+  analogWriteResolution(12);
+#endif
+  
   analogReadResolution(12);
 
 
   CanBegin();
   //azzeramento TORQUE OUT and BRAKE OUT
-  //analogWrite(DAC0, 0); //brake
+ 
+#if _USE_REGEN_
+  analogWrite(DAC0, 0); //brake
+#endif
   //analogWrite(DAC1, map(th1Low, th1Low, th1Up, 0, 4095)); //torque
-
+  CANtorqReq(0);
 }
 
 
@@ -241,7 +249,7 @@ Serial.print("bk ciclato: "); Serial.println(bk);
 }
 
 
-void CANtorqReq(uint16_t torq){
+inline void CANtorqReq(uint16_t torq){
   
     frame.id = 0x211;//200+11
     frame.length = 8;
@@ -301,8 +309,19 @@ void DRIVE() {
 //      else
 //        analogWrite(DAC1, map(th1, dinamica2 + th1Low, th1Up, 2048, 4095));
 
-    
-    CANtorqReq(map(th1, th1Low, th1Up, 0, 4095));
+  #if _USE_REGEN_
+      if (bk<3500){  //3500=2.82V IN
+        CANtorqReq(map(th1, th1Low, th1Up, 0, 4095));
+        analogWrite(DAC0, 0);
+      }
+      else{
+        CANtorqReq(0);
+        analogWrite(DAC0, 1613);  //1296=2.6V OUT
+      }
+  #else
+      CANtorqReq(map(th1, th1Low, th1Up, 0, 4095));
+  #endif
+     
       //analogWrite(DAC1, map(th1, th1Low, th1Up, 0, 4095));
       //analogWrite(DAC0, 0);
 
