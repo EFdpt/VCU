@@ -99,7 +99,7 @@ void CanBegin(){
     //ci serve sia bloccante 
     CAN_FUNZ.watchFor(0x710);
     
-  while (Serial.available() > 0) {
+  while (CAN_FUNZ.available() > 0) {
         CAN_FUNZ.read(incoming);
         if(incoming.id==0x710) 
     break;
@@ -116,7 +116,7 @@ void CanBegin(){
     
     //DEVE essere bloccante
     CAN_FUNZ.watchFor(0x590);
-    while (Serial.available() > 0) {
+    while (CAN_FUNZ.available() > 0) {
         CAN_FUNZ.read(incoming);
         if(incoming.id==0x590) 
             break;

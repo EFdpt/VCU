@@ -11,12 +11,6 @@
 CAN_FRAME                     incoming;
 #endif
 
-/*
- *  Per abilitare l'inlining delle funzioni è necessario utilizzare almeno il livello 1 di ottimizzazione del compilatore.
- *  Per fare ciò modificare il file "platform.txt" situato dentro la path ".../arduino/hardware/sam/<version-code>/platform.txt":
- *    definire la variabile compiler.optimization=-O2 (ottimizzazione livello 2) e sostituire tutte le occorrenze di "-Os" nel file
- *    con {compiler.optimization}
- */
 static inline void consumer(CAN_FRAME* frame) {
   
   if (frame -> data.s0 > POT_THRES)
