@@ -1,7 +1,9 @@
 #include <due_can.h>
+#include <DueTimer.h>
 
 #define INVERTER_NODE_ID      (0x01)
 #define VCU_NODE_ID           (0x11)
+#define SYNC_PERIOD           (5000) // 5ms
 
 #define CAN_FUNZ              Can0
 
@@ -9,6 +11,16 @@ volatile bool       inverter_online     = false;
 volatile bool       inverter_configured = false;
 
 uint32_t vendorID;
+
+void send_sync() {
+  CAN_FRAME sync;
+
+  sync.id = 0x00000080;
+  sync.length = 1;
+  sync.extended = false;
+  sync.data.byte[0] = 0x00;
+  CAN_FUNZ.sendFrame(sync);
+}
 
 void CAN_GENERAL_CB(CAN_FRAME* frame) {
 
@@ -69,7 +81,35 @@ void CAN_GENERAL_CB(CAN_FRAME* frame) {
     CAN_FUNZ.sendFrame(output);
 
     inverter_configured = true;
+    Serial.println("Inverter successfully configured");
+
+    // send periodic SYNC
+    DueTimer::getAvailable().attachInterrupt(send_sync).start(SYNC_PERIOD);
   }
+}
+
+void torque_request(uint16_t torque) {
+  CAN_FRAME output;
+
+  output.id = 0x00000200 + (uint8_t) VCU_NODE_ID;
+  output.length = 8;
+  output.data.high = 0x0F000000;
+  output.data.low = 0x00000000 | torque;
+  output.extended = 0;
+  CAN_FUNZ.sendFrame(output);
+}
+
+void CAN_GENERAL_CONSUMER_CB(CAN_FRAME* frame) {
+   Serial.print(" ID: 0x");
+   Serial.print(frame->id, HEX);
+   Serial.print(" Len: ");
+   Serial.print(frame->length);
+   Serial.print(" Data: 0x");
+   for (int count = 0; count < frame->length; count++) {
+       Serial.print(frame->data.bytes[count], HEX);
+       Serial.print(" ");
+   }
+   Serial.print("\r\n");
 }
 
 /* attendere il pacchetto di boot: ID:0x700 + NODE-ID
@@ -78,8 +118,14 @@ void CAN_GENERAL_CB(CAN_FRAME* frame) {
  * scrivere il pacchetto NMT= ID: 0x000 | DATA: 0x0100
 */
 void CanBegin(){
+
+  Serial.begin(9600);
+
+  while (!Serial);
+
+  Serial.println("Serial started");
  
-  while (!CAN_FUNZ.begin(CAN_BPS_1000K)){
+  while (!CAN_FUNZ.begin(CAN_BPS_500K)){
       Serial.println("CAN baudrate initialization ERROR");
   }
 
@@ -97,6 +143,8 @@ void CanBegin(){
     CAN_FUNZ.setRXFilter(i, 0, 0, false);
     CAN_FUNZ.setCallback(i, CAN_GENERAL_CB);
   }
+
+  Serial.println("CAN mailboxes configured");
 
   while (!inverter_online || !inverter_configured) {}
 }
