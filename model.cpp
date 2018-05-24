@@ -10,8 +10,13 @@
 #define APPS_PLAUS_RANGE        10
 
 #define ADC_CHANNELS            3
-#define ADC_CHANNELS_LIST       TPS1_ADC_CHAN_NUM | TPS2_ADC_CHAN_NUM | BRAKE_ADC_CHAN_NUM
-  
+#define ADC_CHANNELS_LIST       TPS1_ADC_CHAN_NUM | TPS2_ADC_CHAN_NUM | BRAKE_ADC_CHAN_NUM | SC_ADC_CHAN_NUM
+
+#define TPS1_ADC_OFFSET         0
+#define TPS2_ADC_OFFSET         1
+#define BRAKE_ADC_OFFSET        2
+#define SC_ADC_OFFSET           3
+
 #define BUFFER_LENGTH           ADC_BUFFER_SIZE * ADC_CHANNELS
 
 // CAN acquisition
@@ -21,16 +26,19 @@ volatile uint8_t    brake_percentage   = 0;
 volatile bool       apps_plausibility  = true;
 volatile bool       brake_plausibility = true;
 
+volatile bool       can_servizi_online = true;
+
 // analog acquisition
 volatile uint8_t    tps1_adc_percentage    = 0;
 volatile uint8_t    tps2_adc_percentage    = 0;
 volatile uint8_t    brake_adc_percentage   = 0;
-volatile bool       apps_adc_plausibility  = true;
-volatile bool       brake_adc_plausibility = true;
+volatile bool       apps_adc_plausibility  = false;
+volatile bool       brake_adc_plausibility = false;
 
 volatile uint16_t   tps1_value = 0;
 volatile uint16_t   tps2_value = 0;
 volatile uint16_t   brake_value = 0;
+volatile uint16_t   SC_value    = 0;
 
 volatile uint16_t   tps1_max = ADC_MIN;
 volatile uint16_t   tps1_low = ADC_MAX;
@@ -47,11 +55,11 @@ volatile uint16_t   buf[BUFFERS][BUFFER_LENGTH];
 
 volatile bool       calibrate          = true;
 
-
 static inline void filter_data() {
     tps1_value = (tps1_value + filter_buffer(buf[obufn] + TPS1_ADC_OFFSET, ADC_BUFFER_SIZE, ADC_CHANNELS)) / 2;
     tps2_value = (tps2_value + filter_buffer(buf[obufn] + TPS2_ADC_OFFSET, ADC_BUFFER_SIZE, ADC_CHANNELS)) / 2;
     brake_value = (brake_value + filter_buffer(buf[obufn] + BRAKE_ADC_OFFSET, ADC_BUFFER_SIZE, ADC_CHANNELS)) / 2;
+    SC_value = (SC_value + filter_buffer(buf[obufn] + SC_ADC_OFFSET, ADC_BUFFER_SIZE, ADC_CHANNELS)) / 2;
 
     if (calibrate) {
         if (tps1_value < tps1_low) tps1_low = tps1_value;
@@ -112,25 +120,53 @@ void model_init() {
     ADC->ADC_CR = 2;
 
     // for regen brake
+    
+
+    pinMode(FAN, OUTPUT);
+    pinMode(AIRcc, OUTPUT);
+    pinMode(AIRGnd, OUTPUT);
+    pinMode(PRE, OUTPUT);
+    pinMode(BUZZ, OUTPUT);
+
+    pinMode(AIRB, INPUT_PULLUP);
+    pinMode(RTDB, INPUT_PULLUP);
+
+    Serial.begin(SERIAL_BAUDRATE);
+    while (!Serial);
+
     analogWriteResolution(12);
+
+    //azzeramento BRAKE OUT
+    analogWrite(BRAKE_REGEN_PIN, 0); //brake
 }
 
 __attribute__((__inline__)) volatile uint8_t get_tps1_percentage() {
-    return tps1_adc_percentage;
+    return can_servizi_online? tps1_percentage : tps1_adc_percentage;
 }
 
 __attribute__((__inline__)) volatile uint8_t get_tps2_percentage() {
-    return tps2_adc_percentage;
+    return can_servizi_online? tps2_percentage : tps2_adc_percentage;
 }
 
 __attribute__((__inline__)) volatile uint8_t get_brake_percentage() {
-    return brake_adc_percentage;
+    return can_servizi_online? brake_percentage : brake_adc_percentage;
 }
 
 __attribute__((__inline__)) volatile bool    get_apps_plausibility() {
-    return apps_adc_plausibility;
+    return can_servizi_online? apps_plausibility : apps_adc_plausibility;
 }
 
 __attribute__((__inline__)) volatile bool    get_brake_plausibility() {
-    return brake_adc_plausibility;
+    return can_servizi_online? brake_plausibility : brake_adc_plausibility;
+}
+
+__attribute__((__inline__)) volatile uint16_t get_SC_value() {
+    return SC_value;
+}
+
+__attribute__((__inline__)) void model_enable_calibrations() {
+    calibrate = true;
+}
+__attribute__((__inline__)) void model_disable_calibrations() {
+    calibrate = false;
 }
