@@ -42,8 +42,6 @@ void CAN_GENERAL_CB(CAN_FRAME* frame) {
 
   if (frame -> id == (0x700 + INVERTER_NODE_ID)) {
 
-    inverter_online = true;
-
     if (inverter_online)
       return;
 
@@ -59,6 +57,8 @@ void CAN_GENERAL_CB(CAN_FRAME* frame) {
     output.extended = 0;
     CAN_FUNZ.sendFrame(output);
     Serial.println("VendorID SDO client request sent");
+    
+    inverter_online = true;
 
   } else if (frame -> id == 0x580 + INVERTER_NODE_ID) {
 
@@ -107,7 +107,7 @@ void CAN_GENERAL_CB(CAN_FRAME* frame) {
 
     // send periodic SYNC
     DueTimer::getAvailable().attachInterrupt(send_sync).start(SYNC_PERIOD);
-  } else if (frame -> id == 0x180 + INVERTER_NODE_ID) { // inverter torque actual val
+  } else if (frame -> id == 0x180 + INVERTER_NODE_ID) { // inverter torque actual val (Transmit PDO1)
     torque_actual_val = frame -> data.s3;
   }
 }
@@ -167,8 +167,8 @@ void CanBegin(){
 }
 
 void setup() {
-  CanBegin();
   analogReadResolution(12);
+  CanBegin();
   torque_request(0);
 }
 
