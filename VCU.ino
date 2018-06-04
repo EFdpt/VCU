@@ -36,7 +36,7 @@ int dinamica2     = 944; //80% della corsa del pedale
 #define REGEN_BK_PERCENTAGE         40
 
 void setup() {
-    can_init();
+    while (!can_init()) {};
     model_init();
 }
 
@@ -84,8 +84,6 @@ void HVON() {
     /*ritorno allo stato STAND*/
     if (get_SC_value() < SC_THRES)  setState(STAND);
 }
-
-
 
 void DRIVE() {
     // RTD = true; // serve risettarlo a true???
@@ -148,6 +146,7 @@ void NOTDRIVE() {
     if (get_SC_value() < SC_THRES) setState(STAND);
 
     if (get_apps_plausibility() && get_brake_percentage() < RunBK) {
+        RTD = true;
         setState(DRIVE);
         Serial.println("stato corrente DRIVE");
     }

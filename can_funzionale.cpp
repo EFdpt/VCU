@@ -98,6 +98,11 @@ bool can_funzionale_init() {
     return true;
 }
 
+__attribute__((__inline__))
+volatile bool can_funzionale_online() {
+    return inverter_online && inverter_configured;
+}
+
 __attribute__((__inline__)) 
 void inverter_torque_request(uint16_t torque) {
     CAN_FRAME output;

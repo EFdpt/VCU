@@ -3,6 +3,8 @@
 
 bool can_funzionale_init();
 
+volatile bool can_funzionale_online();
+
 void inverter_torque_request(uint16_t torque);
 
 volatile uint16_t get_torque_actual_value();
