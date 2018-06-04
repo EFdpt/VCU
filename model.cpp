@@ -1,4 +1,5 @@
 #include "model.h"
+#include "can_servizi.h"
 
 #undef HID_ENABLED
 #define ADC_BUFFER_SIZE         128
@@ -18,15 +19,6 @@
 #define SC_ADC_OFFSET           3
 
 #define BUFFER_LENGTH           ADC_BUFFER_SIZE * ADC_CHANNELS
-
-// CAN acquisition
-volatile uint8_t    tps1_percentage    = 0;
-volatile uint8_t    tps2_percentage    = 0;
-volatile uint8_t    brake_percentage   = 0;
-volatile bool       apps_plausibility  = true;
-volatile bool       brake_plausibility = true;
-
-volatile bool       can_servizi_online = true;
 
 // analog acquisition
 volatile uint8_t    tps1_adc_percentage    = 0;
@@ -141,23 +133,23 @@ void model_init() {
 }
 
 __attribute__((__inline__)) volatile uint8_t get_tps1_percentage() {
-    return can_servizi_online? tps1_percentage : tps1_adc_percentage;
+    return can_servizi_online() ? get_servizi_tps1() : tps1_adc_percentage;
 }
 
 __attribute__((__inline__)) volatile uint8_t get_tps2_percentage() {
-    return can_servizi_online? tps2_percentage : tps2_adc_percentage;
+    return can_servizi_online() ? get_servizi_tps2() : tps2_adc_percentage;
 }
 
 __attribute__((__inline__)) volatile uint8_t get_brake_percentage() {
-    return can_servizi_online? brake_percentage : brake_adc_percentage;
+    return can_servizi_online() ? get_servizi_brake() : brake_adc_percentage;
 }
 
 __attribute__((__inline__)) volatile bool    get_apps_plausibility() {
-    return can_servizi_online? apps_plausibility : apps_adc_plausibility;
+    return can_servizi_online() ? get_servizi_apps_plausibility() : apps_adc_plausibility;
 }
 
 __attribute__((__inline__)) volatile bool    get_brake_plausibility() {
-    return can_servizi_online? brake_plausibility : brake_adc_plausibility;
+    return can_servizi_online() ? get_servizi_brake_plausibility() : brake_adc_plausibility;
 }
 
 __attribute__((__inline__)) volatile uint16_t get_SC_value() {

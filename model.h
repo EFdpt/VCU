@@ -1,8 +1,6 @@
 #ifndef _MODEL_H_
 #define _MODEL_H_
 
-extern volatile bool can_servizi_online;
-
 void model_init();
 
 volatile uint8_t get_tps1_percentage();

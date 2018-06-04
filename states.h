@@ -16,23 +16,17 @@ enum CO_nodeState {
 
 typedef enum CO_nodeState CO_nodeState;
 
-typedef enum e_nodeState_ {
-    STAND       = 0x00,
-    HVON        = 0x01,
-    DRIVE       = 0x02,
-    NOTDRIVE    = 0x03
-} e_nodeState;
+typedef enum {
+    STAND,
+    HVON,
+    DRIVE,
+    NOTDRIVE,
+    MAX_STATES
+} state_e;
 
-/** 
- * @brief Called by driver/app when receiving messages
- * @param *d Pointer on a CAN object data structure
- * @param *m Pointer on a CAN message structure
- */
-void canDispatch(Message* m);
+state_e getState();
 
-e_nodeState getState();
-
-void setState(e_nodeState newState);
+void setState(state_e newState);
 
 uint8_t getNodeId();
 

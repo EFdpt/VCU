@@ -3,15 +3,14 @@
 
 #include "CAN_ID.h"
 
-#define CAN_FUNZIONALE			Can0
-#define CAN_SERVIZI				Can1
-
 #define CAN_FUNZ_BAUDRATE		1000000 // 1Mbit/s
 #define CAN_SERV_BAUDRATE		1000000
 
 #define SERIAL_BAUDRATE         115200
 
 #define INVERTER_TORQUE_MIN		0
-#define INVERTER_TORQUE_MAX		32000 // da verificare
+#define INVERTER_TORQUE_MAX		32767 // da verificare
+
+#define CAN_FUNZ_SYNC_PERIOD    5000 // 5ms
 
 #endif /* _COMMON_H_ */

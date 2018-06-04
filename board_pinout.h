@@ -1,13 +1,16 @@
 #ifndef _BOARD_PINOUT_H_
 #define _BOARD_PINOUT_H_
 
-#define AIRcc           48
-#define AIRGnd          49
-#define PRE             47
-#define BUZZ            52
-#define AIRB            14
-#define RTDB            15
-#define FAN             9
+#define CAN_FUNZIONALE              Can0
+#define CAN_SERVIZI                 Can1
+
+#define AIRcc                       48
+#define AIRGnd                      49
+#define PRE                         47
+#define BUZZ                        52
+#define AIRB                        14
+#define RTDB                        15
+#define FAN                         9
 
 #define BRAKE_REGEN_PIN				DAC0
 

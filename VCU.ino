@@ -22,51 +22,41 @@
 
 #include "common.h"
 #include "CAN_ID.h"
+#include "CO_can.h"
 #include "model.h"
 
-int AIR = 0;
-int RTD = 0;
-int BSPD = 1;
+volatile bool RTD = false;
 
-int SCthr=600;
-int dinamica1 = 885;  //75% di th1Up-th1Low utilizzato per mappa pedale non lineare
-int dinamica2 = 944; //80% della corsa del pedale
+#define SC_THRES    600
+int dinamica1     = 885;  //75% di th1Up-th1Low utilizzato per mappa pedale non lineare
+int dinamica2     = 944; //80% della corsa del pedale
 
-int RunTH = 3195; //25% della corsa del pedale
-int RunTH5 = 2959;
-int RunBK = 10; //10% della corsa del freno
-int RTDBK = 10; //pressione freno per RTD (10%)
+#define RunBK       10 //10% della corsa del freno
+#define RTDBK       10 //pressione freno per RTD (10%)
+#define REGEN_BK_PERCENTAGE         40
 
 void setup() {
-  model_init();
+    can_init();
+    model_init();
 }
-
 
 /*
  * stato 0, accensione della vettura
  */
 void STAND() {
-  while (!BSPD);
-  BSPD = 1;
-  //AIR = 0;
-  RTD = 0;
-  digitalWrite(PRE, LOW);
-  digitalWrite(AIRGnd, LOW);
-  digitalWrite(AIRcc, LOW);
-  /*lettura bottone (chiuso = GND) e SC maggiore di 1.28V
-    transizione per stato HVON
-  */
-  if (digitalRead(AIRB) == LOW && get_SC_value() > SCthr) {
-    digitalWrite(PRE, HIGH);
-    digitalWrite(AIRGnd, HIGH);
-    delay(3000); // TODO: fare senza delay
-    digitalWrite(AIRcc, HIGH);
+    RTD = false;
     digitalWrite(PRE, LOW);
-    //if(ricevuto pacchetto AIR chiusi){
-    //AIR = 1;
-    setState(HVON);
-    //}else AIR=0
-  }
+    digitalWrite(AIRGnd, LOW);
+    digitalWrite(AIRcc, LOW);
+    
+    if (digitalRead(AIRB) == LOW && get_SC_value() > SC_THRES) {
+        digitalWrite(PRE, HIGH);
+        digitalWrite(AIRGnd, HIGH);
+        delay(3000);
+        digitalWrite(AIRcc, HIGH);
+        digitalWrite(PRE, LOW);
+        setState(HVON);
+    }
 }
 
 /*
@@ -74,69 +64,58 @@ void STAND() {
  */
 void HVON() {
 
-  //RTD = 0;
+    /*transizione verso stato DRIVE
+        Il segnale dello SC è maggiore di 1,28 V
+        suono RTD 2 secondi
+    */
+    if (get_SC_value() > SC_THRES && get_brake_percentage() > RTDBK && digitalRead(RTDB) == LOW) { //brake >800
 
-  /*transizione verso stato DRIVE
-    Il segnale dello SC è maggiore di 1,28 V
-    suono RTD 2 secondi
-  */
-  if (get_SC_value() > SCthr && get_brake_percentage() > RTDBK && digitalRead(RTDB) == LOW) { //brake >800
-
-  //buzzer che suona
-    for (int count = 0; count < 4; count++) {
-        delay(100);
-        digitalWrite(BUZZ, HIGH);
-        delay(270);
-        digitalWrite(BUZZ, LOW);
+        //buzzer che suona
+        for (int count = 0; count < 4; count++) {
+            delay(100);
+            digitalWrite(BUZZ, HIGH);
+            delay(270);
+            digitalWrite(BUZZ, LOW);
+        }
+        
+        RTD = true;
+        setState(DRIVE);
     }
-    
-    //if(feedback RTD){
-    //RTD = 1;
-    setState(DRIVE);
-    //}else RTD=0
-    }
-  /*ritorno allo stato STAND*/
-    if (get_SC_value() < SCthr)  setState(STAND);
+    /*ritorno allo stato STAND*/
+    if (get_SC_value() < SC_THRES)  setState(STAND);
 }
 
 
 
 void DRIVE() {
-  RTD = 1;
-  AIR = 1;
+    // RTD = true; // serve risettarlo a true???
 
   /*
     il while permette un ciclo più veloce evitando di
     ripetere la chiamata alla funzione di stato ad ogni richiesta di coppia
     appena scattano le plausibilità si esce dal while di guida plausibile
   */
-    while (get_SC_value() > SCthr && RTD && get_apps_plausibility() && get_brake_plausibility()) {
+    while (get_SC_value() > SC_THRES && RTD && get_apps_plausibility() && get_brake_plausibility()) {
 
     /*drive!!*/
-        if (get_apps_plausibility() && get_brake_plausibility()) {  
-//      //mappa spezzata su richiesta coppia
-//      if (th1 <= dinamica1 + th1Low)
-//        analogWrite(DAC1, map(th1, th1Low, dinamica2 + th1Low, 0, 2047));
-//      else
-//        analogWrite(DAC1, map(th1, dinamica2 + th1Low, th1Up, 2048, 4095));
-
-            if (bk<3500) {  //3500=2.82V IN
-                inverter_torque_request(map(get_tps1_percentage(), 0, 100, INVERTER_TORQUE_MIN, INVERTER_TORQUE_MAX)); // regen
-                analogWrite(BRAKE_REGEN_PIN, 0);
+        if (get_apps_plausibility() && get_brake_plausibility()) {
+            if (get_brake_percentage() < REGEN_BK_PERCENTAGE) {  // 2.82V IN
+                inverter_torque_request(map(get_tps1_percentage(), 0, 100, INVERTER_TORQUE_MIN, INVERTER_TORQUE_MAX));
+                analogWrite(BRAKE_REGEN_PIN, 0); // regen OFF
             } else {
                 inverter_torque_request(0);
-                analogWrite(BRAKE_REGEN_PIN, 1613);  //1296=2.6V OUT
+                analogWrite(BRAKE_REGEN_PIN, 1613);  //1296=2.6V OUT - regen ON
             }
 
-            Serial.print("TH1: "); Serial.print(get_tps1_percentage()); Serial.print("   BREAK: "); Serial.println(get_brake_percentage());
+            Serial.print("TPS1: "); Serial.print(get_tps1_percentage()); Serial.print("   BRAKE: "); Serial.println(get_brake_percentage());
         }
     }
 
   /*ritorno allo stato STAND*/
-    if (get_SC_value() < SCthr)  setState(STAND);
+    if (get_SC_value() < SC_THRES)  setState(STAND);
 
   /*scatto plausibilità TPS o scollegamento BRAKE*/
-    if (!get_apps_plausibility() || bk < 500) {
+    if (!get_apps_plausibility() || get_brake_percentage() < 5) {
         inverter_torque_request(0);
         analogWrite(BRAKE_REGEN_PIN, 0);
         setState(NOTDRIVE);
@@ -159,20 +138,18 @@ void DRIVE() {
     }
 
   /*ritorno allo stato STAND*/
-    if (get_SC_value() < SCthr)  setState(STAND);
+    if (get_SC_value() < SC_THRES)  setState(STAND);
 }
 
 /* 
  * errore con la pedaliera, i sensori dei pedali sono scollegati o fuori range
  */
 void NOTDRIVE() {
-    if (get_SC_value() < SCthr) setState(STAND);
-  /*
-    th1-th2 <= Upper bound && th1-th2 >= Lower bound && bk < 10%
-   **/
-    if (get_apps_plausibility() && bk < RunBK) {
+    if (get_SC_value() < SC_THRES) setState(STAND);
+
+    if (get_apps_plausibility() && get_brake_percentage() < RunBK) {
         setState(DRIVE);
-        Serial.println("stato corrente 2");
+        Serial.println("stato corrente DRIVE");
     }
 }
 
