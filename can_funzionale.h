@@ -1,6 +1,8 @@
 #ifndef _CAN_FUNZIONALE_H_
 #define _CAN_FUNZIONALE_H_
 
+#include "common.h"
+
 bool can_funzionale_init();
 
 volatile bool can_funzionale_online();

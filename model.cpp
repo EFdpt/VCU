@@ -1,4 +1,5 @@
 #include "model.h"
+#include "filter.h"
 #include "can_servizi.h"
 
 #undef HID_ENABLED
@@ -75,7 +76,7 @@ static inline void filter_data() {
     // check APPS + brake plausibility (BSPD)
     if (tps1_adc_percentage > 5 && brake_adc_percentage > 25) // ACCELERATOR + BRAKE plausibility
       brake_adc_plausibility = false;
-    else if (!brake_percentage)
+    else if (!brake_adc_percentage)
       brake_adc_plausibility = true;
 }
 

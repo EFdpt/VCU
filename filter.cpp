@@ -1,5 +1,4 @@
 #include "filter.h"
-#include "sort.h"
 
 #define FILTER_BOUND			(8)
 

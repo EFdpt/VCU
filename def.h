@@ -21,8 +21,11 @@
 #define NODE_GUARD 0xE
 #define LSS 	   0xF
 
-#define GET_FUNC_CODE(COB_ID)	(COB_ID >> 7)
-#define SET_FUNC_CODE(COB_ID)   (COB_ID << 7)
+#define GET_FUNC_CODE(COB_ID)			(COB_ID >> 7)
+#define SET_FUNC_CODE(COB_ID)   		(COB_ID << 7)
+
+#define GET_NODE_ID(COB_ID)				(COB_ID & 0x0000007F)
+#define SET_NODE_ID(COB_ID, NODE_ID)	(COB_ID | NODE_ID)
 
 /* NMT Command Specifier, sent by master to change a slave state */
 /* ------------------------------------------------------------- */

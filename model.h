@@ -1,6 +1,8 @@
 #ifndef _MODEL_H_
 #define _MODEL_H_
 
+#include <Arduino.h>
+
 void model_init();
 
 volatile uint8_t get_tps1_percentage();
