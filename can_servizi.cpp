@@ -59,12 +59,12 @@ bool can_servizi_init() {
     uint32_t i;
 
     // set mailbox 0 for receiving boot-up frames
-    CAN_SERVIZI.setRXFilter(0, 0x00000700 + (SCU_FRONTAL_NODE_ID | SCU_RETRO_NODE_ID | TCU_NODE_ID), 0x1FFFFFFF, false);
+    CAN_SERVIZI.setRXFilter(0, 0x00000700, 0x1FFFFF80, false);
     CAN_SERVIZI.setCallback(0, CAN_SERV_BOOTUP_CB);
 
-    // set remaining mailboxes for receiving TPDO1
+    // set remaining mailboxes for receiving TPDOs
     for (i = 2; i < 8; i++) {
-        CAN_SERVIZI.setRXFilter(i, 0x00000080 + (SCU_FRONTAL_NODE_ID | TCU_NODE_ID), 0x1FFFFEFF, false);
+        CAN_SERVIZI.setRXFilter(i, 0x00000080, 0x1FFFFC80, false);
         CAN_SERVIZI.setCallback(i, CAN_SERV_GENERAL_CB);
     }
 
@@ -92,7 +92,7 @@ volatile bool can_servizi_online() {
 
 __attribute__((__inline__))
 volatile bool tcs_online() {
-    return TCS_online;
+    return TCS_online && SCU_F_online;
 }
 
 __attribute__((__inline__)) volatile uint8_t get_servizi_tps1() {
