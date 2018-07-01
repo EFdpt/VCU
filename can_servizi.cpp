@@ -122,6 +122,6 @@ __attribute__((__inline__)) volatile bool    get_servizi_brake_plausibility() {
 }
 
 __attribute__((__inline__))
-volatile float get_tcs_torque_coefficient() {
+volatile uint8_t get_tcs_torque_coefficient() {
     return TCS_online ? tcs_coefficient : 100;
 }

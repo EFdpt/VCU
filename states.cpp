@@ -67,9 +67,10 @@ void hvon() {
 void drive() {
     while (get_SC_value() > SC_THRES && RTD && get_apps_plausibility() && get_brake_plausibility()) {
 
+        volatile uint16_t apps_percentage;
         if (get_apps_plausibility() && get_brake_plausibility()) {
             if (get_brake_percentage() < REGEN_BK_PERCENTAGE) {  // 2.82V IN
-                volatile uint16_t apps_percentage = (get_tps1_percentage() + get_tps2_percentage()) / 2;
+                apps_percentage = (get_tps1_percentage() + get_tps2_percentage()) / 2;
                 volatile uint16_t torque_request = get_tcs_torque_coefficient() * apps_percentage;
                 inverter_torque_request(torque_request);
                 // analogWrite(BRAKE_REGEN_PIN, 0); // regen OFF
