@@ -2,12 +2,17 @@
 #include "filter.h"
 #include "can_servizi.h"
 
+#include <DueFlashStorage.h>
+
 #undef HID_ENABLED
 #define ADC_BUFFER_SIZE         128
 #define BUFFERS                 4
 
 #define ADC_MIN                 0
 #define ADC_MAX                 4095
+
+#define APPS_MIN                (ADC_MAX >> 1)
+#define APPS_MAX                (ADC_MAX >> 1)
 
 #define APPS_PLAUS_RANGE        10
 
@@ -33,20 +38,70 @@ volatile uint16_t   tps2_value = 0;
 volatile uint16_t   brake_value = 0;
 volatile uint16_t   SC_value    = 0;
 
-volatile uint16_t   tps1_max = ADC_MIN;
-volatile uint16_t   tps1_low = ADC_MAX;
+#define TPS1_UPPER_BOUND            APPS_MIN
+#define TPS1_LOWER_BOUND            APPS_MAX
 
-volatile uint16_t   tps2_max = ADC_MIN;
-volatile uint16_t   tps2_low = ADC_MAX;
+#define TPS2_UPPER_BOUND            APPS_MIN
+#define TPS2_LOWER_BOUND            APPS_MAX
 
-volatile uint16_t   brake_max = ADC_MIN;
-volatile uint16_t   brake_low = ADC_MAX;
+#define BRAKE_UPPER_BOUND           APPS_MIN
+#define BRAKE_LOWER_BOUND           APPS_MAX
+
+// struct for loading/storing pedals ranges in flash memory
+typedef struct pedals_ranges_s {
+    volatile uint16_t   tps1_max;
+    volatile uint16_t   tps1_low;
+    volatile uint16_t   tps2_max;
+    volatile uint16_t   tps2_low;
+    volatile uint16_t   brake_max;
+    volatile uint16_t   brake_low;
+} pedals_ranges_t;
+
+// pedals ranges' addresses in flash memory
+#define FIRST_RUN_FLAG_ADDR         0
+#define PEDALS_RANGES_FLASH_ADDR    4
+
+DueFlashStorage     dueFlashStorage;
+
+// pedals ranges in RAM
+volatile uint16_t   tps1_max;
+volatile uint16_t   tps1_low;
+volatile uint16_t   tps2_max;
+volatile uint16_t   tps2_low;
+volatile uint16_t   brake_max;
+volatile uint16_t   brake_low;
 
 volatile int        bufn, obufn;
 
 volatile uint16_t   buf[BUFFERS][BUFFER_LENGTH];
 
-volatile bool       calibrate          = true;
+volatile bool       calibrate          = false;
+
+static inline void load_pedals_ranges(pedals_ranges_t* ranges) {
+    uint8_t first_time = dueFlashStorage.read(FIRST_RUN_FLAG_ADDR);
+    if (first_time) {
+        ranges -> tps1_low = TPS1_LOWER_BOUND;
+        ranges -> tps1_max = TPS1_UPPER_BOUND;
+        ranges -> tps2_low = TPS2_LOWER_BOUND;
+        ranges -> tps2_max = TPS2_UPPER_BOUND;
+        ranges -> brake_low = BRAKE_LOWER_BOUND;
+        ranges -> brake_max = BRAKE_UPPER_BOUND;
+
+        byte buf[sizeof(pedals_ranges_t)];
+        memcpy(buf, ranges, sizeof(pedals_ranges_t));
+        dueFlashStorage.write(PEDALS_RANGES_FLASH_ADDR, buf, sizeof(pedals_ranges_t));
+        dueFlashStorage.write(FIRST_RUN_FLAG_ADDR, 0);
+    } else {
+        byte* buf = dueFlashStorage.readAddress(PEDALS_RANGES_FLASH_ADDR);
+        memcpy(ranges, buf, sizeof(pedals_ranges_t));
+    }
+}
+
+static inline void store_pedals_ranges(pedals_ranges_t* ranges) {
+    byte buf[sizeof(pedals_ranges_t)];
+    memcpy(buf, ranges, sizeof(pedals_ranges_t));
+    dueFlashStorage.write(PEDALS_RANGES_FLASH_ADDR, buf, sizeof(pedals_ranges_t)); // write byte array to flash
+}
 
 static inline void filter_data() {
     tps1_value = (tps1_value + filter_buffer(buf[obufn] + TPS1_ADC_OFFSET, ADC_BUFFER_SIZE, ADC_CHANNELS)) / 2;
@@ -112,25 +167,21 @@ void model_init() {
     ADC->ADC_PTCR = 1;
     ADC->ADC_CR = 2;
 
-    // for regen brake
-    
-
     pinMode(FAN, OUTPUT);
     pinMode(AIRcc, OUTPUT);
     pinMode(AIRGnd, OUTPUT);
     pinMode(PRE, OUTPUT);
-    pinMode(BUZZ, OUTPUT);
+    pinMode(BUZZER, OUTPUT);
 
     pinMode(AIRB, INPUT_PULLUP);
     pinMode(RTDB, INPUT_PULLUP);
 
     Serial.begin(SERIAL_BAUDRATE);
-    while (!Serial);
 
+    analogReadResolution(12);
     analogWriteResolution(12);
 
-    //azzeramento BRAKE OUT
-    analogWrite(BRAKE_REGEN_PIN, 0); //brake
+    // model_enable_calibrations();
 }
 
 __attribute__((__inline__)) volatile uint8_t get_tps1_percentage() {
@@ -157,9 +208,35 @@ __attribute__((__inline__)) volatile uint16_t get_SC_value() {
     return SC_value;
 }
 
-__attribute__((__inline__)) void model_enable_calibrations() {
+// load previous calibration from flash & enable calibration
+__attribute__((__inline__))
+void model_enable_calibrations() {
+    pedals_ranges_t     pedals_ranges;
+
+    load_pedals_ranges(&pedals_ranges);
+
+    tps1_low = pedals_ranges.tps1_low;
+    tps1_max = pedals_ranges.tps1_max;
+    tps2_low = pedals_ranges.tps2_low;
+    tps2_max = pedals_ranges.tps2_max;
+    brake_low = pedals_ranges.brake_low;
+    brake_max = pedals_ranges.brake_max;
+
     calibrate = true;
 }
-__attribute__((__inline__)) void model_disable_calibrations() {
+
+__attribute__((__inline__))
+void model_disable_calibrations() {
+    pedals_ranges_t     pedals_ranges;
+
     calibrate = false;
+
+    pedals_ranges.tps1_low = tps1_low;
+    pedals_ranges.tps1_max = tps1_max;
+    pedals_ranges.tps2_low = tps2_low;
+    pedals_ranges.tps2_max = tps2_max;
+    pedals_ranges.brake_low = brake_low;
+    pedals_ranges.brake_max = brake_max;
+
+    store_pedals_ranges(&pedals_ranges);
 }

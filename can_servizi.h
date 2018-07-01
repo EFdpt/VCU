@@ -4,6 +4,9 @@
 #include "common.h"
 
 bool can_servizi_init();
+
+volatile bool can_servizi_initialized();
+
 void can_servizi_go_operational();
 
 volatile bool can_servizi_online();

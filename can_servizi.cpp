@@ -3,6 +3,7 @@
 #include <due_can.h>
 #include <DueTimer.h>
 
+volatile bool can_serv_initialized  = false;
 volatile bool SCU_F_online          = false;
 volatile bool TCS_online            = false;
 
@@ -24,6 +25,11 @@ void timeout() {
         curr_seq_num = next_seq_num;
     } else
         SCU_F_online = false;
+}
+
+__attribute__((__inline__))
+volatile bool can_servizi_initialized() {
+    return can_serv_initialized;
 }
 
 void CAN_SERV_BOOTUP_CB(CAN_FRAME* frame) {
@@ -54,7 +60,7 @@ void CAN_SERV_GENERAL_CB(CAN_FRAME* frame) {
 
 bool can_servizi_init() {
     if (!CAN_SERVIZI.begin(CAN_SERV_BAUDRATE))
-        return false;
+        return (can_serv_initialized = false);
   
     uint32_t i;
 
@@ -70,7 +76,7 @@ bool can_servizi_init() {
 
     DueTimer::getAvailable().attachInterrupt(timeout).start(CAN_SERVIZI_TIMEOUT_PERIOD);
 
-    return true;
+    return (can_serv_initialized = true);
 }
 
 __attribute__((__inline__))
@@ -87,12 +93,12 @@ void can_servizi_go_operational() {
 
 __attribute__((__inline__))
 volatile bool can_servizi_online() {
-    return SCU_F_online;
+    return (can_serv_initialized && SCU_F_online);
 }
 
 __attribute__((__inline__))
 volatile bool tcs_online() {
-    return TCS_online && SCU_F_online;
+    return (can_serv_initialized && TCS_online);
 }
 
 __attribute__((__inline__)) volatile uint8_t get_servizi_tps1() {
@@ -117,5 +123,5 @@ __attribute__((__inline__)) volatile bool    get_servizi_brake_plausibility() {
 
 __attribute__((__inline__))
 volatile float get_tcs_torque_coefficient() {
-    return TCS_online ? tcs_coefficient / 100.0 : 1.0;
+    return TCS_online ? tcs_coefficient : 100;
 }

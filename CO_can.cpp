@@ -3,7 +3,9 @@
 #include "can_funzionale.h"
 
 bool can_init() {
-    if (!can_servizi_online())
-    	can_servizi_init();
-    return can_funzionale_online() ? true : can_funzionale_init();
+    if (!can_funzionale_initialized())
+    	can_funzionale_init();
+    if (!can_servizi_initialized())
+        return can_servizi_init();
+    return true;
 }

@@ -1,6 +1,7 @@
 #include "states.h"
 #include "can_funzionale.h"
 #include "can_servizi.h"
+#include "rtds.h"
 #include "model.h"
 #include "common.h"
 
@@ -9,10 +10,9 @@
 #define RTDBK       10 //pressione freno per RTD (10%)
 #define REGEN_BK_PERCENTAGE         40
 
-volatile bool RTD = false;
+volatile bool RTD = false; // Ready To Drive
 
 volatile    e_nodeState current_state   = STAND;
-uint8_t     nodeId                      = VCU_NODE_ID;
 
 __attribute__((__inline__)) e_nodeState getState() {
 	return current_state;
@@ -22,18 +22,11 @@ __attribute__((__inline__)) void setState(e_nodeState newState) {
 	current_state = newState;
 }
 
-__attribute__((__inline__)) uint8_t getNodeId() {
-	return nodeId;
-}
-
-__attribute__((__inline__)) void setNodeId(uint8_t nodeId) {
-	nodeId = nodeId;
-}
-
 /*
  * stato 0, accensione della vettura
  */
 void stand() {
+    // model_enable_calibrations();
     RTD = false;
     digitalWrite(PRE, LOW);
     digitalWrite(AIRGnd, LOW);
@@ -54,21 +47,16 @@ void stand() {
  */
 void hvon() {
 
-    /*transizione verso stato DRIVE
-        Il segnale dello SC è maggiore di 1,28 V
+    /* transizione verso stato DRIVE
+        Il segnale dello SC è maggiore di SCmin
         suono RTD 2 secondi
     */
-    if (get_SC_value() > SC_THRES && get_brake_percentage() > RTDBK && digitalRead(RTDB) == LOW) { //brake >800
+    if (get_SC_value() > SC_THRES && get_brake_percentage() > RTDBK && digitalRead(RTDB) == LOW) {
 
-        //buzzer che suona
-        for (int count = 0; count < 4; count++) {
-            delay(100);
-            digitalWrite(BUZZ, HIGH);
-            delay(270);
-            digitalWrite(BUZZ, LOW);
-        }
+        ready_to_drive_sound_start();
         
         RTD = true;
+        // model_disable_calibrations();
         setState(DRIVE);
     }
     
@@ -81,15 +69,16 @@ void drive() {
 
         if (get_apps_plausibility() && get_brake_plausibility()) {
             if (get_brake_percentage() < REGEN_BK_PERCENTAGE) {  // 2.82V IN
-                volatile uint16_t torque_request = get_tcs_torque_coefficient() * get_tps1_percentage();
+                volatile uint16_t apps_percentage = (get_tps1_percentage() + get_tps2_percentage()) / 2;
+                volatile uint16_t torque_request = get_tcs_torque_coefficient() * apps_percentage;
                 inverter_torque_request(torque_request);
-                analogWrite(BRAKE_REGEN_PIN, 0); // regen OFF
+                // analogWrite(BRAKE_REGEN_PIN, 0); // regen OFF
             } else {
                 inverter_torque_request(0);
-                analogWrite(BRAKE_REGEN_PIN, 1613);  //1296=2.6V OUT - regen ON
+                // analogWrite(BRAKE_REGEN_PIN, 1613);  // 1296=2.6V OUT - regen ON
             }
 
-            Serial.print("TPS1: "); Serial.print(get_tps1_percentage()); Serial.print("   BRAKE: "); Serial.println(get_brake_percentage());
+            Serial.print("APPS: "); Serial.print(apps_percentage); Serial.print("   BRAKE: "); Serial.println(get_brake_percentage());
         }
     }
 
@@ -99,7 +88,7 @@ void drive() {
   /*scatto plausibilità TPS*/
     if (!get_apps_plausibility()) {
         inverter_torque_request(0);
-        analogWrite(BRAKE_REGEN_PIN, 0);
+        // analogWrite(BRAKE_REGEN_PIN, 0);
         setState(NOTDRIVE);
     }
 
@@ -109,9 +98,6 @@ void drive() {
   */
     while (!get_brake_plausibility())
         Serial.println("   FRENO + ACCELERATORE !!!");
-
-  /*ritorno allo stato STAND*/
-    if (get_SC_value() < SC_THRES)  setState(STAND);
 }
 
 /* 

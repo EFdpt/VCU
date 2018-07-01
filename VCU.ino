@@ -5,7 +5,7 @@
  * STAND:  stato 0, accensione della vettura, si ritorna qui ogni volta che casca l'SC
  *
  * HVON: stato 1, alta tensione attiva
- *    si accede solo da STAND tramite AIRbutton e SC>3V
+ *    si accede solo da STAND tramite AIRbutton e SC>SCmin
  *
  * DRIVE: stato 2, lo stato di guida sicura, accedibile tramite procedura RTD ma anche con lo 
  *    scatto delle plausibilità tramite procedura di rientro
@@ -23,9 +23,15 @@
 #include "states.h"
 
 void setup() {
-    while (!can_init()) {}; // block until can funzionale is online
+    volatile uint16_t timeout = 2000;
+
+    while (!can_init()) // initialize CAN bus baudrate & configure mailboxes
+        if (timeout--) break;
+
     model_init();
-    can_servizi_go_operational();
+
+    if (can_servizi_online())
+        can_servizi_go_operational();
 }
 
 void loop() {
