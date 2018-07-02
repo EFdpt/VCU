@@ -64,12 +64,12 @@ typedef struct pedals_ranges_s {
 DueFlashStorage     dueFlashStorage;
 
 // pedals ranges in RAM
-volatile uint16_t   tps1_max;
-volatile uint16_t   tps1_low;
-volatile uint16_t   tps2_max;
-volatile uint16_t   tps2_low;
-volatile uint16_t   brake_max;
-volatile uint16_t   brake_low;
+volatile uint16_t   tps1_max    = TPS1_UPPER_BOUND;
+volatile uint16_t   tps1_low    = TPS1_LOWER_BOUND;
+volatile uint16_t   tps2_max    = TPS2_UPPER_BOUND;
+volatile uint16_t   tps2_low    = TPS2_LOWER_BOUND;
+volatile uint16_t   brake_max   = BRAKE_UPPER_BOUND;
+volatile uint16_t   brake_low   = BRAKE_LOWER_BOUND;
 
 volatile int        bufn, obufn;
 
