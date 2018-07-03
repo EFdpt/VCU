@@ -1,7 +1,7 @@
 #ifndef _BOARD_PINOUT_H_
 #define _BOARD_PINOUT_H_
 
-#define CAN_FUNZIONALE              Can1 // DAC1
+#define CAN_FUNZIONALE              Can1 // DAC0
 #define CAN_SERVIZI                 Can0
 
 #define AIRcc                       48
@@ -12,8 +12,8 @@
 #define RTDB                        15
 #define FAN                         9
 
-#define INVERTER_ANALOG_PIN         DAC1
-#define BRAKE_REGEN_PIN				DAC0
+#define INVERTER_ANALOG_PIN         DAC0
+#define BRAKE_REGEN_PIN				DAC1
 
 #define TPS1_PIN                    A0
 #define TPS1_ADC_CHAN_NUM           ADC_CHER_CH7   // AD7

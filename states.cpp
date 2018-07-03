@@ -73,9 +73,10 @@ void drive() {
                 apps_percentage = (get_tps1_percentage() + get_tps2_percentage()) / 2;
                 volatile uint16_t torque_request = get_tcs_torque_coefficient() * apps_percentage;
                 inverter_torque_request(torque_request);
-                // analogWrite(BRAKE_REGEN_PIN, 0); // regen OFF
+                inverter_regen_request(0);
             } else {
                 inverter_torque_request(0);
+                inverter_regen_request(1613);
                 // analogWrite(BRAKE_REGEN_PIN, 1613);  // 1296=2.6V OUT - regen ON
             }
 

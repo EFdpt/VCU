@@ -9,15 +9,15 @@
 #define BUFFERS                 4
 
 #define ADC_MIN                 0
-#define ADC_MAX                 4095
+#define ADC_MAX                 4095 // TODO: abbassare a 3V
 
 #define APPS_MIN                (ADC_MAX >> 1)
 #define APPS_MAX                (ADC_MAX >> 1)
 
 #define APPS_PLAUS_RANGE        10
 
-#define ADC_CHANNELS            3
 #define ADC_CHANNELS_LIST       TPS1_ADC_CHAN_NUM | TPS2_ADC_CHAN_NUM | BRAKE_ADC_CHAN_NUM | SC_ADC_CHAN_NUM
+#define ADC_CHANNELS            4
 
 #define TPS1_ADC_OFFSET         0
 #define TPS2_ADC_OFFSET         1
@@ -38,6 +38,7 @@ volatile uint16_t   tps2_value = 0;
 volatile uint16_t   brake_value = 0;
 volatile uint16_t   SC_value    = 0;
 
+// TODO: vedere soglie fisse dei pedali
 #define TPS1_UPPER_BOUND            APPS_MIN
 #define TPS1_LOWER_BOUND            APPS_MAX
 
@@ -178,7 +179,6 @@ void model_init() {
 
     Serial.begin(SERIAL_BAUDRATE);
 
-    analogReadResolution(12);
     analogWriteResolution(12);
 
     // model_enable_calibrations();

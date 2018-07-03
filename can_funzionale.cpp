@@ -142,6 +142,15 @@ void inverter_torque_request(uint16_t torque) {
     }
 }
 
+__attribute__((__inline__))
+void inverter_regen_request(uint16_t regen) {
+    if (can_funzionale_online()) {
+
+    } else {
+        analogWrite(BRAKE_REGEN_PIN, regen);
+    }
+}
+
 __attribute__((__inline__)) 
 volatile uint16_t get_torque_actual_value() {
     return torque_actual_value;
