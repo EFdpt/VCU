@@ -1,0 +1,184 @@
+\hypertarget{model_8cpp}{}\section{model.\+cpp File Reference}
+\label{model_8cpp}\index{model.\+cpp@{model.\+cpp}}
+
+
+Board model implementation file.  
+
+
+{\ttfamily \#include \char`\"{}model.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}filter.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}can\+\_\+servizi.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$Due\+Flash\+Storage.\+h$>$}\newline
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structpedals__ranges__s}{pedals\+\_\+ranges\+\_\+s}}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{model_8cpp_a602abb8ec84dcb3b6f854a738310ea46}\label{model_8cpp_a602abb8ec84dcb3b6f854a738310ea46}} 
+\#define {\bfseries A\+D\+C\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+ZE}~128
+\item 
+\mbox{\Hypertarget{model_8cpp_aabe0f927d44a09f458bd5fe5ab4e2f7f}\label{model_8cpp_aabe0f927d44a09f458bd5fe5ab4e2f7f}} 
+\#define {\bfseries B\+U\+F\+F\+E\+RS}~4
+\item 
+\mbox{\Hypertarget{model_8cpp_af0098a1eafb8a60a1c65773e1064d595}\label{model_8cpp_af0098a1eafb8a60a1c65773e1064d595}} 
+\#define {\bfseries A\+D\+C\+\_\+\+M\+IN}~0
+\item 
+\mbox{\Hypertarget{model_8cpp_a555a695bf58df062dc03f0e892d95cd7}\label{model_8cpp_a555a695bf58df062dc03f0e892d95cd7}} 
+\#define {\bfseries A\+D\+C\+\_\+\+M\+AX}~4095
+\item 
+\mbox{\Hypertarget{model_8cpp_a3e1022cd2e2154437b583f7ff83f2960}\label{model_8cpp_a3e1022cd2e2154437b583f7ff83f2960}} 
+\#define {\bfseries A\+P\+P\+S\+\_\+\+P\+L\+A\+U\+S\+\_\+\+R\+A\+N\+GE}~10
+\item 
+\mbox{\Hypertarget{model_8cpp_a8b6fbd5b46174be3b86bc1ab5daa9080}\label{model_8cpp_a8b6fbd5b46174be3b86bc1ab5daa9080}} 
+\#define {\bfseries A\+D\+C\+\_\+\+C\+H\+A\+N\+N\+E\+L\+S\+\_\+\+L\+I\+ST}~T\+P\+S1\+\_\+\+A\+D\+C\+\_\+\+C\+H\+A\+N\+\_\+\+N\+UM $\vert$ T\+P\+S2\+\_\+\+A\+D\+C\+\_\+\+C\+H\+A\+N\+\_\+\+N\+UM $\vert$ B\+R\+A\+K\+E\+\_\+\+A\+D\+C\+\_\+\+C\+H\+A\+N\+\_\+\+N\+UM $\vert$ S\+C\+\_\+\+A\+D\+C\+\_\+\+C\+H\+A\+N\+\_\+\+N\+UM
+\item 
+\mbox{\Hypertarget{model_8cpp_a065dcfa648ca52ed6214008cb177de36}\label{model_8cpp_a065dcfa648ca52ed6214008cb177de36}} 
+\#define {\bfseries A\+D\+C\+\_\+\+C\+H\+A\+N\+N\+E\+LS}~4
+\item 
+\mbox{\Hypertarget{model_8cpp_a7ce02d79fba23321a377a26a963e2bdf}\label{model_8cpp_a7ce02d79fba23321a377a26a963e2bdf}} 
+\#define {\bfseries T\+P\+S1\+\_\+\+A\+D\+C\+\_\+\+O\+F\+F\+S\+ET}~0
+\item 
+\mbox{\Hypertarget{model_8cpp_a24019e59e805c7acf8f816e141d3d689}\label{model_8cpp_a24019e59e805c7acf8f816e141d3d689}} 
+\#define {\bfseries T\+P\+S2\+\_\+\+A\+D\+C\+\_\+\+O\+F\+F\+S\+ET}~1
+\item 
+\mbox{\Hypertarget{model_8cpp_ade98eccd60c9b68cde78ca4c0009a84c}\label{model_8cpp_ade98eccd60c9b68cde78ca4c0009a84c}} 
+\#define {\bfseries B\+R\+A\+K\+E\+\_\+\+A\+D\+C\+\_\+\+O\+F\+F\+S\+ET}~2
+\item 
+\mbox{\Hypertarget{model_8cpp_a58133efa918e1af6c0cc436137c78cc0}\label{model_8cpp_a58133efa918e1af6c0cc436137c78cc0}} 
+\#define {\bfseries S\+C\+\_\+\+A\+D\+C\+\_\+\+O\+F\+F\+S\+ET}~3
+\item 
+\mbox{\Hypertarget{model_8cpp_af7b7dc9a200cb1404c280bd500fd1551}\label{model_8cpp_af7b7dc9a200cb1404c280bd500fd1551}} 
+\#define {\bfseries B\+U\+F\+F\+E\+R\+\_\+\+L\+E\+N\+G\+TH}~A\+D\+C\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+ZE $\ast$ A\+D\+C\+\_\+\+C\+H\+A\+N\+N\+E\+LS
+\item 
+\mbox{\Hypertarget{model_8cpp_a6741cba3daf129b6f73eed1b1db09519}\label{model_8cpp_a6741cba3daf129b6f73eed1b1db09519}} 
+\#define {\bfseries T\+P\+S1\+\_\+\+U\+P\+P\+E\+R\+\_\+\+B\+O\+U\+ND}~3723
+\item 
+\mbox{\Hypertarget{model_8cpp_a9c9aa914f6b372d9ef3f15ce4108da6a}\label{model_8cpp_a9c9aa914f6b372d9ef3f15ce4108da6a}} 
+\#define {\bfseries T\+P\+S1\+\_\+\+L\+O\+W\+E\+R\+\_\+\+B\+O\+U\+ND}~993
+\item 
+\mbox{\Hypertarget{model_8cpp_ac8be8d89c699c40b79d04c0fdf6238f4}\label{model_8cpp_ac8be8d89c699c40b79d04c0fdf6238f4}} 
+\#define {\bfseries T\+P\+S2\+\_\+\+U\+P\+P\+E\+R\+\_\+\+B\+O\+U\+ND}~1861
+\item 
+\mbox{\Hypertarget{model_8cpp_adfcc723e175ac44e73e38407299ac875}\label{model_8cpp_adfcc723e175ac44e73e38407299ac875}} 
+\#define {\bfseries T\+P\+S2\+\_\+\+L\+O\+W\+E\+R\+\_\+\+B\+O\+U\+ND}~496
+\item 
+\mbox{\Hypertarget{model_8cpp_a891de03ab9e1bd9a92ffffe69a1b10ca}\label{model_8cpp_a891de03ab9e1bd9a92ffffe69a1b10ca}} 
+\#define {\bfseries B\+R\+A\+K\+E\+\_\+\+U\+P\+P\+E\+R\+\_\+\+B\+O\+U\+ND}~0
+\item 
+\mbox{\Hypertarget{model_8cpp_a0aed20cafcc206360abda47b125432c7}\label{model_8cpp_a0aed20cafcc206360abda47b125432c7}} 
+\#define {\bfseries B\+R\+A\+K\+E\+\_\+\+L\+O\+W\+E\+R\+\_\+\+B\+O\+U\+ND}~A\+D\+C\+\_\+\+M\+AX
+\item 
+\mbox{\Hypertarget{model_8cpp_a67f3ed7e4d434620243264095f680f33}\label{model_8cpp_a67f3ed7e4d434620243264095f680f33}} 
+\#define {\bfseries F\+I\+R\+S\+T\+\_\+\+R\+U\+N\+\_\+\+F\+L\+A\+G\+\_\+\+A\+D\+DR}~0
+\item 
+\mbox{\Hypertarget{model_8cpp_a445787e42bb697a944ea501a0169a084}\label{model_8cpp_a445787e42bb697a944ea501a0169a084}} 
+\#define {\bfseries P\+E\+D\+A\+L\+S\+\_\+\+R\+A\+N\+G\+E\+S\+\_\+\+F\+L\+A\+S\+H\+\_\+\+A\+D\+DR}~4
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{model_8cpp_a3726080ee22ab4d5408ae9e07b5e9a41}\label{model_8cpp_a3726080ee22ab4d5408ae9e07b5e9a41}} 
+typedef struct \mbox{\hyperlink{structpedals__ranges__s}{pedals\+\_\+ranges\+\_\+s}} {\bfseries pedals\+\_\+ranges\+\_\+t}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{model_8cpp_aedc241164d501dcbc52cde232333c9cf}\label{model_8cpp_aedc241164d501dcbc52cde232333c9cf}} 
+void {\bfseries A\+D\+C\+\_\+\+Handler} ()
+\item 
+void \mbox{\hyperlink{group___board__model__group_gace5a444da39d4366693503c53f0841c2}{model\+\_\+init}} ()
+\begin{DoxyCompactList}\small\item\em This function initializes hardware board. \end{DoxyCompactList}\item 
+volatile uint8\+\_\+t \mbox{\hyperlink{group___board__model__group_ga9239a95f68fab3d9b6832fbe85eb87cd}{get\+\_\+tps1\+\_\+percentage}} ()
+\begin{DoxyCompactList}\small\item\em This function returns the value of the first A\+P\+PS in percentage, retrieved by C\+AN servizi network, if online, or by analog signal. \end{DoxyCompactList}\item 
+volatile uint8\+\_\+t \mbox{\hyperlink{group___board__model__group_gae563bbe9e3c31913df498ebd7cbf6c10}{get\+\_\+tps2\+\_\+percentage}} ()
+\begin{DoxyCompactList}\small\item\em This function returns the value of the second A\+P\+PS in percentage, retrieved by C\+AN servizi network, if online, or by analog signal. \end{DoxyCompactList}\item 
+volatile uint8\+\_\+t \mbox{\hyperlink{group___board__model__group_ga6db41e7368919bc4dfafaf4e400ae1a9}{get\+\_\+brake\+\_\+percentage}} ()
+\begin{DoxyCompactList}\small\item\em This function returns the value of the brake pedal position sensor in percentage, retrieved by C\+AN servizi network, if online, or by analog signal. \end{DoxyCompactList}\item 
+volatile bool \mbox{\hyperlink{group___board__model__group_gae0acabf32ee7f2a82b2f9149ba3d1978}{get\+\_\+apps\+\_\+plausibility}} ()
+\begin{DoxyCompactList}\small\item\em This function returns the value of A\+P\+PS plausibility retrieved by C\+AN servizi network, if online, or by analog signal. \end{DoxyCompactList}\item 
+volatile bool \mbox{\hyperlink{group___board__model__group_gad47b702f79115e19d75b22f39b45efeb}{get\+\_\+brake\+\_\+plausibility}} ()
+\begin{DoxyCompactList}\small\item\em This function returns the value of brake plausibility retrieved by C\+AN servizi network, if online, or by analog signal. \end{DoxyCompactList}\item 
+volatile uint16\+\_\+t \mbox{\hyperlink{group___board__model__group_ga36eddbc000c8d1820fd2a644a39c87ea}{get\+\_\+\+S\+C\+\_\+value}} ()
+\begin{DoxyCompactList}\small\item\em This function returns the value of the SC. \end{DoxyCompactList}\item 
+void {\bfseries model\+\_\+enable\+\_\+calibrations} ()
+\item 
+void {\bfseries model\+\_\+disable\+\_\+calibrations} ()
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{model_8cpp_a7c7f5690cca986bc3fb2f6dcbda24690}\label{model_8cpp_a7c7f5690cca986bc3fb2f6dcbda24690}} 
+volatile uint8\+\_\+t {\bfseries tps1\+\_\+adc\+\_\+percentage} = 0
+\item 
+\mbox{\Hypertarget{model_8cpp_ae1f465253d690605c0948394a3f055f4}\label{model_8cpp_ae1f465253d690605c0948394a3f055f4}} 
+volatile uint8\+\_\+t {\bfseries tps2\+\_\+adc\+\_\+percentage} = 0
+\item 
+\mbox{\Hypertarget{model_8cpp_a709add26e40f60e3add32981ea2a5868}\label{model_8cpp_a709add26e40f60e3add32981ea2a5868}} 
+volatile uint8\+\_\+t {\bfseries brake\+\_\+adc\+\_\+percentage} = 0
+\item 
+\mbox{\Hypertarget{model_8cpp_a3e919d1e6477d52b4ccddd497351d3ec}\label{model_8cpp_a3e919d1e6477d52b4ccddd497351d3ec}} 
+volatile bool {\bfseries apps\+\_\+adc\+\_\+plausibility} = false
+\item 
+\mbox{\Hypertarget{model_8cpp_af6aa7f974533c4306128757d0634572a}\label{model_8cpp_af6aa7f974533c4306128757d0634572a}} 
+volatile bool {\bfseries brake\+\_\+adc\+\_\+plausibility} = false
+\item 
+\mbox{\Hypertarget{model_8cpp_a3d6043851868b7da3c1d6381f835a559}\label{model_8cpp_a3d6043851868b7da3c1d6381f835a559}} 
+volatile uint16\+\_\+t {\bfseries tps1\+\_\+value} = 0
+\item 
+\mbox{\Hypertarget{model_8cpp_aa8a9b03858f40eadfd5d3d6c3e266834}\label{model_8cpp_aa8a9b03858f40eadfd5d3d6c3e266834}} 
+volatile uint16\+\_\+t {\bfseries tps2\+\_\+value} = 0
+\item 
+\mbox{\Hypertarget{model_8cpp_ad7966e70fb4bebc6947eb3fbb059a3c9}\label{model_8cpp_ad7966e70fb4bebc6947eb3fbb059a3c9}} 
+volatile uint16\+\_\+t {\bfseries brake\+\_\+value} = 0
+\item 
+\mbox{\Hypertarget{model_8cpp_a0b4151ed3267a5fae4789f4b3ffe7bbd}\label{model_8cpp_a0b4151ed3267a5fae4789f4b3ffe7bbd}} 
+volatile uint16\+\_\+t {\bfseries S\+C\+\_\+value} = 0
+\item 
+\mbox{\Hypertarget{model_8cpp_a4bef309dadbf7820bcb6a396516f9db9}\label{model_8cpp_a4bef309dadbf7820bcb6a396516f9db9}} 
+Due\+Flash\+Storage {\bfseries due\+Flash\+Storage}
+\item 
+\mbox{\Hypertarget{model_8cpp_af1d46fb483b2a63c3da25c11688af7c4}\label{model_8cpp_af1d46fb483b2a63c3da25c11688af7c4}} 
+volatile uint16\+\_\+t {\bfseries tps1\+\_\+max} = 3723
+\item 
+\mbox{\Hypertarget{model_8cpp_a51d40eb16833e50f71e595ab0a45795e}\label{model_8cpp_a51d40eb16833e50f71e595ab0a45795e}} 
+volatile uint16\+\_\+t {\bfseries tps1\+\_\+low} = 993
+\item 
+\mbox{\Hypertarget{model_8cpp_a53381436ea8db96c356db8b305bec988}\label{model_8cpp_a53381436ea8db96c356db8b305bec988}} 
+volatile uint16\+\_\+t {\bfseries tps2\+\_\+max} = 1861
+\item 
+\mbox{\Hypertarget{model_8cpp_ab03e92ec2b5f742e5a147a6589d3975e}\label{model_8cpp_ab03e92ec2b5f742e5a147a6589d3975e}} 
+volatile uint16\+\_\+t {\bfseries tps2\+\_\+low} = 496
+\item 
+\mbox{\Hypertarget{model_8cpp_a744857a9bc060647cfc4ad47017c5bee}\label{model_8cpp_a744857a9bc060647cfc4ad47017c5bee}} 
+volatile uint16\+\_\+t {\bfseries brake\+\_\+max} = 0
+\item 
+\mbox{\Hypertarget{model_8cpp_aaf843a7e652e5cf9b270d0b211be937c}\label{model_8cpp_aaf843a7e652e5cf9b270d0b211be937c}} 
+volatile uint16\+\_\+t {\bfseries brake\+\_\+low} = 4095
+\item 
+\mbox{\Hypertarget{model_8cpp_ad2658b77f345b15c03759c02d1ba0e81}\label{model_8cpp_ad2658b77f345b15c03759c02d1ba0e81}} 
+volatile int {\bfseries bufn}
+\item 
+\mbox{\Hypertarget{model_8cpp_afef4d6ed48b3edc5f7a74defba82e7d8}\label{model_8cpp_afef4d6ed48b3edc5f7a74defba82e7d8}} 
+volatile int {\bfseries obufn}
+\item 
+\mbox{\Hypertarget{model_8cpp_ae2914df4576584b74251c106756eac9c}\label{model_8cpp_ae2914df4576584b74251c106756eac9c}} 
+volatile uint16\+\_\+t {\bfseries buf} \mbox{[}4\mbox{]}\mbox{[}128 $\ast$4\mbox{]}
+\item 
+\mbox{\Hypertarget{model_8cpp_a481292a7bd814aefcdc2deb9872f5421}\label{model_8cpp_a481292a7bd814aefcdc2deb9872f5421}} 
+volatile bool {\bfseries calibrate} = false
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Board model implementation file. 
+
+\begin{DoxyAuthor}{Author}
+Arella Matteo ~\newline
+ (mail\+: \href{mailto:arella.1646983@studenti.uniroma1.it}{\tt arella.\+1646983@studenti.\+uniroma1.\+it}) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2018 
+\end{DoxyDate}

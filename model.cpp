@@ -1,3 +1,10 @@
+/** 
+ *  @file           model.cpp
+ *  @author         Arella Matteo <br/>
+ *                  (mail: arella.1646983@studenti.uniroma1.it)
+ *  @date           2018
+ *  @brief          Board model implementation file
+ */
 #include "model.h"
 #include "filter.h"
 #include "can_servizi.h"
@@ -9,10 +16,7 @@
 #define BUFFERS                 4
 
 #define ADC_MIN                 0
-#define ADC_MAX                 4095 // TODO: abbassare a 3V
-
-#define APPS_MIN                (ADC_MAX >> 1)
-#define APPS_MAX                (ADC_MAX >> 1)
+#define ADC_MAX                 4095
 
 #define APPS_PLAUS_RANGE        10
 
@@ -39,14 +43,14 @@ volatile uint16_t   brake_value = 0;
 volatile uint16_t   SC_value    = 0;
 
 // TODO: vedere soglie fisse dei pedali
-#define TPS1_UPPER_BOUND            APPS_MIN
-#define TPS1_LOWER_BOUND            APPS_MAX
+#define TPS1_UPPER_BOUND            3723    // 3V
+#define TPS1_LOWER_BOUND            993     // 0.8V
 
-#define TPS2_UPPER_BOUND            APPS_MIN
-#define TPS2_LOWER_BOUND            APPS_MAX
+#define TPS2_UPPER_BOUND            1861    // 1.5V
+#define TPS2_LOWER_BOUND            496     // 0.4V
 
-#define BRAKE_UPPER_BOUND           APPS_MIN
-#define BRAKE_LOWER_BOUND           APPS_MAX
+#define BRAKE_UPPER_BOUND           0
+#define BRAKE_LOWER_BOUND           ADC_MAX
 
 // struct for loading/storing pedals ranges in flash memory
 typedef struct pedals_ranges_s {
