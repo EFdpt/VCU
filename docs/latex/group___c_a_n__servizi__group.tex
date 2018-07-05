@@ -58,13 +58,10 @@ volatile uint32\+\_\+t \mbox{\hyperlink{group___c_a_n__servizi__group_gacad002b7
 \mbox{\Hypertarget{group___c_a_n__servizi__group_gadcbd4ad67b50cf61731266bf5c5ba158}\label{group___c_a_n__servizi__group_gadcbd4ad67b50cf61731266bf5c5ba158}} 
 volatile uint32\+\_\+t \mbox{\hyperlink{group___c_a_n__servizi__group_gadcbd4ad67b50cf61731266bf5c5ba158}{next\+\_\+pedals\+\_\+seq\+\_\+num}} = 0
 \begin{DoxyCompactList}\small\item\em Frontal S\+CU P\+D\+Otx1 next sequence number. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{group___c_a_n__servizi__group_ga1d42f28ccf027a3243fad064fa47ef81}\label{group___c_a_n__servizi__group_ga1d42f28ccf027a3243fad064fa47ef81}} 
 volatile uint8\+\_\+t \mbox{\hyperlink{group___c_a_n__servizi__group_ga1d42f28ccf027a3243fad064fa47ef81}{tps1\+\_\+percentage}} = 0
 \begin{DoxyCompactList}\small\item\em First A\+P\+PS percentage value retrieved by frontal S\+CU node. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{group___c_a_n__servizi__group_gaf69d82f83885abc5adbd5fcbf4c421cf}\label{group___c_a_n__servizi__group_gaf69d82f83885abc5adbd5fcbf4c421cf}} 
 volatile uint8\+\_\+t \mbox{\hyperlink{group___c_a_n__servizi__group_gaf69d82f83885abc5adbd5fcbf4c421cf}{tps2\+\_\+percentage}} = 0
 \begin{DoxyCompactList}\small\item\em Second A\+P\+PS percentage value retrieved by frontal S\+CU node. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{group___c_a_n__servizi__group_ga8e50a30864da7026531520887968d4c0}\label{group___c_a_n__servizi__group_ga8e50a30864da7026531520887968d4c0}} 
 volatile uint8\+\_\+t \mbox{\hyperlink{group___c_a_n__servizi__group_ga8e50a30864da7026531520887968d4c0}{brake\+\_\+percentage}} = 0
 \begin{DoxyCompactList}\small\item\em Brake pedal position sensor percentage value retrieved by frontal S\+CU node. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{group___c_a_n__servizi__group_gaa9de48f5a49bc92a608ed315c087f3a6}\label{group___c_a_n__servizi__group_gaa9de48f5a49bc92a608ed315c087f3a6}} 
@@ -425,4 +422,49 @@ Arella Matteo ~\newline
 
 
 Definition at line 93 of file can\+\_\+servizi.\+cpp.
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{group___c_a_n__servizi__group_ga8e50a30864da7026531520887968d4c0}\label{group___c_a_n__servizi__group_ga8e50a30864da7026531520887968d4c0}} 
+\index{C\+A\+N\+\_\+servizi\+\_\+group@{C\+A\+N\+\_\+servizi\+\_\+group}!brake\+\_\+percentage@{brake\+\_\+percentage}}
+\index{brake\+\_\+percentage@{brake\+\_\+percentage}!C\+A\+N\+\_\+servizi\+\_\+group@{C\+A\+N\+\_\+servizi\+\_\+group}}
+\subsubsection{\texorpdfstring{brake\+\_\+percentage}{brake\_percentage}}
+{\footnotesize\ttfamily volatile uint8\+\_\+t brake\+\_\+percentage = 0}
+
+
+
+Brake pedal position sensor percentage value retrieved by frontal S\+CU node. 
+
+Brake pedal position sensor percentage value retrieved by analog brake signal (\mbox{\hyperlink{group___board__model__group_gad632b56bf4c6259a390c3db91607078e}{B\+R\+A\+K\+E\+\_\+\+P\+IN}}) 
+
+Definition at line 64 of file can\+\_\+servizi.\+cpp.
+
+\mbox{\Hypertarget{group___c_a_n__servizi__group_ga1d42f28ccf027a3243fad064fa47ef81}\label{group___c_a_n__servizi__group_ga1d42f28ccf027a3243fad064fa47ef81}} 
+\index{C\+A\+N\+\_\+servizi\+\_\+group@{C\+A\+N\+\_\+servizi\+\_\+group}!tps1\+\_\+percentage@{tps1\+\_\+percentage}}
+\index{tps1\+\_\+percentage@{tps1\+\_\+percentage}!C\+A\+N\+\_\+servizi\+\_\+group@{C\+A\+N\+\_\+servizi\+\_\+group}}
+\subsubsection{\texorpdfstring{tps1\+\_\+percentage}{tps1\_percentage}}
+{\footnotesize\ttfamily volatile uint8\+\_\+t tps1\+\_\+percentage = 0}
+
+
+
+First A\+P\+PS percentage value retrieved by frontal S\+CU node. 
+
+First A\+P\+PS percentage value retrieved by analog tps1 signal (\mbox{\hyperlink{group___board__model__group_gae9aa914854f611488701c96a330b0bd4}{T\+P\+S1\+\_\+\+P\+IN}}) 
+
+Definition at line 52 of file can\+\_\+servizi.\+cpp.
+
+\mbox{\Hypertarget{group___c_a_n__servizi__group_gaf69d82f83885abc5adbd5fcbf4c421cf}\label{group___c_a_n__servizi__group_gaf69d82f83885abc5adbd5fcbf4c421cf}} 
+\index{C\+A\+N\+\_\+servizi\+\_\+group@{C\+A\+N\+\_\+servizi\+\_\+group}!tps2\+\_\+percentage@{tps2\+\_\+percentage}}
+\index{tps2\+\_\+percentage@{tps2\+\_\+percentage}!C\+A\+N\+\_\+servizi\+\_\+group@{C\+A\+N\+\_\+servizi\+\_\+group}}
+\subsubsection{\texorpdfstring{tps2\+\_\+percentage}{tps2\_percentage}}
+{\footnotesize\ttfamily volatile uint8\+\_\+t tps2\+\_\+percentage = 0}
+
+
+
+Second A\+P\+PS percentage value retrieved by frontal S\+CU node. 
+
+Second A\+P\+PS percentage value retrieved by analog tps2 signal (\mbox{\hyperlink{group___board__model__group_gab13a816bae3ca994897fc6f1cb590a67}{T\+P\+S2\+\_\+\+P\+IN}}) 
+
+Definition at line 58 of file can\+\_\+servizi.\+cpp.
 

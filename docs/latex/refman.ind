@@ -1,6 +1,6 @@
 \begin{theindex}
 
-  \item {Board\+\_\+model\+\_\+group}, \hyperpage{27}
+  \item {Board\+\_\+model\+\_\+group}, \hyperpage{25}
     \subitem {get\+\_\+\+S\+C\+\_\+value}, \hyperpage{28}
     \subitem {get\+\_\+apps\+\_\+plausibility}, \hyperpage{27}
     \subitem {get\+\_\+brake\+\_\+percentage}, \hyperpage{27}
@@ -8,82 +8,87 @@
     \subitem {get\+\_\+tps1\+\_\+percentage}, \hyperpage{29}
     \subitem {get\+\_\+tps2\+\_\+percentage}, \hyperpage{29}
     \subitem {model\+\_\+init}, \hyperpage{29}
+  \item {brake\+\_\+percentage}
+    \subitem {C\+A\+N\+\_\+servizi\+\_\+group}, \hyperpage{24}
 
   \indexspace
 
   \item {C\+A\+N\+\_\+\+F\+U\+N\+Z\+\_\+\+B\+O\+O\+T\+U\+P\+\_\+\+CB}
-    \subitem {C\+A\+N\+\_\+funzionale\+\_\+group}, \hyperpage{14}
+    \subitem {C\+A\+N\+\_\+funzionale\+\_\+group}, \hyperpage{12}
   \item {C\+A\+N\+\_\+\+F\+U\+N\+Z\+\_\+\+G\+E\+N\+E\+R\+A\+L\+\_\+\+CB}
-    \subitem {C\+A\+N\+\_\+funzionale\+\_\+group}, \hyperpage{14}
+    \subitem {C\+A\+N\+\_\+funzionale\+\_\+group}, \hyperpage{12}
   \item {C\+A\+N\+\_\+\+F\+U\+N\+Z\+\_\+\+V\+E\+N\+D\+O\+R\+\_\+\+I\+D\+\_\+\+CB}
-    \subitem {C\+A\+N\+\_\+funzionale\+\_\+group}, \hyperpage{15}
-  \item {C\+A\+N\+\_\+\+I\+D.\+h}, \hyperpage{35}
+    \subitem {C\+A\+N\+\_\+funzionale\+\_\+group}, \hyperpage{13}
+  \item {C\+A\+N\+\_\+\+I\+D.\+h}, \hyperpage{33}
   \item {C\+A\+N\+\_\+\+S\+E\+R\+V\+\_\+\+B\+O\+O\+T\+U\+P\+\_\+\+CB}
-    \subitem {C\+A\+N\+\_\+servizi\+\_\+group}, \hyperpage{20}
+    \subitem {C\+A\+N\+\_\+servizi\+\_\+group}, \hyperpage{18}
   \item {C\+A\+N\+\_\+\+S\+E\+R\+V\+\_\+\+G\+E\+N\+E\+R\+A\+L\+\_\+\+CB}
-    \subitem {C\+A\+N\+\_\+servizi\+\_\+group}, \hyperpage{21}
-  \item {C\+A\+N\+\_\+funzionale\+\_\+group}, \hyperpage{13}
+    \subitem {C\+A\+N\+\_\+servizi\+\_\+group}, \hyperpage{19}
+  \item {C\+A\+N\+\_\+funzionale\+\_\+group}, \hyperpage{11}
     \subitem {C\+A\+N\+\_\+\+F\+U\+N\+Z\+\_\+\+B\+O\+O\+T\+U\+P\+\_\+\+CB}, 
-		\hyperpage{14}
+		\hyperpage{12}
     \subitem {C\+A\+N\+\_\+\+F\+U\+N\+Z\+\_\+\+G\+E\+N\+E\+R\+A\+L\+\_\+\+CB}, 
-		\hyperpage{14}
+		\hyperpage{12}
     \subitem {C\+A\+N\+\_\+\+F\+U\+N\+Z\+\_\+\+V\+E\+N\+D\+O\+R\+\_\+\+I\+D\+\_\+\+CB}, 
-		\hyperpage{15}
-    \subitem {can\+\_\+funzionale\+\_\+init}, \hyperpage{15}
-    \subitem {can\+\_\+funzionale\+\_\+initialized}, \hyperpage{16}
-    \subitem {can\+\_\+funzionale\+\_\+online}, \hyperpage{16}
-    \subitem {can\+\_\+funzionale\+\_\+send\+\_\+sync}, \hyperpage{17}
-    \subitem {get\+\_\+torque\+\_\+actual\+\_\+value}, \hyperpage{17}
-    \subitem {inverter\+\_\+regen\+\_\+request}, \hyperpage{17}
-    \subitem {inverter\+\_\+torque\+\_\+request}, \hyperpage{18}
-  \item {C\+A\+N\+\_\+module\+\_\+group}, \hyperpage{11}
-    \subitem {can\+\_\+init}, \hyperpage{11}
-  \item {C\+A\+N\+\_\+servizi\+\_\+group}, \hyperpage{19}
+		\hyperpage{13}
+    \subitem {can\+\_\+funzionale\+\_\+init}, \hyperpage{13}
+    \subitem {can\+\_\+funzionale\+\_\+initialized}, \hyperpage{14}
+    \subitem {can\+\_\+funzionale\+\_\+online}, \hyperpage{14}
+    \subitem {can\+\_\+funzionale\+\_\+send\+\_\+sync}, \hyperpage{15}
+    \subitem {get\+\_\+torque\+\_\+actual\+\_\+value}, \hyperpage{15}
+    \subitem {inverter\+\_\+regen\+\_\+request}, \hyperpage{15}
+    \subitem {inverter\+\_\+torque\+\_\+request}, \hyperpage{16}
+  \item {C\+A\+N\+\_\+module\+\_\+group}, \hyperpage{9}
+    \subitem {can\+\_\+init}, \hyperpage{9}
+  \item {C\+A\+N\+\_\+servizi\+\_\+group}, \hyperpage{17}
+    \subitem {brake\+\_\+percentage}, \hyperpage{24}
     \subitem {C\+A\+N\+\_\+\+S\+E\+R\+V\+\_\+\+B\+O\+O\+T\+U\+P\+\_\+\+CB}, 
-		\hyperpage{20}
+		\hyperpage{18}
     \subitem {C\+A\+N\+\_\+\+S\+E\+R\+V\+\_\+\+G\+E\+N\+E\+R\+A\+L\+\_\+\+CB}, 
-		\hyperpage{21}
+		\hyperpage{19}
     \subitem {can\+\_\+servizi\+\_\+go\+\_\+operational}, 
-		\hyperpage{21}
-    \subitem {can\+\_\+servizi\+\_\+init}, \hyperpage{21}
-    \subitem {can\+\_\+servizi\+\_\+initialized}, \hyperpage{22}
-    \subitem {can\+\_\+servizi\+\_\+online}, \hyperpage{23}
+		\hyperpage{19}
+    \subitem {can\+\_\+servizi\+\_\+init}, \hyperpage{19}
+    \subitem {can\+\_\+servizi\+\_\+initialized}, \hyperpage{20}
+    \subitem {can\+\_\+servizi\+\_\+online}, \hyperpage{21}
     \subitem {get\+\_\+servizi\+\_\+apps\+\_\+plausibility}, 
-		\hyperpage{23}
-    \subitem {get\+\_\+servizi\+\_\+brake}, \hyperpage{23}
+		\hyperpage{21}
+    \subitem {get\+\_\+servizi\+\_\+brake}, \hyperpage{21}
     \subitem {get\+\_\+servizi\+\_\+brake\+\_\+plausibility}, 
-		\hyperpage{24}
-    \subitem {get\+\_\+servizi\+\_\+tps1}, \hyperpage{24}
-    \subitem {get\+\_\+servizi\+\_\+tps2}, \hyperpage{24}
+		\hyperpage{22}
+    \subitem {get\+\_\+servizi\+\_\+tps1}, \hyperpage{22}
+    \subitem {get\+\_\+servizi\+\_\+tps2}, \hyperpage{22}
     \subitem {get\+\_\+tcs\+\_\+torque\+\_\+coefficient}, 
-		\hyperpage{25}
-    \subitem {tcs\+\_\+online}, \hyperpage{25}
-    \subitem {timeout}, \hyperpage{26}
-  \item {C\+O\+\_\+can.\+cpp}, \hyperpage{38}
-  \item {C\+O\+\_\+can.\+h}, \hyperpage{39}
-  \item {can\+\_\+funzionale.\+cpp}, \hyperpage{33}
-  \item {can\+\_\+funzionale.\+h}, \hyperpage{34}
+		\hyperpage{23}
+    \subitem {tcs\+\_\+online}, \hyperpage{23}
+    \subitem {timeout}, \hyperpage{24}
+    \subitem {tps1\+\_\+percentage}, \hyperpage{24}
+    \subitem {tps2\+\_\+percentage}, \hyperpage{24}
+  \item {C\+O\+\_\+can.\+cpp}, \hyperpage{36}
+  \item {C\+O\+\_\+can.\+h}, \hyperpage{37}
+  \item {can\+\_\+funzionale.\+cpp}, \hyperpage{31}
+  \item {can\+\_\+funzionale.\+h}, \hyperpage{32}
   \item {can\+\_\+funzionale\+\_\+init}
-    \subitem {C\+A\+N\+\_\+funzionale\+\_\+group}, \hyperpage{15}
+    \subitem {C\+A\+N\+\_\+funzionale\+\_\+group}, \hyperpage{13}
   \item {can\+\_\+funzionale\+\_\+initialized}
-    \subitem {C\+A\+N\+\_\+funzionale\+\_\+group}, \hyperpage{16}
+    \subitem {C\+A\+N\+\_\+funzionale\+\_\+group}, \hyperpage{14}
   \item {can\+\_\+funzionale\+\_\+online}
-    \subitem {C\+A\+N\+\_\+funzionale\+\_\+group}, \hyperpage{16}
+    \subitem {C\+A\+N\+\_\+funzionale\+\_\+group}, \hyperpage{14}
   \item {can\+\_\+funzionale\+\_\+send\+\_\+sync}
-    \subitem {C\+A\+N\+\_\+funzionale\+\_\+group}, \hyperpage{17}
+    \subitem {C\+A\+N\+\_\+funzionale\+\_\+group}, \hyperpage{15}
   \item {can\+\_\+init}
-    \subitem {C\+A\+N\+\_\+module\+\_\+group}, \hyperpage{11}
-  \item {can\+\_\+servizi.\+cpp}, \hyperpage{35}
-  \item {can\+\_\+servizi.\+h}, \hyperpage{37}
+    \subitem {C\+A\+N\+\_\+module\+\_\+group}, \hyperpage{9}
+  \item {can\+\_\+servizi.\+cpp}, \hyperpage{33}
+  \item {can\+\_\+servizi.\+h}, \hyperpage{35}
   \item {can\+\_\+servizi\+\_\+go\+\_\+operational}
-    \subitem {C\+A\+N\+\_\+servizi\+\_\+group}, \hyperpage{21}
+    \subitem {C\+A\+N\+\_\+servizi\+\_\+group}, \hyperpage{19}
   \item {can\+\_\+servizi\+\_\+init}
-    \subitem {C\+A\+N\+\_\+servizi\+\_\+group}, \hyperpage{21}
+    \subitem {C\+A\+N\+\_\+servizi\+\_\+group}, \hyperpage{19}
   \item {can\+\_\+servizi\+\_\+initialized}
-    \subitem {C\+A\+N\+\_\+servizi\+\_\+group}, \hyperpage{22}
+    \subitem {C\+A\+N\+\_\+servizi\+\_\+group}, \hyperpage{20}
   \item {can\+\_\+servizi\+\_\+online}
-    \subitem {C\+A\+N\+\_\+servizi\+\_\+group}, \hyperpage{23}
-  \item {common.\+h}, \hyperpage{39}
+    \subitem {C\+A\+N\+\_\+servizi\+\_\+group}, \hyperpage{21}
+  \item {common.\+h}, \hyperpage{37}
 
   \indexspace
 
@@ -96,19 +101,19 @@
   \item {get\+\_\+brake\+\_\+plausibility}
     \subitem {Board\+\_\+model\+\_\+group}, \hyperpage{28}
   \item {get\+\_\+servizi\+\_\+apps\+\_\+plausibility}
-    \subitem {C\+A\+N\+\_\+servizi\+\_\+group}, \hyperpage{23}
+    \subitem {C\+A\+N\+\_\+servizi\+\_\+group}, \hyperpage{21}
   \item {get\+\_\+servizi\+\_\+brake}
-    \subitem {C\+A\+N\+\_\+servizi\+\_\+group}, \hyperpage{23}
+    \subitem {C\+A\+N\+\_\+servizi\+\_\+group}, \hyperpage{21}
   \item {get\+\_\+servizi\+\_\+brake\+\_\+plausibility}
-    \subitem {C\+A\+N\+\_\+servizi\+\_\+group}, \hyperpage{24}
+    \subitem {C\+A\+N\+\_\+servizi\+\_\+group}, \hyperpage{22}
   \item {get\+\_\+servizi\+\_\+tps1}
-    \subitem {C\+A\+N\+\_\+servizi\+\_\+group}, \hyperpage{24}
+    \subitem {C\+A\+N\+\_\+servizi\+\_\+group}, \hyperpage{22}
   \item {get\+\_\+servizi\+\_\+tps2}
-    \subitem {C\+A\+N\+\_\+servizi\+\_\+group}, \hyperpage{24}
+    \subitem {C\+A\+N\+\_\+servizi\+\_\+group}, \hyperpage{22}
   \item {get\+\_\+tcs\+\_\+torque\+\_\+coefficient}
-    \subitem {C\+A\+N\+\_\+servizi\+\_\+group}, \hyperpage{25}
+    \subitem {C\+A\+N\+\_\+servizi\+\_\+group}, \hyperpage{23}
   \item {get\+\_\+torque\+\_\+actual\+\_\+value}
-    \subitem {C\+A\+N\+\_\+funzionale\+\_\+group}, \hyperpage{17}
+    \subitem {C\+A\+N\+\_\+funzionale\+\_\+group}, \hyperpage{15}
   \item {get\+\_\+tps1\+\_\+percentage}
     \subitem {Board\+\_\+model\+\_\+group}, \hyperpage{29}
   \item {get\+\_\+tps2\+\_\+percentage}
@@ -117,42 +122,42 @@
   \indexspace
 
   \item {inverter\+\_\+regen\+\_\+request}
-    \subitem {C\+A\+N\+\_\+funzionale\+\_\+group}, \hyperpage{17}
+    \subitem {C\+A\+N\+\_\+funzionale\+\_\+group}, \hyperpage{15}
   \item {inverter\+\_\+torque\+\_\+request}
-    \subitem {C\+A\+N\+\_\+funzionale\+\_\+group}, \hyperpage{18}
+    \subitem {C\+A\+N\+\_\+funzionale\+\_\+group}, \hyperpage{16}
 
   \indexspace
 
   \item {loop}
-    \subitem {V\+C\+U.\+ino}, \hyperpage{44}
+    \subitem {V\+C\+U.\+ino}, \hyperpage{42}
 
   \indexspace
 
-  \item {model.\+cpp}, \hyperpage{40}
-  \item {model.\+h}, \hyperpage{42}
+  \item {model.\+cpp}, \hyperpage{38}
+  \item {model.\+h}, \hyperpage{41}
   \item {model\+\_\+init}
     \subitem {Board\+\_\+model\+\_\+group}, \hyperpage{29}
 
   \indexspace
 
-  \item {pedals\+\_\+ranges\+\_\+s}, \hyperpage{31}
-
-  \indexspace
-
   \item {setup}
-    \subitem {V\+C\+U.\+ino}, \hyperpage{44}
+    \subitem {V\+C\+U.\+ino}, \hyperpage{42}
 
   \indexspace
 
   \item {tcs\+\_\+online}
-    \subitem {C\+A\+N\+\_\+servizi\+\_\+group}, \hyperpage{25}
+    \subitem {C\+A\+N\+\_\+servizi\+\_\+group}, \hyperpage{23}
   \item {timeout}
-    \subitem {C\+A\+N\+\_\+servizi\+\_\+group}, \hyperpage{26}
+    \subitem {C\+A\+N\+\_\+servizi\+\_\+group}, \hyperpage{24}
+  \item {tps1\+\_\+percentage}
+    \subitem {C\+A\+N\+\_\+servizi\+\_\+group}, \hyperpage{24}
+  \item {tps2\+\_\+percentage}
+    \subitem {C\+A\+N\+\_\+servizi\+\_\+group}, \hyperpage{24}
 
   \indexspace
 
-  \item {V\+C\+U.\+ino}, \hyperpage{43}
-    \subitem {loop}, \hyperpage{44}
-    \subitem {setup}, \hyperpage{44}
+  \item {V\+C\+U.\+ino}, \hyperpage{41}
+    \subitem {loop}, \hyperpage{42}
+    \subitem {setup}, \hyperpage{42}
 
 \end{theindex}

@@ -11,7 +11,7 @@
 
 #include <Arduino.h>
 
-/** @addtogroup Board_model_group
+/** @defgroup Board_model_group
  *  
  *  @{
  */

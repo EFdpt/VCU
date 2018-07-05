@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.6.23)  5 JUL 2018 22:02
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.6.23)  6 JUL 2018 00:16
 entering extended mode
 **./refman.tex
 (refman.tex
@@ -1251,40 +1251,36 @@ LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
 
 ]
 Chapter 4.
-(annotated.tex) [7] [8
-
-]
-Chapter 5.
 (files.tex
 
-LaTeX Warning: Reference `board__pinout_8h' on page 9 undefined on input line 3
+LaTeX Warning: Reference `board__pinout_8h' on page 7 undefined on input line 3
 .
 
 
-LaTeX Warning: Reference `def_8h' on page 9 undefined on input line 12.
+LaTeX Warning: Reference `def_8h' on page 7 undefined on input line 12.
 
 
-LaTeX Warning: Reference `filter_8cpp' on page 9 undefined on input line 13.
+LaTeX Warning: Reference `filter_8cpp' on page 7 undefined on input line 13.
 
 
-LaTeX Warning: Reference `filter_8h' on page 9 undefined on input line 14.
+LaTeX Warning: Reference `filter_8h' on page 7 undefined on input line 14.
 
 
-LaTeX Warning: Reference `rtds_8cpp' on page 9 undefined on input line 17.
+LaTeX Warning: Reference `rtds_8cpp' on page 7 undefined on input line 17.
 
 
-LaTeX Warning: Reference `rtds_8h' on page 9 undefined on input line 18.
+LaTeX Warning: Reference `rtds_8h' on page 7 undefined on input line 18.
 
 
-LaTeX Warning: Reference `states_8cpp' on page 9 undefined on input line 19.
+LaTeX Warning: Reference `states_8cpp' on page 7 undefined on input line 19.
 
 
-LaTeX Warning: Reference `states_8h' on page 9 undefined on input line 20.
+LaTeX Warning: Reference `states_8h' on page 7 undefined on input line 20.
 
-) [9] [10
+) [7] [8
 
 ]
-Chapter 6.
+Chapter 5.
 (group___c_a_n__module__group.tex
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <12> not available
 (Font)              Font shape `T1/phv/b/n' tried instead on input line 3.
@@ -1315,7 +1311,7 @@ Underfull \hbox (badness 10000) detected at line 37
 [][][]
  []
 
-[11]) [12]
+[9]) [10]
 \openout2 = `group___c_a_n__funzionale__group.aux'.
 
  (group___c_a_n__funzionale__group.tex
@@ -1325,7 +1321,7 @@ LaTeX Font Info:    Font shape `TS1/phv/m/sl' will be
 (Font)              scaled to size 8.09995pt on input line 27.
 LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <8> not available
 (Font)              Font shape `T1/pcr/m/sl' tried instead on input line 57.
- [13
+ [11
 
 ]
 Underfull \hbox (badness 10000) detected at line 63
@@ -1344,7 +1340,7 @@ Underfull \hbox (badness 10000) detected at line 94
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [14]
+ [12]
 Underfull \hbox (badness 10000) detected at line 117
 [][][]
  []
@@ -1354,7 +1350,7 @@ Underfull \hbox (badness 10000) detected at line 142
 [][][]
  []
 
-[15]
+[13]
 Underfull \hbox (badness 10000) detected at line 153
 [][][]
  []
@@ -1373,7 +1369,7 @@ Underfull \hbox (badness 10000) detected at line 205
 Overfull \vbox (19.50938pt too high) has occurred while \output is active []
 
 
-[16]
+[14]
 Underfull \hbox (badness 10000) detected at line 216
 [][][]
  []
@@ -1398,182 +1394,187 @@ Underfull \hbox (badness 10000) detected at line 282
 [][][]
  []
 
-[17]
+[15]
 Underfull \hbox (badness 10000) detected at line 307
 [][][]
  []
 
-) [18]
+) [16]
 \openout2 = `group___c_a_n__servizi__group.aux'.
 
- (group___c_a_n__servizi__group.tex [19
+ (group___c_a_n__servizi__group.tex [17
 
 
 ]
-Underfull \hbox (badness 10000) detected at line 95
+Underfull \hbox (badness 10000) detected at line 92
 [][][]
  []
 
-[20]
-Overfull \hbox (1.44637pt too wide) in paragraph at lines 128--128
+[18]
+Overfull \hbox (1.44637pt too wide) in paragraph at lines 125--125
 []|[]|  
  []
 
 
-Underfull \vbox (badness 10000) detected at line 128
+Underfull \vbox (badness 10000) detected at line 125
  []
 
 
-Underfull \hbox (badness 10000) detected at line 133
+Underfull \hbox (badness 10000) detected at line 130
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 156
+Underfull \hbox (badness 10000) detected at line 153
 [][][]
  []
 
-[21]
-Underfull \hbox (badness 10000) detected at line 176
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 187
+[19]
+Underfull \hbox (badness 10000) detected at line 173
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 212
+Underfull \hbox (badness 10000) detected at line 184
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 209
 [][][]
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [22]
-Underfull \hbox (badness 10000) detected at line 237
+ [20]
+Underfull \hbox (badness 10000) detected at line 234
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 262
+Underfull \hbox (badness 10000) detected at line 259
+[][][]
+ []
+
+[21]
+Underfull \hbox (badness 10000) detected at line 284
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 288
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 305
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 330
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 334
+[][][]
+ []
+
+[22]
+Underfull \hbox (badness 10000) detected at line 351
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 355
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 372
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 376
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 393
 [][][]
  []
 
 [23]
-Underfull \hbox (badness 10000) detected at line 287
+Underfull \hbox (badness 10000) detected at line 418
 [][][]
  []
 
-
-Underfull \hbox (badness 10000) detected at line 291
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 308
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 333
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 337
-[][][]
- []
-
-[24]
-Underfull \hbox (badness 10000) detected at line 354
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 358
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 375
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 379
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 396
-[][][]
- []
-
-[25]
-Underfull \hbox (badness 10000) detected at line 421
-[][][]
- []
-
-) [26]
+) [24]
 \openout2 = `group___board__model__group.aux'.
 
  (group___board__model__group.tex
-Underfull \hbox (badness 10000) detected at line 42
+Overfull \hbox (30.73154pt too wide) in paragraph at lines 78--80
+[][] \T1/phv/m/n/10 #de-fine [] [] $\OMS/cmsy/m/n/10 j$ [] $j$ []
+ []
+
+[25
+
+
+] [26]
+Underfull \hbox (badness 10000) detected at line 219
 [][][]
  []
 
-[27
-
-
-]
-Underfull \hbox (badness 10000) detected at line 67
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 71
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 88
+[27]
+Underfull \hbox (badness 10000) detected at line 244
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 113
+Underfull \hbox (badness 10000) detected at line 248
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 265
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 290
 [][][]
  []
 
 [28]
-Underfull \hbox (badness 10000) detected at line 117
+Underfull \hbox (badness 10000) detected at line 294
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 134
+Underfull \hbox (badness 10000) detected at line 311
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 138
+Underfull \hbox (badness 10000) detected at line 315
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 155
+Underfull \hbox (badness 10000) detected at line 332
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 159
+Underfull \hbox (badness 10000) detected at line 336
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 176
+Underfull \hbox (badness 10000) detected at line 353
 [][][]
  []
 
@@ -1581,17 +1582,13 @@ Underfull \hbox (badness 10000) detected at line 176
 
 
 ]
-Chapter 7.
-(structpedals__ranges__s.tex) [31] [32
-
-]
-Chapter 8.
+Chapter 6.
 (can__funzionale_8cpp.tex
 Underfull \hbox (badness 10000) in paragraph at lines 8--12
 
  []
 
-[33]
+[31]
 Underfull \hbox (badness 10000) detected at line 51
 [][][]
  []
@@ -1606,7 +1603,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 8--9
 
  []
 
-[34]
+[32]
 Underfull \hbox (badness 10000) detected at line 29
 [][][]
  []
@@ -1631,7 +1628,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 8--11
 
  []
 
-[35] [36]
+[33] [34]
 Underfull \hbox (badness 10000) detected at line 72
 [][][]
  []
@@ -1646,7 +1643,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 8--9
 
  []
 
-[37]
+[35]
 Underfull \hbox (badness 10000) detected at line 39
 [][][]
  []
@@ -1671,7 +1668,7 @@ Underfull \hbox (badness 10000) detected at line 25
 [][][]
  []
 
-) (_c_o__can_8h.tex [38]
+) (_c_o__can_8h.tex [36]
 Underfull \hbox (badness 10000) in paragraph at lines 8--10
 
  []
@@ -1691,7 +1688,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 8--11
 
  []
 
-[39]
+[37]
 Underfull \hbox (badness 10000) detected at line 40
 [][][]
  []
@@ -1706,13 +1703,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 8--12
 
  []
 
-[40] [41]
-Underfull \hbox (badness 10000) detected at line 178
+
+Overfull \hbox (28.82356pt too wide) in paragraph at lines 25--26
+[]\T1/phv/m/n/10 #define [] [] $\OMS/cmsy/m/n/10 j$ [] $j$ []
+ []
+
+[38] [39]
+Underfull \hbox (badness 10000) detected at line 116
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 182
+Underfull \hbox (badness 10000) detected at line 120
 [][][]
  []
 
@@ -1721,7 +1723,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 8--9
 
  []
 
-[42]
+[40]
 Underfull \hbox (badness 10000) detected at line 35
 [][][]
  []
@@ -1736,7 +1738,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 8--13
 
  []
 
-[43]
+[41]
 Underfull \hbox (badness 10000) detected at line 25
 [][][]
  []
@@ -1756,32 +1758,32 @@ Underfull \hbox (badness 10000) detected at line 67
 [][][]
  []
 
-) [44] (refman.ind [45
+) [42] (refman.ind [43
 
 
 
-] [46
+] [44
 
 ])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 182.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 182.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 178.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 178.
  (refman.aux (group___c_a_n__funzionale__group.aux) (group___c_a_n__servizi__gr
 oup.aux) (group___board__model__group.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 182.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 182.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 178.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 178.
 Package rerunfilecheck Info: File `refman.out' has not changed.
-(rerunfilecheck)             Checksum: 84C0860956177144A2F719C1D25926C5;17032.
+(rerunfilecheck)             Checksum: 936951DCC2B97C34D4AE683B5D3D3568;16974.
 
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 182.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 178.
  ) 
 Here is how much of TeX's memory you used:
- 15647 strings out of 493305
- 232222 string characters out of 3138874
- 339633 words of memory out of 3000000
- 18581 multiletter control sequences out of 15000+200000
+ 15653 strings out of 493305
+ 234726 string characters out of 3138874
+ 339906 words of memory out of 3000000
+ 18588 multiletter control sequences out of 15000+200000
  65698 words of font info for 84 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  53i,16n,92p,2919b,622s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1796,9 +1798,9 @@ iles/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb><D:/Program Files/MiKTeX 2.
 9/fonts/type1/urw/helvetic/uhvb8ac.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1
 /urw/helvetic/uhvr8a.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/urw/helvetic/
 uhvro8a.pfb>
-Output written on refman.pdf (52 pages, 344730 bytes).
+Output written on refman.pdf (50 pages, 369266 bytes).
 PDF statistics:
- 1258 PDF objects out of 1440 (max. 8388607)
- 311 named destinations out of 1000 (max. 500000)
- 665 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1336 PDF objects out of 1440 (max. 8388607)
+ 315 named destinations out of 1000 (max. 500000)
+ 657 words of extra memory for PDF output out of 10000 (max. 10000000)
 

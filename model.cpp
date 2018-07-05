@@ -12,46 +12,180 @@
 #include <DueFlashStorage.h>
 
 #undef HID_ENABLED
+
+/** @addtogroup Board_model_group
+ *  
+ *  @{
+ */
+
+/**
+ *  @def ADC_BUFFER_SIZE
+ *  @brief Size (bytes) of buffer for store each ADC channel data
+ */
 #define ADC_BUFFER_SIZE         128
+
+/**
+ *  @def BUFFERs
+ *  @brief Number of ADC buffers
+ */
 #define BUFFERS                 4
 
+/**
+ *  @def ADC_MIN
+ *  @brief ADC lower bound value
+ */
 #define ADC_MIN                 0
+
+/**
+ *  @def ADC_MAX
+ *  @brief ADC upper bound value
+ */
 #define ADC_MAX                 4095
 
+/**
+ *  @def APPS_PLAUS_RANGE
+ *  @brief Size (bytes) of each ADC buffer
+ */
 #define APPS_PLAUS_RANGE        10
 
+/**
+ *  @def ADC_CHANNELS_LIST
+ *  @brief List of ADC channels dedicated to each board pinout
+ */
 #define ADC_CHANNELS_LIST       TPS1_ADC_CHAN_NUM | TPS2_ADC_CHAN_NUM | BRAKE_ADC_CHAN_NUM | SC_ADC_CHAN_NUM
+
+/**
+ *  @def ADC_CHANNELS
+ *  @brief Number of ADC channels
+ */
 #define ADC_CHANNELS            4
 
+/**
+ *  @def TPS1_ADC_OFFSET
+ *  @brief Offset from DMA buffer
+ */
 #define TPS1_ADC_OFFSET         0
+
+/**
+ *  @def TPS2_ADC_OFFSET
+ *  @brief Offset from DMA buffer
+ */
 #define TPS2_ADC_OFFSET         1
+
+/**
+ *  @def BRAKE_ADC_OFFSET
+ *  @brief Offset from DMA buffer
+ */
 #define BRAKE_ADC_OFFSET        2
+
+/**
+ *  @def SC_ADC_OFFSET
+ *  @brief Offset from DMA buffer
+ */
 #define SC_ADC_OFFSET           3
 
+/**
+ *  @def BUFFER_LENGTH
+ *  @brief Length, in bytes, of each DMA buffer
+ */
 #define BUFFER_LENGTH           ADC_BUFFER_SIZE * ADC_CHANNELS
 
-// analog acquisition
+/**
+ * @var     volatile uint8_t tps1_percentage;
+ * @brief   First APPS percentage value retrieved by analog tps1 signal (#TPS1_PIN)
+ */
 volatile uint8_t    tps1_adc_percentage    = 0;
-volatile uint8_t    tps2_adc_percentage    = 0;
-volatile uint8_t    brake_adc_percentage   = 0;
-volatile bool       apps_adc_plausibility  = false;
-volatile bool       brake_adc_plausibility = false;
 
+/**
+ * @var     volatile uint8_t tps2_percentage;
+ * @brief   Second APPS percentage value retrieved by analog tps2 signal (#TPS2_PIN)
+ */
+volatile uint8_t    tps2_adc_percentage    = 0;
+
+/**
+ * @var     volatile uint8_t brake_percentage;
+ * @brief   Brake pedal position sensor percentage value retrieved by analog brake
+ *          signal (#BRAKE_PIN)
+ */
+volatile uint8_t    brake_adc_percentage   = 0;
+
+/**
+ * @var     volatile bool apps_adc_plausibility;
+ * @brief   APPS plausibility status retrieved by analog acquisition
+ */
+volatile bool       apps_adc_plausibility  = true;
+
+/**
+ * @var     volatile bool brake_adc_plausibility;
+ * @brief   Brake plausibility status retrieved by analog acquisition
+ */
+volatile bool       brake_adc_plausibility = true;
+
+/**
+ * @var     volatile uint16_t tps1_value;
+ * @brief   First APPS value retrieved directly by analog tps1 signal (#TPS1_PIN)
+ *          and filtered after DMA buffer is filled entirely
+ */
 volatile uint16_t   tps1_value = 0;
+
+/**
+ * @var     volatile uint16_t tps2_value;
+ * @brief   Second APPS value retrieved directly by analog tps2 signal (#TPS2_PIN)
+ *          and filtered after DMA buffer is filled entirely
+ */
 volatile uint16_t   tps2_value = 0;
+
+/**
+ * @var     volatile uint16_t brake_value;
+ * @brief   Brake pedal position sensor value retrieved directly by analog brake
+ *          signal (#BRAKE_PIN) and filtered after DMA buffer is filled entirely
+ */
 volatile uint16_t   brake_value = 0;
+
+/**
+ * @var     volatile uint16_t SC_value;
+ * @brief   SC value retrieved directly by analog SC signal (#SC_PIN)
+ *          and filtered after DMA buffer is filled entirely
+ */
 volatile uint16_t   SC_value    = 0;
 
-// TODO: vedere soglie fisse dei pedali
-#define TPS1_UPPER_BOUND            3723    // 3V
-#define TPS1_LOWER_BOUND            993     // 0.8V
+/**
+ * @def     TPS1_UPPER_BOUND
+ * @brief   First APPS max output voltage (3V)
+ */
+#define TPS1_UPPER_BOUND            3723
 
-#define TPS2_UPPER_BOUND            1861    // 1.5V
-#define TPS2_LOWER_BOUND            496     // 0.4V
+/**
+ * @def     TPS1_LOWER_BOUND
+ * @brief   First APPS min output voltage (0.8V)
+ */
+#define TPS1_LOWER_BOUND            993
 
+/**
+ * @def     TPS2_UPPER_BOUND
+ * @brief   Second APPS max output voltage (1.5V)
+ */
+#define TPS2_UPPER_BOUND            1861
+
+/**
+ * @def     TPS2_LOWER_BOUND
+ * @brief   Second APPS min output voltage (0.4V)
+ */
+#define TPS2_LOWER_BOUND            496
+
+/**
+ * @def     BRAKE_UPPER_BOUND
+ * @brief   Brake sensor max output voltage (TODO: check Voutmax)
+ */
 #define BRAKE_UPPER_BOUND           0
+
+/**
+ * @def     BRAKE_LOWER_BOUND
+ * @brief   Brake sensor min output voltage (TODO: check Voutmin)
+ */
 #define BRAKE_LOWER_BOUND           ADC_MAX
 
+#if 0
 // struct for loading/storing pedals ranges in flash memory
 typedef struct pedals_ranges_s {
     volatile uint16_t   tps1_max;
@@ -67,6 +201,7 @@ typedef struct pedals_ranges_s {
 #define PEDALS_RANGES_FLASH_ADDR    4
 
 DueFlashStorage     dueFlashStorage;
+#endif
 
 // pedals ranges in RAM
 volatile uint16_t   tps1_max    = TPS1_UPPER_BOUND;
@@ -78,10 +213,17 @@ volatile uint16_t   brake_low   = BRAKE_LOWER_BOUND;
 
 volatile int        bufn, obufn;
 
+/**
+ * @var     volatile uint16_t   buf[#BUFFERS][#BUFFER_LENGTH];
+ * @brief   DMA buffers: #BUFFERS number of buffers each of #BUFFER_LENGTH size;
+ *          DMA is configured in cyclic mode: after one of #BUFFERS is filled then 
+ *          DMA transfer head moves to next buffer in circular indexing.
+ */
 volatile uint16_t   buf[BUFFERS][BUFFER_LENGTH];
 
 volatile bool       calibrate          = false;
 
+#if 0
 static inline void load_pedals_ranges(pedals_ranges_t* ranges) {
     uint8_t first_time = dueFlashStorage.read(FIRST_RUN_FLAG_ADDR);
     if (first_time) {
@@ -107,6 +249,7 @@ static inline void store_pedals_ranges(pedals_ranges_t* ranges) {
     memcpy(buf, ranges, sizeof(pedals_ranges_t));
     dueFlashStorage.write(PEDALS_RANGES_FLASH_ADDR, buf, sizeof(pedals_ranges_t)); // write byte array to flash
 }
+#endif
 
 static inline void filter_data() {
     tps1_value = (tps1_value + filter_buffer(buf[obufn] + TPS1_ADC_OFFSET, ADC_BUFFER_SIZE, ADC_CHANNELS)) / 2;
@@ -212,6 +355,7 @@ __attribute__((__inline__)) volatile uint16_t get_SC_value() {
     return SC_value;
 }
 
+#if 0
 // load previous calibration from flash & enable calibration
 __attribute__((__inline__))
 void model_enable_calibrations() {
@@ -244,3 +388,8 @@ void model_disable_calibrations() {
 
     store_pedals_ranges(&pedals_ranges);
 }
+#endif
+
+/**
+ *  @}
+ */
