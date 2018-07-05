@@ -1,0 +1,41 @@
+\hypertarget{filter_8h}{}\section{filter.\+h File Reference}
+\label{filter_8h}\index{filter.\+h@{filter.\+h}}
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}model.\+h\char`\"{}}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{filter_8h_a676952eee893902e5a15b3f5adca1f86}{filter\+\_\+buffer}} (volatile uint16\+\_\+t $\ast$buffer, int size, unsigned offset)
+\begin{DoxyCompactList}\small\item\em This function filters the input buffer with an average filter. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{filter_8h_a676952eee893902e5a15b3f5adca1f86}\label{filter_8h_a676952eee893902e5a15b3f5adca1f86}} 
+\index{filter.\+h@{filter.\+h}!filter\+\_\+buffer@{filter\+\_\+buffer}}
+\index{filter\+\_\+buffer@{filter\+\_\+buffer}!filter.\+h@{filter.\+h}}
+\subsubsection{\texorpdfstring{filter\+\_\+buffer()}{filter\_buffer()}}
+{\footnotesize\ttfamily uint16\+\_\+t filter\+\_\+buffer (\begin{DoxyParamCaption}\item[{volatile uint16\+\_\+t $\ast$}]{buffer,  }\item[{int}]{size,  }\item[{unsigned}]{offset }\end{DoxyParamCaption})}
+
+
+
+This function filters the input buffer with an average filter. 
+
+\begin{DoxyAuthor}{Author}
+Arella Matteo 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & \mbox{[}in\mbox{]} The buffer to filter \\
+\hline
+{\em size} & \mbox{[}in\mbox{]} The size of the buffer \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Filtered} & value \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 16 of file filter.\+cpp.
+

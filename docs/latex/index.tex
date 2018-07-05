@@ -1,0 +1,6 @@
+Vehicle Control Unit (V\+CU) firmware is based upon 4 states\+:
+\begin{DoxyItemize}
+\item S\+T\+A\+ND\+: stato 0, accensione della vettura, si ritorna qui ogni volta che casca l\textquotesingle{}SC
+\item H\+V\+ON\+: stato 1, alta tensione attiva si accede solo da S\+T\+A\+ND tramite A\+I\+Rbutton e SC$>$3V
+\item D\+R\+I\+VE\+: stato 2, lo stato di guida sicura, accedibile tramite procedura R\+TD ma anche con lo scatto delle plausibilità tramite procedura di rientro 
+\end{DoxyItemize}

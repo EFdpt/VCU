@@ -1,0 +1,35 @@
+\hypertarget{can__funzionale_8h}{}\section{can\+\_\+funzionale.\+h File Reference}
+\label{can__funzionale_8h}\index{can\+\_\+funzionale.\+h@{can\+\_\+funzionale.\+h}}
+
+
+C\+AN funzionale module header.  
+
+
+{\ttfamily \#include \char`\"{}common.\+h\char`\"{}}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{group___c_a_n__funzionale__group_ga578b28192b0c78942fcc0452d070accb}{can\+\_\+funzionale\+\_\+init}} ()
+\begin{DoxyCompactList}\small\item\em This function initialize C\+AN funzionale hardware port with baudrate \mbox{\hyperlink{common_8h_adee7e3800c996a5a977034531d94570d}{C\+A\+N\+\_\+\+F\+U\+N\+Z\+\_\+\+B\+A\+U\+D\+R\+A\+TE}}. Mailbox 0 is configured for receiving boot-\/up messages from inverter slave node (filter = 0x00000700 + \mbox{\hyperlink{group___c_a_n__funzionale__group_ga59ea82aec4abe07072cbdad555a8c1b9}{I\+N\+V\+E\+R\+T\+E\+R\+\_\+\+N\+O\+D\+E\+\_\+\+ID}}, mask = 0x1\+F\+F\+F\+F\+F\+FF); mailbox 1 is configured for receiving vendor\+ID S\+DO response from inverter (filter = 0x00000580 + \mbox{\hyperlink{group___c_a_n__funzionale__group_ga59ea82aec4abe07072cbdad555a8c1b9}{I\+N\+V\+E\+R\+T\+E\+R\+\_\+\+N\+O\+D\+E\+\_\+\+ID}}, mask = 0x1\+F\+F\+F\+F\+F\+FF); remaining mailboxes are configured for receiving T\+P\+D\+Os from inverter slave node (filter = 0x00000080, mask = 0x1\+F\+F\+F\+F\+C\+FF). \end{DoxyCompactList}\item 
+volatile bool \mbox{\hyperlink{group___c_a_n__funzionale__group_gaf1acdfa5537f47656edd6ffa3e7c24bd}{can\+\_\+funzionale\+\_\+initialized}} ()
+\begin{DoxyCompactList}\small\item\em This function returns C\+AN funzionale initialization status. \end{DoxyCompactList}\item 
+volatile bool \mbox{\hyperlink{group___c_a_n__funzionale__group_ga7d74fd826c5df3b86fd751f91c61671f}{can\+\_\+funzionale\+\_\+online}} ()
+\begin{DoxyCompactList}\small\item\em This function returns if inverter is online and active over C\+AN funzionale. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___c_a_n__funzionale__group_ga41854ab275f2b3cb7efb9385502d7d65}{inverter\+\_\+torque\+\_\+request}} (uint16\+\_\+t torque)
+\begin{DoxyCompactList}\small\item\em This function send torque request to inverter. If inverter is active over C\+AN funzionale network then the request is done via R\+P\+D\+O1 viceversa it\textquotesingle{}s done via analog signal. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___c_a_n__funzionale__group_ga75820e0d72b7f264a70d99f414745518}{inverter\+\_\+regen\+\_\+request}} (uint16\+\_\+t regen)
+\begin{DoxyCompactList}\small\item\em This function send regen request to inverter. \end{DoxyCompactList}\item 
+volatile uint16\+\_\+t \mbox{\hyperlink{group___c_a_n__funzionale__group_ga3c4828f57a818b8e1b2f277c2174b5da}{get\+\_\+torque\+\_\+actual\+\_\+value}} ()
+\begin{DoxyCompactList}\small\item\em This function return the torque value requested by inverter to motor retrieved from T\+P\+D\+O1 from inverter over C\+AN funzionale network. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+C\+AN funzionale module header. 
+
+\begin{DoxyAuthor}{Author}
+Arella Matteo ~\newline
+ (mail\+: \href{mailto:arella.1646983@studenti.uniroma1.it}{\tt arella.\+1646983@studenti.\+uniroma1.\+it}) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2018 
+\end{DoxyDate}
