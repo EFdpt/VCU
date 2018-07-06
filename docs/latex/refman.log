@@ -1,97 +1,88 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.6.23)  6 JUL 2018 00:16
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6730 64-bit) (preloaded format=pdflatex 2018.7.6)  6 JUL 2018 12:34
 entering extended mode
 **./refman.tex
 (refman.tex
-LaTeX2e <2017-04-15>
-Babel <3.18> and hyphenation patterns for 75 language(s) loaded.
-("D:\Program Files\MiKTeX 2.9\tex\latex\base\book.cls"
+LaTeX2e <2018-04-01> patch level 5
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\book.cls"
 Document Class: book 2014/09/29 v1.4h Standard LaTeX document class
-("D:\Program Files\MiKTeX 2.9\tex\latex\base\bk10.clo"
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\bk10.clo"
 File: bk10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 )
-\c@part=\count79
-\c@chapter=\count80
-\c@section=\count81
-\c@subsection=\count82
-\c@subsubsection=\count83
-\c@paragraph=\count84
-\c@subparagraph=\count85
-\c@figure=\count86
-\c@table=\count87
+\c@part=\count80
+\c@chapter=\count81
+\c@section=\count82
+\c@subsection=\count83
+\c@subsubsection=\count84
+\c@paragraph=\count85
+\c@subparagraph=\count86
+\c@figure=\count87
+\c@table=\count88
 \abovecaptionskip=\skip41
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-("D:\Program Files\MiKTeX 2.9\tex\latex\base\fixltx2e.sty"
-Package: fixltx2e 2016/12/29 v2.1a fixes to LaTeX (obsolete)
-Applying: [2015/01/01] Old fixltx2e package on input line 46.
-
-
-Package fixltx2e Warning: fixltx2e is not required with releases after 2015
-(fixltx2e)                All fixes are now in the LaTeX kernel.
-(fixltx2e)                See the latexrelease package for details.
-
-Already applied: [0000/00/00] Old fixltx2e package on input line 53.
-) ("D:\Program Files\MiKTeX 2.9\tex\latex\tools\calc.sty"
-Package: calc 2014/10/28 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count88
-\calc@Bcount=\count89
+("C:\Program Files\MiKTeX 2.9\tex\latex\tools\calc.sty"
+Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count89
+\calc@Bcount=\count90
 \calc@Adimen=\dimen103
 \calc@Bdimen=\dimen104
 \calc@Askip=\skip43
 \calc@Bskip=\skip44
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count90
+\calc@Ccount=\count91
 \calc@Cskip=\skip45
 ) (doxygen.sty
 Package: doxygen 
 
-("D:\Program Files\MiKTeX 2.9\tex\latex\base\alltt.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\alltt.sty"
 Package: alltt 1997/06/16 v2.0g defines alltt environment
 )
-("D:\Program Files\MiKTeX 2.9\tex\latex\tools\array.sty"
-Package: array 2016/10/06 v2.4d Tabular extension package (FMi)
+("C:\Program Files\MiKTeX 2.9\tex\latex\tools\array.sty"
+Package: array 2018/04/30 v2.4h Tabular extension package (FMi)
 \col@sep=\dimen105
+\ar@mcellbox=\box26
 \extrarowheight=\dimen106
 \NC@list=\toks14
 \extratabsurround=\skip46
 \backup@length=\skip47
+\ar@cellbox=\box27
 )
-("D:\Program Files\MiKTeX 2.9\tex\latex\float\float.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\float\float.sty"
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count91
+\c@float@type=\count92
 \float@exts=\toks15
-\float@box=\box26
+\float@box=\box28
 \@float@everytoks=\toks16
-\@floatcapt=\box27
+\@floatcapt=\box29
 )
-("D:\Program Files\MiKTeX 2.9\tex\latex\base\ifthen.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\ifthen.sty"
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
-("D:\Program Files\MiKTeX 2.9\tex\latex\tools\verbatim.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\tools\verbatim.sty"
 Package: verbatim 2014/10/28 v1.5q LaTeX2e package for verbatim enhancements
 \every@verbatim=\toks17
 \verbatim@line=\toks18
 \verbatim@in@stream=\read1
 )
-("D:\Program Files\MiKTeX 2.9\tex\latex\xcolor\xcolor.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\xcolor\xcolor.sty"
 Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
 
-("D:\Program Files\MiKTeX 2.9\tex\latex\graphics-cfg\color.cfg"
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics-cfg\color.cfg"
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package xcolor Info: Driver file: pdftex.def on input line 225.
 
-("D:\Program Files\MiKTeX 2.9\tex\latex\graphics-def\pdftex.def"
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics-def\pdftex.def"
 File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
 )
-("D:\Program Files\MiKTeX 2.9\tex\latex\colortbl\colortbl.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\colortbl\colortbl.sty"
 Package: colortbl 2018/05/02 v1.0c Color table columns (DPC)
 \everycr=\toks19
 \minrowclearance=\skip48
 )
-\rownum=\count92
+\rownum=\count93
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
 Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
 Package xcolor Info: Model `RGB' extended on input line 1364.
@@ -102,486 +93,98 @@ Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
 )
-("D:\Program Files\MiKTeX 2.9\tex\latex\tools\longtable.sty"
-Package: longtable 2014/10/28 v4.11 Multi-page Table package (DPC)
-\LTleft=\skip49
-\LTright=\skip50
-\LTpre=\skip51
-\LTpost=\skip52
-\LTchunksize=\count93
-\LTcapwidth=\dimen107
-\LT@head=\box28
-\LT@firsthead=\box29
-\LT@foot=\box30
-\LT@lastfoot=\box31
-\LT@cols=\count94
-\LT@rows=\count95
-\c@LT@tables=\count96
-\c@LT@chunks=\count97
-\LT@p@ftn=\toks20
+("C:\Program Files\MiKTeX 2.9\tex\latex\xtab\xtab.sty"
+Package: xtab 2011/07/31 v2.3f Extended supertabular package
+\c@tracingst=\count94
+\PWSTcapht=\dimen107
+\ST@wd=\dimen108
+\ST@rightskip=\skip49
+\ST@leftskip=\skip50
+\ST@parfillskip=\skip51
+\c@PWSTtable=\count95
+\PWSTlastpage=\count96
+\PWSTpenultimate=\count97
+\PWSTcurpage=\count98
+\PWSTtempc=\count99
+\PWSTlines=\count100
+\PWST@lastht=\dimen109
+\PWST@generalht=\dimen110
+\PWST@ht=\dimen111
+\ST@pageleft=\dimen112
+\ST@headht=\dimen113
+\ST@tailht=\dimen114
+\ST@pagesofar=\dimen115
+\ST@pboxht=\dimen116
+\ST@lineht=\dimen117
+\ST@stretchht=\dimen118
+\ST@prevht=\dimen119
+\ST@toadd=\dimen120
+\ST@dimen=\dimen121
+\ST@pbox=\box30
 )
-("D:\Program Files\MiKTeX 2.9\tex\latex\tabu\tabu.sty"
-Package: tabu 2011/02/26 v2.8 - flexible LaTeX tabulars (FC)
-
-("D:\Program Files\MiKTeX 2.9\tex\latex\ltxmisc\varwidth.sty"
-Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
-\@vwid@box=\box32
-\sift@deathcycles=\count98
-\@vwid@loff=\dimen108
-\@vwid@roff=\dimen109
+\xrefbox=\box31
+\xreflength=\skip52
+\tmplength=\skip53
 )
-\c@taburow=\count99
-\tabu@nbcols=\count100
-\tabu@cnt=\count101
-\tabu@Xcol=\count102
-\tabu@alloc=\count103
-\tabu@nested=\count104
-\tabu@target=\dimen110
-\tabu@spreadtarget=\dimen111
-\tabu@naturalX=\dimen112
-\tabucolX=\dimen113
-\tabu@Xsum=\dimen114
-\extrarowdepth=\dimen115
-\abovetabulinesep=\dimen116
-\belowtabulinesep=\dimen117
-\tabustrutrule=\dimen118
-\tabu@thebody=\toks21
-\tabu@footnotes=\toks22
-\tabu@box=\box33
-\tabu@arstrutbox=\box34
-\tabu@hleads=\box35
-\tabu@vleads=\box36
-\tabu@cellskip=\skip53
-)
-("D:\Program Files\MiKTeX 2.9\tex\latex\tools\tabularx.sty"
-Package: tabularx 2016/02/03 v2.11 `tabularx' package (DPC)
-\TX@col@width=\dimen119
-\TX@old@table=\dimen120
-\TX@old@col=\dimen121
-\TX@target=\dimen122
-\TX@delta=\dimen123
-\TX@cols=\count105
-\TX@ftn=\toks23
-)
-("D:\Program Files\MiKTeX 2.9\tex\latex\multirow\multirow.sty"
-Package: multirow 2016/11/25 v2.2 Span multiple rows of a table
-\multirow@colwidth=\skip54
-\multirow@cntb=\count106
-\multirow@dima=\skip55
-\bigstrutjot=\dimen124
-)
-\xrefbox=\box37
-\xreflength=\skip56
-)
-("D:\Program Files\MiKTeX 2.9\tex\latex\adjustbox\adjustbox.sty"
-Package: adjustbox 2018/04/08 v1.1 Adjusting TeX boxes (trim, clip, ...)
-
-("D:\Program Files\MiKTeX 2.9\tex\latex\xkeyval\xkeyval.sty"
-Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
-
-("D:\Program Files\MiKTeX 2.9\tex\generic\xkeyval\xkeyval.tex"
-("D:\Program Files\MiKTeX 2.9\tex\generic\xkeyval\xkvutils.tex"
-\XKV@toks=\toks24
-\XKV@tempa@toks=\toks25
-
-("D:\Program Files\MiKTeX 2.9\tex\generic\xkeyval\keyval.tex"))
-\XKV@depth=\count107
-File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
-))
-("D:\Program Files\MiKTeX 2.9\tex\latex\adjustbox\adjcalc.sty"
-Package: adjcalc 2012/05/16 v1.1 Provides advanced setlength with multiple back
--ends (calc, etex, pgfmath)
-)
-("D:\Program Files\MiKTeX 2.9\tex\latex\adjustbox\trimclip.sty"
-Package: trimclip 2018/04/08 v1.1 Trim and clip general TeX material
-
-("D:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
 Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
 
-("D:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks20
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
 Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
 
-("D:\Program Files\MiKTeX 2.9\tex\latex\graphics\trig.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\trig.sty"
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 )
-("D:\Program Files\MiKTeX 2.9\tex\latex\graphics-cfg\graphics.cfg"
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics-cfg\graphics.cfg"
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 99.
 )
-\Gin@req@height=\dimen125
-\Gin@req@width=\dimen126
+\Gin@req@height=\dimen122
+\Gin@req@width=\dimen123
 )
-("D:\Program Files\MiKTeX 2.9\tex\latex\collectbox\collectbox.sty"
-Package: collectbox 2012/05/17 v0.4b Collect macro arguments as boxes
-\collectedbox=\box38
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\inputenc.sty"
+Package: inputenc 2018/04/06 v1.3b Input encoding file
+\inpenc@prehook=\toks21
+\inpenc@posthook=\toks22
 )
-\tc@llx=\dimen127
-\tc@lly=\dimen128
-\tc@urx=\dimen129
-\tc@ury=\dimen130
-Package trimclip Info: Using driver 'tc-pdftex.def'.
-
-("D:\Program Files\MiKTeX 2.9\tex\latex\adjustbox\tc-pdftex.def"
-File: tc-pdftex.def 2018/04/08 v2.1 Clipping driver for pdftex
-))
-\adjbox@Width=\dimen131
-\adjbox@Height=\dimen132
-\adjbox@Depth=\dimen133
-\adjbox@Totalheight=\dimen134
-\adjbox@pwidth=\dimen135
-\adjbox@pheight=\dimen136
-\adjbox@pdepth=\dimen137
-\adjbox@ptotalheight=\dimen138
-
-("D:\Program Files\MiKTeX 2.9\tex\latex\ifoddpage\ifoddpage.sty"
-Package: ifoddpage 2016/04/23 v1.1 Conditionals for odd/even page detection
-\c@checkoddpage=\count108
-))
-("D:\Program Files\MiKTeX 2.9\tex\latex\base\inputenc.sty"
-Package: inputenc 2015/03/17 v1.2c Input encoding file
-\inpenc@prehook=\toks26
-\inpenc@posthook=\toks27
-
-("D:\Program Files\MiKTeX 2.9\tex\latex\base\utf8.def"
-File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
-Now handling font encoding OML ...
-... no UTF-8 mapping file for font encoding OML
-Now handling font encoding T1 ...
-... processing UTF-8 mapping file for font encoding T1
-
-("D:\Program Files\MiKTeX 2.9\tex\latex\base\t1enc.dfu"
-File: t1enc.dfu 2017/01/28 v1.1t UTF-8 support for inputenc
-   defining Unicode char U+00A0 (decimal 160)
-   defining Unicode char U+00A1 (decimal 161)
-   defining Unicode char U+00A3 (decimal 163)
-   defining Unicode char U+00AB (decimal 171)
-   defining Unicode char U+00AD (decimal 173)
-   defining Unicode char U+00BB (decimal 187)
-   defining Unicode char U+00BF (decimal 191)
-   defining Unicode char U+00C0 (decimal 192)
-   defining Unicode char U+00C1 (decimal 193)
-   defining Unicode char U+00C2 (decimal 194)
-   defining Unicode char U+00C3 (decimal 195)
-   defining Unicode char U+00C4 (decimal 196)
-   defining Unicode char U+00C5 (decimal 197)
-   defining Unicode char U+00C6 (decimal 198)
-   defining Unicode char U+00C7 (decimal 199)
-   defining Unicode char U+00C8 (decimal 200)
-   defining Unicode char U+00C9 (decimal 201)
-   defining Unicode char U+00CA (decimal 202)
-   defining Unicode char U+00CB (decimal 203)
-   defining Unicode char U+00CC (decimal 204)
-   defining Unicode char U+00CD (decimal 205)
-   defining Unicode char U+00CE (decimal 206)
-   defining Unicode char U+00CF (decimal 207)
-   defining Unicode char U+00D0 (decimal 208)
-   defining Unicode char U+00D1 (decimal 209)
-   defining Unicode char U+00D2 (decimal 210)
-   defining Unicode char U+00D3 (decimal 211)
-   defining Unicode char U+00D4 (decimal 212)
-   defining Unicode char U+00D5 (decimal 213)
-   defining Unicode char U+00D6 (decimal 214)
-   defining Unicode char U+00D8 (decimal 216)
-   defining Unicode char U+00D9 (decimal 217)
-   defining Unicode char U+00DA (decimal 218)
-   defining Unicode char U+00DB (decimal 219)
-   defining Unicode char U+00DC (decimal 220)
-   defining Unicode char U+00DD (decimal 221)
-   defining Unicode char U+00DE (decimal 222)
-   defining Unicode char U+00DF (decimal 223)
-   defining Unicode char U+00E0 (decimal 224)
-   defining Unicode char U+00E1 (decimal 225)
-   defining Unicode char U+00E2 (decimal 226)
-   defining Unicode char U+00E3 (decimal 227)
-   defining Unicode char U+00E4 (decimal 228)
-   defining Unicode char U+00E5 (decimal 229)
-   defining Unicode char U+00E6 (decimal 230)
-   defining Unicode char U+00E7 (decimal 231)
-   defining Unicode char U+00E8 (decimal 232)
-   defining Unicode char U+00E9 (decimal 233)
-   defining Unicode char U+00EA (decimal 234)
-   defining Unicode char U+00EB (decimal 235)
-   defining Unicode char U+00EC (decimal 236)
-   defining Unicode char U+00ED (decimal 237)
-   defining Unicode char U+00EE (decimal 238)
-   defining Unicode char U+00EF (decimal 239)
-   defining Unicode char U+00F0 (decimal 240)
-   defining Unicode char U+00F1 (decimal 241)
-   defining Unicode char U+00F2 (decimal 242)
-   defining Unicode char U+00F3 (decimal 243)
-   defining Unicode char U+00F4 (decimal 244)
-   defining Unicode char U+00F5 (decimal 245)
-   defining Unicode char U+00F6 (decimal 246)
-   defining Unicode char U+00F8 (decimal 248)
-   defining Unicode char U+00F9 (decimal 249)
-   defining Unicode char U+00FA (decimal 250)
-   defining Unicode char U+00FB (decimal 251)
-   defining Unicode char U+00FC (decimal 252)
-   defining Unicode char U+00FD (decimal 253)
-   defining Unicode char U+00FE (decimal 254)
-   defining Unicode char U+00FF (decimal 255)
-   defining Unicode char U+0100 (decimal 256)
-   defining Unicode char U+0101 (decimal 257)
-   defining Unicode char U+0102 (decimal 258)
-   defining Unicode char U+0103 (decimal 259)
-   defining Unicode char U+0104 (decimal 260)
-   defining Unicode char U+0105 (decimal 261)
-   defining Unicode char U+0106 (decimal 262)
-   defining Unicode char U+0107 (decimal 263)
-   defining Unicode char U+0108 (decimal 264)
-   defining Unicode char U+0109 (decimal 265)
-   defining Unicode char U+010A (decimal 266)
-   defining Unicode char U+010B (decimal 267)
-   defining Unicode char U+010C (decimal 268)
-   defining Unicode char U+010D (decimal 269)
-   defining Unicode char U+010E (decimal 270)
-   defining Unicode char U+010F (decimal 271)
-   defining Unicode char U+0110 (decimal 272)
-   defining Unicode char U+0111 (decimal 273)
-   defining Unicode char U+0112 (decimal 274)
-   defining Unicode char U+0113 (decimal 275)
-   defining Unicode char U+0114 (decimal 276)
-   defining Unicode char U+0115 (decimal 277)
-   defining Unicode char U+0116 (decimal 278)
-   defining Unicode char U+0117 (decimal 279)
-   defining Unicode char U+0118 (decimal 280)
-   defining Unicode char U+0119 (decimal 281)
-   defining Unicode char U+011A (decimal 282)
-   defining Unicode char U+011B (decimal 283)
-   defining Unicode char U+011C (decimal 284)
-   defining Unicode char U+011D (decimal 285)
-   defining Unicode char U+011E (decimal 286)
-   defining Unicode char U+011F (decimal 287)
-   defining Unicode char U+0120 (decimal 288)
-   defining Unicode char U+0121 (decimal 289)
-   defining Unicode char U+0122 (decimal 290)
-   defining Unicode char U+0123 (decimal 291)
-   defining Unicode char U+0124 (decimal 292)
-   defining Unicode char U+0125 (decimal 293)
-   defining Unicode char U+0128 (decimal 296)
-   defining Unicode char U+0129 (decimal 297)
-   defining Unicode char U+012A (decimal 298)
-   defining Unicode char U+012B (decimal 299)
-   defining Unicode char U+012C (decimal 300)
-   defining Unicode char U+012D (decimal 301)
-   defining Unicode char U+012E (decimal 302)
-   defining Unicode char U+012F (decimal 303)
-   defining Unicode char U+0130 (decimal 304)
-   defining Unicode char U+0131 (decimal 305)
-   defining Unicode char U+0132 (decimal 306)
-   defining Unicode char U+0133 (decimal 307)
-   defining Unicode char U+0134 (decimal 308)
-   defining Unicode char U+0135 (decimal 309)
-   defining Unicode char U+0136 (decimal 310)
-   defining Unicode char U+0137 (decimal 311)
-   defining Unicode char U+0139 (decimal 313)
-   defining Unicode char U+013A (decimal 314)
-   defining Unicode char U+013B (decimal 315)
-   defining Unicode char U+013C (decimal 316)
-   defining Unicode char U+013D (decimal 317)
-   defining Unicode char U+013E (decimal 318)
-   defining Unicode char U+0141 (decimal 321)
-   defining Unicode char U+0142 (decimal 322)
-   defining Unicode char U+0143 (decimal 323)
-   defining Unicode char U+0144 (decimal 324)
-   defining Unicode char U+0145 (decimal 325)
-   defining Unicode char U+0146 (decimal 326)
-   defining Unicode char U+0147 (decimal 327)
-   defining Unicode char U+0148 (decimal 328)
-   defining Unicode char U+014A (decimal 330)
-   defining Unicode char U+014B (decimal 331)
-   defining Unicode char U+014C (decimal 332)
-   defining Unicode char U+014D (decimal 333)
-   defining Unicode char U+014E (decimal 334)
-   defining Unicode char U+014F (decimal 335)
-   defining Unicode char U+0150 (decimal 336)
-   defining Unicode char U+0151 (decimal 337)
-   defining Unicode char U+0152 (decimal 338)
-   defining Unicode char U+0153 (decimal 339)
-   defining Unicode char U+0154 (decimal 340)
-   defining Unicode char U+0155 (decimal 341)
-   defining Unicode char U+0156 (decimal 342)
-   defining Unicode char U+0157 (decimal 343)
-   defining Unicode char U+0158 (decimal 344)
-   defining Unicode char U+0159 (decimal 345)
-   defining Unicode char U+015A (decimal 346)
-   defining Unicode char U+015B (decimal 347)
-   defining Unicode char U+015C (decimal 348)
-   defining Unicode char U+015D (decimal 349)
-   defining Unicode char U+015E (decimal 350)
-   defining Unicode char U+015F (decimal 351)
-   defining Unicode char U+0160 (decimal 352)
-   defining Unicode char U+0161 (decimal 353)
-   defining Unicode char U+0162 (decimal 354)
-   defining Unicode char U+0163 (decimal 355)
-   defining Unicode char U+0164 (decimal 356)
-   defining Unicode char U+0165 (decimal 357)
-   defining Unicode char U+0168 (decimal 360)
-   defining Unicode char U+0169 (decimal 361)
-   defining Unicode char U+016A (decimal 362)
-   defining Unicode char U+016B (decimal 363)
-   defining Unicode char U+016C (decimal 364)
-   defining Unicode char U+016D (decimal 365)
-   defining Unicode char U+016E (decimal 366)
-   defining Unicode char U+016F (decimal 367)
-   defining Unicode char U+0170 (decimal 368)
-   defining Unicode char U+0171 (decimal 369)
-   defining Unicode char U+0172 (decimal 370)
-   defining Unicode char U+0173 (decimal 371)
-   defining Unicode char U+0174 (decimal 372)
-   defining Unicode char U+0175 (decimal 373)
-   defining Unicode char U+0176 (decimal 374)
-   defining Unicode char U+0177 (decimal 375)
-   defining Unicode char U+0178 (decimal 376)
-   defining Unicode char U+0179 (decimal 377)
-   defining Unicode char U+017A (decimal 378)
-   defining Unicode char U+017B (decimal 379)
-   defining Unicode char U+017C (decimal 380)
-   defining Unicode char U+017D (decimal 381)
-   defining Unicode char U+017E (decimal 382)
-   defining Unicode char U+01CD (decimal 461)
-   defining Unicode char U+01CE (decimal 462)
-   defining Unicode char U+01CF (decimal 463)
-   defining Unicode char U+01D0 (decimal 464)
-   defining Unicode char U+01D1 (decimal 465)
-   defining Unicode char U+01D2 (decimal 466)
-   defining Unicode char U+01D3 (decimal 467)
-   defining Unicode char U+01D4 (decimal 468)
-   defining Unicode char U+01E2 (decimal 482)
-   defining Unicode char U+01E3 (decimal 483)
-   defining Unicode char U+01E6 (decimal 486)
-   defining Unicode char U+01E7 (decimal 487)
-   defining Unicode char U+01E8 (decimal 488)
-   defining Unicode char U+01E9 (decimal 489)
-   defining Unicode char U+01EA (decimal 490)
-   defining Unicode char U+01EB (decimal 491)
-   defining Unicode char U+01F0 (decimal 496)
-   defining Unicode char U+01F4 (decimal 500)
-   defining Unicode char U+01F5 (decimal 501)
-   defining Unicode char U+0218 (decimal 536)
-   defining Unicode char U+0219 (decimal 537)
-   defining Unicode char U+021A (decimal 538)
-   defining Unicode char U+021B (decimal 539)
-   defining Unicode char U+0232 (decimal 562)
-   defining Unicode char U+0233 (decimal 563)
-   defining Unicode char U+1E02 (decimal 7682)
-   defining Unicode char U+1E03 (decimal 7683)
-   defining Unicode char U+200C (decimal 8204)
-   defining Unicode char U+2010 (decimal 8208)
-   defining Unicode char U+2011 (decimal 8209)
-   defining Unicode char U+2012 (decimal 8210)
-   defining Unicode char U+2013 (decimal 8211)
-   defining Unicode char U+2014 (decimal 8212)
-   defining Unicode char U+2015 (decimal 8213)
-   defining Unicode char U+2018 (decimal 8216)
-   defining Unicode char U+2019 (decimal 8217)
-   defining Unicode char U+201A (decimal 8218)
-   defining Unicode char U+201C (decimal 8220)
-   defining Unicode char U+201D (decimal 8221)
-   defining Unicode char U+201E (decimal 8222)
-   defining Unicode char U+2030 (decimal 8240)
-   defining Unicode char U+2031 (decimal 8241)
-   defining Unicode char U+2039 (decimal 8249)
-   defining Unicode char U+203A (decimal 8250)
-   defining Unicode char U+2423 (decimal 9251)
-   defining Unicode char U+1E20 (decimal 7712)
-   defining Unicode char U+1E21 (decimal 7713)
-)
-Now handling font encoding OT1 ...
-... processing UTF-8 mapping file for font encoding OT1
-
-("D:\Program Files\MiKTeX 2.9\tex\latex\base\ot1enc.dfu"
-File: ot1enc.dfu 2017/01/28 v1.1t UTF-8 support for inputenc
-   defining Unicode char U+00A0 (decimal 160)
-   defining Unicode char U+00A1 (decimal 161)
-   defining Unicode char U+00A3 (decimal 163)
-   defining Unicode char U+00AD (decimal 173)
-   defining Unicode char U+00B8 (decimal 184)
-   defining Unicode char U+00BF (decimal 191)
-   defining Unicode char U+00C5 (decimal 197)
-   defining Unicode char U+00C6 (decimal 198)
-   defining Unicode char U+00D8 (decimal 216)
-   defining Unicode char U+00DF (decimal 223)
-   defining Unicode char U+00E6 (decimal 230)
-   defining Unicode char U+00EC (decimal 236)
-   defining Unicode char U+00ED (decimal 237)
-   defining Unicode char U+00EE (decimal 238)
-   defining Unicode char U+00EF (decimal 239)
-   defining Unicode char U+00F8 (decimal 248)
-   defining Unicode char U+0131 (decimal 305)
-   defining Unicode char U+0141 (decimal 321)
-   defining Unicode char U+0142 (decimal 322)
-   defining Unicode char U+0152 (decimal 338)
-   defining Unicode char U+0153 (decimal 339)
-   defining Unicode char U+0174 (decimal 372)
-   defining Unicode char U+0175 (decimal 373)
-   defining Unicode char U+0176 (decimal 374)
-   defining Unicode char U+0177 (decimal 375)
-   defining Unicode char U+0218 (decimal 536)
-   defining Unicode char U+0219 (decimal 537)
-   defining Unicode char U+021A (decimal 538)
-   defining Unicode char U+021B (decimal 539)
-   defining Unicode char U+2013 (decimal 8211)
-   defining Unicode char U+2014 (decimal 8212)
-   defining Unicode char U+2018 (decimal 8216)
-   defining Unicode char U+2019 (decimal 8217)
-   defining Unicode char U+201C (decimal 8220)
-   defining Unicode char U+201D (decimal 8221)
-)
-Now handling font encoding OMS ...
-... processing UTF-8 mapping file for font encoding OMS
-
-("D:\Program Files\MiKTeX 2.9\tex\latex\base\omsenc.dfu"
-File: omsenc.dfu 2017/01/28 v1.1t UTF-8 support for inputenc
-   defining Unicode char U+00A7 (decimal 167)
-   defining Unicode char U+00B6 (decimal 182)
-   defining Unicode char U+00B7 (decimal 183)
-   defining Unicode char U+2020 (decimal 8224)
-   defining Unicode char U+2021 (decimal 8225)
-   defining Unicode char U+2022 (decimal 8226)
-)
-Now handling font encoding OMX ...
-... no UTF-8 mapping file for font encoding OMX
-Now handling font encoding U ...
-... no UTF-8 mapping file for font encoding U
-   defining Unicode char U+00A9 (decimal 169)
-   defining Unicode char U+00AA (decimal 170)
-   defining Unicode char U+00AE (decimal 174)
-   defining Unicode char U+00BA (decimal 186)
-   defining Unicode char U+02C6 (decimal 710)
-   defining Unicode char U+02DC (decimal 732)
-   defining Unicode char U+200C (decimal 8204)
-   defining Unicode char U+2026 (decimal 8230)
-   defining Unicode char U+2122 (decimal 8482)
-   defining Unicode char U+2423 (decimal 9251)
-))
-("D:\Program Files\MiKTeX 2.9\tex\latex\base\makeidx.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\makeidx.sty"
 Package: makeidx 2014/09/29 v1.0m Standard LaTeX package
 )
-("D:\Program Files\MiKTeX 2.9\tex\latex\tools\multicol.sty"
-Package: multicol 2017/04/11 v1.8q multicolumn formatting (FMi)
-\c@tracingmulticols=\count109
-\mult@box=\box39
-\multicol@leftmargin=\dimen139
-\c@unbalance=\count110
-\c@collectmore=\count111
-\doublecol@number=\count112
-\multicoltolerance=\count113
-\multicolpretolerance=\count114
-\full@width=\dimen140
-\page@free=\dimen141
-\premulticols=\dimen142
-\postmulticols=\dimen143
-\multicolsep=\skip57
-\multicolbaselineskip=\skip58
-\partial@page=\box40
-\last@line=\box41
-\maxbalancingoverflow=\dimen144
-\mult@rightbox=\box42
-\mult@grightbox=\box43
-\mult@gfirstbox=\box44
-\mult@firstbox=\box45
+("C:\Program Files\MiKTeX 2.9\tex\latex\tools\multicol.sty"
+Package: multicol 2018/04/20 v1.8s multicolumn formatting (FMi)
+\c@tracingmulticols=\count101
+\mult@box=\box32
+\multicol@leftmargin=\dimen124
+\c@unbalance=\count102
+\c@collectmore=\count103
+\doublecol@number=\count104
+\multicoltolerance=\count105
+\multicolpretolerance=\count106
+\full@width=\dimen125
+\page@free=\dimen126
+\premulticols=\dimen127
+\postmulticols=\dimen128
+\multicolsep=\skip54
+\multicolbaselineskip=\skip55
+\partial@page=\box33
+\last@line=\box34
+\maxbalancingoverflow=\dimen129
+\mult@rightbox=\box35
+\mult@grightbox=\box36
+\mult@gfirstbox=\box37
+\mult@firstbox=\box38
+\@tempa=\box39
+\@tempa=\box40
+\@tempa=\box41
+\@tempa=\box42
+\@tempa=\box43
+\@tempa=\box44
+\@tempa=\box45
 \@tempa=\box46
 \@tempa=\box47
 \@tempa=\box48
@@ -592,23 +195,23 @@ Package: multicol 2017/04/11 v1.8q multicolumn formatting (FMi)
 \@tempa=\box53
 \@tempa=\box54
 \@tempa=\box55
-\@tempa=\box56
-\@tempa=\box57
-\@tempa=\box58
-\@tempa=\box59
-\@tempa=\box60
-\@tempa=\box61
-\@tempa=\box62
-\c@columnbadness=\count115
-\c@finalcolumnbadness=\count116
-\last@try=\dimen145
-\multicolovershoot=\dimen146
-\multicolundershoot=\dimen147
-\mult@nat@firstbox=\box63
-\colbreak@box=\box64
-\mc@col@check@num=\count117
+\c@columnbadness=\count107
+\c@finalcolumnbadness=\count108
+\last@try=\dimen130
+\multicolovershoot=\dimen131
+\multicolundershoot=\dimen132
+\mult@nat@firstbox=\box56
+\colbreak@box=\box57
+\mc@col@check@num=\count109
 )
-("D:\Program Files\MiKTeX 2.9\tex\latex\base\textcomp.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\multirow\multirow.sty"
+Package: multirow 2016/11/25 v2.2 Span multiple rows of a table
+\multirow@colwidth=\skip56
+\multirow@cntb=\count110
+\multirow@dima=\skip57
+\bigstrutjot=\dimen133
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\textcomp.sty"
 Package: textcomp 2017/04/05 v2.0i Standard LaTeX package
 Package textcomp Info: Sub-encoding information:
 (textcomp)               5 = only ISO-Adobe without \textcurrency
@@ -623,13 +226,13 @@ Package textcomp Info: Sub-encoding information:
 (textcomp)             See the documentation for details.
 Package textcomp Info: Setting ? sub-encoding to TS1/1 on input line 79.
 
-("D:\Program Files\MiKTeX 2.9\tex\latex\base\ts1enc.def"
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\ts1enc.def"
 File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
 Now handling font encoding TS1 ...
 ... processing UTF-8 mapping file for font encoding TS1
 
-("D:\Program Files\MiKTeX 2.9\tex\latex\base\ts1enc.dfu"
-File: ts1enc.dfu 2017/01/28 v1.1t UTF-8 support for inputenc
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\ts1enc.dfu"
+File: ts1enc.dfu 2018/04/05 v1.2c UTF-8 support for inputenc
    defining Unicode char U+00A2 (decimal 162)
    defining Unicode char U+00A3 (decimal 163)
    defining Unicode char U+00A4 (decimal 164)
@@ -699,6 +302,7 @@ File: ts1enc.dfu 2017/01/28 v1.1t UTF-8 support for inputenc
    defining Unicode char U+25E6 (decimal 9702)
    defining Unicode char U+25EF (decimal 9711)
    defining Unicode char U+266A (decimal 9834)
+   defining Unicode char U+FEFF (decimal 65279)
 ))
 LaTeX Info: Redefining \oldstylenums on input line 334.
 Package textcomp Info: Setting cmr sub-encoding to TS1/0 on input line 349.
@@ -764,140 +368,170 @@ Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 407.
 Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 408.
 Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 409.
 )
-("D:\Program Files\MiKTeX 2.9\tex\latex\wasysym\wasysym.sty"
-Package: wasysym 2003/10/30 v2.0 Wasy-2 symbol support package
-\symwasy=\mathgroup4
-LaTeX Font Info:    Overwriting symbol font `wasy' in version `bold'
-(Font)                  U/wasy/m/n --> U/wasy/b/n on input line 90.
-)
-("D:\Program Files\MiKTeX 2.9\tex\latex\base\fontenc.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\fontenc.sty"
 Package: fontenc 2017/04/05 v2.0i Standard LaTeX package
 
-("D:\Program Files\MiKTeX 2.9\tex\latex\base\t1enc.def"
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\t1enc.def"
 File: t1enc.def 2017/04/05 v2.0i Standard LaTeX file
 LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
 ))
-("D:\Program Files\MiKTeX 2.9\tex\latex\psnfss\helvet.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\mathptmx.sty"
+Package: mathptmx 2005/04/12 PSNFSS-v9.2a Times w/ Math, improved (SPQR, WaS) 
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 28.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> OT1/ztmcm/m/n on input line 28.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/ztmcm/m/n on input line 28.
+LaTeX Font Info:    Redeclaring symbol font `letters' on input line 29.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
+(Font)                  OML/cmm/m/it --> OML/ztmcm/m/it on input line 29.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/cmm/b/it --> OML/ztmcm/m/it on input line 29.
+LaTeX Font Info:    Redeclaring symbol font `symbols' on input line 30.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/cmsy/m/n --> OMS/ztmcm/m/n on input line 30.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/cmsy/b/n --> OMS/ztmcm/m/n on input line 30.
+LaTeX Font Info:    Redeclaring symbol font `largesymbols' on input line 31.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/cmex/m/n --> OMX/ztmcm/m/n on input line 31.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/cmex/m/n --> OMX/ztmcm/m/n on input line 31.
+\symbold=\mathgroup4
+\symitalic=\mathgroup5
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 34.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> OT1/ptm/bx/n on input line 34.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/ptm/bx/n on input line 34.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 35.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> OT1/ptm/m/it on input line 35.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> OT1/ptm/m/it on input line 35.
+LaTeX Info: Redefining \hbar on input line 50.
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\helvet.sty"
 Package: helvet 2005/04/12 PSNFSS-v9.2a (WaS) 
 )
-("D:\Program Files\MiKTeX 2.9\tex\latex\psnfss\courier.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\courier.sty"
 Package: courier 2005/04/12 PSNFSS-v9.2a (WaS) 
 )
-("D:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\amssymb.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\amssymb.sty"
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
 
-("D:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\amsfonts.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\amsfonts.sty"
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
-\@emptytoks=\toks28
-\symAMSa=\mathgroup5
-\symAMSb=\mathgroup6
+\@emptytoks=\toks23
+\symAMSa=\mathgroup6
+\symAMSb=\mathgroup7
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 ))
-("D:\Program Files\MiKTeX 2.9\tex\latex\sectsty\sectsty.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\sectsty\sectsty.sty"
 Package: sectsty 2002/02/25 v2.0.2 Commands to change all sectional heading sty
 les
 )
-("D:\Program Files\MiKTeX 2.9\tex\latex\geometry\geometry.sty"
-Package: geometry 2010/09/12 v5.6 Page Geometry
+("C:\Program Files\MiKTeX 2.9\tex\latex\geometry\geometry.sty"
+Package: geometry 2018/04/16 v5.8 Page Geometry
 
-("D:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.sty"
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.sty"
 Package: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
 )
-("D:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifvtex.sty"
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifvtex.sty"
 Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
 Package ifvtex Info: VTeX not detected.
 )
-("D:\Program Files\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.sty"
+("C:\Program Files\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.sty"
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
-\Gm@cnth=\count118
-\Gm@cntv=\count119
-\c@Gm@tempcnt=\count120
-\Gm@bindingoffset=\dimen148
-\Gm@wd@mp=\dimen149
-\Gm@odd@mp=\dimen150
-\Gm@even@mp=\dimen151
-\Gm@layoutwidth=\dimen152
-\Gm@layoutheight=\dimen153
-\Gm@layouthoffset=\dimen154
-\Gm@layoutvoffset=\dimen155
-\Gm@dimlist=\toks29
+\Gm@cnth=\count111
+\Gm@cntv=\count112
+\c@Gm@tempcnt=\count113
+\Gm@bindingoffset=\dimen134
+\Gm@wd@mp=\dimen135
+\Gm@odd@mp=\dimen136
+\Gm@even@mp=\dimen137
+\Gm@layoutwidth=\dimen138
+\Gm@layoutheight=\dimen139
+\Gm@layouthoffset=\dimen140
+\Gm@layoutvoffset=\dimen141
+\Gm@dimlist=\toks24
 
-("D:\Program Files\MiKTeX 2.9\tex\latex\geometry\geometry.cfg"))
-("D:\Program Files\MiKTeX 2.9\tex\latex\fancyhdr\fancyhdr.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\geometry\geometry.cfg"))
+("C:\Program Files\MiKTeX 2.9\tex\latex\fancyhdr\fancyhdr.sty"
 Package: fancyhdr 2017/06/30 v3.9a Extensive control of page headers and footer
 s
-\f@nch@headwidth=\skip59
-\f@nch@O@elh=\skip60
-\f@nch@O@erh=\skip61
-\f@nch@O@olh=\skip62
-\f@nch@O@orh=\skip63
-\f@nch@O@elf=\skip64
-\f@nch@O@erf=\skip65
-\f@nch@O@olf=\skip66
-\f@nch@O@orf=\skip67
+\f@nch@headwidth=\skip58
+\f@nch@O@elh=\skip59
+\f@nch@O@erh=\skip60
+\f@nch@O@olh=\skip61
+\f@nch@O@orh=\skip62
+\f@nch@O@elf=\skip63
+\f@nch@O@erf=\skip64
+\f@nch@O@olf=\skip65
+\f@nch@O@orf=\skip66
 )
-("D:\Program Files\MiKTeX 2.9\tex\latex\natbib\natbib.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\natbib\natbib.sty"
 Package: natbib 2010/09/13 8.31b (PWD, AO)
-\bibhang=\skip68
-\bibsep=\skip69
+\bibhang=\skip67
+\bibsep=\skip68
 LaTeX Info: Redefining \cite on input line 694.
-\c@NAT@ctr=\count121
+\c@NAT@ctr=\count114
 )
-("D:\Program Files\MiKTeX 2.9\tex\latex\tocloft\tocloft.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\tocloft\tocloft.sty"
 Package: tocloft 2017/08/31 v2.3i parameterised ToC, etc., typesetting
 Package tocloft Info: The document has chapter divisions on input line 51.
-\cftparskip=\skip70
-\cftbeforetoctitleskip=\skip71
-\cftaftertoctitleskip=\skip72
-\cftbeforepartskip=\skip73
-\cftpartnumwidth=\skip74
-\cftpartindent=\skip75
-\cftbeforechapskip=\skip76
-\cftchapindent=\skip77
-\cftchapnumwidth=\skip78
-\cftbeforesecskip=\skip79
-\cftsecindent=\skip80
-\cftsecnumwidth=\skip81
-\cftbeforesubsecskip=\skip82
-\cftsubsecindent=\skip83
-\cftsubsecnumwidth=\skip84
-\cftbeforesubsubsecskip=\skip85
-\cftsubsubsecindent=\skip86
-\cftsubsubsecnumwidth=\skip87
-\cftbeforeparaskip=\skip88
-\cftparaindent=\skip89
-\cftparanumwidth=\skip90
-\cftbeforesubparaskip=\skip91
-\cftsubparaindent=\skip92
-\cftsubparanumwidth=\skip93
-\cftbeforeloftitleskip=\skip94
-\cftafterloftitleskip=\skip95
-\cftbeforefigskip=\skip96
-\cftfigindent=\skip97
-\cftfignumwidth=\skip98
-\c@lofdepth=\count122
-\c@lotdepth=\count123
-\cftbeforelottitleskip=\skip99
-\cftafterlottitleskip=\skip100
-\cftbeforetabskip=\skip101
-\cfttabindent=\skip102
-\cfttabnumwidth=\skip103
+\cftparskip=\skip69
+\cftbeforetoctitleskip=\skip70
+\cftaftertoctitleskip=\skip71
+\cftbeforepartskip=\skip72
+\cftpartnumwidth=\skip73
+\cftpartindent=\skip74
+\cftbeforechapskip=\skip75
+\cftchapindent=\skip76
+\cftchapnumwidth=\skip77
+\cftbeforesecskip=\skip78
+\cftsecindent=\skip79
+\cftsecnumwidth=\skip80
+\cftbeforesubsecskip=\skip81
+\cftsubsecindent=\skip82
+\cftsubsecnumwidth=\skip83
+\cftbeforesubsubsecskip=\skip84
+\cftsubsubsecindent=\skip85
+\cftsubsubsecnumwidth=\skip86
+\cftbeforeparaskip=\skip87
+\cftparaindent=\skip88
+\cftparanumwidth=\skip89
+\cftbeforesubparaskip=\skip90
+\cftsubparaindent=\skip91
+\cftsubparanumwidth=\skip92
+\cftbeforeloftitleskip=\skip93
+\cftafterloftitleskip=\skip94
+\cftbeforefigskip=\skip95
+\cftfigindent=\skip96
+\cftfignumwidth=\skip97
+\c@lofdepth=\count115
+\c@lotdepth=\count116
+\cftbeforelottitleskip=\skip98
+\cftafterlottitleskip=\skip99
+\cftbeforetabskip=\skip100
+\cfttabindent=\skip101
+\cfttabnumwidth=\skip102
 )
 \@indexfile=\write3
 \openout3 = `refman.idx'.
 
 
 Writing index file refman.idx
-("D:\Program Files\MiKTeX 2.9\tex\latex\hyperref\hyperref.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\hyperref.sty"
 Package: hyperref 2018/02/06 v6.86b Hypertext links for LaTeX
 
-("D:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\hobsub-hyperref.sty"
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\hobsub-hyperref.sty"
 Package: hobsub-hyperref 2016/05/16 v1.14 Bundle oberdiek, subset hyperref (HO)
 
 
-("D:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\hobsub-generic.sty"
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\hobsub-generic.sty"
 Package: hobsub-generic 2016/05/16 v1.14 Bundle oberdiek, subset generic (HO)
 Package: hobsub 2016/05/16 v1.14 Construct package bundles (HO)
 Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
@@ -914,7 +548,7 @@ Package etexcmds Info: Could not find \expanded.
 (etexcmds)             In the latter case, load this package earlier.
 Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
 Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
-Package: pdftexcmds 2018/01/21 v0.26 Utility functions of pdfTeX for LuaTeX (HO
+Package: pdftexcmds 2018/01/30 v0.27 Utility functions of pdfTeX for LuaTeX (HO
 )
 Package pdftexcmds Info: LuaTeX not detected.
 Package pdftexcmds Info: \pdf@primitive is available.
@@ -936,24 +570,24 @@ Package: atbegshi 2016/06/09 v1.18 At begin shipout hook (HO)
 Package: refcount 2016/05/16 v3.5 Data extraction from label references (HO)
 Package: hycolor 2016/05/16 v1.8 Color options for hyperref/bookmark (HO)
 )
-("D:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\auxhook.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\auxhook.sty"
 Package: auxhook 2016/05/16 v1.4 Hooks for auxiliary files (HO)
 )
-("D:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\kvoptions.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\kvoptions.sty"
 Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
 )
-\@linkdim=\dimen156
-\Hy@linkcounter=\count124
-\Hy@pagecounter=\count125
+\@linkdim=\dimen142
+\Hy@linkcounter=\count117
+\Hy@pagecounter=\count118
 
-("D:\Program Files\MiKTeX 2.9\tex\latex\hyperref\pd1enc.def"
+("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\pd1enc.def"
 File: pd1enc.def 2018/02/06 v6.86b Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
 )
-\Hy@SavedSpaceFactor=\count126
+\Hy@SavedSpaceFactor=\count119
 
-("D:\Program Files\MiKTeX 2.9\tex\latex\00miktex\hyperref.cfg"
+("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\hyperref.cfg"
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
 )
 Package hyperref Info: Hyper figures OFF on input line 4509.
@@ -964,25 +598,25 @@ Package hyperref Info: Backreferencing ON on input line 4527.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4762.
 
-("D:\Program Files\MiKTeX 2.9\tex\latex\hyperref\backref.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\backref.sty"
 Package: backref 2016/05/21 v1.39 Bibliographical back referencing
 
-("D:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\rerunfilecheck.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\rerunfilecheck.sty"
 Package: rerunfilecheck 2016/05/16 v1.8 Rerun checks for auxiliary files (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 82.
 ))
-\c@Hy@tempcnt=\count127
+\c@Hy@tempcnt=\count120
 
-("D:\Program Files\MiKTeX 2.9\tex\latex\url\url.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\url\url.sty"
 \Urlmuskip=\muskip10
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 5115.
-\XeTeXLinkMargin=\dimen157
-\Fld@menulength=\count128
-\Field@Width=\dimen158
-\Fld@charsize=\dimen159
+\XeTeXLinkMargin=\dimen143
+\Fld@menulength=\count121
+\Field@Width=\dimen144
+\Fld@charsize=\dimen145
 Package hyperref Info: Hyper figures OFF on input line 6369.
 Package hyperref Info: Link nesting OFF on input line 6374.
 Package hyperref Info: Hyper index ON on input line 6377.
@@ -992,101 +626,379 @@ Package hyperref Info: Link coloring with OCG OFF on input line 6394.
 Package hyperref Info: PDF/A mode OFF on input line 6399.
 LaTeX Info: Redefining \ref on input line 6439.
 LaTeX Info: Redefining \pageref on input line 6443.
-\Hy@abspage=\count129
-\c@Item=\count130
-\c@Hfootnote=\count131
+\Hy@abspage=\count122
+\c@Item=\count123
+\c@Hfootnote=\count124
 )
 Package hyperref Info: Driver: hpdftex.
 
-("D:\Program Files\MiKTeX 2.9\tex\latex\hyperref\hpdftex.def"
+("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\hpdftex.def"
 File: hpdftex.def 2018/02/06 v6.86b Hyperref driver for pdfTeX
-\Fld@listcount=\count132
-\c@bookmark@seq@number=\count133
-\Hy@SectionHShift=\skip104
+\Fld@listcount=\count125
+\c@bookmark@seq@number=\count126
+\Hy@SectionHShift=\skip103
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 105.
-Package hyperref Info: Option `unicode' set `true' on input line 105.
+Package hyperref Info: Option `colorlinks' set `true' on input line 101.
+Package hyperref Info: Option `unicode' set `true' on input line 101.
 
-("D:\Program Files\MiKTeX 2.9\tex\latex\hyperref\puenc.def"
+("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\puenc.def"
 File: puenc.def 2018/02/06 v6.86b Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
 ... no UTF-8 mapping file for font encoding PU
-)
-("D:\Program Files\MiKTeX 2.9\tex\latex\caption\caption.sty"
-Package: caption 2018/05/01 v3.3-147 Customizing captions (AR)
-
-("D:\Program Files\MiKTeX 2.9\tex\latex\caption\caption3.sty"
-Package: caption3 2018/05/27 v1.8a caption3 kernel (AR)
-Package caption3 Info: TeX engine: e-TeX on input line 64.
-\captionmargin=\dimen160
-\captionmargin@=\dimen161
-\captionwidth=\dimen162
-\caption@tempdima=\dimen163
-\caption@indent=\dimen164
-\caption@parindent=\dimen165
-\caption@hangindent=\dimen166
-)
-\c@ContinuedFloat=\count134
-Package caption Info: float package is loaded.
-Package caption Info: hyperref package is loaded.
-Package caption Info: longtable package is loaded.
-
-("D:\Program Files\MiKTeX 2.9\tex\latex\caption\ltcaption.sty"
-Package: ltcaption 2013/06/09 v1.4-94 longtable captions (AR)
-)) (refman.aux
+) (refman.aux
 (group___c_a_n__funzionale__group.aux) (group___c_a_n__servizi__group.aux)
-(group___board__model__group.aux))
+(group___board__model__group.aux)
+
+LaTeX Warning: Label `group___board__model__group_gaea8caf3e051442ba02c4e44a596
+02796' multiply defined.
+
+
+LaTeX Warning: Label `group___board__model__group_ga8d2f70cd4c07aafe94fd9944121
+922d9' multiply defined.
+
+
+LaTeX Warning: Label `group___board__model__group_ga15003800bba3fb64e770c6a9206
+13419' multiply defined.
+
+
+LaTeX Warning: Label `group___board__model__group_gab421578437964f5c645163739a0
+803e7' multiply defined.
+
+
+LaTeX Warning: Label `group___board__model__group_ga349316092037fdd0773335fab4e
+15ee8' multiply defined.
+
+
+LaTeX Warning: Label `group___board__model__group_ga145103118f6d9d1129aa4509cf2
+14a13' multiply defined.
+
+
+LaTeX Warning: Label `group___board__model__group_ga78a99c4f7bcb7723d7bf21810c4
+ce09b' multiply defined.
+
+
+LaTeX Warning: Label `group___board__model__group_ga1bcd7461cf494d3235f792bf3d8
+14923' multiply defined.
+
+
+LaTeX Warning: Label `group___board__model__group_gacd9448edb89c378d843fc3cb93a
+098d3' multiply defined.
+
+
+LaTeX Warning: Label `group___board__model__group_gad6c9e9b63f53c664772ee858436
+e0ae9' multiply defined.
+
+
+LaTeX Warning: Label `group___board__model__group_ga604c7f4c9fe74f1d9877071bbee
+1c9e0' multiply defined.
+
+
+LaTeX Warning: Label `group___board__model__group_gae9aa914854f611488701c96a330
+b0bd4' multiply defined.
+
+
+LaTeX Warning: Label `group___board__model__group_ga99b2a7dadaf495e3c559a46440f
+9141f' multiply defined.
+
+
+LaTeX Warning: Label `group___board__model__group_gab13a816bae3ca994897fc6f1cb5
+90a67' multiply defined.
+
+
+LaTeX Warning: Label `group___board__model__group_ga4cecb8c10512873904099a1a88d
+69ed3' multiply defined.
+
+
+LaTeX Warning: Label `group___board__model__group_gad632b56bf4c6259a390c3db9160
+7078e' multiply defined.
+
+
+LaTeX Warning: Label `group___board__model__group_ga310547321c4a016c4ad19922920
+fadfd' multiply defined.
+
+
+LaTeX Warning: Label `group___board__model__group_gabbdb157ae4ad39d102935c21fa3
+0d1c5' multiply defined.
+
+
+LaTeX Warning: Label `group___board__model__group_ga564adb575db2620ac85e3abdd6a
+5bbaf' multiply defined.
+
+
+LaTeX Warning: Label `group___c_a_n__funzionale__group_ga8cd40fe9b965184307fe58
+86fcef6236' multiply defined.
+
+
+LaTeX Warning: Label `group___c_a_n__funzionale__group_ga392f688b1edd69f29b4881
+8a5b9b19ae' multiply defined.
+
+
+LaTeX Warning: Label `group___c_a_n__funzionale__group_ga979fff19d884e9a83eecc2
+309b36ad0c' multiply defined.
+
+
+LaTeX Warning: Label `group___c_a_n__funzionale__group_ga99ead1878913db87bc7cc8
+08a8392e21' multiply defined.
+
+
+LaTeX Warning: Label `group___c_a_n__module__group_ga5703fd8de5ab8d0dcedb561f21
+78829e' multiply defined.
+
+
+LaTeX Warning: Label `group___c_a_n__funzionale__group_ga59ea82aec4abe07072cbda
+d555a8c1b9' multiply defined.
+
+
+LaTeX Warning: Label `group___c_a_n__servizi__group_ga8d64b6b4c0f02ebded5440c62
+50e03b9' multiply defined.
+
+
+LaTeX Warning: Label `group___c_a_n__servizi__group_gaceef3f7366b39e88d89cb98ad
+8094c7b' multiply defined.
+
+
+LaTeX Warning: Label `group___c_a_n__servizi__group_gaf351ebc02b2d28174f8e4b18f
+f9edf5f' multiply defined.
+
+
+LaTeX Warning: Label `group___c_a_n__servizi__group_gafc26efcf97051372e70a8d0f2
+f0c79f0' multiply defined.
+
+
+LaTeX Warning: Label `group___c_a_n__servizi__group_gad3e88db55b4105026b7e451f8
+53a796b' multiply defined.
+
+
+LaTeX Warning: Label `group___c_a_n__servizi__group_gacad002b7cb06bffa8811859e6
+f53cb28' multiply defined.
+
+
+LaTeX Warning: Label `group___c_a_n__servizi__group_gadcbd4ad67b50cf61731266bf5
+c5ba158' multiply defined.
+
+
+LaTeX Warning: Label `group___c_a_n__servizi__group_gaa9de48f5a49bc92a608ed315c
+087f3a6' multiply defined.
+
+
+LaTeX Warning: Label `group___c_a_n__servizi__group_gae505d69d6ac9d4e7e3c2268ca
+6cb20b3' multiply defined.
+
+
+LaTeX Warning: Label `group___c_a_n__servizi__group_gac6f04deffa2553115dad7c8b4
+5e14d8b' multiply defined.
+
+
+LaTeX Warning: Label `group___board__model__group_ga602abb8ec84dcb3b6f854a73831
+0ea46' multiply defined.
+
+
+LaTeX Warning: Label `group___board__model__group_gaabe0f927d44a09f458bd5fe5ab4
+e2f7f' multiply defined.
+
+
+LaTeX Warning: Label `group___board__model__group_gaf0098a1eafb8a60a1c65773e106
+4d595' multiply defined.
+
+
+LaTeX Warning: Label `group___board__model__group_ga555a695bf58df062dc03f0e892d
+95cd7' multiply defined.
+
+
+LaTeX Warning: Label `group___board__model__group_ga3e1022cd2e2154437b583f7ff83
+f2960' multiply defined.
+
+
+LaTeX Warning: Label `group___board__model__group_ga8b6fbd5b46174be3b86bc1ab5da
+a9080' multiply defined.
+
+
+LaTeX Warning: Label `group___board__model__group_ga065dcfa648ca52ed6214008cb17
+7de36' multiply defined.
+
+
+LaTeX Warning: Label `group___board__model__group_ga7ce02d79fba23321a377a26a963
+e2bdf' multiply defined.
+
+
+LaTeX Warning: Label `group___board__model__group_ga24019e59e805c7acf8f816e141d
+3d689' multiply defined.
+
+
+LaTeX Warning: Label `group___board__model__group_gade98eccd60c9b68cde78ca4c000
+9a84c' multiply defined.
+
+
+LaTeX Warning: Label `group___board__model__group_ga58133efa918e1af6c0cc436137c
+78cc0' multiply defined.
+
+
+LaTeX Warning: Label `group___board__model__group_gaf7b7dc9a200cb1404c280bd500f
+d1551' multiply defined.
+
+
+LaTeX Warning: Label `group___board__model__group_ga6741cba3daf129b6f73eed1b1db
+09519' multiply defined.
+
+
+LaTeX Warning: Label `group___board__model__group_ga9c9aa914f6b372d9ef3f15ce410
+8da6a' multiply defined.
+
+
+LaTeX Warning: Label `group___board__model__group_gac8be8d89c699c40b79d04c0fdf6
+238f4' multiply defined.
+
+
+LaTeX Warning: Label `group___board__model__group_gadfcc723e175ac44e73e38407299
+ac875' multiply defined.
+
+
+LaTeX Warning: Label `group___board__model__group_ga891de03ab9e1bd9a92ffffe69a1
+b10ca' multiply defined.
+
+
+LaTeX Warning: Label `group___board__model__group_ga0aed20cafcc206360abda47b125
+432c7' multiply defined.
+
+
+LaTeX Warning: Label `group___board__model__group_gaedc241164d501dcbc52cde23233
+3c9cf' multiply defined.
+
+
+LaTeX Warning: Label `group___board__model__group_ga7c7f5690cca986bc3fb2f6dcbda
+24690' multiply defined.
+
+
+LaTeX Warning: Label `group___board__model__group_gae1f465253d690605c0948394a3f
+055f4' multiply defined.
+
+
+LaTeX Warning: Label `group___board__model__group_ga709add26e40f60e3add32981ea2
+a5868' multiply defined.
+
+
+LaTeX Warning: Label `group___board__model__group_ga3e919d1e6477d52b4ccddd49735
+1d3ec' multiply defined.
+
+
+LaTeX Warning: Label `group___board__model__group_gaf6aa7f974533c4306128757d063
+4572a' multiply defined.
+
+
+LaTeX Warning: Label `group___board__model__group_ga3d6043851868b7da3c1d6381f83
+5a559' multiply defined.
+
+
+LaTeX Warning: Label `group___board__model__group_gaa8a9b03858f40eadfd5d3d6c3e2
+66834' multiply defined.
+
+
+LaTeX Warning: Label `group___board__model__group_gad7966e70fb4bebc6947eb3fbb05
+9a3c9' multiply defined.
+
+
+LaTeX Warning: Label `group___board__model__group_ga0b4151ed3267a5fae4789f4b3ff
+e7bbd' multiply defined.
+
+
+LaTeX Warning: Label `group___board__model__group_gaf1d46fb483b2a63c3da25c11688
+af7c4' multiply defined.
+
+
+LaTeX Warning: Label `group___board__model__group_ga51d40eb16833e50f71e595ab0a4
+5795e' multiply defined.
+
+
+LaTeX Warning: Label `group___board__model__group_ga53381436ea8db96c356db8b305b
+ec988' multiply defined.
+
+
+LaTeX Warning: Label `group___board__model__group_gab03e92ec2b5f742e5a147a6589d
+3975e' multiply defined.
+
+
+LaTeX Warning: Label `group___board__model__group_ga744857a9bc060647cfc4ad47017
+c5bee' multiply defined.
+
+
+LaTeX Warning: Label `group___board__model__group_gaaf843a7e652e5cf9b270d0b211b
+e937c' multiply defined.
+
+
+LaTeX Warning: Label `group___board__model__group_gad2658b77f345b15c03759c02d1b
+a0e81' multiply defined.
+
+
+LaTeX Warning: Label `group___board__model__group_gafef4d6ed48b3edc5f7a74defba8
+2e7d8' multiply defined.
+
+
+LaTeX Warning: Label `group___board__model__group_gabaadbcc3b48e8ec3798741a74a6
+72046' multiply defined.
+
+
+LaTeX Warning: Label `group___board__model__group_ga481292a7bd814aefcdc2deb9872
+f5421' multiply defined.
+
+
+LaTeX Warning: Label `group___board__model__group_ga56b9cca331f294c3249df72b9f3
+7ff2a' multiply defined.
+
+
+LaTeX Warning: Label `group___board__model__group_ga8ce089b65afda1dee23f7ecefd0
+cb873' multiply defined.
+
+)
 \openout1 = `refman.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 117.
-LaTeX Font Info:    ... okay on input line 117.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 117.
-LaTeX Font Info:    ... okay on input line 117.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 117.
-LaTeX Font Info:    ... okay on input line 117.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 117.
-LaTeX Font Info:    ... okay on input line 117.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 117.
-LaTeX Font Info:    ... okay on input line 117.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 117.
-LaTeX Font Info:    ... okay on input line 117.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 117.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 117.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 111.
+LaTeX Font Info:    ... okay on input line 111.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 111.
+LaTeX Font Info:    ... okay on input line 111.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 111.
+LaTeX Font Info:    ... okay on input line 111.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 111.
+LaTeX Font Info:    ... okay on input line 111.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 111.
+LaTeX Font Info:    ... okay on input line 111.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 111.
+LaTeX Font Info:    ... okay on input line 111.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 111.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 111.
 
-
-("D:\Program Files\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 117.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 117.
-LaTeX Font Info:    ... okay on input line 117.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 117.
-LaTeX Font Info:    ... okay on input line 117.
-LaTeX Font Info:    Try loading font information for T1+phv on input line 117.
+LaTeX Font Info:    ... okay on input line 111.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 111.
+LaTeX Font Info:    ... okay on input line 111.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 111.
+LaTeX Font Info:    ... okay on input line 111.
+LaTeX Font Info:    Try loading font information for T1+phv on input line 111.
 
-("D:\Program Files\MiKTeX 2.9\tex\latex\psnfss\t1phv.fd"
+("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\t1phv.fd"
 File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
 )
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 8.99994pt on input line 117.
+(Font)              scaled to size 8.99994pt on input line 111.
 
-("D:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
+("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count135
-\scratchdimen=\dimen167
-\scratchbox=\box65
-\nofMPsegments=\count136
-\nofMParguments=\count137
-\everyMPshowfont=\toks30
-\MPscratchCnt=\count138
-\MPscratchDim=\dimen168
-\MPnumerator=\count139
-\makeMPintoPDFobject=\count140
-\everyMPtoPDFconversion=\toks31
-) ("D:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-base.sty"
+\scratchcounter=\count127
+\scratchdimen=\dimen146
+\scratchbox=\box58
+\nofMPsegments=\count128
+\nofMParguments=\count129
+\everyMPshowfont=\toks25
+\MPscratchCnt=\count130
+\MPscratchDim=\dimen147
+\MPnumerator=\count131
+\makeMPintoPDFobject=\count132
+\everyMPtoPDFconversion=\toks26
+) ("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-base.sty"
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
-("D:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\grfext.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\grfext.sty"
 Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
 )
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -1096,6 +1008,8 @@ Package grfext Info: Graphics extension search list:
 G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
 )
+\big@size=\dimen148
+
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -1130,52 +1044,32 @@ G,.JBIG2,.JB2,.eps]
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-\AtBeginShipoutBox=\box66
-Package backref Info: ** backref set up for natbib ** on input line 117.
-Package hyperref Info: Link coloring ON on input line 117.
-("D:\Program Files\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
+\AtBeginShipoutBox=\box59
+Package backref Info: ** backref set up for natbib ** on input line 111.
+Package hyperref Info: Link coloring ON on input line 111.
+("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 
-("D:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\gettitlestring.sty"
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\gettitlestring.sty"
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count141
+\c@section@level=\count133
 )
-LaTeX Info: Redefining \ref on input line 117.
-LaTeX Info: Redefining \pageref on input line 117.
-LaTeX Info: Redefining \nameref on input line 117.
+LaTeX Info: Redefining \ref on input line 111.
+LaTeX Info: Redefining \pageref on input line 111.
+LaTeX Info: Redefining \nameref on input line 111.
 
 (refman.out) (refman.out)
 \@outlinefile=\write4
 \openout4 = `refman.out'.
 
-Package caption Info: Begin \AtBeginDocument code.
-Package caption Info: End \AtBeginDocument code.
-Package hyperref Info: Option `pageanchor' set `false' on input line 123.
-Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 123.
-
-Package hyperref Info: Option `unicode' set `true' on input line 123.
+Package hyperref Info: Option `pageanchor' set `false' on input line 114.
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 12.9599pt on input line 128.
+(Font)              scaled to size 12.9599pt on input line 119.
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 6.29996pt on input line 128.
-LaTeX Font Info:    Try loading font information for U+wasy on input line 128.
-
-("D:\Program Files\MiKTeX 2.9\tex\latex\wasysym\uwasy.fd"
-File: uwasy.fd 2003/10/30 v2.0 Wasy-2 symbol font definitions
-)
-LaTeX Font Info:    Try loading font information for U+msa on input line 128.
-
-("D:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Try loading font information for U+msb on input line 128.
-
-("D:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
+(Font)              scaled to size 10.79993pt on input line 121.
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 10.79993pt on input line 130.
+(Font)              scaled to size 8.09995pt on input line 123.
  [1
 
 
@@ -1183,48 +1077,93 @@ LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 
 ]
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 22.39185pt on input line 135.
+(Font)              scaled to size 22.39185pt on input line 127.
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <24.88> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 135.
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 127.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 22.39185pt on input line 135.
+(Font)              scaled to size 22.39185pt on input line 127.
 LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
-(Font)              scaled to size 22.39185pt on input line 135.
+(Font)              scaled to size 22.39185pt on input line 127.
  (refman.toc
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <10> not available
 (Font)              Font shape `T1/phv/b/n' tried instead on input line 1.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 (Font)              scaled to size 8.99994pt on input line 1.
-LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <7> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 1.
-LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 6.29996pt on input line 1.
- [1
+LaTeX Font Info:    Try loading font information for OT1+ztmcm on input line 1.
 
-] [2])
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\ot1ztmcm.fd"
+File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
+)
+LaTeX Font Info:    Try loading font information for OML+ztmcm on input line 1.
+
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\omlztmcm.fd"
+File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
+)
+LaTeX Font Info:    Try loading font information for OMS+ztmcm on input line 1.
+
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\omsztmcm.fd"
+File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
+)
+LaTeX Font Info:    Try loading font information for OMX+ztmcm on input line 1.
+
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\omxztmcm.fd"
+File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
+)
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 1.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\ot1ptm.fd"
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+)
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1.
+ [3
+
+]
+LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <7> not available
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 70.
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 6.29996pt on input line 70.
+ [4]
+LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <12> not available
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 84.
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 10.79993pt on input line 84.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 84.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 84.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 84.
+)
 \tf@toc=\write5
 \openout5 = `refman.toc'.
 
-
-[3] [4
+ [5]
+[6
 
 ]
-Package hyperref Info: Option `pageanchor' set `true' on input line 138.
+Package hyperref Info: Option `pageanchor' set `true' on input line 130.
 
 Chapter 1.
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 18.66588pt on input line 141.
+(Font)              scaled to size 18.66588pt on input line 133.
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <20.74> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 141.
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 133.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 18.66588pt on input line 141.
+(Font)              scaled to size 18.66588pt on input line 133.
 LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
-(Font)              scaled to size 18.66588pt on input line 141.
-LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
-(Font)              scaled to size 6.29996pt on input line 141.
+(Font)              scaled to size 18.66588pt on input line 133.
 (index.tex
 LaTeX Font Info:    Try loading font information for TS1+phv on input line 3.
- ("D:\Program Files\MiKTeX 2.9\tex\latex\psnfss\ts1phv.fd"
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\ts1phv.fd"
 File: ts1phv.fd 2001/06/04 scalable font definitions for TS1/phv.
 )
 LaTeX Font Info:    Font shape `TS1/phv/m/n' will be
@@ -1253,10 +1192,6 @@ LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
 Chapter 4.
 (files.tex
 
-LaTeX Warning: Reference `board__pinout_8h' on page 7 undefined on input line 3
-.
-
-
 LaTeX Warning: Reference `def_8h' on page 7 undefined on input line 12.
 
 
@@ -1282,254 +1217,80 @@ LaTeX Warning: Reference `states_8h' on page 7 undefined on input line 20.
 ]
 Chapter 5.
 (group___c_a_n__module__group.tex
-LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <12> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 3.
-LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 10.79993pt on input line 3.
 LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
-(Font)              scaled to size 10.79993pt on input line 3.
-LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 8.09995pt on input line 15.
+(Font)              scaled to size 10.79993pt on input line 4.
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <9> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 15.
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 16.
 LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
-(Font)              scaled to size 8.09995pt on input line 15.
-LaTeX Font Info:    Font shape `T1/phv/m/it' in size <7> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 15.
-LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
-(Font)              scaled to size 6.29996pt on input line 15.
+(Font)              scaled to size 8.09995pt on input line 16.
 LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
-(Font)              scaled to size 8.99994pt on input line 30.
-LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 7.19995pt on input line 31.
-LaTeX Font Info:    Try loading font information for T1+pcr on input line 31.
+(Font)              scaled to size 8.99994pt on input line 34.
 
-("D:\Program Files\MiKTeX 2.9\tex\latex\psnfss\t1pcr.fd"
+Underfull \hbox (badness 10000) detected at line 39
+[][][]
+ []
+
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 41.
+("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\t1pcr.fd"
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )
-Underfull \hbox (badness 10000) detected at line 37
-[][][]
- []
-
-[9]) [10]
+LaTeX Font Info:    Font shape `T1/phv/m/it' in size <10> not available
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 45.
+LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
+(Font)              scaled to size 8.99994pt on input line 45.
+) [9]
 \openout2 = `group___c_a_n__funzionale__group.aux'.
 
- (group___c_a_n__funzionale__group.tex
-LaTeX Font Info:    Font shape `TS1/phv/m/it' in size <9> not available
-(Font)              Font shape `TS1/phv/m/sl' tried instead on input line 27.
-LaTeX Font Info:    Font shape `TS1/phv/m/sl' will be
-(Font)              scaled to size 8.09995pt on input line 27.
-LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <8> not available
-(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 57.
- [11
+
+(group___c_a_n__funzionale__group.tex
+LaTeX Font Info:    Font shape `T1/phv/bc/it' in size <10> not available
+(Font)              Font shape `T1/phv/bc/sl' tried instead on input line 60.
+LaTeX Font Info:    Font shape `T1/phv/bc/sl' will be
+(Font)              scaled to size 8.99994pt on input line 60.
+ [10
 
 ]
-Underfull \hbox (badness 10000) detected at line 63
+Underfull \hbox (badness 10000) detected at line 65
 [][][]
  []
 
 
-Underfull \vbox (badness 10000) detected at line 91
+Underfull \hbox (badness 10000) in alignment at lines 89--93
+[][][] 
  []
 
 
-Underfull \hbox (badness 10000) detected at line 94
+Underfull \hbox (badness 10000) detected at line 96
 [][][]
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \hbox (badness 10000) detected at line 120
+[][][]
+ []
 
- [12]
-Underfull \hbox (badness 10000) detected at line 117
+[11]
+Underfull \hbox (badness 10000) detected at line 146
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 142
-[][][]
- []
-
-[13]
-Underfull \hbox (badness 10000) detected at line 153
+Underfull \hbox (badness 10000) detected at line 157
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 178
+Underfull \hbox (badness 10000) detected at line 183
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 205
+Underfull \hbox (badness 10000) detected at line 211
 [][][]
  []
 
-
-Overfull \vbox (19.50938pt too high) has occurred while \output is active []
-
-
-[14]
-Underfull \hbox (badness 10000) detected at line 216
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 241
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 261
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 265
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 282
-[][][]
- []
-
-[15]
-Underfull \hbox (badness 10000) detected at line 307
-[][][]
- []
-
-) [16]
-\openout2 = `group___c_a_n__servizi__group.aux'.
-
- (group___c_a_n__servizi__group.tex [17
-
-
-]
-Underfull \hbox (badness 10000) detected at line 92
-[][][]
- []
-
-[18]
-Overfull \hbox (1.44637pt too wide) in paragraph at lines 125--125
-[]|[]|  
- []
-
-
-Underfull \vbox (badness 10000) detected at line 125
- []
-
-
-Underfull \hbox (badness 10000) detected at line 130
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 153
-[][][]
- []
-
-[19]
-Underfull \hbox (badness 10000) detected at line 173
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 184
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 209
-[][][]
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [20]
-Underfull \hbox (badness 10000) detected at line 234
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 259
-[][][]
- []
-
-[21]
-Underfull \hbox (badness 10000) detected at line 284
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 288
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 305
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 330
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 334
-[][][]
- []
-
-[22]
-Underfull \hbox (badness 10000) detected at line 351
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 355
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 372
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 376
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 393
-[][][]
- []
-
-[23]
-Underfull \hbox (badness 10000) detected at line 418
-[][][]
- []
-
-) [24]
-\openout2 = `group___board__model__group.aux'.
-
- (group___board__model__group.tex
-Overfull \hbox (30.73154pt too wide) in paragraph at lines 78--80
-[][] \T1/phv/m/n/10 #de-fine [] [] $\OMS/cmsy/m/n/10 j$ [] $j$ []
- []
-
-[25
-
-
-] [26]
-Underfull \hbox (badness 10000) detected at line 219
-[][][]
- []
-
-[27]
-Underfull \hbox (badness 10000) detected at line 244
+[12]
+Underfull \hbox (badness 10000) detected at line 222
 [][][]
  []
 
@@ -1539,96 +1300,326 @@ Underfull \hbox (badness 10000) detected at line 248
  []
 
 
-Underfull \hbox (badness 10000) detected at line 265
+Underfull \hbox (badness 10000) detected at line 269
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 290
-[][][]
- []
-
-[28]
-Underfull \hbox (badness 10000) detected at line 294
+Underfull \hbox (badness 10000) detected at line 273
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 311
+Underfull \hbox (badness 10000) detected at line 291
 [][][]
  []
 
-
-Underfull \hbox (badness 10000) detected at line 315
+[13]
+Underfull \hbox (badness 10000) detected at line 317
 [][][]
  []
 
+) [14]
+\openout2 = `group___c_a_n__servizi__group.aux'.
 
-Underfull \hbox (badness 10000) detected at line 332
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 336
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 353
-[][][]
- []
-
-) [29] [30
+ (group___c_a_n__servizi__group.tex [15
 
 
 ]
+Underfull \hbox (badness 10000) detected at line 94
+[][][]
+ []
+
+[16]
+Underfull \hbox (badness 10000) detected at line 132
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 156
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 177
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 188
+[][][]
+ []
+
+[17]
+Underfull \hbox (badness 10000) detected at line 214
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 240
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 266
+[][][]
+ []
+
+[18]
+Underfull \hbox (badness 10000) detected at line 292
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 296
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 314
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 340
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 344
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 362
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 366
+[][][]
+ []
+
+[19]
+Underfull \hbox (badness 10000) detected at line 384
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 388
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 406
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 432
+[][][]
+ []
+
+[20]) [21]
+\openout2 = `group___board__model__group.aux'.
+
+ (group___board__model__group.tex [22
+
+
+] [23]
+Underfull \hbox (badness 10000) detected at line 221
+[][][]
+ []
+
+[24]
+Underfull \hbox (badness 10000) detected at line 247
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 251
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 269
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 295
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 299
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 317
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 321
+[][][]
+ []
+
+[25]
+Underfull \hbox (badness 10000) detected at line 339
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 343
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 361
+[][][]
+ []
+
+) [26]
 Chapter 6.
-(can__funzionale_8cpp.tex
-Underfull \hbox (badness 10000) in paragraph at lines 8--12
+(board__pinout_8h.texpdfTeX warning (ext4): destination with the same identifie
+r (name{group___board__model__group_gaea8caf3e051442ba02c4e44a59602796}) has be
+en already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.12 ...-\_\-\-F\-U\-N\-Z\-I\-O\-N\-A\-L\-E}~Can1}
+                                                  \label{group___board__mode...
+pdfTeX warning (ext4): destination with the same identifier (name{group___board
+__model__group_ga8d2f70cd4c07aafe94fd9944121922d9}) has been already used, dupl
+icate ignored
+<to be read again> 
+                   \relax 
+l.15 ...{C\-A\-N\-\_\-\-S\-E\-R\-V\-I\-Z\-I}~Can0}
+                                                  \label{group___board__mode...
+pdfTeX warning (ext4): destination with the same identifier (name{group___board
+__model__group_ga15003800bba3fb64e770c6a920613419}) has been already used, dupl
+icate ignored
+<to be read again> 
+                   \relax 
+l.18 ...00bba3fb64e770c6a920613419}{A\-I\-Rcc}~48}
+                                                  \label{group___board__mode...
+pdfTeX warning (ext4): destination with the same identifier (name{group___board
+__model__group_gab421578437964f5c645163739a0803e7}) has been already used, dupl
+icate ignored
+<to be read again> 
+                   \relax 
+l.21 ...7964f5c645163739a0803e7}{A\-I\-R\-Gnd}~49}
+                                                  \label{group___board__mode...
+pdfTeX warning (ext4): destination with the same identifier (name{group___board
+__model__group_ga349316092037fdd0773335fab4e15ee8}) has been already used, dupl
+icate ignored
+<to be read again> 
+                   \relax 
+l.24 ...16092037fdd0773335fab4e15ee8}{P\-R\-E}~47}
+                                                  \label{group___board__mode...
+pdfTeX warning (ext4): destination with the same identifier (name{group___board
+__model__group_ga145103118f6d9d1129aa4509cf214a13}) has been already used, dupl
+icate ignored
+<to be read again> 
+                   \relax 
+l.27 ...d1129aa4509cf214a13}{B\-U\-Z\-Z\-E\-R}~52}
+                                                  \label{group___board__mode...
+pdfTeX warning (ext4): destination with the same identifier (name{group___board
+__model__group_ga78a99c4f7bcb7723d7bf21810c4ce09b}) has been already used, dupl
+icate ignored
+<to be read again> 
+                   \relax 
+l.30 ...f7bcb7723d7bf21810c4ce09b}{A\-I\-R\-B}~14}
+                                                  \label{group___board__mode...
+pdfTeX warning (ext4): destination with the same identifier (name{group___board
+__model__group_ga1bcd7461cf494d3235f792bf3d814923}) has been already used, dupl
+icate ignored
+<to be read again> 
+                   \relax 
+l.33 ...1cf494d3235f792bf3d814923}{R\-T\-D\-B}~15}
+                                                  \label{group___board__mode...
+pdfTeX warning (ext4): destination with the same identifier (name{group___board
+__model__group_gacd9448edb89c378d843fc3cb93a098d3}) has been already used, dupl
+icate ignored
+<to be read again> 
+                   \relax 
+l.36 ...448edb89c378d843fc3cb93a098d3}{F\-A\-N}~9}
+                                                  \label{group___board__mode...
+pdfTeX warning (ext4): destination with the same identifier (name{group___board
+__model__group_gad6c9e9b63f53c664772ee858436e0ae9}) has been already used, dupl
+icate ignored
+<to be read again> 
+                   \relax 
+l.39 ...A\-N\-A\-L\-O\-G\-\_\-\-P\-I\-N}~D\-A\-C1}
+                                                  \label{group___board__mode...
+pdfTeX warning (ext4): destination with the same identifier (name{group___board
+__model__group_ga604c7f4c9fe74f1d9877071bbee1c9e0}) has been already used, dupl
+icate ignored
+<to be read again> 
+                   \relax 
+l.42 ...-\-R\-E\-G\-E\-N\-\_\-\-P\-I\-N}~D\-A\-C0}
+                                                  \label{group___board__mode...
+pdfTeX warning (ext4): destination with the same identifier (name{group___board
+__model__group_gae9aa914854f611488701c96a330b0bd4}) has been already used, dupl
+icate ignored
+<to be read again> 
+                   \relax 
+l.45 ...c96a330b0bd4}{T\-P\-S1\-\_\-\-P\-I\-N}~A0}
+                                                  \label{group___board__mode...
+pdfTeX warning (ext4): destination with the same identifier (name{group___board
+__model__group_ga99b2a7dadaf495e3c559a46440f9141f}) has been already used, dupl
+icate ignored
+<to be read again> 
+                   \relax 
+l.48 ...M}~A\-D\-C\-\_\-\-C\-H\-E\-R\-\_\-\-C\-H7}
+                                                  \label{group___board__mode...
+pdfTeX warning (ext4): destination with the same identifier (name{group___board
+__model__group_gab13a816bae3ca994897fc6f1cb590a67}) has been already used, dupl
+icate ignored
+<to be read again> 
+                   \relax 
+l.51 ...c6f1cb590a67}{T\-P\-S2\-\_\-\-P\-I\-N}~A1}
+                                                  \label{group___board__mode...
+pdfTeX warning (ext4): destination with the same identifier (name{group___board
+__model__group_ga4cecb8c10512873904099a1a88d69ed3}) has been already used, dupl
+icate ignored
+<to be read again> 
+                   \relax 
+l.54 ...M}~A\-D\-C\-\_\-\-C\-H\-E\-R\-\_\-\-C\-H6}
+                                                  \label{group___board__mode...
+pdfTeX warning (ext4): destination with the same identifier (name{group___board
+__model__group_gad632b56bf4c6259a390c3db91607078e}) has been already used, dupl
+icate ignored
+<to be read again> 
+                   \relax 
+l.57 ...607078e}{B\-R\-A\-K\-E\-\_\-\-P\-I\-N}~A2}
+                                                  \label{group___board__mode...
+pdfTeX warning (ext4): destination with the same identifier (name{group___board
+__model__group_ga310547321c4a016c4ad19922920fadfd}) has been already used, dupl
+icate ignored
+<to be read again> 
+                   \relax 
+l.60 ...M}~A\-D\-C\-\_\-\-C\-H\-E\-R\-\_\-\-C\-H5}
+                                                  \label{group___board__mode...
+[27
 
- []
 
-[31]
-Underfull \hbox (badness 10000) detected at line 51
-[][][]
- []
+]pdfTeX warning (ext4): destination with the same identifier (name{group___boar
+d__model__group_gabbdb157ae4ad39d102935c21fa30d1c5}) has been already used, dup
+licate ignored
+<to be read again> 
+                   \relax 
+l.63 ...02935c21fa30d1c5}{S\-C\-\_\-\-P\-I\-N}~A3}
+                                                  \label{group___board__mode...
+pdfTeX warning (ext4): destination with the same identifier (name{group___board
+__model__group_ga564adb575db2620ac85e3abdd6a5bbaf}) has been already used, dupl
+icate ignored
+<to be read again> 
+                   \relax 
+l.66 ...M}~A\-D\-C\-\_\-\-C\-H\-E\-R\-\_\-\-C\-H4}
+                                                  \label{group___board__mode...
 
-
-Underfull \hbox (badness 10000) detected at line 55
-[][][]
- []
-
-) (can__funzionale_8h.tex
-Underfull \hbox (badness 10000) in paragraph at lines 8--9
-
- []
-
-[32]
-Underfull \hbox (badness 10000) detected at line 29
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 33
-[][][]
- []
-
-) (_c_a_n___i_d_8h.tex
-Underfull \hbox (badness 10000) detected at line 24
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 28
-[][][]
- []
-
-) (can__servizi_8cpp.tex
-Underfull \hbox (badness 10000) in paragraph at lines 8--11
-
- []
-
-[33] [34]
 Underfull \hbox (badness 10000) detected at line 72
 [][][]
  []
@@ -1638,38 +1629,190 @@ Underfull \hbox (badness 10000) detected at line 76
 [][][]
  []
 
+) (can__funzionale_8cpp.tex
+Underfull \hbox (badness 10000) in paragraph at lines 9--13
+
+ []
+
+[28]pdfTeX warning (ext4): destination with the same identifier (name{group___c
+_a_n__funzionale__group_ga8cd40fe9b965184307fe5886fcef6236}) has been already u
+sed, duplicate ignored
+<to be read again> 
+                   \relax 
+l.39 ...}{can\-\_\-funz\-\_\-initialized} = false}
+                                                  \label{group___c_a_n__funz...
+pdfTeX warning (ext4): destination with the same identifier (name{group___c_a_n
+__funzionale__group_ga392f688b1edd69f29b48818a5b9b19ae}) has been already used,
+ duplicate ignored
+<to be read again> 
+                   \relax 
+l.42 ...8a5b9b19ae}{inverter\-\_\-online} = false}
+                                                  \label{group___c_a_n__funz...
+pdfTeX warning (ext4): destination with the same identifier (name{group___c_a_n
+__funzionale__group_ga979fff19d884e9a83eecc2309b36ad0c}) has been already used,
+ duplicate ignored
+<to be read again> 
+                   \relax 
+l.45 ...36ad0c}{inverter\-\_\-configured} = false}
+                                                  \label{group___c_a_n__funz...
+pdfTeX warning (ext4): destination with the same identifier (name{group___c_a_n
+__funzionale__group_ga99ead1878913db87bc7cc808a8392e21}) has been already used,
+ duplicate ignored
+<to be read again> 
+                   \relax 
+l.48 ...92e21}{torque\-\_\-actual\-\_\-value} = 0}
+                                                  \label{group___c_a_n__funz...
+
+Underfull \hbox (badness 10000) detected at line 54
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 58
+[][][]
+ []
+
+) (can__funzionale_8h.tex
+Underfull \hbox (badness 10000) in paragraph at lines 9--10
+
+ []
+
+[29]
+Underfull \hbox (badness 10000) detected at line 28
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 32
+[][][]
+ []
+
+) (_c_a_n___i_d_8h.texpdfTeX warning (ext4): destination with the same identifi
+er (name{group___c_a_n__module__group_ga5703fd8de5ab8d0dcedb561f2178829e}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.12 ...{V\-C\-U\-\_\-\-N\-O\-D\-E\-\_\-\-I\-D}~2}
+                                                  \label{group___c_a_n__modu...
+pdfTeX warning (ext4): destination with the same identifier (name{group___c_a_n
+__funzionale__group_ga59ea82aec4abe07072cbdad555a8c1b9}) has been already used,
+ duplicate ignored
+<to be read again> 
+                   \relax 
+l.15 ...-T\-E\-R\-\_\-\-N\-O\-D\-E\-\_\-\-I\-D}~1}
+                                                  \label{group___c_a_n__funz...
+pdfTeX warning (ext4): destination with the same identifier (name{group___c_a_n
+__servizi__group_ga8d64b6b4c0f02ebded5440c6250e03b9}) has been already used, du
+plicate ignored
+<to be read again> 
+                   \relax 
+l.18 ...-T\-A\-L\-\_\-\-N\-O\-D\-E\-\_\-\-I\-D}~1}
+                                                  \label{group___c_a_n__serv...
+pdfTeX warning (ext4): destination with the same identifier (name{group___c_a_n
+__servizi__group_gaceef3f7366b39e88d89cb98ad8094c7b}) has been already used, du
+plicate ignored
+<to be read again> 
+                   \relax 
+l.21 ...{T\-C\-U\-\_\-\-N\-O\-D\-E\-\_\-\-I\-D}~4}
+                                                  \label{group___c_a_n__serv...
+[30]
+Underfull \hbox (badness 10000) detected at line 27
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 31
+[][][]
+ []
+
+) (can__servizi_8cpp.tex
+Underfull \hbox (badness 10000) in paragraph at lines 9--12
+
+ []
+
+[31]pdfTeX warning (ext4): destination with the same identifier (name{group___c
+_a_n__servizi__group_gaf351ebc02b2d28174f8e4b18ff9edf5f}) has been already used
+, duplicate ignored
+<to be read again> 
+                   \relax 
+l.46 ...}{can\-\_\-serv\-\_\-initialized} = false}
+                                                  \label{group___c_a_n__serv...
+pdfTeX warning (ext4): destination with the same identifier (name{group___c_a_n
+__servizi__group_gafc26efcf97051372e70a8d0f2f0c79f0}) has been already used, du
+plicate ignored
+<to be read again> 
+                   \relax 
+l.49 ...f0}{S\-C\-U\-\_\-\-F\-\_\-online} = false}
+                                                  \label{group___c_a_n__serv...
+pdfTeX warning (ext4): destination with the same identifier (name{group___c_a_n
+__servizi__group_gad3e88db55b4105026b7e451f853a796b}) has been already used, du
+plicate ignored
+<to be read again> 
+                   \relax 
+l.52 ...51f853a796b}{T\-C\-S\-\_\-online} = false}
+                                                  \label{group___c_a_n__serv...
+pdfTeX warning (ext4): destination with the same identifier (name{group___c_a_n
+__servizi__group_gacad002b7cb06bffa8811859e6f53cb28}) has been already used, du
+plicate ignored
+<to be read again> 
+                   \relax 
+l.55 ...}{curr\-\_\-pedals\-\_\-seq\-\_\-num} = 0}
+                                                  \label{group___c_a_n__serv...
+pdfTeX warning (ext4): destination with the same identifier (name{group___c_a_n
+__servizi__group_gadcbd4ad67b50cf61731266bf5c5ba158}) has been already used, du
+plicate ignored
+<to be read again> 
+                   \relax 
+l.58 ...}{next\-\_\-pedals\-\_\-seq\-\_\-num} = 0}
+                                                  \label{group___c_a_n__serv...
+pdfTeX warning (ext4): destination with the same identifier (name{group___c_a_n
+__servizi__group_gaa9de48f5a49bc92a608ed315c087f3a6}) has been already used, du
+plicate ignored
+<to be read again> 
+                   \relax 
+l.67 ...5c087f3a6}{apps\-\_\-plausibility} = true}
+                                                  \label{group___c_a_n__serv...
+pdfTeX warning (ext4): destination with the same identifier (name{group___c_a_n
+__servizi__group_gae505d69d6ac9d4e7e3c2268ca6cb20b3}) has been already used, du
+plicate ignored
+<to be read again> 
+                   \relax 
+l.70 ...a6cb20b3}{brake\-\_\-plausibility} = true}
+                                                  \label{group___c_a_n__serv...
+pdfTeX warning (ext4): destination with the same identifier (name{group___c_a_n
+__servizi__group_gac6f04deffa2553115dad7c8b45e14d8b}) has been already used, du
+plicate ignored
+<to be read again> 
+                   \relax 
+l.73 ...ad7c8b45e14d8b}{tcs\-\_\-coefficient} = 0}
+                                                  \label{group___c_a_n__serv...
+
+Underfull \hbox (badness 10000) detected at line 79
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 83
+[][][]
+ []
+
 ) (can__servizi_8h.tex
-Underfull \hbox (badness 10000) in paragraph at lines 8--9
+Underfull \hbox (badness 10000) in paragraph at lines 9--10
 
  []
 
-[35]
-Underfull \hbox (badness 10000) detected at line 39
+[32]
+Underfull \hbox (badness 10000) detected at line 38
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 43
+Underfull \hbox (badness 10000) detected at line 42
 [][][]
  []
 
-) (_c_o__can_8cpp.tex
-Underfull \hbox (badness 10000) in paragraph at lines 8--11
-
- []
-
-
-Underfull \hbox (badness 10000) detected at line 21
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 25
-[][][]
- []
-
-) (_c_o__can_8h.tex [36]
-Underfull \hbox (badness 10000) in paragraph at lines 8--10
+) (_c_o__can_8cpp.tex [33]
+Underfull \hbox (badness 10000) in paragraph at lines 9--12
 
  []
 
@@ -1683,49 +1826,24 @@ Underfull \hbox (badness 10000) detected at line 24
 [][][]
  []
 
-) (common_8h.tex
-Underfull \hbox (badness 10000) in paragraph at lines 8--11
+) (_c_o__can_8h.tex
+Underfull \hbox (badness 10000) in paragraph at lines 9--11
 
  []
 
-[37]
-Underfull \hbox (badness 10000) detected at line 40
+
+Underfull \hbox (badness 10000) detected at line 19
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 44
+Underfull \hbox (badness 10000) detected at line 23
 [][][]
  []
 
-) (model_8cpp.tex
-Underfull \hbox (badness 10000) in paragraph at lines 8--12
+) (common_8h.tex [34]
+Underfull \hbox (badness 10000) in paragraph at lines 9--12
 
- []
-
-
-Overfull \hbox (28.82356pt too wide) in paragraph at lines 25--26
-[]\T1/phv/m/n/10 #define [] [] $\OMS/cmsy/m/n/10 j$ [] $j$ []
- []
-
-[38] [39]
-Underfull \hbox (badness 10000) detected at line 116
-[][][]
- []
-
-
-Underfull \hbox (badness 10000) detected at line 120
-[][][]
- []
-
-) (model_8h.tex
-Underfull \hbox (badness 10000) in paragraph at lines 8--9
-
- []
-
-[40]
-Underfull \hbox (badness 10000) detected at line 35
-[][][]
  []
 
 
@@ -1733,74 +1851,425 @@ Underfull \hbox (badness 10000) detected at line 39
 [][][]
  []
 
+
+Underfull \hbox (badness 10000) detected at line 43
+[][][]
+ []
+
+) (model_8cpp.tex
+Underfull \hbox (badness 10000) in paragraph at lines 9--13
+
+ []
+
+pdfTeX warning (ext4): destination with the same identifier (name{group___board
+__model__group_ga602abb8ec84dcb3b6f854a738310ea46}) has been already used, dupl
+icate ignored
+<to be read again> 
+                   \relax 
+l.16 ...\-B\-U\-F\-F\-E\-R\-\_\-\-S\-I\-Z\-E}~128}
+                                                  \label{group___board__mode...
+pdfTeX warning (ext4): destination with the same identifier (name{group___board
+__model__group_gaabe0f927d44a09f458bd5fe5ab4e2f7f}) has been already used, dupl
+icate ignored
+<to be read again> 
+                   \relax 
+l.19 ...#define {\bfseries B\-U\-F\-F\-E\-R\-S}~4}
+                                                  \label{group___board__mode...
+[35]pdfTeX warning (ext4): destination with the same identifier (name{group___b
+oard__model__group_gaf0098a1eafb8a60a1c65773e1064d595}) has been already used, 
+duplicate ignored
+<to be read again> 
+                   \relax 
+l.22 ...65773e1064d595}{A\-D\-C\-\_\-\-M\-I\-N}~0}
+                                                  \label{group___board__mode...
+pdfTeX warning (ext4): destination with the same identifier (name{group___board
+__model__group_ga555a695bf58df062dc03f0e892d95cd7}) has been already used, dupl
+icate ignored
+<to be read again> 
+                   \relax 
+l.25 ...0e892d95cd7}{A\-D\-C\-\_\-\-M\-A\-X}~4095}
+                                                  \label{group___board__mode...
+pdfTeX warning (ext4): destination with the same identifier (name{group___board
+__model__group_ga3e1022cd2e2154437b583f7ff83f2960}) has been already used, dupl
+icate ignored
+<to be read again> 
+                   \relax 
+l.28 ...-\-P\-L\-A\-U\-S\-\_\-\-R\-A\-N\-G\-E}~10}
+                                                  \label{group___board__mode...
+pdfTeX warning (ext4): destination with the same identifier (name{group___board
+__model__group_ga8b6fbd5b46174be3b86bc1ab5daa9080}) has been already used, dupl
+icate ignored
+<to be read again> 
+                   \relax 
+l.31 ...A\-D\-C\-\_\-\-C\-H\-A\-N\-\_\-\-N\-U\-M}}
+                                                  \label{group___board__mode...
+pdfTeX warning (ext4): destination with the same identifier (name{group___board
+__model__group_ga065dcfa648ca52ed6214008cb177de36}) has been already used, dupl
+icate ignored
+<to be read again> 
+                   \relax 
+l.34 ...{A\-D\-C\-\_\-\-C\-H\-A\-N\-N\-E\-L\-S}~4}
+                                                  \label{group___board__mode...
+pdfTeX warning (ext4): destination with the same identifier (name{group___board
+__model__group_ga7ce02d79fba23321a377a26a963e2bdf}) has been already used, dupl
+icate ignored
+<to be read again> 
+                   \relax 
+l.37 ...-\_\-\-A\-D\-C\-\_\-\-O\-F\-F\-S\-E\-T}~0}
+                                                  \label{group___board__mode...
+pdfTeX warning (ext4): destination with the same identifier (name{group___board
+__model__group_ga24019e59e805c7acf8f816e141d3d689}) has been already used, dupl
+icate ignored
+<to be read again> 
+                   \relax 
+l.40 ...-\_\-\-A\-D\-C\-\_\-\-O\-F\-F\-S\-E\-T}~1}
+                                                  \label{group___board__mode...
+pdfTeX warning (ext4): destination with the same identifier (name{group___board
+__model__group_gade98eccd60c9b68cde78ca4c0009a84c}) has been already used, dupl
+icate ignored
+<to be read again> 
+                   \relax 
+l.43 ...-\_\-\-A\-D\-C\-\_\-\-O\-F\-F\-S\-E\-T}~2}
+                                                  \label{group___board__mode...
+pdfTeX warning (ext4): destination with the same identifier (name{group___board
+__model__group_ga58133efa918e1af6c0cc436137c78cc0}) has been already used, dupl
+icate ignored
+<to be read again> 
+                   \relax 
+l.46 ...-\_\-\-A\-D\-C\-\_\-\-O\-F\-F\-S\-E\-T}~3}
+                                                  \label{group___board__mode...
+pdfTeX warning (ext4): destination with the same identifier (name{group___board
+__model__group_gaf7b7dc9a200cb1404c280bd500fd1551}) has been already used, dupl
+icate ignored
+<to be read again> 
+                   \relax 
+l.49 ...6}{A\-D\-C\-\_\-\-C\-H\-A\-N\-N\-E\-L\-S}}
+                                                  \label{group___board__mode...
+pdfTeX warning (ext4): destination with the same identifier (name{group___board
+__model__group_ga6741cba3daf129b6f73eed1b1db09519}) has been already used, dupl
+icate ignored
+<to be read again> 
+                   \relax 
+l.52 ...-U\-P\-P\-E\-R\-\_\-\-B\-O\-U\-N\-D}~2482}
+                                                  \label{group___board__mode...
+pdfTeX warning (ext4): destination with the same identifier (name{group___board
+__model__group_ga9c9aa914f6b372d9ef3f15ce4108da6a}) has been already used, dupl
+icate ignored
+<to be read again> 
+                   \relax 
+l.55 ...\-L\-O\-W\-E\-R\-\_\-\-B\-O\-U\-N\-D}~993}
+                                                  \label{group___board__mode...
+pdfTeX warning (ext4): destination with the same identifier (name{group___board
+__model__group_gac8be8d89c699c40b79d04c0fdf6238f4}) has been already used, dupl
+icate ignored
+<to be read again> 
+                   \relax 
+l.58 ...-U\-P\-P\-E\-R\-\_\-\-B\-O\-U\-N\-D}~1241}
+                                                  \label{group___board__mode...
+pdfTeX warning (ext4): destination with the same identifier (name{group___board
+__model__group_gadfcc723e175ac44e73e38407299ac875}) has been already used, dupl
+icate ignored
+<to be read again> 
+                   \relax 
+l.61 ...\-L\-O\-W\-E\-R\-\_\-\-B\-O\-U\-N\-D}~497}
+                                                  \label{group___board__mode...
+pdfTeX warning (ext4): destination with the same identifier (name{group___board
+__model__group_ga891de03ab9e1bd9a92ffffe69a1b10ca}) has been already used, dupl
+icate ignored
+<to be read again> 
+                   \relax 
+l.64 ...\-\-U\-P\-P\-E\-R\-\_\-\-B\-O\-U\-N\-D}~0}
+                                                  \label{group___board__mode...
+pdfTeX warning (ext4): destination with the same identifier (name{group___board
+__model__group_ga0aed20cafcc206360abda47b125432c7}) has been already used, dupl
+icate ignored
+<to be read again> 
+                   \relax 
+l.67 ...dc03f0e892d95cd7}{A\-D\-C\-\_\-\-M\-A\-X}}
+                                                  \label{group___board__mode...
+pdfTeX warning (ext4): destination with the same identifier (name{group___board
+__model__group_gaedc241164d501dcbc52cde232333c9cf}) has been already used, dupl
+icate ignored
+<to be read again> 
+                   \relax 
+l.73 ...oid {\bfseries A\-D\-C\-\_\-\-Handler} ()}
+                                                  \label{group___board__mode...
+[36]pdfTeX warning (ext4): destination with the same identifier (name{group___b
+oard__model__group_ga7c7f5690cca986bc3fb2f6dcbda24690}) has been already used, 
+duplicate ignored
+<to be read again> 
+                   \relax 
+l.93 ...series tps1\-\_\-adc\-\_\-percentage} = 0}
+                                                  \label{group___board__mode...
+pdfTeX warning (ext4): destination with the same identifier (name{group___board
+__model__group_gae1f465253d690605c0948394a3f055f4}) has been already used, dupl
+icate ignored
+<to be read again> 
+                   \relax 
+l.96 ...series tps2\-\_\-adc\-\_\-percentage} = 0}
+                                                  \label{group___board__mode...
+pdfTeX warning (ext4): destination with the same identifier (name{group___board
+__model__group_ga709add26e40f60e3add32981ea2a5868}) has been already used, dupl
+icate ignored
+<to be read again> 
+                   \relax 
+l.99 ...eries brake\-\_\-adc\-\_\-percentage} = 0}
+                                                  \label{group___board__mode...
+pdfTeX warning (ext4): destination with the same identifier (name{group___board
+__model__group_ga3e919d1e6477d52b4ccddd497351d3ec}) has been already used, dupl
+icate ignored
+<to be read again> 
+                   \relax 
+l.102 ...{apps\-\_\-adc\-\_\-plausibility} = true}
+                                                  \label{group___board__mode...
+pdfTeX warning (ext4): destination with the same identifier (name{group___board
+__model__group_gaf6aa7f974533c4306128757d0634572a}) has been already used, dupl
+icate ignored
+<to be read again> 
+                   \relax 
+l.105 ...brake\-\_\-adc\-\_\-plausibility} = true}
+                                                  \label{group___board__mode...
+pdfTeX warning (ext4): destination with the same identifier (name{group___board
+__model__group_ga3d6043851868b7da3c1d6381f835a559}) has been already used, dupl
+icate ignored
+<to be read again> 
+                   \relax 
+l.108 ...da3c1d6381f835a559}{tps1\-\_\-value} = 0}
+                                                  \label{group___board__mode...
+pdfTeX warning (ext4): destination with the same identifier (name{group___board
+__model__group_gaa8a9b03858f40eadfd5d3d6c3e266834}) has been already used, dupl
+icate ignored
+<to be read again> 
+                   \relax 
+l.111 ...adfd5d3d6c3e266834}{tps2\-\_\-value} = 0}
+                                                  \label{group___board__mode...
+pdfTeX warning (ext4): destination with the same identifier (name{group___board
+__model__group_gad7966e70fb4bebc6947eb3fbb059a3c9}) has been already used, dupl
+icate ignored
+<to be read again> 
+                   \relax 
+l.114 ...6947eb3fbb059a3c9}{brake\-\_\-value} = 0}
+                                                  \label{group___board__mode...
+pdfTeX warning (ext4): destination with the same identifier (name{group___board
+__model__group_ga0b4151ed3267a5fae4789f4b3ffe7bbd}) has been already used, dupl
+icate ignored
+<to be read again> 
+                   \relax 
+l.117 ...fae4789f4b3ffe7bbd}{S\-C\-\_\-value} = 0}
+                                                  \label{group___board__mode...
+pdfTeX warning (ext4): destination with the same identifier (name{group___board
+__model__group_gaf1d46fb483b2a63c3da25c11688af7c4}) has been already used, dupl
+icate ignored
+<to be read again> 
+                   \relax 
+l.120 ...\-\_\-t {\bfseries tps1\-\_\-max} = 2482}
+                                                  \label{group___board__mode...
+pdfTeX warning (ext4): destination with the same identifier (name{group___board
+__model__group_ga51d40eb16833e50f71e595ab0a45795e}) has been already used, dupl
+icate ignored
+<to be read again> 
+                   \relax 
+l.123 ...6\-\_\-t {\bfseries tps1\-\_\-low} = 993}
+                                                  \label{group___board__mode...
+pdfTeX warning (ext4): destination with the same identifier (name{group___board
+__model__group_ga53381436ea8db96c356db8b305bec988}) has been already used, dupl
+icate ignored
+<to be read again> 
+                   \relax 
+l.126 ...\-\_\-t {\bfseries tps2\-\_\-max} = 1241}
+                                                  \label{group___board__mode...
+pdfTeX warning (ext4): destination with the same identifier (name{group___board
+__model__group_gab03e92ec2b5f742e5a147a6589d3975e}) has been already used, dupl
+icate ignored
+<to be read again> 
+                   \relax 
+l.129 ...6\-\_\-t {\bfseries tps2\-\_\-low} = 497}
+                                                  \label{group___board__mode...
+pdfTeX warning (ext4): destination with the same identifier (name{group___board
+__model__group_ga744857a9bc060647cfc4ad47017c5bee}) has been already used, dupl
+icate ignored
+<to be read again> 
+                   \relax 
+l.132 ...16\-\_\-t {\bfseries brake\-\_\-max} = 0}
+                                                  \label{group___board__mode...
+pdfTeX warning (ext4): destination with the same identifier (name{group___board
+__model__group_gaaf843a7e652e5cf9b270d0b211be937c}) has been already used, dupl
+icate ignored
+<to be read again> 
+                   \relax 
+l.135 ...-\_\-t {\bfseries brake\-\_\-low} = 4095}
+                                                  \label{group___board__mode...
+pdfTeX warning (ext4): destination with the same identifier (name{group___board
+__model__group_gad2658b77f345b15c03759c02d1ba0e81}) has been already used, dupl
+icate ignored
+<to be read again> 
+                   \relax 
+l.138 ...2d1ba0e81}{volatile int {\bfseries bufn}}
+                                                  \label{group___board__mode...
+pdfTeX warning (ext4): destination with the same identifier (name{group___board
+__model__group_gafef4d6ed48b3edc5f7a74defba82e7d8}) has been already used, dupl
+icate ignored
+<to be read again> 
+                   \relax 
+l.141 ...ba82e7d8}{volatile int {\bfseries obufn}}
+                                                  \label{group___board__mode...
+pdfTeX warning (ext4): destination with the same identifier (name{group___board
+__model__group_gabaadbcc3b48e8ec3798741a74a672046}) has been already used, dupl
+icate ignored
+<to be read again> 
+                   \relax 
+l.144 ...x{[}4\mbox{]}\mbox{[}128 $\ast$4\mbox{]}}
+                                                  \label{group___board__mode...
+pdfTeX warning (ext4): destination with the same identifier (name{group___board
+__model__group_ga481292a7bd814aefcdc2deb9872f5421}) has been already used, dupl
+icate ignored
+<to be read again> 
+                   \relax 
+l.147 ...atile bool {\bfseries calibrate} = false}
+                                                  \label{group___board__mode...
+
+Underfull \hbox (badness 10000) detected at line 153
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 157
+[][][]
+ []
+
+) (model_8h.tex [37]
+Underfull \hbox (badness 10000) in paragraph at lines 9--10
+
+ []
+
+pdfTeX warning (ext4): destination with the same identifier (name{group___board
+__model__group_ga56b9cca331f294c3249df72b9f37ff2a}) has been already used, dupl
+icate ignored
+<to be read again> 
+                   \relax 
+l.27 ...s model\-\_\-enable\-\_\-calibrations} ()}
+                                                  \label{group___board__mode...
+pdfTeX warning (ext4): destination with the same identifier (name{group___board
+__model__group_ga8ce089b65afda1dee23f7ecefd0cb873}) has been already used, dupl
+icate ignored
+<to be read again> 
+                   \relax 
+l.30 ... model\-\_\-disable\-\_\-calibrations} ()}
+                                                  \label{group___board__mode...
+
+Underfull \hbox (badness 10000) detected at line 36
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 40
+[][][]
+ []
+
 ) (_v_c_u_8ino.tex
-Underfull \hbox (badness 10000) in paragraph at lines 8--13
+Underfull \hbox (badness 10000) in paragraph at lines 9--14
 
  []
 
-[41]
-Underfull \hbox (badness 10000) detected at line 25
+[38]
+Underfull \hbox (badness 10000) detected at line 24
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 29
+Underfull \hbox (badness 10000) detected at line 28
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 45
+Underfull \hbox (badness 10000) detected at line 49
 [][][]
  []
 
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 7.19995pt on input line 68.
 
-Underfull \hbox (badness 10000) detected at line 67
+Underfull \hbox (badness 10000) detected at line 80
 [][][]
  []
 
-) [42] (refman.ind [43
+) [39] (refman.ind [40
 
-
-
-] [44
+] [41
 
 ])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 178.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 178.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 169.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 169.
  (refman.aux (group___c_a_n__funzionale__group.aux) (group___c_a_n__servizi__gr
 oup.aux) (group___board__model__group.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 178.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 178.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 169.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 169.
 Package rerunfilecheck Info: File `refman.out' has not changed.
-(rerunfilecheck)             Checksum: 936951DCC2B97C34D4AE683B5D3D3568;16974.
+(rerunfilecheck)             Checksum: CBFB489B51EF189E3CD64C61FEA213C1;13992.
 
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 178.
+
+LaTeX Warning: There were multiply-defined labels.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 169.
  ) 
 Here is how much of TeX's memory you used:
- 15653 strings out of 493305
- 234726 string characters out of 3138874
- 339906 words of memory out of 3000000
- 18588 multiletter control sequences out of 15000+200000
- 65698 words of font info for 84 fonts, out of 3000000 for 9000
+ 12575 strings out of 492973
+ 188293 string characters out of 3135933
+ 267493 words of memory out of 3000000
+ 15903 multiletter control sequences out of 15000+200000
+ 80145 words of font info for 109 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 53i,16n,92p,2919b,622s stack positions out of 5000i,500n,10000p,200000b,50000s
-{D:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<D:/Program Files/Mi
-KTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><D:/Program Files/MiKTeX 2.9
-/fonts/type1/public/amsfonts/cm/cmmi7.pfb><D:/Program Files/MiKTeX 2.9/fonts/ty
-pe1/public/amsfonts/cm/cmsy10.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/publ
-ic/amsfonts/cm/cmsy7.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfon
-ts/cm/cmsy8.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/urw/courier/ucrr8a.pfb
-><D:/Program Files/MiKTeX 2.9/fonts/type1/urw/courier/ucrro8a.pfb><D:/Program F
-iles/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb><D:/Program Files/MiKTeX 2.
-9/fonts/type1/urw/helvetic/uhvb8ac.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1
-/urw/helvetic/uhvr8a.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/urw/helvetic/
-uhvro8a.pfb>
-Output written on refman.pdf (50 pages, 369266 bytes).
+ 48i,13n,43p,1017b,526s stack positions out of 5000i,500n,10000p,200000b,50000s
+pdfTeX warning (dest): name{_v_c_u_8ino_source} has been referenced but does 
+not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{model_8h_source} has been referenced but does not e
+xist, replaced by a fixed one
+
+pdfTeX warning (dest): name{model_8cpp_source} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{common_8h_source} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{_c_o__can_8h_source} has been referenced but does n
+ot exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{_c_o__can_8cpp_source} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{can__servizi_8h_source} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{can__servizi_8cpp_source} has been referenced but d
+oes not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{_c_a_n___i_d_8h_source} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{can__funzionale_8h_source} has been referenced but 
+does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{can__funzionale_8cpp_source} has been referenced bu
+t does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{board__pinout_8h_source} has been referenced but do
+es not exist, replaced by a fixed one
+
+{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/Program Files/MiKT
+eX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9/f
+onts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/typ
+e1/urw/courier/ucrr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/helvetic
+/uhvb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8ac.pfb><
+C:/Program Files/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvbo8ac.pfb><C:/Program F
+iles/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Program Files/MiKTeX 2.
+9/fonts/type1/urw/helvetic/uhvro8a.pfb>
+Output written on refman.pdf (47 pages, 353521 bytes).
 PDF statistics:
- 1336 PDF objects out of 1440 (max. 8388607)
- 315 named destinations out of 1000 (max. 500000)
- 657 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1355 PDF objects out of 1440 (max. 8388607)
+ 304 named destinations out of 1000 (max. 500000)
+ 673 words of extra memory for PDF output out of 10000 (max. 10000000)
 

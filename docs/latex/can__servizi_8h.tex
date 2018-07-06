@@ -1,45 +1,48 @@
-\hypertarget{can__servizi_8h}{}\section{can\+\_\+servizi.\+h File Reference}
-\label{can__servizi_8h}\index{can\+\_\+servizi.\+h@{can\+\_\+servizi.\+h}}
+\hypertarget{can__servizi_8h}{\section{can\-\_\-servizi.\-h File Reference}
+\label{can__servizi_8h}\index{can\-\_\-servizi.\-h@{can\-\_\-servizi.\-h}}
+}
 
 
-C\+AN servizi module header.  
+C\-A\-N servizi module header.  
 
 
-{\ttfamily \#include \char`\"{}common.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}common.\-h\char`\"{}}\\*
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-bool \mbox{\hyperlink{group___c_a_n__servizi__group_ga2d29bd107e96ae1986e8874f004ffc84}{can\+\_\+servizi\+\_\+init}} ()
-\begin{DoxyCompactList}\small\item\em This function initialize C\+AN servizi hardware port with baudrate \mbox{\hyperlink{common_8h_a2a5e84dfc7fa972b75e7ddbc6cc52a45}{C\+A\+N\+\_\+\+S\+E\+R\+V\+\_\+\+B\+A\+U\+D\+R\+A\+TE}}. Mailbox 0 is configured for receiving boot-\/up messages from C\+AN servizi slave nodes (filter = 0x00000700, mask = 0x1\+F\+F\+F\+F\+F80); remaining mailboxes are configured for receiving T\+P\+D\+Os from C\+AN servizi slave nodes (filter = 0x00000080, mask = 0x1\+F\+F\+F\+F\+C80). \end{DoxyCompactList}\item 
-volatile bool \mbox{\hyperlink{group___c_a_n__servizi__group_gaa460928ec03256a076ebafceab10c2be}{can\+\_\+servizi\+\_\+initialized}} ()
-\begin{DoxyCompactList}\small\item\em This function returns C\+AN servizi initialization status. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{group___c_a_n__servizi__group_gad444fb6be3b439dcfbefff66e85efd94}{can\+\_\+servizi\+\_\+go\+\_\+operational}} ()
-\begin{DoxyCompactList}\small\item\em This function send a C\+A\+N\+Open master N\+MT message for request \textquotesingle{}go to Operational\textquotesingle{} state to C\+AN servizi slave nodes (S\+C\+Us and T\+CU). \end{DoxyCompactList}\item 
-volatile bool \mbox{\hyperlink{group___c_a_n__servizi__group_ga43e9ef52770f760c5751d83b138c7e6b}{can\+\_\+servizi\+\_\+online}} ()
-\begin{DoxyCompactList}\small\item\em This function returns if C\+AN servizi network is online. \end{DoxyCompactList}\item 
-volatile bool \mbox{\hyperlink{group___c_a_n__servizi__group_ga0c5f72386ae62e3e0b6908efa2fb2b28}{tcs\+\_\+online}} ()
-\begin{DoxyCompactList}\small\item\em This function returns if T\+CU node is active and online on the C\+AN servizi network. \end{DoxyCompactList}\item 
-volatile uint8\+\_\+t \mbox{\hyperlink{group___c_a_n__servizi__group_gac899876f81f391e2daafcd8b22d2f32e}{get\+\_\+servizi\+\_\+tps1}} ()
-\begin{DoxyCompactList}\small\item\em This function returns the value of the first A\+P\+PS in percentage, retrieved by frontal S\+CU node over C\+AN servizi network. \end{DoxyCompactList}\item 
-volatile uint8\+\_\+t \mbox{\hyperlink{group___c_a_n__servizi__group_ga431b31efe978864b1a2db0d57a5b572a}{get\+\_\+servizi\+\_\+tps2}} ()
-\begin{DoxyCompactList}\small\item\em This function returns the value of the second A\+P\+PS in percentage, retrieved by frontal S\+CU node over C\+AN servizi network. \end{DoxyCompactList}\item 
-volatile uint8\+\_\+t \mbox{\hyperlink{group___c_a_n__servizi__group_ga21c09880bef645f24962658ef3dbb16e}{get\+\_\+servizi\+\_\+brake}} ()
-\begin{DoxyCompactList}\small\item\em This function returns the value of brake pedal position sensor in percentage, retrieved by frontal S\+CU node over C\+AN servizi network. \end{DoxyCompactList}\item 
-volatile bool \mbox{\hyperlink{group___c_a_n__servizi__group_ga66135a8978149fc6fa0b62446131ce95}{get\+\_\+servizi\+\_\+apps\+\_\+plausibility}} ()
-\begin{DoxyCompactList}\small\item\em This function returns the value of A\+P\+PS plausibility retrieved by frontal S\+CU node over C\+AN servizi network. \end{DoxyCompactList}\item 
-volatile bool \mbox{\hyperlink{group___c_a_n__servizi__group_ga064fdc5f825b2d50b1b13509e3f135d2}{get\+\_\+servizi\+\_\+brake\+\_\+plausibility}} ()
-\begin{DoxyCompactList}\small\item\em This function returns the value of brake plausibility retrieved by frontal S\+CU node over C\+AN servizi network. \end{DoxyCompactList}\item 
-volatile uint8\+\_\+t \mbox{\hyperlink{group___c_a_n__servizi__group_ga68bca94de95a77a3366f46eed661193f}{get\+\_\+tcs\+\_\+torque\+\_\+coefficient}} ()
-\begin{DoxyCompactList}\small\item\em This function returns the value of torque limiter percentage retrieved by T\+CU node over C\+AN servizi network. \end{DoxyCompactList}\end{DoxyCompactItemize}
+bool \hyperlink{group___c_a_n__servizi__group_ga2d29bd107e96ae1986e8874f004ffc84}{can\-\_\-servizi\-\_\-init} ()
+\begin{DoxyCompactList}\small\item\em This function initialize C\-A\-N servizi hardware port with baudrate \hyperlink{common_8h_a2a5e84dfc7fa972b75e7ddbc6cc52a45}{C\-A\-N\-\_\-\-S\-E\-R\-V\-\_\-\-B\-A\-U\-D\-R\-A\-T\-E}. Mailbox 0 is configured for receiving boot-\/up messages from C\-A\-N servizi slave nodes (filter = 0x00000700, mask = 0x1\-F\-F\-F\-F\-F80); remaining mailboxes are configured for receiving T\-P\-D\-Os from C\-A\-N servizi slave nodes (filter = 0x00000080, mask = 0x1\-F\-F\-F\-F\-C80). \end{DoxyCompactList}\item 
+volatile bool \hyperlink{group___c_a_n__servizi__group_gaa460928ec03256a076ebafceab10c2be}{can\-\_\-servizi\-\_\-initialized} ()
+\begin{DoxyCompactList}\small\item\em This function returns C\-A\-N servizi initialization status. \end{DoxyCompactList}\item 
+void \hyperlink{group___c_a_n__servizi__group_gad444fb6be3b439dcfbefff66e85efd94}{can\-\_\-servizi\-\_\-go\-\_\-operational} ()
+\begin{DoxyCompactList}\small\item\em This function send a C\-A\-N\-Open master N\-M\-T message for request 'go to Operational' state to C\-A\-N servizi slave nodes (S\-C\-Us and T\-C\-U). \end{DoxyCompactList}\item 
+volatile bool \hyperlink{group___c_a_n__servizi__group_ga43e9ef52770f760c5751d83b138c7e6b}{can\-\_\-servizi\-\_\-online} ()
+\begin{DoxyCompactList}\small\item\em This function returns if C\-A\-N servizi network is online. \end{DoxyCompactList}\item 
+volatile bool \hyperlink{group___c_a_n__servizi__group_ga0c5f72386ae62e3e0b6908efa2fb2b28}{tcs\-\_\-online} ()
+\begin{DoxyCompactList}\small\item\em This function returns if T\-C\-U node is active and online on the C\-A\-N servizi network. \end{DoxyCompactList}\item 
+volatile uint8\-\_\-t \hyperlink{group___c_a_n__servizi__group_gac899876f81f391e2daafcd8b22d2f32e}{get\-\_\-servizi\-\_\-tps1} ()
+\begin{DoxyCompactList}\small\item\em This function returns the value of the first A\-P\-P\-S in percentage, retrieved by frontal S\-C\-U node over C\-A\-N servizi network. \end{DoxyCompactList}\item 
+volatile uint8\-\_\-t \hyperlink{group___c_a_n__servizi__group_ga431b31efe978864b1a2db0d57a5b572a}{get\-\_\-servizi\-\_\-tps2} ()
+\begin{DoxyCompactList}\small\item\em This function returns the value of the second A\-P\-P\-S in percentage, retrieved by frontal S\-C\-U node over C\-A\-N servizi network. \end{DoxyCompactList}\item 
+volatile uint8\-\_\-t \hyperlink{group___c_a_n__servizi__group_ga21c09880bef645f24962658ef3dbb16e}{get\-\_\-servizi\-\_\-brake} ()
+\begin{DoxyCompactList}\small\item\em This function returns the value of brake pedal position sensor in percentage, retrieved by frontal S\-C\-U node over C\-A\-N servizi network. \end{DoxyCompactList}\item 
+volatile bool \hyperlink{group___c_a_n__servizi__group_ga66135a8978149fc6fa0b62446131ce95}{get\-\_\-servizi\-\_\-apps\-\_\-plausibility} ()
+\begin{DoxyCompactList}\small\item\em This function returns the value of A\-P\-P\-S plausibility retrieved by frontal S\-C\-U node over C\-A\-N servizi network. \end{DoxyCompactList}\item 
+volatile bool \hyperlink{group___c_a_n__servizi__group_ga064fdc5f825b2d50b1b13509e3f135d2}{get\-\_\-servizi\-\_\-brake\-\_\-plausibility} ()
+\begin{DoxyCompactList}\small\item\em This function returns the value of brake plausibility retrieved by frontal S\-C\-U node over C\-A\-N servizi network. \end{DoxyCompactList}\item 
+volatile uint8\-\_\-t \hyperlink{group___c_a_n__servizi__group_ga68bca94de95a77a3366f46eed661193f}{get\-\_\-tcs\-\_\-torque\-\_\-coefficient} ()
+\begin{DoxyCompactList}\small\item\em This function returns the value of torque limiter percentage retrieved by T\-C\-U node over C\-A\-N servizi network. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-C\+AN servizi module header. 
-
-\begin{DoxyAuthor}{Author}
-Arella Matteo ~\newline
- (mail\+: \href{mailto:arella.1646983@studenti.uniroma1.it}{\tt arella.\+1646983@studenti.\+uniroma1.\+it}) 
+C\-A\-N servizi module header. \begin{DoxyAuthor}{Author}
+Arella Matteo \par
+ (mail\-: \href{mailto:arella.1646983@studenti.uniroma1.it}{\tt arella.\-1646983@studenti.\-uniroma1.\-it}) 
 \end{DoxyAuthor}
 \begin{DoxyDate}{Date}
 2018 
 \end{DoxyDate}
+
+
+Definition in file \hyperlink{can__servizi_8h_source}{can\-\_\-servizi.\-h}.
+

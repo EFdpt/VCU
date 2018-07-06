@@ -1,3 +1,10 @@
+/** 
+ *  @file           board_pinout.h
+ *  @author         Arella Matteo <br/>
+ *                  (mail: arella.1646983@studenti.uniroma1.it)
+ *  @date           2018
+ *  @brief          Board pinout module header
+ */
 #ifndef _BOARD_PINOUT_H_
 #define _BOARD_PINOUT_H_
 
@@ -6,18 +13,70 @@
  *  @{
  */
 
+/**
+ *  @def CAN_FUNZIONALE
+ *  @brief Pin on board dedicated to CAN funzionale port
+ */
 #define CAN_FUNZIONALE              Can1
+
+/**
+ *  @def CAN_SERVIZI
+ *  @brief Pin on board dedicated to CAN servizi port
+ */
 #define CAN_SERVIZI                 Can0
 
+/**
+ *  @def AIRcc
+ *  @brief Pin on board dedicated to AIR+
+ */
 #define AIRcc                       48
+
+/**
+ *  @def AIRGnd
+ *  @brief Pin on board dedicated to AIR-
+ */
 #define AIRGnd                      49
+
+/**
+ *  @def PRE
+ *  @brief Pin on board dedicated to PRECHARGE
+ */
 #define PRE                         47
+
+/**
+ *  @def BUZZER
+ *  @brief Pin on board dedicated to buzzer for RTDS
+ */
 #define BUZZER                      52
+
+/**
+ *  @def AIRB
+ *  @brief Pin on board dedicated to AIR button
+ */
 #define AIRB                        14
+
+/**
+ *  @def RTDB
+ *  @brief Pin on board dedicated to RTD button
+ */
 #define RTDB                        15
+
+/**
+ *  @def FAN
+ *  @brief Pin on board dedicated to FAN
+ */
 #define FAN                         9
 
+/**
+ *  @def INVERTER_ANALOG_PIN
+ *  @brief Pin on board dedicated to inverter torque request analog signal
+ */
 #define INVERTER_ANALOG_PIN         DAC1
+
+/**
+ *  @def BRAKE_REGEN_PIN
+ *  @brief Pin on board dedicated to inverter regen request analog signal
+ */
 #define BRAKE_REGEN_PIN				DAC0
 
 /**

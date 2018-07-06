@@ -41,7 +41,7 @@
  *              (mail: arella.1646983@studenti.uniroma1.it)
  */
 void setup() {
-    volatile uint16_t timeout = 2000;
+    volatile uint16_t timeout = 1000;
 
     while (!can_init()) // initialize CAN bus baudrate & configure mailboxes
         if (timeout--) break;

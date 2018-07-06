@@ -9,7 +9,9 @@
 #include "filter.h"
 #include "can_servizi.h"
 
+#if 0
 #include <DueFlashStorage.h>
+#endif
 
 #undef HID_ENABLED
 
@@ -25,7 +27,7 @@
 #define ADC_BUFFER_SIZE         128
 
 /**
- *  @def BUFFERs
+ *  @def BUFFERS
  *  @brief Number of ADC buffers
  */
 #define BUFFERS                 4
@@ -151,9 +153,9 @@ volatile uint16_t   SC_value    = 0;
 
 /**
  * @def     TPS1_UPPER_BOUND
- * @brief   First APPS max output voltage (3V)
+ * @brief   First APPS max output voltage (2V)
  */
-#define TPS1_UPPER_BOUND            3723
+#define TPS1_UPPER_BOUND            2482
 
 /**
  * @def     TPS1_LOWER_BOUND
@@ -163,15 +165,15 @@ volatile uint16_t   SC_value    = 0;
 
 /**
  * @def     TPS2_UPPER_BOUND
- * @brief   Second APPS max output voltage (1.5V)
+ * @brief   Second APPS max output voltage (1V)
  */
-#define TPS2_UPPER_BOUND            1861
+#define TPS2_UPPER_BOUND            1241
 
 /**
  * @def     TPS2_LOWER_BOUND
  * @brief   Second APPS min output voltage (0.4V)
  */
-#define TPS2_LOWER_BOUND            496
+#define TPS2_LOWER_BOUND            497
 
 /**
  * @def     BRAKE_UPPER_BOUND
