@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['tcs_5fonline',['tcs_online',['../group___c_a_n__servizi__group.html#ga0c5f72386ae62e3e0b6908efa2fb2b28',1,'can_servizi.cpp']]],
-  ['timeout',['timeout',['../group___c_a_n__servizi__group.html#gad446b5782bcb2d8ffc0aa1f8c4d16ded',1,'can_servizi.cpp']]]
+  ['inverter_5fregen_5frequest',['inverter_regen_request',['../group___c_a_n__funzionale__group.html#ga75820e0d72b7f264a70d99f414745518',1,'can_funzionale.cpp']]],
+  ['inverter_5ftorque_5frequest',['inverter_torque_request',['../group___c_a_n__funzionale__group.html#ga41854ab275f2b3cb7efb9385502d7d65',1,'can_funzionale.cpp']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['can_20networks',['CAN Networks',['../_c_a_n.html',1,'']]]
+  ['board_20model',['Board model',['../_model_page.html',1,'']]]
 ];

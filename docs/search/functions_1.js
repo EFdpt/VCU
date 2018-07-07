@@ -1,16 +1,17 @@
 var searchData=
 [
-  ['get_5fapps_5fplausibility',['get_apps_plausibility',['../group___board__model__group.html#gae0acabf32ee7f2a82b2f9149ba3d1978',1,'model.cpp']]],
-  ['get_5fbrake_5fpercentage',['get_brake_percentage',['../group___board__model__group.html#ga6db41e7368919bc4dfafaf4e400ae1a9',1,'model.cpp']]],
-  ['get_5fbrake_5fplausibility',['get_brake_plausibility',['../group___board__model__group.html#gad47b702f79115e19d75b22f39b45efeb',1,'model.cpp']]],
-  ['get_5fsc_5fvalue',['get_SC_value',['../group___board__model__group.html#ga36eddbc000c8d1820fd2a644a39c87ea',1,'model.cpp']]],
-  ['get_5fservizi_5fapps_5fplausibility',['get_servizi_apps_plausibility',['../group___c_a_n__servizi__group.html#ga66135a8978149fc6fa0b62446131ce95',1,'can_servizi.cpp']]],
-  ['get_5fservizi_5fbrake',['get_servizi_brake',['../group___c_a_n__servizi__group.html#ga21c09880bef645f24962658ef3dbb16e',1,'can_servizi.cpp']]],
-  ['get_5fservizi_5fbrake_5fplausibility',['get_servizi_brake_plausibility',['../group___c_a_n__servizi__group.html#ga064fdc5f825b2d50b1b13509e3f135d2',1,'can_servizi.cpp']]],
-  ['get_5fservizi_5ftps1',['get_servizi_tps1',['../group___c_a_n__servizi__group.html#gac899876f81f391e2daafcd8b22d2f32e',1,'can_servizi.cpp']]],
-  ['get_5fservizi_5ftps2',['get_servizi_tps2',['../group___c_a_n__servizi__group.html#ga431b31efe978864b1a2db0d57a5b572a',1,'can_servizi.cpp']]],
-  ['get_5ftcs_5ftorque_5fcoefficient',['get_tcs_torque_coefficient',['../group___c_a_n__servizi__group.html#ga68bca94de95a77a3366f46eed661193f',1,'can_servizi.cpp']]],
-  ['get_5ftorque_5factual_5fvalue',['get_torque_actual_value',['../group___c_a_n__funzionale__group.html#ga3c4828f57a818b8e1b2f277c2174b5da',1,'can_funzionale.cpp']]],
-  ['get_5ftps1_5fpercentage',['get_tps1_percentage',['../group___board__model__group.html#ga9239a95f68fab3d9b6832fbe85eb87cd',1,'model.cpp']]],
-  ['get_5ftps2_5fpercentage',['get_tps2_percentage',['../group___board__model__group.html#gae563bbe9e3c31913df498ebd7cbf6c10',1,'model.cpp']]]
+  ['can_5ffunz_5fbootup_5fcb',['CAN_FUNZ_BOOTUP_CB',['../group___c_a_n__funzionale__group.html#gaf4990e00c0c4a9f9eeb9cb5bdaecfa94',1,'can_funzionale.cpp']]],
+  ['can_5ffunz_5fgeneral_5fcb',['CAN_FUNZ_GENERAL_CB',['../group___c_a_n__funzionale__group.html#ga1fcfa8e31cfbfe2461328c345b5b8e19',1,'can_funzionale.cpp']]],
+  ['can_5ffunz_5fvendor_5fid_5fcb',['CAN_FUNZ_VENDOR_ID_CB',['../group___c_a_n__funzionale__group.html#ga81bbc4c65d579febfbcae399f0ecbffc',1,'can_funzionale.cpp']]],
+  ['can_5ffunzionale_5finit',['can_funzionale_init',['../group___c_a_n__funzionale__group.html#ga578b28192b0c78942fcc0452d070accb',1,'can_funzionale.cpp']]],
+  ['can_5ffunzionale_5finitialized',['can_funzionale_initialized',['../group___c_a_n__funzionale__group.html#gaf1acdfa5537f47656edd6ffa3e7c24bd',1,'can_funzionale.cpp']]],
+  ['can_5ffunzionale_5fonline',['can_funzionale_online',['../group___c_a_n__funzionale__group.html#ga7d74fd826c5df3b86fd751f91c61671f',1,'can_funzionale.cpp']]],
+  ['can_5ffunzionale_5fsend_5fsync',['can_funzionale_send_sync',['../group___c_a_n__funzionale__group.html#gac93bbbf1b84f1bc82b26d54d7f898172',1,'can_funzionale.cpp']]],
+  ['can_5finit',['can_init',['../group___c_a_n__module__group.html#ga36b6b5924eb84ef2e4c2bd548b28436f',1,'CO_can.cpp']]],
+  ['can_5fserv_5fbootup_5fcb',['CAN_SERV_BOOTUP_CB',['../group___c_a_n__servizi__group.html#gaab9a1dbabaf97e474f5597e8b2a02c6e',1,'can_servizi.cpp']]],
+  ['can_5fserv_5fgeneral_5fcb',['CAN_SERV_GENERAL_CB',['../group___c_a_n__servizi__group.html#ga5897a28288e24aa5131ff5b81f5fedc8',1,'can_servizi.cpp']]],
+  ['can_5fservizi_5fgo_5foperational',['can_servizi_go_operational',['../group___c_a_n__servizi__group.html#gad444fb6be3b439dcfbefff66e85efd94',1,'can_servizi.cpp']]],
+  ['can_5fservizi_5finit',['can_servizi_init',['../group___c_a_n__servizi__group.html#ga2d29bd107e96ae1986e8874f004ffc84',1,'can_servizi.cpp']]],
+  ['can_5fservizi_5finitialized',['can_servizi_initialized',['../group___c_a_n__servizi__group.html#gaa460928ec03256a076ebafceab10c2be',1,'can_servizi.cpp']]],
+  ['can_5fservizi_5fonline',['can_servizi_online',['../group___c_a_n__servizi__group.html#ga43e9ef52770f760c5751d83b138c7e6b',1,'can_servizi.cpp']]]
 ];

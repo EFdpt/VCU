@@ -1,0 +1,7 @@
+<map id="model.h" name="model.h">
+<area shape="rect" id="node2" href="$filter_8h.html" title="Filter module header file. " alt="" coords="47,80,104,107"/>
+<area shape="rect" id="node4" href="$model_8cpp.html" title="Board model implementation file. " alt="" coords="101,155,183,181"/>
+<area shape="rect" id="node5" href="$states_8cpp.html" title="FSM implementation file. " alt="" coords="179,80,262,107"/>
+<area shape="rect" id="node6" href="$_v_c_u_8ino.html" title="Main module file. " alt="" coords="287,80,357,107"/>
+<area shape="rect" id="node3" href="$filter_8cpp.html" title="Filter module implementation file. " alt="" coords="5,155,76,181"/>
+</map>

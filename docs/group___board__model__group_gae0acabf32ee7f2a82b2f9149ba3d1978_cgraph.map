@@ -1,0 +1,4 @@
+<map id="get_apps_plausibility" name="get_apps_plausibility">
+<area shape="rect" id="node2" href="$group___c_a_n__servizi__group.html#ga43e9ef52770f760c5751d83b138c7e6b" title="This function returns if CAN servizi network is online. " alt="" coords="226,5,353,32"/>
+<area shape="rect" id="node3" href="$group___c_a_n__servizi__group.html#ga66135a8978149fc6fa0b62446131ce95" title="This function returns the value of APPS plausibility retrieved by frontal SCU node over CAN servizi n..." alt="" coords="196,56,383,83"/>
+</map>

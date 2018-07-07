@@ -1,0 +1,4 @@
+<map id="get_brake_percentage" name="get_brake_percentage">
+<area shape="rect" id="node2" href="$group___c_a_n__servizi__group.html#ga43e9ef52770f760c5751d83b138c7e6b" title="This function returns if CAN servizi network is online. " alt="" coords="204,5,331,32"/>
+<area shape="rect" id="node3" href="$group___c_a_n__servizi__group.html#ga21c09880bef645f24962658ef3dbb16e" title="This function returns the value of brake pedal position sensor in percentage, retrieved by frontal SC..." alt="" coords="206,56,329,83"/>
+</map>

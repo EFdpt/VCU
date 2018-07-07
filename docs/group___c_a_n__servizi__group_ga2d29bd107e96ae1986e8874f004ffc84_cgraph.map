@@ -1,0 +1,4 @@
+<map id="can_servizi_init" name="can_servizi_init">
+<area shape="rect" id="node2" href="$group___c_a_n__servizi__group.html#gaab9a1dbabaf97e474f5597e8b2a02c6e" title="This function manage boot&#45;up messages sent over CAN servizi network by slave nodes. " alt="" coords="168,5,347,32"/>
+<area shape="rect" id="node3" href="$group___c_a_n__servizi__group.html#ga5897a28288e24aa5131ff5b81f5fedc8" title="This function manage PDOs received over CAN servizi network and deserializes data: ..." alt="" coords="164,56,351,83"/>
+</map>

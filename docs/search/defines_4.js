@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['sc_5fadc_5foffset',['SC_ADC_OFFSET',['../model_8cpp.html#a58133efa918e1af6c0cc436137c78cc0',1,'model.cpp']]],
-  ['serial_5fbaudrate',['SERIAL_BAUDRATE',['../common_8h.html#a89f82a9d44beaa52b00c7245a50a105c',1,'common.h']]]
+  ['lss',['LSS',['../def_8h.html#aa09b700d4c6a1eac2a3068f446c397e2',1,'def.h']]]
 ];

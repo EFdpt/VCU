@@ -1,46 +1,51 @@
-\hypertarget{model_8h}{\section{model.\-h File Reference}
-\label{model_8h}\index{model.\-h@{model.\-h}}
-}
+\hypertarget{model_8h}{}\section{model.\+h File Reference}
+\label{model_8h}\index{model.\+h@{model.\+h}}
 
 
 Board model header file.  
 
 
-{\ttfamily \#include $<$Arduino.\-h$>$}\\*
+{\ttfamily \#include $<$Arduino.\+h$>$}\newline
+Include dependency graph for model.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=138pt]{model_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=344pt]{model_8h__dep__incl}
+\end{center}
+\end{figure}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{group___board__model__group_gace5a444da39d4366693503c53f0841c2}{model\-\_\-init} ()
-\begin{DoxyCompactList}\small\item\em This function initializes hardware board. \end{DoxyCompactList}\item 
-volatile uint8\-\_\-t \hyperlink{group___board__model__group_ga9239a95f68fab3d9b6832fbe85eb87cd}{get\-\_\-tps1\-\_\-percentage} ()
-\begin{DoxyCompactList}\small\item\em This function returns the value of the first A\-P\-P\-S in percentage, retrieved by C\-A\-N servizi network, if online, or by analog signal. \end{DoxyCompactList}\item 
-volatile uint8\-\_\-t \hyperlink{group___board__model__group_gae563bbe9e3c31913df498ebd7cbf6c10}{get\-\_\-tps2\-\_\-percentage} ()
-\begin{DoxyCompactList}\small\item\em This function returns the value of the second A\-P\-P\-S in percentage, retrieved by C\-A\-N servizi network, if online, or by analog signal. \end{DoxyCompactList}\item 
-volatile uint8\-\_\-t \hyperlink{group___board__model__group_ga6db41e7368919bc4dfafaf4e400ae1a9}{get\-\_\-brake\-\_\-percentage} ()
-\begin{DoxyCompactList}\small\item\em This function returns the value of the brake pedal position sensor in percentage, retrieved by C\-A\-N servizi network, if online, or by analog signal. \end{DoxyCompactList}\item 
-volatile bool \hyperlink{group___board__model__group_gae0acabf32ee7f2a82b2f9149ba3d1978}{get\-\_\-apps\-\_\-plausibility} ()
-\begin{DoxyCompactList}\small\item\em This function returns the value of A\-P\-P\-S plausibility retrieved by C\-A\-N servizi network, if online, or by analog signal. \end{DoxyCompactList}\item 
-volatile bool \hyperlink{group___board__model__group_gad47b702f79115e19d75b22f39b45efeb}{get\-\_\-brake\-\_\-plausibility} ()
-\begin{DoxyCompactList}\small\item\em This function returns the value of brake plausibility retrieved by C\-A\-N servizi network, if online, or by analog signal. \end{DoxyCompactList}\item 
-volatile uint16\-\_\-t \hyperlink{group___board__model__group_ga36eddbc000c8d1820fd2a644a39c87ea}{get\-\_\-\-S\-C\-\_\-value} ()
-\begin{DoxyCompactList}\small\item\em This function returns the value of the S\-C. \end{DoxyCompactList}\item 
-\hypertarget{group___board__model__group_ga56b9cca331f294c3249df72b9f37ff2a}{void {\bfseries model\-\_\-enable\-\_\-calibrations} ()}\label{group___board__model__group_ga56b9cca331f294c3249df72b9f37ff2a}
-
-\item 
-\hypertarget{group___board__model__group_ga8ce089b65afda1dee23f7ecefd0cb873}{void {\bfseries model\-\_\-disable\-\_\-calibrations} ()}\label{group___board__model__group_ga8ce089b65afda1dee23f7ecefd0cb873}
-
-\end{DoxyCompactItemize}
+void \mbox{\hyperlink{group___board__model__group_gace5a444da39d4366693503c53f0841c2}{model\+\_\+init}} ()
+\begin{DoxyCompactList}\small\item\em This function initializes hardware board. Both A\+P\+PS and brake pedal position sensor are acquired by analog signals for fault tolerance in case of C\+AN servizi fault. \end{DoxyCompactList}\item 
+volatile uint8\+\_\+t \mbox{\hyperlink{group___board__model__group_ga9239a95f68fab3d9b6832fbe85eb87cd}{get\+\_\+tps1\+\_\+percentage}} ()
+\begin{DoxyCompactList}\small\item\em This function returns the value of the first A\+P\+PS in percentage, retrieved by C\+AN servizi network, if online, or by analog signal. \end{DoxyCompactList}\item 
+volatile uint8\+\_\+t \mbox{\hyperlink{group___board__model__group_gae563bbe9e3c31913df498ebd7cbf6c10}{get\+\_\+tps2\+\_\+percentage}} ()
+\begin{DoxyCompactList}\small\item\em This function returns the value of the second A\+P\+PS in percentage, retrieved by C\+AN servizi network, if online, or by analog signal. \end{DoxyCompactList}\item 
+volatile uint8\+\_\+t \mbox{\hyperlink{group___board__model__group_ga6db41e7368919bc4dfafaf4e400ae1a9}{get\+\_\+brake\+\_\+percentage}} ()
+\begin{DoxyCompactList}\small\item\em This function returns the value of the brake pedal position sensor in percentage, retrieved by C\+AN servizi network, if online, or by analog signal. \end{DoxyCompactList}\item 
+volatile bool \mbox{\hyperlink{group___board__model__group_gae0acabf32ee7f2a82b2f9149ba3d1978}{get\+\_\+apps\+\_\+plausibility}} ()
+\begin{DoxyCompactList}\small\item\em This function returns the value of A\+P\+PS plausibility retrieved by C\+AN servizi network, if online, or by analog signal. \end{DoxyCompactList}\item 
+volatile bool \mbox{\hyperlink{group___board__model__group_gad47b702f79115e19d75b22f39b45efeb}{get\+\_\+brake\+\_\+plausibility}} ()
+\begin{DoxyCompactList}\small\item\em This function returns the value of brake plausibility retrieved by C\+AN servizi network, if online, or by analog signal. \end{DoxyCompactList}\item 
+volatile uint16\+\_\+t \mbox{\hyperlink{group___board__model__group_ga36eddbc000c8d1820fd2a644a39c87ea}{get\+\_\+\+S\+C\+\_\+value}} ()
+\begin{DoxyCompactList}\small\item\em This function returns the value of the SC. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-Board model header file. \begin{DoxyAuthor}{Author}
-Arella Matteo \par
- (mail\-: \href{mailto:arella.1646983@studenti.uniroma1.it}{\tt arella.\-1646983@studenti.\-uniroma1.\-it}) 
+Board model header file. 
+
+\begin{DoxyAuthor}{Author}
+Arella Matteo ~\newline
+ (mail\+: \href{mailto:arella.1646983@studenti.uniroma1.it}{\tt arella.\+1646983@studenti.\+uniroma1.\+it}) 
 \end{DoxyAuthor}
 \begin{DoxyDate}{Date}
 2018 
 \end{DoxyDate}
-
-
-Definition in file \hyperlink{model_8h_source}{model.\-h}.
-

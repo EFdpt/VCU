@@ -10,11 +10,48 @@
 
 #include "common.h"
 
+/**
+ *  @page CAN_servizi_page CAN Servizi
+ *
+ *  CAN servizi network arises from the need to digitize all those signals 
+ *  necessary for the operation of the car.
+ *  VCU master node is interested to receive pedals position percentage values, 
+ *  APPS and brake plausibility from frontal SCU, and torque request limiter 
+ *  from TCU.
+ *
+ *  A CANbus communication protocol has been developed based on the CANopen 
+ *  specifications (CiA 301).
+ *  Each slave node can be represented by a finite state machine with the 
+ *  following states: Initialisation, Pre-operational, Operational, Stopped.
+ *  During power-up each node is in the Initialization phase. At the end of this
+ *  phase, it attempts to send a boot-up message. As soon as it has been 
+ *  successfully sent, it is placed in the Pre-operational state.
+ *  Using an NMT master message, the VCU can passes the various slave nodes
+ *  between the different Pre-operational, Operational and Stopped states.
+ *
+ *  <h2>VCU master on power up sequence</h2>
+ *  1. **wait for BOOT-UP message from slave nodes** (from frontal SCU and TCU)
+ *      | COB-ID (11bits) | data byte 0 |
+ *      | :-------------: | :---------: |
+ *      | 0x700 + NODE-ID | 0x00        |
+ *      
+ *  2. **send NMT 'go Operational'** (broadcast)
+ *      | COB-ID (11bits) | data byte 0 | data byte 1 |
+ *      | :-------------: | :---------: | :---------: |
+ *      | 0x000           | 0x01        | 0x00        |
+ *
+ *  <h2>Fault Tolerance</h2>
+ *  If failure of CAN servizi network occurs, redundancy has been introduced in 
+ *  the acquisition of pedals: if PDO with the pedal data are not received within a 
+ *  certain timeout then CAN servizi network is considered non-functional and 
+ *  pedal sensors are acquired directly via analog signals from the VCU.
+ */
+
 /** @addtogroup CAN_module_group
  *  
  *  @{
  *
- *      @defgroup CAN_servizi_group
+ *      @defgroup CAN_servizi_group CAN servizi
  *      @{
  */
 

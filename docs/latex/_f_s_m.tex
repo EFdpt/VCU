@@ -1,0 +1,22 @@
+V\+CU firmware is based upon 4 states\+:
+\begin{DoxyItemize}
+\item \label{_f_s_m_STAND}%
+\Hypertarget{_f_s_m_STAND}%
+S\+T\+A\+ND\+: ignition of the car, you return here every time SC is undervoltage
+\item \label{_f_s_m_HVON}%
+\Hypertarget{_f_s_m_HVON}%
+HV ON\+: active high voltage is only accessed from S\+T\+A\+ND via A\+I\+Rbutton and SC voltage $>$ 3V
+\item \label{_f_s_m_DRIVE}%
+\Hypertarget{_f_s_m_DRIVE}%
+D\+R\+I\+VE\+: the safe driving status, accessible by R\+TD procedure but also with pedals implausibility through the return procedure
+\item \label{_f_s_m_NOTDRIVE}%
+\Hypertarget{_f_s_m_NOTDRIVE}%
+N\+OT D\+R\+I\+VE\+: error with pedals, the sensors of the pedals are disconnected or out range. Torque request and braking request are disabled; you enter only by pedals implausibility or absence of the brake.
+\end{DoxyItemize}
+
+ 
+\begin{DoxyImage}
+\includegraphics[width=10cm]{fsm_diagram}
+\doxyfigcaption{F\+SM diagram}
+\end{DoxyImage}
+ 

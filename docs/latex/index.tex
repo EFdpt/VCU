@@ -1,6 +1,1 @@
-Vehicle Control Unit (V\-C\-U) firmware is based upon 4 states\-:
-\begin{DoxyItemize}
-\item S\-T\-A\-N\-D\-: stato 0, accensione della vettura, si ritorna qui ogni volta che casca l'S\-C
-\item H\-V\-O\-N\-: stato 1, alta tensione attiva si accede solo da S\-T\-A\-N\-D tramite A\-I\-Rbutton e S\-C$>$3\-V
-\item D\-R\-I\-V\-E\-: stato 2, lo stato di guida sicura, accedibile tramite procedura R\-T\-D ma anche con lo scatto delle plausibilità tramite procedura di rientro 
-\end{DoxyItemize}
+V\+CU is an embedded system employeed to control the functional operations of the vehicle. It takes care of the management of the state of drive according to the \mbox{\hyperlink{_f_s_m_page}{Finite State Machine (F\+SM)}} section. 

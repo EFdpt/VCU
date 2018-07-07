@@ -1,194 +1,69 @@
 \hypertarget{states_8cpp}{}\section{states.\+cpp File Reference}
 \label{states_8cpp}\index{states.\+cpp@{states.\+cpp}}
+
+
+F\+SM implementation file.  
+
+
 {\ttfamily \#include \char`\"{}states.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}can\+\_\+funzionale.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}can\+\_\+servizi.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}rtds.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}model.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}common.\+h\char`\"{}}\newline
+Include dependency graph for states.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{states_8cpp__incl}
+\end{center}
+\end{figure}
 \subsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
-\#define \mbox{\hyperlink{states_8cpp_a9688af4f17ae88b4d149269d71b7ff1f}{S\+C\+\_\+\+T\+H\+R\+ES}}~600
-\item 
-\#define \mbox{\hyperlink{states_8cpp_a83586e8309ed2076018ef686b6154a78}{Run\+BK}}~10
-\item 
-\#define \mbox{\hyperlink{states_8cpp_a87841f6a3eeb660263b624e20c4f072f}{R\+T\+D\+BK}}~10
-\item 
-\#define \mbox{\hyperlink{states_8cpp_a5d31d58edb14312cf64a13efd7abfca2}{R\+E\+G\+E\+N\+\_\+\+B\+K\+\_\+\+P\+E\+R\+C\+E\+N\+T\+A\+GE}}~40
-\end{DoxyCompactItemize}
+\#define \mbox{\hyperlink{group__stages__group_ga9688af4f17ae88b4d149269d71b7ff1f}{S\+C\+\_\+\+T\+H\+R\+ES}}~600
+\begin{DoxyCompactList}\small\item\em SC voltage minimum value. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__stages__group_ga83586e8309ed2076018ef686b6154a78}{Run\+BK}}~10
+\begin{DoxyCompactList}\small\item\em Brake pedal position percentage threshold to pass from N\+O\+T\+D\+R\+I\+VE to D\+R\+I\+VE. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__stages__group_ga87841f6a3eeb660263b624e20c4f072f}{R\+T\+D\+BK}}~10
+\begin{DoxyCompactList}\small\item\em Brake pedal position percentage threshold to pass from H\+V\+ON to D\+R\+I\+VE. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__stages__group_ga5d31d58edb14312cf64a13efd7abfca2}{R\+E\+G\+E\+N\+\_\+\+B\+K\+\_\+\+P\+E\+R\+C\+E\+N\+T\+A\+GE}}~40
+\begin{DoxyCompactList}\small\item\em Brake pedal position percentage threshold to active regen request. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{states_8h_a5891f63a4c9243179838389a93d084e2}{e\+\_\+node\+State}} \mbox{\hyperlink{states_8cpp_a2802a8c3f0174f4e54dd2381968212a0}{get\+State}} ()
-\item 
-void \mbox{\hyperlink{states_8cpp_a47cb7615bbcf2c96cc4a7656f9a76bab}{set\+State}} (\mbox{\hyperlink{states_8h_a5891f63a4c9243179838389a93d084e2}{e\+\_\+node\+State}} new\+State)
-\item 
-void \mbox{\hyperlink{states_8cpp_a506140395cba78bffc95d77985780ca5}{stand}} ()
-\item 
-void \mbox{\hyperlink{states_8cpp_a6fada8f571df828c8fe6b920e2558c37}{hvon}} ()
-\item 
-void \mbox{\hyperlink{states_8cpp_a928e32686c7e00c1ecde24c3da3019f7}{drive}} ()
-\item 
-void \mbox{\hyperlink{states_8cpp_a3ac5d1576c7d3ef76c2dfe724d4849fa}{notdrive}} ()
-\item 
-void \mbox{\hyperlink{states_8cpp_ac534eb879fa26941a06ffadeb69d92ff}{state\+\_\+dispatch}} ()
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{group__stages__group_ga29e04432d3efcac24a5ae62572a6e8f2}{e\+\_\+node\+State}} \mbox{\hyperlink{group__stages__group_ga2802a8c3f0174f4e54dd2381968212a0}{get\+State}} ()
+\begin{DoxyCompactList}\small\item\em Return current state on the F\+SM. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__stages__group_ga47cb7615bbcf2c96cc4a7656f9a76bab}{set\+State}} (\mbox{\hyperlink{group__stages__group_ga29e04432d3efcac24a5ae62572a6e8f2}{e\+\_\+node\+State}} new\+State)
+\begin{DoxyCompactList}\small\item\em Set current state on the F\+SM. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__stages__group_ga506140395cba78bffc95d77985780ca5}{stand}} ()
+\begin{DoxyCompactList}\small\item\em S\+T\+A\+ND state task on the F\+SM\+: ignition of the car. If A\+IR button is pressed and SC voltage value is greater than \mbox{\hyperlink{group__stages__group_ga9688af4f17ae88b4d149269d71b7ff1f}{S\+C\+\_\+\+T\+H\+R\+ES}} then current state passes to H\+V\+ON, activating Precharge, A\+I\+R-\/ and A\+I\+R+. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__stages__group_ga6fada8f571df828c8fe6b920e2558c37}{hvon}} ()
+\begin{DoxyCompactList}\small\item\em HV ON state task on the F\+SM\+: active high voltage. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__stages__group_ga928e32686c7e00c1ecde24c3da3019f7}{drive}} ()
+\begin{DoxyCompactList}\small\item\em D\+R\+I\+VE state task on the F\+SM. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__stages__group_ga3ac5d1576c7d3ef76c2dfe724d4849fa}{notdrive}} ()
+\begin{DoxyCompactList}\small\item\em N\+OT D\+R\+I\+VE state task on the F\+SM\+: inconsistent pedals values. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__stages__group_gac534eb879fa26941a06ffadeb69d92ff}{state\+\_\+dispatch}} ()
+\begin{DoxyCompactList}\small\item\em Execute current state task. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
-volatile bool \mbox{\hyperlink{states_8cpp_a1fd7369abe3c391498e2e8714bf1b2c7}{R\+TD}} = false
-\item 
-volatile \mbox{\hyperlink{states_8h_a5891f63a4c9243179838389a93d084e2}{e\+\_\+node\+State}} \mbox{\hyperlink{states_8cpp_a924e56dabe104382db4ee1a3bb507ed9}{current\+\_\+state}} = \mbox{\hyperlink{states_8h_a3136d2815abe9d284f985e0a7ec68646af422fb81d42ecd479de08e64b6533d18}{S\+T\+A\+ND}}
-\item 
-void($\ast$ \mbox{\hyperlink{states_8cpp_a132d7cb26103f03737fb75eb122ddfbc}{state\+\_\+table}} \mbox{[}$\,$\mbox{]})(void) = \{\mbox{\hyperlink{states_8cpp_a506140395cba78bffc95d77985780ca5}{stand}}, \mbox{\hyperlink{states_8cpp_a6fada8f571df828c8fe6b920e2558c37}{hvon}}, \mbox{\hyperlink{states_8cpp_a928e32686c7e00c1ecde24c3da3019f7}{drive}}, \mbox{\hyperlink{states_8cpp_a3ac5d1576c7d3ef76c2dfe724d4849fa}{notdrive}}\}
-\end{DoxyCompactItemize}
+volatile bool \mbox{\hyperlink{group__stages__group_ga1fd7369abe3c391498e2e8714bf1b2c7}{R\+TD}} = false
+\begin{DoxyCompactList}\small\item\em Ready To Drive flag. \end{DoxyCompactList}\item 
+volatile \mbox{\hyperlink{group__stages__group_ga29e04432d3efcac24a5ae62572a6e8f2}{e\+\_\+node\+State}} \mbox{\hyperlink{group__stages__group_ga924e56dabe104382db4ee1a3bb507ed9}{current\+\_\+state}} = \mbox{\hyperlink{group__stages__group_gga3136d2815abe9d284f985e0a7ec68646af422fb81d42ecd479de08e64b6533d18}{S\+T\+A\+ND}}
+\begin{DoxyCompactList}\small\item\em Current state on the F\+SM. \end{DoxyCompactList}\item 
+void($\ast$ \mbox{\hyperlink{group__stages__group_gac6be9d5998378197fc666c4bcb01f3f2}{state\+\_\+table}} \mbox{[}$\,$\mbox{]})(void) = \{\mbox{\hyperlink{group__stages__group_ga506140395cba78bffc95d77985780ca5}{stand}}, \mbox{\hyperlink{group__stages__group_ga6fada8f571df828c8fe6b920e2558c37}{hvon}}, \mbox{\hyperlink{group__stages__group_ga928e32686c7e00c1ecde24c3da3019f7}{drive}}, \mbox{\hyperlink{group__stages__group_ga3ac5d1576c7d3ef76c2dfe724d4849fa}{notdrive}}\}
+\begin{DoxyCompactList}\small\item\em F\+SM tasks function pointers. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
-\subsection{Macro Definition Documentation}
-\mbox{\Hypertarget{states_8cpp_a5d31d58edb14312cf64a13efd7abfca2}\label{states_8cpp_a5d31d58edb14312cf64a13efd7abfca2}} 
-\index{states.\+cpp@{states.\+cpp}!R\+E\+G\+E\+N\+\_\+\+B\+K\+\_\+\+P\+E\+R\+C\+E\+N\+T\+A\+GE@{R\+E\+G\+E\+N\+\_\+\+B\+K\+\_\+\+P\+E\+R\+C\+E\+N\+T\+A\+GE}}
-\index{R\+E\+G\+E\+N\+\_\+\+B\+K\+\_\+\+P\+E\+R\+C\+E\+N\+T\+A\+GE@{R\+E\+G\+E\+N\+\_\+\+B\+K\+\_\+\+P\+E\+R\+C\+E\+N\+T\+A\+GE}!states.\+cpp@{states.\+cpp}}
-\subsubsection{\texorpdfstring{R\+E\+G\+E\+N\+\_\+\+B\+K\+\_\+\+P\+E\+R\+C\+E\+N\+T\+A\+GE}{REGEN\_BK\_PERCENTAGE}}
-{\footnotesize\ttfamily \#define R\+E\+G\+E\+N\+\_\+\+B\+K\+\_\+\+P\+E\+R\+C\+E\+N\+T\+A\+GE~40}
+\subsection{Detailed Description}
+F\+SM implementation file. 
 
-
-
-Definition at line 11 of file states.\+cpp.
-
-\mbox{\Hypertarget{states_8cpp_a87841f6a3eeb660263b624e20c4f072f}\label{states_8cpp_a87841f6a3eeb660263b624e20c4f072f}} 
-\index{states.\+cpp@{states.\+cpp}!R\+T\+D\+BK@{R\+T\+D\+BK}}
-\index{R\+T\+D\+BK@{R\+T\+D\+BK}!states.\+cpp@{states.\+cpp}}
-\subsubsection{\texorpdfstring{R\+T\+D\+BK}{RTDBK}}
-{\footnotesize\ttfamily \#define R\+T\+D\+BK~10}
-
-
-
-Definition at line 10 of file states.\+cpp.
-
-\mbox{\Hypertarget{states_8cpp_a83586e8309ed2076018ef686b6154a78}\label{states_8cpp_a83586e8309ed2076018ef686b6154a78}} 
-\index{states.\+cpp@{states.\+cpp}!Run\+BK@{Run\+BK}}
-\index{Run\+BK@{Run\+BK}!states.\+cpp@{states.\+cpp}}
-\subsubsection{\texorpdfstring{Run\+BK}{RunBK}}
-{\footnotesize\ttfamily \#define Run\+BK~10}
-
-
-
-Definition at line 9 of file states.\+cpp.
-
-\mbox{\Hypertarget{states_8cpp_a9688af4f17ae88b4d149269d71b7ff1f}\label{states_8cpp_a9688af4f17ae88b4d149269d71b7ff1f}} 
-\index{states.\+cpp@{states.\+cpp}!S\+C\+\_\+\+T\+H\+R\+ES@{S\+C\+\_\+\+T\+H\+R\+ES}}
-\index{S\+C\+\_\+\+T\+H\+R\+ES@{S\+C\+\_\+\+T\+H\+R\+ES}!states.\+cpp@{states.\+cpp}}
-\subsubsection{\texorpdfstring{S\+C\+\_\+\+T\+H\+R\+ES}{SC\_THRES}}
-{\footnotesize\ttfamily \#define S\+C\+\_\+\+T\+H\+R\+ES~600}
-
-
-
-Definition at line 8 of file states.\+cpp.
-
-
-
-\subsection{Function Documentation}
-\mbox{\Hypertarget{states_8cpp_a928e32686c7e00c1ecde24c3da3019f7}\label{states_8cpp_a928e32686c7e00c1ecde24c3da3019f7}} 
-\index{states.\+cpp@{states.\+cpp}!drive@{drive}}
-\index{drive@{drive}!states.\+cpp@{states.\+cpp}}
-\subsubsection{\texorpdfstring{drive()}{drive()}}
-{\footnotesize\ttfamily void drive (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-
-
-Definition at line 67 of file states.\+cpp.
-
-\mbox{\Hypertarget{states_8cpp_a2802a8c3f0174f4e54dd2381968212a0}\label{states_8cpp_a2802a8c3f0174f4e54dd2381968212a0}} 
-\index{states.\+cpp@{states.\+cpp}!get\+State@{get\+State}}
-\index{get\+State@{get\+State}!states.\+cpp@{states.\+cpp}}
-\subsubsection{\texorpdfstring{get\+State()}{getState()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{states_8h_a5891f63a4c9243179838389a93d084e2}{e\+\_\+node\+State}} get\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-
-
-Definition at line 17 of file states.\+cpp.
-
-\mbox{\Hypertarget{states_8cpp_a6fada8f571df828c8fe6b920e2558c37}\label{states_8cpp_a6fada8f571df828c8fe6b920e2558c37}} 
-\index{states.\+cpp@{states.\+cpp}!hvon@{hvon}}
-\index{hvon@{hvon}!states.\+cpp@{states.\+cpp}}
-\subsubsection{\texorpdfstring{hvon()}{hvon()}}
-{\footnotesize\ttfamily void hvon (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-
-
-Definition at line 48 of file states.\+cpp.
-
-\mbox{\Hypertarget{states_8cpp_a3ac5d1576c7d3ef76c2dfe724d4849fa}\label{states_8cpp_a3ac5d1576c7d3ef76c2dfe724d4849fa}} 
-\index{states.\+cpp@{states.\+cpp}!notdrive@{notdrive}}
-\index{notdrive@{notdrive}!states.\+cpp@{states.\+cpp}}
-\subsubsection{\texorpdfstring{notdrive()}{notdrive()}}
-{\footnotesize\ttfamily void notdrive (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-
-
-Definition at line 108 of file states.\+cpp.
-
-\mbox{\Hypertarget{states_8cpp_a47cb7615bbcf2c96cc4a7656f9a76bab}\label{states_8cpp_a47cb7615bbcf2c96cc4a7656f9a76bab}} 
-\index{states.\+cpp@{states.\+cpp}!set\+State@{set\+State}}
-\index{set\+State@{set\+State}!states.\+cpp@{states.\+cpp}}
-\subsubsection{\texorpdfstring{set\+State()}{setState()}}
-{\footnotesize\ttfamily void set\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{states_8h_a5891f63a4c9243179838389a93d084e2}{e\+\_\+node\+State}}}]{new\+State }\end{DoxyParamCaption})}
-
-
-
-Definition at line 21 of file states.\+cpp.
-
-\mbox{\Hypertarget{states_8cpp_a506140395cba78bffc95d77985780ca5}\label{states_8cpp_a506140395cba78bffc95d77985780ca5}} 
-\index{states.\+cpp@{states.\+cpp}!stand@{stand}}
-\index{stand@{stand}!states.\+cpp@{states.\+cpp}}
-\subsubsection{\texorpdfstring{stand()}{stand()}}
-{\footnotesize\ttfamily void stand (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-
-
-Definition at line 28 of file states.\+cpp.
-
-\mbox{\Hypertarget{states_8cpp_ac534eb879fa26941a06ffadeb69d92ff}\label{states_8cpp_ac534eb879fa26941a06ffadeb69d92ff}} 
-\index{states.\+cpp@{states.\+cpp}!state\+\_\+dispatch@{state\+\_\+dispatch}}
-\index{state\+\_\+dispatch@{state\+\_\+dispatch}!states.\+cpp@{states.\+cpp}}
-\subsubsection{\texorpdfstring{state\+\_\+dispatch()}{state\_dispatch()}}
-{\footnotesize\ttfamily void state\+\_\+dispatch (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-
-
-Definition at line 122 of file states.\+cpp.
-
-
-
-\subsection{Variable Documentation}
-\mbox{\Hypertarget{states_8cpp_a924e56dabe104382db4ee1a3bb507ed9}\label{states_8cpp_a924e56dabe104382db4ee1a3bb507ed9}} 
-\index{states.\+cpp@{states.\+cpp}!current\+\_\+state@{current\+\_\+state}}
-\index{current\+\_\+state@{current\+\_\+state}!states.\+cpp@{states.\+cpp}}
-\subsubsection{\texorpdfstring{current\+\_\+state}{current\_state}}
-{\footnotesize\ttfamily volatile \mbox{\hyperlink{states_8h_a5891f63a4c9243179838389a93d084e2}{e\+\_\+node\+State}} current\+\_\+state = \mbox{\hyperlink{states_8h_a3136d2815abe9d284f985e0a7ec68646af422fb81d42ecd479de08e64b6533d18}{S\+T\+A\+ND}}}
-
-
-
-Definition at line 15 of file states.\+cpp.
-
-\mbox{\Hypertarget{states_8cpp_a1fd7369abe3c391498e2e8714bf1b2c7}\label{states_8cpp_a1fd7369abe3c391498e2e8714bf1b2c7}} 
-\index{states.\+cpp@{states.\+cpp}!R\+TD@{R\+TD}}
-\index{R\+TD@{R\+TD}!states.\+cpp@{states.\+cpp}}
-\subsubsection{\texorpdfstring{R\+TD}{RTD}}
-{\footnotesize\ttfamily volatile bool R\+TD = false}
-
-
-
-Definition at line 13 of file states.\+cpp.
-
-\mbox{\Hypertarget{states_8cpp_a132d7cb26103f03737fb75eb122ddfbc}\label{states_8cpp_a132d7cb26103f03737fb75eb122ddfbc}} 
-\index{states.\+cpp@{states.\+cpp}!state\+\_\+table@{state\+\_\+table}}
-\index{state\+\_\+table@{state\+\_\+table}!states.\+cpp@{states.\+cpp}}
-\subsubsection{\texorpdfstring{state\+\_\+table}{state\_table}}
-{\footnotesize\ttfamily void($\ast$ state\+\_\+table\mbox{[}$\,$\mbox{]})(void) = \{\mbox{\hyperlink{states_8cpp_a506140395cba78bffc95d77985780ca5}{stand}}, \mbox{\hyperlink{states_8cpp_a6fada8f571df828c8fe6b920e2558c37}{hvon}}, \mbox{\hyperlink{states_8cpp_a928e32686c7e00c1ecde24c3da3019f7}{drive}}, \mbox{\hyperlink{states_8cpp_a3ac5d1576c7d3ef76c2dfe724d4849fa}{notdrive}}\}}
-
-
-
-Definition at line 120 of file states.\+cpp.
-
+\begin{DoxyAuthor}{Author}
+Arella Matteo ~\newline
+ (mail\+: \href{mailto:arella.1646983@studenti.uniroma1.it}{\tt arella.\+1646983@studenti.\+uniroma1.\+it}) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2018 
+\end{DoxyDate}

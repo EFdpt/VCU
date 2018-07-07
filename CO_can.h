@@ -17,10 +17,23 @@
  *  Two CAN networks have been designed to be inserted into the vehicle: a first
  *  CAN network between the VCU and the inverter (CAN funzionale) and a second 
  *  CAN network between the VCU, TCU and SCUs (CAN servizi).
+ *
+ *  Each node connected to CAN network has an unique ID internally to that network, 
+ *  according to this table:
+ *  | CAN NETWORK | NODE       | NODE-ID |
+ *  | :---------: | :--------: | :-----: |
+ *  | FUNZIONALE  | INVERTER   | 1       |
+ *  | ^           | VCU        | 2       |
+ *  | SERVIZI     | FrontalSCU | 1       |
+ *  | ^           | VCU        | 2       |
+ *  | ^           | TCU        | 4       |
+ *
+ *  - @subpage CAN_funzionale_page "CAN funzionale"
+ *  - @subpage CAN_servizi_page "CAN servizi"
  */
 
 /**
- *  @defgroup CAN_module_group
+ *  @defgroup CAN_module_group CAN module
  *  @{
  */
 

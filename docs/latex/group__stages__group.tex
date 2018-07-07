@@ -1,0 +1,257 @@
+\hypertarget{group__stages__group}{}\section{Finite State Machine (F\+SM)}
+\label{group__stages__group}\index{Finite State Machine (\+F\+S\+M)@{Finite State Machine (\+F\+S\+M)}}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group__stages__group_ga9688af4f17ae88b4d149269d71b7ff1f}\label{group__stages__group_ga9688af4f17ae88b4d149269d71b7ff1f}} 
+\#define \mbox{\hyperlink{group__stages__group_ga9688af4f17ae88b4d149269d71b7ff1f}{S\+C\+\_\+\+T\+H\+R\+ES}}~600
+\begin{DoxyCompactList}\small\item\em SC voltage minimum value. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__stages__group_ga83586e8309ed2076018ef686b6154a78}\label{group__stages__group_ga83586e8309ed2076018ef686b6154a78}} 
+\#define \mbox{\hyperlink{group__stages__group_ga83586e8309ed2076018ef686b6154a78}{Run\+BK}}~10
+\begin{DoxyCompactList}\small\item\em Brake pedal position percentage threshold to pass from N\+O\+T\+D\+R\+I\+VE to D\+R\+I\+VE. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__stages__group_ga87841f6a3eeb660263b624e20c4f072f}\label{group__stages__group_ga87841f6a3eeb660263b624e20c4f072f}} 
+\#define \mbox{\hyperlink{group__stages__group_ga87841f6a3eeb660263b624e20c4f072f}{R\+T\+D\+BK}}~10
+\begin{DoxyCompactList}\small\item\em Brake pedal position percentage threshold to pass from H\+V\+ON to D\+R\+I\+VE. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__stages__group_ga5d31d58edb14312cf64a13efd7abfca2}\label{group__stages__group_ga5d31d58edb14312cf64a13efd7abfca2}} 
+\#define \mbox{\hyperlink{group__stages__group_ga5d31d58edb14312cf64a13efd7abfca2}{R\+E\+G\+E\+N\+\_\+\+B\+K\+\_\+\+P\+E\+R\+C\+E\+N\+T\+A\+GE}}~40
+\begin{DoxyCompactList}\small\item\em Brake pedal position percentage threshold to active regen request. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group__stages__group_ga29e04432d3efcac24a5ae62572a6e8f2}\label{group__stages__group_ga29e04432d3efcac24a5ae62572a6e8f2}} 
+typedef enum \mbox{\hyperlink{group__stages__group_ga3136d2815abe9d284f985e0a7ec68646}{enum\+\_\+node\+State}} \mbox{\hyperlink{group__stages__group_ga29e04432d3efcac24a5ae62572a6e8f2}{e\+\_\+node\+State}}
+\begin{DoxyCompactList}\small\item\em F\+SM states enum. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group__stages__group_ga3136d2815abe9d284f985e0a7ec68646}{enum\+\_\+node\+State}} \{ \newline
+\mbox{\hyperlink{group__stages__group_gga3136d2815abe9d284f985e0a7ec68646af422fb81d42ecd479de08e64b6533d18}{S\+T\+A\+ND}} = 0, 
+\mbox{\hyperlink{group__stages__group_gga3136d2815abe9d284f985e0a7ec68646a1fa0533f275ef4762e6eafc3b35bfd02}{H\+V\+ON}}, 
+\mbox{\hyperlink{group__stages__group_gga3136d2815abe9d284f985e0a7ec68646af7b6d6d8e5e14633d388ef9cc7a941b7}{D\+R\+I\+VE}}, 
+\mbox{\hyperlink{group__stages__group_gga3136d2815abe9d284f985e0a7ec68646a58841f2207f211031fa8cdfa2152537a}{N\+O\+T\+D\+R\+I\+VE}}, 
+\newline
+\mbox{\hyperlink{group__stages__group_gga3136d2815abe9d284f985e0a7ec68646a6e301d1f2fcd23ccfc4de60c6e6cc9ce}{M\+A\+X\+\_\+\+S\+T\+A\+T\+ES}}
+ \}
+\begin{DoxyCompactList}\small\item\em F\+SM states enum. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group__stages__group_ga29e04432d3efcac24a5ae62572a6e8f2}{e\+\_\+node\+State}} \mbox{\hyperlink{group__stages__group_ga2802a8c3f0174f4e54dd2381968212a0}{get\+State}} ()
+\begin{DoxyCompactList}\small\item\em Return current state on the F\+SM. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__stages__group_ga47cb7615bbcf2c96cc4a7656f9a76bab}{set\+State}} (\mbox{\hyperlink{group__stages__group_ga29e04432d3efcac24a5ae62572a6e8f2}{e\+\_\+node\+State}} new\+State)
+\begin{DoxyCompactList}\small\item\em Set current state on the F\+SM. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__stages__group_ga506140395cba78bffc95d77985780ca5}{stand}} ()
+\begin{DoxyCompactList}\small\item\em S\+T\+A\+ND state task on the F\+SM\+: ignition of the car. If A\+IR button is pressed and SC voltage value is greater than \mbox{\hyperlink{group__stages__group_ga9688af4f17ae88b4d149269d71b7ff1f}{S\+C\+\_\+\+T\+H\+R\+ES}} then current state passes to H\+V\+ON, activating Precharge, A\+I\+R-\/ and A\+I\+R+. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__stages__group_ga6fada8f571df828c8fe6b920e2558c37}{hvon}} ()
+\begin{DoxyCompactList}\small\item\em HV ON state task on the F\+SM\+: active high voltage. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__stages__group_ga928e32686c7e00c1ecde24c3da3019f7}{drive}} ()
+\begin{DoxyCompactList}\small\item\em D\+R\+I\+VE state task on the F\+SM. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__stages__group_ga3ac5d1576c7d3ef76c2dfe724d4849fa}{notdrive}} ()
+\begin{DoxyCompactList}\small\item\em N\+OT D\+R\+I\+VE state task on the F\+SM\+: inconsistent pedals values. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__stages__group_gac534eb879fa26941a06ffadeb69d92ff}{state\+\_\+dispatch}} ()
+\begin{DoxyCompactList}\small\item\em Execute current state task. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group__stages__group_ga1fd7369abe3c391498e2e8714bf1b2c7}\label{group__stages__group_ga1fd7369abe3c391498e2e8714bf1b2c7}} 
+volatile bool \mbox{\hyperlink{group__stages__group_ga1fd7369abe3c391498e2e8714bf1b2c7}{R\+TD}} = false
+\begin{DoxyCompactList}\small\item\em Ready To Drive flag. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__stages__group_ga924e56dabe104382db4ee1a3bb507ed9}\label{group__stages__group_ga924e56dabe104382db4ee1a3bb507ed9}} 
+volatile \mbox{\hyperlink{group__stages__group_ga29e04432d3efcac24a5ae62572a6e8f2}{e\+\_\+node\+State}} \mbox{\hyperlink{group__stages__group_ga924e56dabe104382db4ee1a3bb507ed9}{current\+\_\+state}} = \mbox{\hyperlink{group__stages__group_gga3136d2815abe9d284f985e0a7ec68646af422fb81d42ecd479de08e64b6533d18}{S\+T\+A\+ND}}
+\begin{DoxyCompactList}\small\item\em Current state on the F\+SM. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__stages__group_gac6be9d5998378197fc666c4bcb01f3f2}\label{group__stages__group_gac6be9d5998378197fc666c4bcb01f3f2}} 
+void($\ast$ \mbox{\hyperlink{group__stages__group_gac6be9d5998378197fc666c4bcb01f3f2}{state\+\_\+table}} \mbox{[}$\,$\mbox{]})(void) = \{\mbox{\hyperlink{group__stages__group_ga506140395cba78bffc95d77985780ca5}{stand}}, \mbox{\hyperlink{group__stages__group_ga6fada8f571df828c8fe6b920e2558c37}{hvon}}, \mbox{\hyperlink{group__stages__group_ga928e32686c7e00c1ecde24c3da3019f7}{drive}}, \mbox{\hyperlink{group__stages__group_ga3ac5d1576c7d3ef76c2dfe724d4849fa}{notdrive}}\}
+\begin{DoxyCompactList}\small\item\em F\+SM tasks function pointers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+\subsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{group__stages__group_ga3136d2815abe9d284f985e0a7ec68646}\label{group__stages__group_ga3136d2815abe9d284f985e0a7ec68646}} 
+\index{Finite State Machine (\+F\+S\+M)@{Finite State Machine (\+F\+S\+M)}!enum\+\_\+node\+State@{enum\+\_\+node\+State}}
+\index{enum\+\_\+node\+State@{enum\+\_\+node\+State}!Finite State Machine (\+F\+S\+M)@{Finite State Machine (\+F\+S\+M)}}
+\subsubsection{\texorpdfstring{enum\+\_\+node\+State}{enum\_nodeState}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__stages__group_ga3136d2815abe9d284f985e0a7ec68646}{enum\+\_\+node\+State}}}
+
+
+
+F\+SM states enum. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+T\+A\+ND@{S\+T\+A\+ND}!Finite State Machine (\+F\+S\+M)@{Finite State Machine (\+F\+S\+M)}}\index{Finite State Machine (\+F\+S\+M)@{Finite State Machine (\+F\+S\+M)}!S\+T\+A\+ND@{S\+T\+A\+ND}}}\mbox{\Hypertarget{group__stages__group_gga3136d2815abe9d284f985e0a7ec68646af422fb81d42ecd479de08e64b6533d18}\label{group__stages__group_gga3136d2815abe9d284f985e0a7ec68646af422fb81d42ecd479de08e64b6533d18}} 
+S\+T\+A\+ND&S\+T\+A\+ND state \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{H\+V\+ON@{H\+V\+ON}!Finite State Machine (\+F\+S\+M)@{Finite State Machine (\+F\+S\+M)}}\index{Finite State Machine (\+F\+S\+M)@{Finite State Machine (\+F\+S\+M)}!H\+V\+ON@{H\+V\+ON}}}\mbox{\Hypertarget{group__stages__group_gga3136d2815abe9d284f985e0a7ec68646a1fa0533f275ef4762e6eafc3b35bfd02}\label{group__stages__group_gga3136d2815abe9d284f985e0a7ec68646a1fa0533f275ef4762e6eafc3b35bfd02}} 
+H\+V\+ON&HV ON state \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{D\+R\+I\+VE@{D\+R\+I\+VE}!Finite State Machine (\+F\+S\+M)@{Finite State Machine (\+F\+S\+M)}}\index{Finite State Machine (\+F\+S\+M)@{Finite State Machine (\+F\+S\+M)}!D\+R\+I\+VE@{D\+R\+I\+VE}}}\mbox{\Hypertarget{group__stages__group_gga3136d2815abe9d284f985e0a7ec68646af7b6d6d8e5e14633d388ef9cc7a941b7}\label{group__stages__group_gga3136d2815abe9d284f985e0a7ec68646af7b6d6d8e5e14633d388ef9cc7a941b7}} 
+D\+R\+I\+VE&D\+R\+I\+VE state \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{N\+O\+T\+D\+R\+I\+VE@{N\+O\+T\+D\+R\+I\+VE}!Finite State Machine (\+F\+S\+M)@{Finite State Machine (\+F\+S\+M)}}\index{Finite State Machine (\+F\+S\+M)@{Finite State Machine (\+F\+S\+M)}!N\+O\+T\+D\+R\+I\+VE@{N\+O\+T\+D\+R\+I\+VE}}}\mbox{\Hypertarget{group__stages__group_gga3136d2815abe9d284f985e0a7ec68646a58841f2207f211031fa8cdfa2152537a}\label{group__stages__group_gga3136d2815abe9d284f985e0a7ec68646a58841f2207f211031fa8cdfa2152537a}} 
+N\+O\+T\+D\+R\+I\+VE&N\+OT D\+R\+I\+VE state \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+A\+X\+\_\+\+S\+T\+A\+T\+ES@{M\+A\+X\+\_\+\+S\+T\+A\+T\+ES}!Finite State Machine (\+F\+S\+M)@{Finite State Machine (\+F\+S\+M)}}\index{Finite State Machine (\+F\+S\+M)@{Finite State Machine (\+F\+S\+M)}!M\+A\+X\+\_\+\+S\+T\+A\+T\+ES@{M\+A\+X\+\_\+\+S\+T\+A\+T\+ES}}}\mbox{\Hypertarget{group__stages__group_gga3136d2815abe9d284f985e0a7ec68646a6e301d1f2fcd23ccfc4de60c6e6cc9ce}\label{group__stages__group_gga3136d2815abe9d284f985e0a7ec68646a6e301d1f2fcd23ccfc4de60c6e6cc9ce}} 
+M\+A\+X\+\_\+\+S\+T\+A\+T\+ES&max number of states \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 38 of file states.\+h.
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{group__stages__group_ga928e32686c7e00c1ecde24c3da3019f7}\label{group__stages__group_ga928e32686c7e00c1ecde24c3da3019f7}} 
+\index{Finite State Machine (\+F\+S\+M)@{Finite State Machine (\+F\+S\+M)}!drive@{drive}}
+\index{drive@{drive}!Finite State Machine (\+F\+S\+M)@{Finite State Machine (\+F\+S\+M)}}
+\subsubsection{\texorpdfstring{drive()}{drive()}}
+{\footnotesize\ttfamily void drive (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+D\+R\+I\+VE state task on the F\+SM. 
+
+If pedals values are consistent (no implausibility) and SC voltage value is greater than \mbox{\hyperlink{group__stages__group_ga9688af4f17ae88b4d149269d71b7ff1f}{S\+C\+\_\+\+T\+H\+R\+ES}} then torque or regen (if vehicle speed is $>\ 5\ km/h$) request is sent to inverter; request to inverter is done through C\+AN funzionale if online or through analog signals.
+
+If SC voltage value is lower than \mbox{\hyperlink{group__stages__group_ga9688af4f17ae88b4d149269d71b7ff1f}{S\+C\+\_\+\+T\+H\+R\+ES}}, (SC undervoltage error), then current state passes to S\+T\+A\+ND.
+
+If there are pedals implausibility then current state passes to N\+OT D\+R\+I\+VE state.
+
+\begin{DoxyAuthor}{Author}
+Arella Matteo ~\newline
+ (mail\+: \href{mailto:arella.1646983@studenti.uniroma1.it}{\tt arella.\+1646983@studenti.\+uniroma1.\+it}) 
+\end{DoxyAuthor}
+
+
+Definition at line 162 of file states.\+cpp.
+
+\mbox{\Hypertarget{group__stages__group_ga2802a8c3f0174f4e54dd2381968212a0}\label{group__stages__group_ga2802a8c3f0174f4e54dd2381968212a0}} 
+\index{Finite State Machine (\+F\+S\+M)@{Finite State Machine (\+F\+S\+M)}!get\+State@{get\+State}}
+\index{get\+State@{get\+State}!Finite State Machine (\+F\+S\+M)@{Finite State Machine (\+F\+S\+M)}}
+\subsubsection{\texorpdfstring{get\+State()}{getState()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__stages__group_ga29e04432d3efcac24a5ae62572a6e8f2}{e\+\_\+node\+State}} get\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Return current state on the F\+SM. 
+
+\begin{DoxyAuthor}{Author}
+Arella Matteo ~\newline
+ (mail\+: \href{mailto:arella.1646983@studenti.uniroma1.it}{\tt arella.\+1646983@studenti.\+uniroma1.\+it})
+\end{DoxyAuthor}
+\begin{DoxyReturn}{Returns}
+current state on the F\+SM 
+\end{DoxyReturn}
+
+
+Definition at line 68 of file states.\+cpp.
+
+\mbox{\Hypertarget{group__stages__group_ga6fada8f571df828c8fe6b920e2558c37}\label{group__stages__group_ga6fada8f571df828c8fe6b920e2558c37}} 
+\index{Finite State Machine (\+F\+S\+M)@{Finite State Machine (\+F\+S\+M)}!hvon@{hvon}}
+\index{hvon@{hvon}!Finite State Machine (\+F\+S\+M)@{Finite State Machine (\+F\+S\+M)}}
+\subsubsection{\texorpdfstring{hvon()}{hvon()}}
+{\footnotesize\ttfamily void hvon (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+HV ON state task on the F\+SM\+: active high voltage. 
+
+If R\+TD button is pressed, SC voltage value is greater than \mbox{\hyperlink{group__stages__group_ga9688af4f17ae88b4d149269d71b7ff1f}{S\+C\+\_\+\+T\+H\+R\+ES}} and brake pedal position percentage is greater than \mbox{\hyperlink{group__stages__group_ga87841f6a3eeb660263b624e20c4f072f}{R\+T\+D\+BK}} then current state passes to D\+R\+I\+VE, triggering R\+T\+DS.
+
+If SC voltage value is lower than \mbox{\hyperlink{group__stages__group_ga9688af4f17ae88b4d149269d71b7ff1f}{S\+C\+\_\+\+T\+H\+R\+ES}}, (SC undervoltage error), then current state passes to S\+T\+A\+ND.
+
+\begin{DoxyAuthor}{Author}
+Arella Matteo ~\newline
+ (mail\+: \href{mailto:arella.1646983@studenti.uniroma1.it}{\tt arella.\+1646983@studenti.\+uniroma1.\+it}) 
+\end{DoxyAuthor}
+
+
+Definition at line 125 of file states.\+cpp.
+
+\mbox{\Hypertarget{group__stages__group_ga3ac5d1576c7d3ef76c2dfe724d4849fa}\label{group__stages__group_ga3ac5d1576c7d3ef76c2dfe724d4849fa}} 
+\index{Finite State Machine (\+F\+S\+M)@{Finite State Machine (\+F\+S\+M)}!notdrive@{notdrive}}
+\index{notdrive@{notdrive}!Finite State Machine (\+F\+S\+M)@{Finite State Machine (\+F\+S\+M)}}
+\subsubsection{\texorpdfstring{notdrive()}{notdrive()}}
+{\footnotesize\ttfamily void notdrive (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+N\+OT D\+R\+I\+VE state task on the F\+SM\+: inconsistent pedals values. 
+
+If SC voltage value is lower than \mbox{\hyperlink{group__stages__group_ga9688af4f17ae88b4d149269d71b7ff1f}{S\+C\+\_\+\+T\+H\+R\+ES}}, (SC undervoltage error), then current state passes to S\+T\+A\+ND state.
+
+If pedals values return consistent (i.\+e. plausibility check verified), then current state passes to D\+R\+I\+VE state.
+
+\begin{DoxyAuthor}{Author}
+Arella Matteo ~\newline
+ (mail\+: \href{mailto:arella.1646983@studenti.uniroma1.it}{\tt arella.\+1646983@studenti.\+uniroma1.\+it}) 
+\end{DoxyAuthor}
+
+
+Definition at line 211 of file states.\+cpp.
+
+\mbox{\Hypertarget{group__stages__group_ga47cb7615bbcf2c96cc4a7656f9a76bab}\label{group__stages__group_ga47cb7615bbcf2c96cc4a7656f9a76bab}} 
+\index{Finite State Machine (\+F\+S\+M)@{Finite State Machine (\+F\+S\+M)}!set\+State@{set\+State}}
+\index{set\+State@{set\+State}!Finite State Machine (\+F\+S\+M)@{Finite State Machine (\+F\+S\+M)}}
+\subsubsection{\texorpdfstring{set\+State()}{setState()}}
+{\footnotesize\ttfamily void set\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__stages__group_ga29e04432d3efcac24a5ae62572a6e8f2}{e\+\_\+node\+State}}}]{new\+State }\end{DoxyParamCaption})}
+
+
+
+Set current state on the F\+SM. 
+
+\begin{DoxyAuthor}{Author}
+Arella Matteo ~\newline
+ (mail\+: \href{mailto:arella.1646983@studenti.uniroma1.it}{\tt arella.\+1646983@studenti.\+uniroma1.\+it})
+\end{DoxyAuthor}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em new\+State} & New state transition \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 82 of file states.\+cpp.
+
+\mbox{\Hypertarget{group__stages__group_ga506140395cba78bffc95d77985780ca5}\label{group__stages__group_ga506140395cba78bffc95d77985780ca5}} 
+\index{Finite State Machine (\+F\+S\+M)@{Finite State Machine (\+F\+S\+M)}!stand@{stand}}
+\index{stand@{stand}!Finite State Machine (\+F\+S\+M)@{Finite State Machine (\+F\+S\+M)}}
+\subsubsection{\texorpdfstring{stand()}{stand()}}
+{\footnotesize\ttfamily void stand (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+S\+T\+A\+ND state task on the F\+SM\+: ignition of the car. If A\+IR button is pressed and SC voltage value is greater than \mbox{\hyperlink{group__stages__group_ga9688af4f17ae88b4d149269d71b7ff1f}{S\+C\+\_\+\+T\+H\+R\+ES}} then current state passes to H\+V\+ON, activating Precharge, A\+I\+R-\/ and A\+I\+R+. 
+
+\begin{DoxyAuthor}{Author}
+Arella Matteo ~\newline
+ (mail\+: \href{mailto:arella.1646983@studenti.uniroma1.it}{\tt arella.\+1646983@studenti.\+uniroma1.\+it}) 
+\end{DoxyAuthor}
+
+
+Definition at line 95 of file states.\+cpp.
+
+\mbox{\Hypertarget{group__stages__group_gac534eb879fa26941a06ffadeb69d92ff}\label{group__stages__group_gac534eb879fa26941a06ffadeb69d92ff}} 
+\index{Finite State Machine (\+F\+S\+M)@{Finite State Machine (\+F\+S\+M)}!state\+\_\+dispatch@{state\+\_\+dispatch}}
+\index{state\+\_\+dispatch@{state\+\_\+dispatch}!Finite State Machine (\+F\+S\+M)@{Finite State Machine (\+F\+S\+M)}}
+\subsubsection{\texorpdfstring{state\+\_\+dispatch()}{state\_dispatch()}}
+{\footnotesize\ttfamily void state\+\_\+dispatch (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Execute current state task. 
+
+\begin{DoxyAuthor}{Author}
+Arella Matteo ~\newline
+ (mail\+: \href{mailto:arella.1646983@studenti.uniroma1.it}{\tt arella.\+1646983@studenti.\+uniroma1.\+it}) 
+\end{DoxyAuthor}
+
+
+Definition at line 232 of file states.\+cpp.
+

@@ -1,0 +1,9 @@
+<map id="VCU.ino" name="VCU.ino">
+<area shape="rect" id="node2" href="$common_8h.html" title="common macro definitions module " alt="" coords="93,229,175,256"/>
+<area shape="rect" id="node6" href="$_c_o__can_8h.html" title="CAN setup header module. " alt="" coords="209,155,289,181"/>
+<area shape="rect" id="node7" href="$can__servizi_8h.html" title="CAN servizi module header. " alt="" coords="87,155,184,181"/>
+<area shape="rect" id="node8" href="$model_8h.html" title="Board model header file. " alt="" coords="317,80,385,107"/>
+<area shape="rect" id="node10" href="$states_8h.html" title="FSM header file. " alt="" coords="223,80,293,107"/>
+<area shape="rect" id="node4" href="$_c_a_n___i_d_8h.html" title="CAN nodes ID definitions module. " alt="" coords="95,304,173,331"/>
+<area shape="rect" id="node5" href="$board__pinout_8h.html" title="Board pinout module header. " alt="" coords="198,304,305,331"/>
+</map>

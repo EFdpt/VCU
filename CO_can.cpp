@@ -24,8 +24,8 @@
  *  @retval     false   CAN networks initialization failed
  */
 bool can_init() {
-    //if (!can_funzionale_initialized())
-    //	can_funzionale_init();
+    if (!can_funzionale_initialized())
+    	can_funzionale_init();
     if (!can_servizi_initialized())
         return can_servizi_init();
     return true;

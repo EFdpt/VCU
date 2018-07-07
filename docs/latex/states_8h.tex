@@ -1,126 +1,60 @@
 \hypertarget{states_8h}{}\section{states.\+h File Reference}
 \label{states_8h}\index{states.\+h@{states.\+h}}
+
+
+F\+SM header file.  
+
+
 {\ttfamily \#include \char`\"{}C\+O\+\_\+can.\+h\char`\"{}}\newline
+Include dependency graph for states.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=305pt]{states_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=214pt]{states_8h__dep__incl}
+\end{center}
+\end{figure}
 \subsection*{Typedefs}
 \begin{DoxyCompactItemize}
 \item 
-typedef enum \mbox{\hyperlink{states_8h_a3136d2815abe9d284f985e0a7ec68646}{enum\+\_\+node\+State}} \mbox{\hyperlink{states_8h_a5891f63a4c9243179838389a93d084e2}{e\+\_\+node\+State}}
-\end{DoxyCompactItemize}
+typedef enum \mbox{\hyperlink{group__stages__group_ga3136d2815abe9d284f985e0a7ec68646}{enum\+\_\+node\+State}} \mbox{\hyperlink{group__stages__group_ga29e04432d3efcac24a5ae62572a6e8f2}{e\+\_\+node\+State}}
+\begin{DoxyCompactList}\small\item\em F\+SM states enum. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Enumerations}
 \begin{DoxyCompactItemize}
 \item 
-enum \mbox{\hyperlink{states_8h_a3136d2815abe9d284f985e0a7ec68646}{enum\+\_\+node\+State}} \{ \newline
-\mbox{\hyperlink{states_8h_a3136d2815abe9d284f985e0a7ec68646af422fb81d42ecd479de08e64b6533d18}{S\+T\+A\+ND}} = 0, 
-\mbox{\hyperlink{states_8h_a3136d2815abe9d284f985e0a7ec68646a1fa0533f275ef4762e6eafc3b35bfd02}{H\+V\+ON}}, 
-\mbox{\hyperlink{states_8h_a3136d2815abe9d284f985e0a7ec68646af7b6d6d8e5e14633d388ef9cc7a941b7}{D\+R\+I\+VE}}, 
-\mbox{\hyperlink{states_8h_a3136d2815abe9d284f985e0a7ec68646a58841f2207f211031fa8cdfa2152537a}{N\+O\+T\+D\+R\+I\+VE}}, 
+enum \mbox{\hyperlink{group__stages__group_ga3136d2815abe9d284f985e0a7ec68646}{enum\+\_\+node\+State}} \{ \newline
+\mbox{\hyperlink{group__stages__group_gga3136d2815abe9d284f985e0a7ec68646af422fb81d42ecd479de08e64b6533d18}{S\+T\+A\+ND}} = 0, 
+\mbox{\hyperlink{group__stages__group_gga3136d2815abe9d284f985e0a7ec68646a1fa0533f275ef4762e6eafc3b35bfd02}{H\+V\+ON}}, 
+\mbox{\hyperlink{group__stages__group_gga3136d2815abe9d284f985e0a7ec68646af7b6d6d8e5e14633d388ef9cc7a941b7}{D\+R\+I\+VE}}, 
+\mbox{\hyperlink{group__stages__group_gga3136d2815abe9d284f985e0a7ec68646a58841f2207f211031fa8cdfa2152537a}{N\+O\+T\+D\+R\+I\+VE}}, 
 \newline
-\mbox{\hyperlink{states_8h_a3136d2815abe9d284f985e0a7ec68646a6e301d1f2fcd23ccfc4de60c6e6cc9ce}{M\+A\+X\+\_\+\+S\+T\+A\+T\+ES}}
+\mbox{\hyperlink{group__stages__group_gga3136d2815abe9d284f985e0a7ec68646a6e301d1f2fcd23ccfc4de60c6e6cc9ce}{M\+A\+X\+\_\+\+S\+T\+A\+T\+ES}}
  \}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em F\+SM states enum. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{states_8h_a5891f63a4c9243179838389a93d084e2}{e\+\_\+node\+State}} \mbox{\hyperlink{states_8h_a2802a8c3f0174f4e54dd2381968212a0}{get\+State}} ()
-\item 
-void \mbox{\hyperlink{states_8h_a47cb7615bbcf2c96cc4a7656f9a76bab}{set\+State}} (\mbox{\hyperlink{states_8h_a5891f63a4c9243179838389a93d084e2}{e\+\_\+node\+State}} new\+State)
-\item 
-uint8\+\_\+t \mbox{\hyperlink{states_8h_abf47bce7c4c8d2166fe3e25ac404d7c7}{get\+Node\+Id}} ()
-\item 
-void \mbox{\hyperlink{states_8h_a9c3b7582805e01be4b88b6648b42837e}{set\+Node\+Id}} (uint8\+\_\+t node\+Id)
-\item 
-void \mbox{\hyperlink{states_8h_ac534eb879fa26941a06ffadeb69d92ff}{state\+\_\+dispatch}} ()
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{group__stages__group_ga29e04432d3efcac24a5ae62572a6e8f2}{e\+\_\+node\+State}} \mbox{\hyperlink{group__stages__group_ga2802a8c3f0174f4e54dd2381968212a0}{get\+State}} ()
+\begin{DoxyCompactList}\small\item\em Return current state on the F\+SM. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__stages__group_ga47cb7615bbcf2c96cc4a7656f9a76bab}{set\+State}} (\mbox{\hyperlink{group__stages__group_ga29e04432d3efcac24a5ae62572a6e8f2}{e\+\_\+node\+State}} new\+State)
+\begin{DoxyCompactList}\small\item\em Set current state on the F\+SM. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__stages__group_gac534eb879fa26941a06ffadeb69d92ff}{state\+\_\+dispatch}} ()
+\begin{DoxyCompactList}\small\item\em Execute current state task. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
-\subsection{Typedef Documentation}
-\mbox{\Hypertarget{states_8h_a5891f63a4c9243179838389a93d084e2}\label{states_8h_a5891f63a4c9243179838389a93d084e2}} 
-\index{states.\+h@{states.\+h}!e\+\_\+node\+State@{e\+\_\+node\+State}}
-\index{e\+\_\+node\+State@{e\+\_\+node\+State}!states.\+h@{states.\+h}}
-\subsubsection{\texorpdfstring{e\+\_\+node\+State}{e\_nodeState}}
-{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{states_8h_a3136d2815abe9d284f985e0a7ec68646}{enum\+\_\+node\+State}} \mbox{\hyperlink{states_8h_a5891f63a4c9243179838389a93d084e2}{e\+\_\+node\+State}}}
+\subsection{Detailed Description}
+F\+SM header file. 
 
-
-
-Definition at line 14 of file states.\+h.
-
-
-
-\subsection{Enumeration Type Documentation}
-\mbox{\Hypertarget{states_8h_a3136d2815abe9d284f985e0a7ec68646}\label{states_8h_a3136d2815abe9d284f985e0a7ec68646}} 
-\index{states.\+h@{states.\+h}!enum\+\_\+node\+State@{enum\+\_\+node\+State}}
-\index{enum\+\_\+node\+State@{enum\+\_\+node\+State}!states.\+h@{states.\+h}}
-\subsubsection{\texorpdfstring{enum\+\_\+node\+State}{enum\_nodeState}}
-{\footnotesize\ttfamily enum \mbox{\hyperlink{states_8h_a3136d2815abe9d284f985e0a7ec68646}{enum\+\_\+node\+State}}}
-
-\begin{DoxyEnumFields}{Enumerator}
-\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+T\+A\+ND@{S\+T\+A\+ND}!states.\+h@{states.\+h}}\index{states.\+h@{states.\+h}!S\+T\+A\+ND@{S\+T\+A\+ND}}}\mbox{\Hypertarget{states_8h_a3136d2815abe9d284f985e0a7ec68646af422fb81d42ecd479de08e64b6533d18}\label{states_8h_a3136d2815abe9d284f985e0a7ec68646af422fb81d42ecd479de08e64b6533d18}} 
-S\+T\+A\+ND&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{H\+V\+ON@{H\+V\+ON}!states.\+h@{states.\+h}}\index{states.\+h@{states.\+h}!H\+V\+ON@{H\+V\+ON}}}\mbox{\Hypertarget{states_8h_a3136d2815abe9d284f985e0a7ec68646a1fa0533f275ef4762e6eafc3b35bfd02}\label{states_8h_a3136d2815abe9d284f985e0a7ec68646a1fa0533f275ef4762e6eafc3b35bfd02}} 
-H\+V\+ON&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{D\+R\+I\+VE@{D\+R\+I\+VE}!states.\+h@{states.\+h}}\index{states.\+h@{states.\+h}!D\+R\+I\+VE@{D\+R\+I\+VE}}}\mbox{\Hypertarget{states_8h_a3136d2815abe9d284f985e0a7ec68646af7b6d6d8e5e14633d388ef9cc7a941b7}\label{states_8h_a3136d2815abe9d284f985e0a7ec68646af7b6d6d8e5e14633d388ef9cc7a941b7}} 
-D\+R\+I\+VE&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{N\+O\+T\+D\+R\+I\+VE@{N\+O\+T\+D\+R\+I\+VE}!states.\+h@{states.\+h}}\index{states.\+h@{states.\+h}!N\+O\+T\+D\+R\+I\+VE@{N\+O\+T\+D\+R\+I\+VE}}}\mbox{\Hypertarget{states_8h_a3136d2815abe9d284f985e0a7ec68646a58841f2207f211031fa8cdfa2152537a}\label{states_8h_a3136d2815abe9d284f985e0a7ec68646a58841f2207f211031fa8cdfa2152537a}} 
-N\+O\+T\+D\+R\+I\+VE&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+A\+X\+\_\+\+S\+T\+A\+T\+ES@{M\+A\+X\+\_\+\+S\+T\+A\+T\+ES}!states.\+h@{states.\+h}}\index{states.\+h@{states.\+h}!M\+A\+X\+\_\+\+S\+T\+A\+T\+ES@{M\+A\+X\+\_\+\+S\+T\+A\+T\+ES}}}\mbox{\Hypertarget{states_8h_a3136d2815abe9d284f985e0a7ec68646a6e301d1f2fcd23ccfc4de60c6e6cc9ce}\label{states_8h_a3136d2815abe9d284f985e0a7ec68646a6e301d1f2fcd23ccfc4de60c6e6cc9ce}} 
-M\+A\+X\+\_\+\+S\+T\+A\+T\+ES&\\
-\hline
-
-\end{DoxyEnumFields}
-
-
-Definition at line 6 of file states.\+h.
-
-
-
-\subsection{Function Documentation}
-\mbox{\Hypertarget{states_8h_abf47bce7c4c8d2166fe3e25ac404d7c7}\label{states_8h_abf47bce7c4c8d2166fe3e25ac404d7c7}} 
-\index{states.\+h@{states.\+h}!get\+Node\+Id@{get\+Node\+Id}}
-\index{get\+Node\+Id@{get\+Node\+Id}!states.\+h@{states.\+h}}
-\subsubsection{\texorpdfstring{get\+Node\+Id()}{getNodeId()}}
-{\footnotesize\ttfamily uint8\+\_\+t get\+Node\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-\mbox{\Hypertarget{states_8h_a2802a8c3f0174f4e54dd2381968212a0}\label{states_8h_a2802a8c3f0174f4e54dd2381968212a0}} 
-\index{states.\+h@{states.\+h}!get\+State@{get\+State}}
-\index{get\+State@{get\+State}!states.\+h@{states.\+h}}
-\subsubsection{\texorpdfstring{get\+State()}{getState()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{states_8h_a5891f63a4c9243179838389a93d084e2}{e\+\_\+node\+State}} get\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-
-
-Definition at line 17 of file states.\+cpp.
-
-\mbox{\Hypertarget{states_8h_a9c3b7582805e01be4b88b6648b42837e}\label{states_8h_a9c3b7582805e01be4b88b6648b42837e}} 
-\index{states.\+h@{states.\+h}!set\+Node\+Id@{set\+Node\+Id}}
-\index{set\+Node\+Id@{set\+Node\+Id}!states.\+h@{states.\+h}}
-\subsubsection{\texorpdfstring{set\+Node\+Id()}{setNodeId()}}
-{\footnotesize\ttfamily void set\+Node\+Id (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{node\+Id }\end{DoxyParamCaption})}
-
-\mbox{\Hypertarget{states_8h_a47cb7615bbcf2c96cc4a7656f9a76bab}\label{states_8h_a47cb7615bbcf2c96cc4a7656f9a76bab}} 
-\index{states.\+h@{states.\+h}!set\+State@{set\+State}}
-\index{set\+State@{set\+State}!states.\+h@{states.\+h}}
-\subsubsection{\texorpdfstring{set\+State()}{setState()}}
-{\footnotesize\ttfamily void set\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{states_8h_a5891f63a4c9243179838389a93d084e2}{e\+\_\+node\+State}}}]{new\+State }\end{DoxyParamCaption})}
-
-
-
-Definition at line 21 of file states.\+cpp.
-
-\mbox{\Hypertarget{states_8h_ac534eb879fa26941a06ffadeb69d92ff}\label{states_8h_ac534eb879fa26941a06ffadeb69d92ff}} 
-\index{states.\+h@{states.\+h}!state\+\_\+dispatch@{state\+\_\+dispatch}}
-\index{state\+\_\+dispatch@{state\+\_\+dispatch}!states.\+h@{states.\+h}}
-\subsubsection{\texorpdfstring{state\+\_\+dispatch()}{state\_dispatch()}}
-{\footnotesize\ttfamily void state\+\_\+dispatch (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-
-
-Definition at line 122 of file states.\+cpp.
-
+\begin{DoxyAuthor}{Author}
+Arella Matteo ~\newline
+ (mail\+: \href{mailto:arella.1646983@studenti.uniroma1.it}{\tt arella.\+1646983@studenti.\+uniroma1.\+it}) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2018 
+\end{DoxyDate}

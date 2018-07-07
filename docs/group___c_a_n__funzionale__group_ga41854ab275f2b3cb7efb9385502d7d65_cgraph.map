@@ -1,0 +1,4 @@
+<map id="inverter_torque_request" name="inverter_torque_request">
+<area shape="rect" id="node2" href="$group___c_a_n__funzionale__group.html#ga7d74fd826c5df3b86fd751f91c61671f" title="This function returns if inverter is online and active over CAN funzionale. " alt="" coords="209,5,359,32"/>
+<area shape="rect" id="node3" href="$group___c_a_n__funzionale__group.html#gaf1acdfa5537f47656edd6ffa3e7c24bd" title="This function returns CAN funzionale initialization status. " alt="" coords="407,5,576,32"/>
+</map>

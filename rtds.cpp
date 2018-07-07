@@ -17,7 +17,7 @@
  */
 
 /**
- *  @brief      This function starts RTDS.
+ *  @brief      This function starts RTDS through a buzzer.
  *              
  *  @author     Arella Matteo <br/>
  *              (mail: arella.1646983@studenti.uniroma1.it)

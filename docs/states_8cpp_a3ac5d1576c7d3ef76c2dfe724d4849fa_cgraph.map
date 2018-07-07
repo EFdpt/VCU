@@ -1,0 +1,9 @@
+<map id="notdrive" name="notdrive">
+<area shape="rect" id="node2" href="$group___board__model__group.html#ga36eddbc000c8d1820fd2a644a39c87ea" title="This function returns the value of the SC. " alt="" coords="145,5,246,32"/>
+<area shape="rect" id="node3" href="$states_8cpp.html#a47cb7615bbcf2c96cc4a7656f9a76bab" title="setState" alt="" coords="160,56,231,83"/>
+<area shape="rect" id="node4" href="$group___board__model__group.html#gae0acabf32ee7f2a82b2f9149ba3d1978" title="This function returns the value of APPS plausibility retrieved by CAN servizi network, if online, or by analog signal. " alt="" coords="124,107,267,133"/>
+<area shape="rect" id="node7" href="$group___board__model__group.html#ga6db41e7368919bc4dfafaf4e400ae1a9" title="This function returns the value of the brake pedal position sensor in percentage, retrieved by CAN se..." alt="" coords="120,157,271,184"/>
+<area shape="rect" id="node5" href="$group___c_a_n__servizi__group.html#ga43e9ef52770f760c5751d83b138c7e6b" title="This function returns if CAN servizi network is online. " alt="" coords="349,132,475,159"/>
+<area shape="rect" id="node6" href="$group___c_a_n__servizi__group.html#ga66135a8978149fc6fa0b62446131ce95" title="This function returns the value of APPS plausibility retrieved by frontal SCU node over CAN servizi n..." alt="" coords="319,81,505,108"/>
+<area shape="rect" id="node8" href="$group___c_a_n__servizi__group.html#ga21c09880bef645f24962658ef3dbb16e" title="This function returns the value of brake pedal position sensor in percentage, retrieved by frontal SC..." alt="" coords="351,183,473,209"/>
+</map>

@@ -1,0 +1,12 @@
+<map id="common.h" name="common.h">
+<area shape="rect" id="node2" href="$can__funzionale_8h.html" title="CAN funzionale module header. " alt="" coords="167,80,286,107"/>
+<area shape="rect" id="node5" href="$states_8cpp.html" title="FSM implementation file. " alt="" coords="248,229,331,256"/>
+<area shape="rect" id="node6" href="$can__servizi_8h.html" title="CAN servizi module header. " alt="" coords="485,80,582,107"/>
+<area shape="rect" id="node9" href="$_v_c_u_8ino.html" title="Main module file. " alt="" coords="473,229,543,256"/>
+<area shape="rect" id="node10" href="$_c_o__can_8h.html" title="CAN setup header module. " alt="" coords="345,80,425,107"/>
+<area shape="rect" id="node3" href="$can__funzionale_8cpp.html" title="CAN funzionale module implementation. " alt="" coords="23,155,156,181"/>
+<area shape="rect" id="node4" href="$_c_o__can_8cpp.html" title="CAN setup module implementation. " alt="" coords="231,155,326,181"/>
+<area shape="rect" id="node7" href="$can__servizi_8cpp.html" title="CAN servizi module implementation. " alt="" coords="597,155,707,181"/>
+<area shape="rect" id="node8" href="$model_8cpp.html" title="Board model implementation file. " alt="" coords="732,155,815,181"/>
+<area shape="rect" id="node11" href="$states_8h.html" title="FSM header file. " alt="" coords="351,155,420,181"/>
+</map>

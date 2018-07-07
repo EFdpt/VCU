@@ -1,0 +1,4 @@
+<map id="stand" name="stand">
+<area shape="rect" id="node2" href="$group___board__model__group.html#ga36eddbc000c8d1820fd2a644a39c87ea" title="This function returns the value of the SC. " alt="" coords="108,5,209,32"/>
+<area shape="rect" id="node3" href="$group__stages__group.html#ga47cb7615bbcf2c96cc4a7656f9a76bab" title="Set current state on the FSM. " alt="" coords="123,56,194,83"/>
+</map>

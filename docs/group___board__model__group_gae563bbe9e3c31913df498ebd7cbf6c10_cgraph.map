@@ -1,0 +1,4 @@
+<map id="get_tps2_percentage" name="get_tps2_percentage">
+<area shape="rect" id="node2" href="$group___c_a_n__servizi__group.html#ga43e9ef52770f760c5751d83b138c7e6b" title="This function returns if CAN servizi network is online. " alt="" coords="196,5,323,32"/>
+<area shape="rect" id="node3" href="$group___c_a_n__servizi__group.html#ga431b31efe978864b1a2db0d57a5b572a" title="This function returns the value of the second APPS in percentage, retrieved by frontal SCU node over ..." alt="" coords="202,56,317,83"/>
+</map>

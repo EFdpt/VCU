@@ -1,0 +1,4 @@
+<map id="get_brake_plausibility" name="get_brake_plausibility">
+<area shape="rect" id="node2" href="$group___c_a_n__servizi__group.html#ga43e9ef52770f760c5751d83b138c7e6b" title="This function returns if CAN servizi network is online. " alt="" coords="232,5,359,32"/>
+<area shape="rect" id="node3" href="$group___c_a_n__servizi__group.html#ga064fdc5f825b2d50b1b13509e3f135d2" title="This function returns the value of brake plausibility retrieved by frontal SCU node over CAN servizi ..." alt="" coords="200,56,391,83"/>
+</map>

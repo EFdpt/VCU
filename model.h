@@ -11,7 +11,30 @@
 
 #include <Arduino.h>
 
-/** @defgroup Board_model_group
+/**
+ *  @page Model_page Board model
+ *
+ *  VCU is based on an Atmel SAM3X8E board with an ARM Cortex-M3 microprocessor.
+ *
+ *  IO signals managed from VCU are:
+ *      - ANALOG
+ *          1. First APPS
+ *          2. Second APPS
+ *          3. Brake pedal position sensor
+ *          4. SC voltage
+ *      - DIGITAL
+ *          1. AIR+
+ *          2. AIR-
+ *          3. Precharge
+ *          4. RTDS buzzer
+ *          5. AIR button
+ *          6. RTD button
+ *
+ *  In case of @ref CAN_servizi_page failure both APPS and brake pedal position 
+ *  sensor are acquired by analog signals for fault tolerance.
+ */
+
+/** @defgroup Board_model_group Board model
  *  
  *  @{
  */
@@ -92,8 +115,10 @@ volatile bool    get_brake_plausibility();
  */
 volatile uint16_t get_SC_value();
 
+#if 0
 void model_enable_calibrations();
 void model_disable_calibrations();
+#endif
 
 /**
  *  @}

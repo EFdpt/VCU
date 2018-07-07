@@ -1,0 +1,52 @@
+\hypertarget{group___filter__module__group}{}\section{Filter buffer}
+\label{group___filter__module__group}\index{Filter buffer@{Filter buffer}}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group___filter__module__group_ga1646c21a91b653eeb516c9d508c1cab6}\label{group___filter__module__group_ga1646c21a91b653eeb516c9d508c1cab6}} 
+\#define \mbox{\hyperlink{group___filter__module__group_ga1646c21a91b653eeb516c9d508c1cab6}{U\+S\+E\+\_\+\+L\+O\+O\+P\+\_\+\+U\+N\+R\+O\+L\+L\+I\+NG}}~(1)
+\begin{DoxyCompactList}\small\item\em Flag macro for using or not loop unrolling into filter function. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group___filter__module__group_gaa505bfa61df2c48cb76be56720dae3d1}\label{group___filter__module__group_gaa505bfa61df2c48cb76be56720dae3d1}} 
+\#define \mbox{\hyperlink{group___filter__module__group_gaa505bfa61df2c48cb76be56720dae3d1}{pos}}(x,  offset)~((x) $\ast$ offset)
+\begin{DoxyCompactList}\small\item\em Buffer indexing macro. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{group___filter__module__group_ga676952eee893902e5a15b3f5adca1f86}{filter\+\_\+buffer}} (volatile uint16\+\_\+t $\ast$buffer, int size, unsigned offset)
+\begin{DoxyCompactList}\small\item\em This function filters the input buffer with an average filter. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{group___filter__module__group_ga676952eee893902e5a15b3f5adca1f86}\label{group___filter__module__group_ga676952eee893902e5a15b3f5adca1f86}} 
+\index{Filter buffer@{Filter buffer}!filter\+\_\+buffer@{filter\+\_\+buffer}}
+\index{filter\+\_\+buffer@{filter\+\_\+buffer}!Filter buffer@{Filter buffer}}
+\subsubsection{\texorpdfstring{filter\+\_\+buffer()}{filter\_buffer()}}
+{\footnotesize\ttfamily uint16\+\_\+t filter\+\_\+buffer (\begin{DoxyParamCaption}\item[{volatile uint16\+\_\+t $\ast$}]{buffer,  }\item[{int}]{size,  }\item[{unsigned}]{offset }\end{DoxyParamCaption})}
+
+
+
+This function filters the input buffer with an average filter. 
+
+\begin{DoxyAuthor}{Author}
+Arella Matteo ~\newline
+ (mail\+: \href{mailto:arella.1646983@studenti.uniroma1.it}{\tt arella.\+1646983@studenti.\+uniroma1.\+it})
+\end{DoxyAuthor}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em buffer} & Input buffer \\
+\hline
+\mbox{\tt in}  & {\em size} & Buffer size \\
+\hline
+\mbox{\tt in}  & {\em offset} & Offset between data corresponding to same acquired value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Filtered data 
+\end{DoxyReturn}
+
+
+Definition at line 39 of file filter.\+cpp.
+

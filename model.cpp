@@ -22,13 +22,14 @@
 
 /**
  *  @def ADC_BUFFER_SIZE
- *  @brief Size (bytes) of buffer for store each ADC channel data
+ *  @brief Size (bytes) of buffer for store each ADC channel data with DMA
  */
 #define ADC_BUFFER_SIZE         128
 
 /**
- *  @def BUFFERS
- *  @brief Number of ADC buffers
+ *  @def        BUFFERS
+ *  @brief      Number of DMA buffers
+ *  @warning    Must be a power of two
  */
 #define BUFFERS                 4
 
@@ -45,14 +46,8 @@
 #define ADC_MAX                 4095
 
 /**
- *  @def APPS_PLAUS_RANGE
- *  @brief Size (bytes) of each ADC buffer
- */
-#define APPS_PLAUS_RANGE        10
-
-/**
  *  @def ADC_CHANNELS_LIST
- *  @brief List of ADC channels dedicated to each board pinout
+ *  @brief List of ADC channels dedicated to each IO port
  */
 #define ADC_CHANNELS_LIST       TPS1_ADC_CHAN_NUM | TPS2_ADC_CHAN_NUM | BRAKE_ADC_CHAN_NUM | SC_ADC_CHAN_NUM
 
@@ -93,19 +88,25 @@
 #define BUFFER_LENGTH           ADC_BUFFER_SIZE * ADC_CHANNELS
 
 /**
- * @var     volatile uint8_t tps1_percentage;
+ *  @def APPS_PLAUS_RANGE
+ *  @brief Size (bytes) of each ADC buffer
+ */
+#define APPS_PLAUS_RANGE        10
+
+/**
+ * @var     volatile uint8_t tps1_adc_percentage;
  * @brief   First APPS percentage value retrieved by analog tps1 signal (#TPS1_PIN)
  */
 volatile uint8_t    tps1_adc_percentage    = 0;
 
 /**
- * @var     volatile uint8_t tps2_percentage;
+ * @var     volatile uint8_t tps2_adc_percentage;
  * @brief   Second APPS percentage value retrieved by analog tps2 signal (#TPS2_PIN)
  */
 volatile uint8_t    tps2_adc_percentage    = 0;
 
 /**
- * @var     volatile uint8_t brake_percentage;
+ * @var     volatile uint8_t brake_adc_percentage;
  * @brief   Brake pedal position sensor percentage value retrieved by analog brake
  *          signal (#BRAKE_PIN)
  */
@@ -205,15 +206,53 @@ typedef struct pedals_ranges_s {
 DueFlashStorage     dueFlashStorage;
 #endif
 
-// pedals ranges in RAM
+/**
+ *  @var    volatile uint16_t tps1_max;
+ *  @brief  First APPS max output voltage (equals to #TPS1_UPPER_BOUND)
+ */
 volatile uint16_t   tps1_max    = TPS1_UPPER_BOUND;
-volatile uint16_t   tps1_low    = TPS1_LOWER_BOUND;
-volatile uint16_t   tps2_max    = TPS2_UPPER_BOUND;
-volatile uint16_t   tps2_low    = TPS2_LOWER_BOUND;
-volatile uint16_t   brake_max   = BRAKE_UPPER_BOUND;
-volatile uint16_t   brake_low   = BRAKE_LOWER_BOUND;
 
-volatile int        bufn, obufn;
+/**
+ *  @var    volatile uint16_t tps1_min;
+ *  @brief  First APPS min output voltage (equals to #TPS1_LOWER_BOUND)
+ */
+volatile uint16_t   tps1_min    = TPS1_LOWER_BOUND;
+
+/**
+ *  @var    volatile uint16_t tps2_max;
+ *  @brief  Second APPS max output voltage (equals to #TPS2_UPPER_BOUND)
+ */
+volatile uint16_t   tps2_max    = TPS2_UPPER_BOUND;
+
+/**
+ *  @var    volatile uint16_t tps2_min;
+ *  @brief  Second APPS min output voltage (equals to #TPS2_LOWER_BOUND)
+ */
+volatile uint16_t   tps2_min    = TPS2_LOWER_BOUND;
+
+/**
+ *  @var    volatile uint16_t brake_max;
+ *  @brief  Brake sensor max output voltage (equals to #BRAKE_UPPER_BOUND)
+ */
+volatile uint16_t   brake_max   = BRAKE_UPPER_BOUND;
+
+/**
+ *  @var    volatile uint16_t brake_min;
+ *  @brief  Brake sensor min output voltage (equals to #BRAKE_LOWER_BOUND)
+ */
+volatile uint16_t   brake_min   = BRAKE_LOWER_BOUND;
+
+/**
+ *  @var    volatile int bufn;
+ *  @brief  DMA buffer pointer
+ */
+volatile int        bufn;
+
+/**
+ *  @var    volatile int obufn;
+ *  @brief  DMA buffer pointer
+ */
+volatile int        obufn;
 
 /**
  * @var     volatile uint16_t   buf[#BUFFERS][#BUFFER_LENGTH];
@@ -223,9 +262,9 @@ volatile int        bufn, obufn;
  */
 volatile uint16_t   buf[BUFFERS][BUFFER_LENGTH];
 
+#if 0
 volatile bool       calibrate          = false;
 
-#if 0
 static inline void load_pedals_ranges(pedals_ranges_t* ranges) {
     uint8_t first_time = dueFlashStorage.read(FIRST_RUN_FLAG_ADDR);
     if (first_time) {
@@ -253,24 +292,44 @@ static inline void store_pedals_ranges(pedals_ranges_t* ranges) {
 }
 #endif
 
+/**
+ *  @brief      This function filters ADC acquisitions;
+ *              - Each ADC buffer data is filtered and an average is done with 
+ *                  previous values; 
+ *              - Each pedal filtered value is mapped to a percentage value;
+ *              - APPS plausibility and brake plausibility are checked.
+ *              
+ *              
+ *  @author     Arella Matteo <br/>
+ *              (mail: arella.1646983@studenti.uniroma1.it)
+ */
 static inline void filter_data() {
     tps1_value = (tps1_value + filter_buffer(buf[obufn] + TPS1_ADC_OFFSET, ADC_BUFFER_SIZE, ADC_CHANNELS)) / 2;
     tps2_value = (tps2_value + filter_buffer(buf[obufn] + TPS2_ADC_OFFSET, ADC_BUFFER_SIZE, ADC_CHANNELS)) / 2;
     brake_value = (brake_value + filter_buffer(buf[obufn] + BRAKE_ADC_OFFSET, ADC_BUFFER_SIZE, ADC_CHANNELS)) / 2;
     SC_value = (SC_value + filter_buffer(buf[obufn] + SC_ADC_OFFSET, ADC_BUFFER_SIZE, ADC_CHANNELS)) / 2;
 
+#if 0
     if (calibrate) {
-        if (tps1_value < tps1_low) tps1_low = tps1_value;
+        if (tps1_value < tps1_min) tps1_min = tps1_value;
         if (tps1_value > tps1_max) tps1_max = tps1_value;
-        if (tps2_value < tps2_low) tps2_low = tps2_value;
+        if (tps2_value < tps2_min) tps2_min = tps2_value;
         if (tps2_value > tps2_max) tps2_max = tps2_value;
-        if (brake_value < brake_low) brake_low = brake_value;
+        if (brake_value < brake_min) brake_min = brake_value;
         if (brake_value > brake_max) brake_max = brake_value;
     }
+#endif
 
-    tps1_adc_percentage = map(tps1_value, tps1_low, tps1_max, 0, 100);
-    tps2_adc_percentage = map(tps2_value, tps2_low, tps2_max, 0, 100);
-    brake_adc_percentage = map(brake_value, brake_low, brake_max, 0, 100);
+    if (tps1_value < tps1_min) tps1_value = tps1_min;
+    if (tps1_value > tps1_max) tps1_value = tps1_max;
+    if (tps2_value < tps2_min) tps2_value = tps2_min;
+    if (tps2_value > tps2_max) tps2_value = tps2_max;
+    if (brake_value < brake_min) brake_value = brake_min;
+    if (brake_value > brake_max) brake_value = brake_max;
+
+    tps1_adc_percentage = map(tps1_value, tps1_min, tps1_max, 0, 100);
+    tps2_adc_percentage = map(tps2_value, tps2_min, tps2_max, 0, 100);
+    brake_adc_percentage = map(brake_value, brake_min, brake_max, 0, 100);
 
     // check APPS plausibility
     if (abs(tps1_adc_percentage - tps2_adc_percentage) > APPS_PLAUS_RANGE)
@@ -285,10 +344,19 @@ static inline void filter_data() {
       brake_adc_plausibility = true;
 }
 
+/**
+ *  @brief      ADC IRQ handler.
+ *              When ADC buffer is filled DMA pointer is linked to next buffer
+ *              available.
+ *              Then acquired data are filtered.
+ *              
+ *  @author     Arella Matteo <br/>
+ *              (mail: arella.1646983@studenti.uniroma1.it)
+ */
 void ADC_Handler() {
     int f = ADC->ADC_ISR;
     if (f & (1 << 27)){
-        bufn = (bufn + 1) &(BUFFERS - 1); // move DMA pointers to next buffer
+        bufn = (bufn + 1) & (BUFFERS - 1); // move DMA pointers to next buffer
         ADC->ADC_RNPR = (uint32_t) buf[bufn];
         ADC->ADC_RNCR = BUFFER_LENGTH;
 
@@ -298,10 +366,33 @@ void ADC_Handler() {
     }
 }
 
+/**
+ *  @brief      This function initializes hardware board.
+ *              Both APPS and brake pedal position sensor are acquired by analog
+ *              signals for fault tolerance in case of CAN servizi fault.
+ *
+ *              ADC peripheral is initialized with ADC_FREQ_MAX clock and with
+ *              12bits of resolution.
+ *
+ *              ADC peripheral is then configured in free running mode for continuous
+ *              acquisitions.
+ *
+ *              ADC channels are enabled according to #ADC_CHANNELS_LIST.
+ *
+ *              ADN End of Receive Buffer Interrupt is enabled for trigger interrupt
+ *              when 
+ *
+ *              Then digital GPIO ports for AIR+, AIR-, PRE, BUZZER, AIRbutton,
+ *              RTDbutton are enabled.
+ *              
+ *  @author     Arella Matteo <br/>
+ *              (mail: arella.1646983@studenti.uniroma1.it)
+ */
 void model_init() {
     pmc_enable_periph_clk(ID_ADC);
     adc_init(ADC, SystemCoreClock, ADC_FREQ_MAX, ADC_STARTUP_FAST);
     adc_set_resolution(ADC, ADC_12_BITS);
+
     ADC->ADC_MR |=0x80; // free running
 
     ADC->ADC_CHER = ADC_CHANNELS_LIST;

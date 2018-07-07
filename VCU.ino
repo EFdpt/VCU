@@ -14,14 +14,10 @@
 
 /**
  *  @mainpage FastChargeSAE VCU firmware
- *  
- *  Vehicle Control Unit (VCU) firmware is based upon 4 states:
- *  - STAND: stato 0, accensione della vettura, si ritorna qui ogni volta che
- *              casca l'SC
- *  - HVON: stato 1, alta tensione attiva si accede solo da STAND tramite AIRbutton 
- *              e SC>3V
- *  - DRIVE: stato 2, lo stato di guida sicura, accedibile tramite procedura RTD 
- *              ma anche con lo scatto delle plausibilità tramite procedura di rientro
+ *
+ *  VCU is an embedded system employeed to control the functional operations of the vehicle.
+ *  It takes care of the management of the state of drive according to the @ref FSM_page
+ *  section.
  */
 
 /**
@@ -32,16 +28,16 @@
  *                  then the VCU is configured to request torque value to inverter
  *                  by analog signal.
  *
- *              -   It initializes board hardware (TODO: see model)
+ *              -   It initializes board hardware (@ref Board_model_group)
  *              
  *              -   If the configuration over CAN servizi with the frontal SCU was
  *                  successful then VCU (master) send an NMT request to go in
- *                  'Operational' state (TODO: see later).
+ *                  'Operational' state.
  *  @author     Arella Matteo <br/>
  *              (mail: arella.1646983@studenti.uniroma1.it)
  */
 void setup() {
-    volatile uint16_t timeout = 1000;
+    volatile uint16_t timeout = 100;
 
     while (!can_init()) // initialize CAN bus baudrate & configure mailboxes
         if (timeout--) break;

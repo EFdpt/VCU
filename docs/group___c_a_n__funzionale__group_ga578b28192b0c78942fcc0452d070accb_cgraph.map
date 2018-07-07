@@ -1,0 +1,6 @@
+<map id="can_funzionale_init" name="can_funzionale_init">
+<area shape="rect" id="node2" href="$group___c_a_n__funzionale__group.html#gaf4990e00c0c4a9f9eeb9cb5bdaecfa94" title="This function manage boot&#45;up message sent over CAN funzionale network by inverter slave node..." alt="" coords="195,5,370,32"/>
+<area shape="rect" id="node3" href="$group___c_a_n__funzionale__group.html#ga81bbc4c65d579febfbcae399f0ecbffc" title="This function manage SDO server response with inverter Vendor ID. VCU sends NMT operational and PDOs ..." alt="" coords="185,56,380,83"/>
+<area shape="rect" id="node5" href="$group___c_a_n__funzionale__group.html#ga1fcfa8e31cfbfe2461328c345b5b8e19" title="This function manage TPDO from inverter and deserializes data: " alt="" coords="191,107,374,133"/>
+<area shape="rect" id="node4" href="$group___c_a_n__funzionale__group.html#gac93bbbf1b84f1bc82b26d54d7f898172" title="This function sends a periodic CANOpen sync message to inverter slave node. " alt="" coords="428,56,607,83"/>
+</map>

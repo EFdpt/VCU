@@ -1,1 +1,187 @@
-Two C\-A\-N networks have been designed to be inserted into the vehicle\-: a first C\-A\-N network between the V\-C\-U and the inverter (C\-A\-N funzionale) and a second C\-A\-N network between the V\-C\-U, T\-C\-U and S\-C\-Us (C\-A\-N servizi). 
+Two C\+AN networks have been designed to be inserted into the vehicle\+: a first C\+AN network between the V\+CU and the inverter (C\+AN funzionale) and a second C\+AN network between the V\+CU, T\+CU and S\+C\+Us (C\+AN servizi).
+
+Each node connected to C\+AN network has an unique ID internally to that network, according to this table\+: \tabulinesep=1mm
+\begin{longtabu} spread 0pt [c]{*{3}{|X[-1]}|}
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ C\+AN N\+E\+T\+W\+O\+RK  }&\textbf{ N\+O\+DE  }&\textbf{ N\+O\+D\+E-\/\+ID   }\\\cline{1-3}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ C\+AN N\+E\+T\+W\+O\+RK  }&\textbf{ N\+O\+DE  }&\textbf{ N\+O\+D\+E-\/\+ID   }\\\cline{1-3}
+\endhead
+\multirow{2}{\linewidth}{F\+U\+N\+Z\+I\+O\+N\+A\+LE  }&I\+N\+V\+E\+R\+T\+ER  &1   \\\cline{2-3}
+&V\+CU  &2   \\\cline{1-3}
+\multirow{3}{\linewidth}{S\+E\+R\+V\+I\+ZI  }&Frontal\+S\+CU  &1   \\\cline{2-3}
+&V\+CU  &2   \\\cline{2-3}
+&T\+CU  &4   \\\cline{1-3}
+\end{longtabu}
+
+
+
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{CAN_funzionale_page}{C\+AN funzionale}}
+\item \mbox{\hyperlink{CAN_servizi_page}{C\+AN servizi}} 
+\end{DoxyItemize}\hypertarget{CAN_funzionale_page}{}\section{C\+AN Funzionale}\label{CAN_funzionale_page}
+C\+AN funzionale network arises from the need to have an high reliable and robust communication between V\+CU and inverter.
+
+\subsection*{V\+CU master on power up sequence}
+
+
+\begin{DoxyEnumerate}
+\item {\bfseries wait for B\+O\+O\+T-\/\+UP message from inverter} ~\newline
+ \tabulinesep=1mm
+\begin{longtabu} spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ C\+O\+B-\/\+ID (11bits)  }&\textbf{ data byte 0   }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ C\+O\+B-\/\+ID (11bits)  }&\textbf{ data byte 0   }\\\cline{1-2}
+\endhead
+0x700 + N\+O\+D\+E-\/\+ID  &0x00   \\\cline{1-2}
+\end{longtabu}
+
+
+
+\item {\bfseries check V\+E\+N\+D\+O\+R-\/\+ID} (V\+CU read object 0x1018) ~\newline
+ {\itshape V\+CU send cliend S\+DO} \tabulinesep=1mm
+\begin{longtabu} spread 0pt [c]{*{5}{|X[-1]}|}
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ C\+O\+B-\/\+ID (11bits)  }&\textbf{ Command byte  }&\textbf{ Obj. Index (2 byte)  }&\textbf{ Obj. sub-\/index (byte)  }&\textbf{ Data (4bytes)   }\\\cline{1-5}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ C\+O\+B-\/\+ID (11bits)  }&\textbf{ Command byte  }&\textbf{ Obj. Index (2 byte)  }&\textbf{ Obj. sub-\/index (byte)  }&\textbf{ Data (4bytes)   }\\\cline{1-5}
+\endhead
+0x600 + N\+O\+D\+E-\/\+ID  &0x40  &0x1810  &0x01  &0   \\\cline{1-5}
+\end{longtabu}
+~\newline
+ {\itshape V\+CU receive server S\+DO (from inverter)} \tabulinesep=1mm
+\begin{longtabu} spread 0pt [c]{*{5}{|X[-1]}|}
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ C\+O\+B-\/\+ID (11bits)  }&\textbf{ Command byte  }&\textbf{ Obj. Index (2 byte)  }&\textbf{ Obj. sub-\/index (byte)  }&\textbf{ Data (4bytes)   }\\\cline{1-5}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ C\+O\+B-\/\+ID (11bits)  }&\textbf{ Command byte  }&\textbf{ Obj. Index (2 byte)  }&\textbf{ Obj. sub-\/index (byte)  }&\textbf{ Data (4bytes)   }\\\cline{1-5}
+\endhead
+0x580 + N\+O\+D\+E-\/\+ID  &0x43  &0x1810  &0x01  &0x19030000   \\\cline{1-5}
+\end{longtabu}
+
+
+
+\item {\bfseries send N\+MT \textquotesingle{}go Operational\textquotesingle{}} (broadcast) \tabulinesep=1mm
+\begin{longtabu} spread 0pt [c]{*{3}{|X[-1]}|}
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ C\+O\+B-\/\+ID (11bits)  }&\textbf{ data byte 0  }&\textbf{ data byte 1   }\\\cline{1-3}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ C\+O\+B-\/\+ID (11bits)  }&\textbf{ data byte 0  }&\textbf{ data byte 1   }\\\cline{1-3}
+\endhead
+0x000  &0x01  &0x00   \\\cline{1-3}
+\end{longtabu}
+
+
+
+\item {\bfseries send P\+DO to enable P\+WM} ~\newline
+ \tabulinesep=1mm
+\begin{longtabu} spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ C\+O\+B-\/\+ID (11bits)  }&\textbf{ Data (R\+P\+D\+O1)   }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ C\+O\+B-\/\+ID (11bits)  }&\textbf{ Data (R\+P\+D\+O1)   }\\\cline{1-2}
+\endhead
+0x200 + N\+O\+D\+E-\/\+ID  &06 00 xx xx xx xx xx xx   \\\cline{1-2}
+\end{longtabu}
+~\newline
+ \tabulinesep=1mm
+\begin{longtabu} spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ C\+O\+B-\/\+ID (11bits)  }&\textbf{ Data (R\+P\+D\+O1)   }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ C\+O\+B-\/\+ID (11bits)  }&\textbf{ Data (R\+P\+D\+O1)   }\\\cline{1-2}
+\endhead
+0x200 + N\+O\+D\+E-\/\+ID  &07 00 xx xx xx xx xx xx   \\\cline{1-2}
+\end{longtabu}
+~\newline
+ \tabulinesep=1mm
+\begin{longtabu} spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ C\+O\+B-\/\+ID (11bits)  }&\textbf{ Data (R\+P\+D\+O1)   }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ C\+O\+B-\/\+ID (11bits)  }&\textbf{ Data (R\+P\+D\+O1)   }\\\cline{1-2}
+\endhead
+0x200 + N\+O\+D\+E-\/\+ID  &0F 00 xx xx xx xx xx xx   \\\cline{1-2}
+\end{longtabu}
+
+
+
+\item {\bfseries periodically send S\+Y\+NC message} ~\newline
+ {\itshape V\+CU broadcast S\+Y\+NC} \tabulinesep=1mm
+\begin{longtabu} spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ C\+O\+B-\/\+ID (11bits)  }&\textbf{ Data byte 0   }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ C\+O\+B-\/\+ID (11bits)  }&\textbf{ Data byte 0   }\\\cline{1-2}
+\endhead
+0x80 + N\+O\+D\+E-\/\+ID  &0x00   \\\cline{1-2}
+\end{longtabu}
+
+\end{DoxyEnumerate}\hypertarget{CAN_servizi_page}{}\section{C\+AN Servizi}\label{CAN_servizi_page}
+C\+AN servizi network arises from the need to digitize all those signals necessary for the operation of the car. V\+CU master node is interested to receive pedals position percentage values, A\+P\+PS and brake plausibility from frontal S\+CU, and torque request limiter from T\+CU.
+
+A C\+A\+Nbus communication protocol has been developed based on the C\+A\+Nopen specifications (CiA 301). Each slave node can be represented by a finite state machine with the following states\+: Initialisation, Pre-\/operational, Operational, Stopped. During power-\/up each node is in the Initialization phase. At the end of this phase, it attempts to send a boot-\/up message. As soon as it has been successfully sent, it is placed in the Pre-\/operational state. Using an N\+MT master message, the V\+CU can passes the various slave nodes between the different Pre-\/operational, Operational and Stopped states.
+
+\subsection*{V\+CU master on power up sequence}
+
+
+\begin{DoxyEnumerate}
+\item {\bfseries wait for B\+O\+O\+T-\/\+UP message from slave nodes} (from frontal S\+CU and T\+CU) \tabulinesep=1mm
+\begin{longtabu} spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ C\+O\+B-\/\+ID (11bits)  }&\textbf{ data byte 0   }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ C\+O\+B-\/\+ID (11bits)  }&\textbf{ data byte 0   }\\\cline{1-2}
+\endhead
+0x700 + N\+O\+D\+E-\/\+ID  &0x00   \\\cline{1-2}
+\end{longtabu}
+
+\item {\bfseries send N\+MT \textquotesingle{}go Operational\textquotesingle{}} (broadcast) \tabulinesep=1mm
+\begin{longtabu} spread 0pt [c]{*{3}{|X[-1]}|}
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ C\+O\+B-\/\+ID (11bits)  }&\textbf{ data byte 0  }&\textbf{ data byte 1   }\\\cline{1-3}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ C\+O\+B-\/\+ID (11bits)  }&\textbf{ data byte 0  }&\textbf{ data byte 1   }\\\cline{1-3}
+\endhead
+0x000  &0x01  &0x00   \\\cline{1-3}
+\end{longtabu}
+
+\end{DoxyEnumerate}
+
+\subsection*{Fault Tolerance}
+
+If failure of C\+AN servizi network occurs, redundancy has been introduced in the acquisition of pedals\+: if P\+DO with the pedal data are not received within a certain timeout then C\+AN servizi network is considered non-\/functional and pedal sensors are acquired directly via analog signals from the V\+CU. 

@@ -1,3 +1,11 @@
+/** 
+ *  @file           states.cpp
+ *  @author         Arella Matteo <br/>
+ *                  (mail: arella.1646983@studenti.uniroma1.it)
+ *  @date           2018
+ *  @brief          FSM implementation file
+ */
+
 #include "states.h"
 #include "can_funzionale.h"
 #include "can_servizi.h"
@@ -5,25 +13,84 @@
 #include "model.h"
 #include "common.h"
 
+/**
+ *  @addtogroup stages_group
+ *   @{
+ */
+
+/**
+ *  @def    SC_THRES
+ *  @brief  SC voltage minimum value
+ */
 #define SC_THRES    600
-#define RunBK       10 //10% della corsa del freno
-#define RTDBK       10 //pressione freno per RTD (10%)
+
+/**
+ *  @def    RunBK
+ *  @brief  Brake pedal position percentage threshold to pass from 
+ *          NOTDRIVE to DRIVE 
+ */
+#define RunBK       10
+
+/**
+ *  @def    RTDBK
+ *  @brief  Brake pedal position percentage threshold to pass from 
+ *          HVON to DRIVE 
+ */
+#define RTDBK       10
+
+/**
+ *  @def    REGEN_BK_PERCENTAGE
+ *  @brief  Brake pedal position percentage threshold to active regen request
+ */
 #define REGEN_BK_PERCENTAGE         40
 
-volatile bool RTD = false; // Ready To Drive
+/**
+ *  @var    volatile bool RTD;
+ *  @brief  Ready To Drive flag
+ */
+volatile bool RTD = false;
 
+/**
+ *  @var    volatile e_nodeState current_state;
+ *  @brief  Current state on the FSM
+ */
 volatile    e_nodeState current_state   = STAND;
 
-__attribute__((__inline__)) e_nodeState getState() {
+/**
+ *  @brief      Return current state on the FSM
+ *  
+ *  @author     Arella Matteo <br/>
+ *                  (mail: arella.1646983@studenti.uniroma1.it)
+ *
+ *  @return     current state on the FSM
+ */
+__attribute__((__inline__))
+e_nodeState getState() {
 	return current_state;
 }
 
-__attribute__((__inline__)) void setState(e_nodeState newState) {
+
+/**
+ *  @brief      Set current state on the FSM
+ *  
+ *  @author     Arella Matteo <br/>
+ *                  (mail: arella.1646983@studenti.uniroma1.it)
+ *
+ *  @param[in]  newState    New state transition
+ */
+__attribute__((__inline__))
+void setState(e_nodeState newState) {
 	current_state = newState;
 }
 
-/*
- * stato 0, accensione della vettura
+/**
+ *  @brief      STAND state task on the FSM: ignition of the car.
+ *              If AIR button is pressed and SC voltage value is greater than
+ *              #SC_THRES then current state passes to HVON, activating Precharge,
+ *              AIR- and AIR+.
+ *  
+ *  @author     Arella Matteo <br/>
+ *                  (mail: arella.1646983@studenti.uniroma1.it)
  */
 void stand() {
     // model_enable_calibrations();
@@ -42,8 +109,18 @@ void stand() {
     }
 }
 
-/*
- * stato 1, alta tensione attiva
+/**
+ *  @brief      HV ON state task on the FSM: active high voltage.
+ *  
+ *              If RTD button is pressed, SC voltage value is greater than
+ *              #SC_THRES and brake pedal position percentage is greater than
+ *              #RTDBK then current state passes to DRIVE, triggering RTDS.
+ *
+ *              If SC voltage value is lower than #SC_THRES, (SC undervoltage error),
+ *              then current state passes to STAND.
+ *  
+ *  @author     Arella Matteo <br/>
+ *                  (mail: arella.1646983@studenti.uniroma1.it)
  */
 void hvon() {
 
@@ -64,6 +141,24 @@ void hvon() {
     if (get_SC_value() < SC_THRES)  setState(STAND);
 }
 
+/**
+ *  @brief      DRIVE state task on the FSM.
+ *  
+ *              If pedals values are consistent (no implausibility) and SC voltage 
+ *              value is greater than #SC_THRES then torque or regen (if vehicle 
+ *              speed is \f$>\ 5\ km/h\f$) request is sent to inverter; request to
+ *              inverter is done through CAN funzionale if online or through analog 
+ *              signals.
+ *              
+ *              If SC voltage value is lower than #SC_THRES, (SC undervoltage error),
+ *              then current state passes to STAND.
+ *
+ *              If there are pedals implausibility then current state passes to
+ *              NOT DRIVE state.
+ *  
+ *  @author     Arella Matteo <br/>
+ *                  (mail: arella.1646983@studenti.uniroma1.it)
+ */
 void drive() {
     while (get_SC_value() > SC_THRES && RTD && get_apps_plausibility() && get_brake_plausibility()) {
 
@@ -77,7 +172,6 @@ void drive() {
             } else {
                 inverter_torque_request(0);
                 inverter_regen_request(1613);
-                // analogWrite(BRAKE_REGEN_PIN, 1613);  // 1296=2.6V OUT - regen ON
             }
 
             Serial.print("APPS: "); Serial.print(apps_percentage); Serial.print("   BRAKE: "); Serial.println(get_brake_percentage());
@@ -102,8 +196,17 @@ void drive() {
         Serial.println("   FRENO + ACCELERATORE !!!");
 }
 
-/* 
- * errore con la pedaliera, i sensori dei pedali sono scollegati o fuori range
+/**
+ *  @brief      NOT DRIVE state task on the FSM: inconsistent pedals values.
+ *  
+ *              If SC voltage value is lower than #SC_THRES, (SC undervoltage error),
+ *              then current state passes to STAND state.
+ *
+ *              If pedals values return consistent (i.e. plausibility check verified),
+ *              then current state passes to DRIVE state.
+ *  
+ *  @author     Arella Matteo <br/>
+ *                  (mail: arella.1646983@studenti.uniroma1.it)
  */
 void notdrive() {
     if (get_SC_value() < SC_THRES) setState(STAND);
@@ -114,11 +217,22 @@ void notdrive() {
     }
 }
 
-/* Tabella dei possibili stati:
-  la tabella punta alle funzioni in elenco (stati)
-*/
+/**
+ *  @var    void(*state_table[])(void);
+ *  @brief  FSM tasks function pointers
+ */
 void(*state_table[])(void) = {stand, hvon, drive, notdrive};
 
+/**
+ *  @brief      Execute current state task
+ *  
+ *  @author     Arella Matteo <br/>
+ *                  (mail: arella.1646983@studenti.uniroma1.it)
+ */
 void state_dispatch() {
     state_table[current_state]();
 }
+
+/**
+ *  @}
+ */
