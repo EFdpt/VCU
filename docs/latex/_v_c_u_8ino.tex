@@ -20,10 +20,10 @@ Include dependency graph for V\+C\+U.\+ino\+:\nopagebreak
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{_v_c_u_8ino_a4fc01d736fe50cf5b977f755b675f11d}{setup}} ()
+void \mbox{\hyperlink{group___main__group__module_ga4fc01d736fe50cf5b977f755b675f11d}{setup}} ()
 \begin{DoxyCompactList}\small\item\em This function perform basic board setup. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{_v_c_u_8ino_afe461d27b9c48d5921c00d521181f12f}{loop}} ()
-\begin{DoxyCompactList}\small\item\em This function is called into endless while main loop. It takes care of dispatching states of the finite state machine (T\+O\+DO\+: see states) \end{DoxyCompactList}\end{DoxyCompactItemize}
+void \mbox{\hyperlink{group___main__group__module_gafe461d27b9c48d5921c00d521181f12f}{loop}} ()
+\begin{DoxyCompactList}\small\item\em This function is called into endless while main loop. It takes care of dispatching states of the \mbox{\hyperlink{_f_s_m_page}{Finite State Machine (F\+SM)}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -36,47 +36,3 @@ Arella Matteo ~\newline
 \begin{DoxyDate}{Date}
 2018 
 \end{DoxyDate}
-
-
-\subsection{Function Documentation}
-\mbox{\Hypertarget{_v_c_u_8ino_afe461d27b9c48d5921c00d521181f12f}\label{_v_c_u_8ino_afe461d27b9c48d5921c00d521181f12f}} 
-\index{V\+C\+U.\+ino@{V\+C\+U.\+ino}!loop@{loop}}
-\index{loop@{loop}!V\+C\+U.\+ino@{V\+C\+U.\+ino}}
-\subsubsection{\texorpdfstring{loop()}{loop()}}
-{\footnotesize\ttfamily void loop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-
-
-This function is called into endless while main loop. It takes care of dispatching states of the finite state machine (T\+O\+DO\+: see states) 
-
-\begin{DoxyAuthor}{Author}
-Arella Matteo ~\newline
- (mail\+: \href{mailto:arella.1646983@studenti.uniroma1.it}{\tt arella.\+1646983@studenti.\+uniroma1.\+it}) 
-\end{DoxyAuthor}
-
-
-Definition at line 59 of file V\+C\+U.\+ino.
-
-\mbox{\Hypertarget{_v_c_u_8ino_a4fc01d736fe50cf5b977f755b675f11d}\label{_v_c_u_8ino_a4fc01d736fe50cf5b977f755b675f11d}} 
-\index{V\+C\+U.\+ino@{V\+C\+U.\+ino}!setup@{setup}}
-\index{setup@{setup}!V\+C\+U.\+ino@{V\+C\+U.\+ino}}
-\subsubsection{\texorpdfstring{setup()}{setup()}}
-{\footnotesize\ttfamily void setup (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-
-
-This function perform basic board setup. 
-
-
-\begin{DoxyItemize}
-\item It starts initializing both C\+AN funzionale (with inverter) and C\+AN servizi (with the two S\+C\+Us and T\+CS); if the comunication between inverter and V\+CU can\textquotesingle{}t be established via C\+AN bus then the V\+CU is configured to request torque value to inverter by analog signal.
-\item It initializes board hardware (\mbox{\hyperlink{group___board__model__group}{Board model}})
-\item If the configuration over C\+AN servizi with the frontal S\+CU was successful then V\+CU (master) send an N\+MT request to go in \textquotesingle{}Operational\textquotesingle{} state. \begin{DoxyAuthor}{Author}
-Arella Matteo ~\newline
- (mail\+: \href{mailto:arella.1646983@studenti.uniroma1.it}{\tt arella.\+1646983@studenti.\+uniroma1.\+it}) 
-\end{DoxyAuthor}
-
-\end{DoxyItemize}
-
-Definition at line 39 of file V\+C\+U.\+ino.
-

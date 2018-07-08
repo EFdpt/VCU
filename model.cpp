@@ -16,8 +16,7 @@
 #undef HID_ENABLED
 
 /** @addtogroup Board_model_group
- *  
- *  @{
+ *   @{
  */
 
 /**
@@ -89,7 +88,7 @@
 
 /**
  *  @def APPS_PLAUS_RANGE
- *  @brief Size (bytes) of each ADC buffer
+ *  @brief Maximum percentage deviation of pedal travel between two APPS
  */
 #define APPS_PLAUS_RANGE        10
 
@@ -379,8 +378,8 @@ void ADC_Handler() {
  *
  *              ADC channels are enabled according to #ADC_CHANNELS_LIST.
  *
- *              ADN End of Receive Buffer Interrupt is enabled for trigger interrupt
- *              when 
+ *              ADC End of Receive Buffer Interrupt is enabled for trigger interrupt
+ *              when DMA has filled entire buffer.
  *
  *              Then digital GPIO ports for AIR+, AIR-, PRE, BUZZER, AIRbutton,
  *              RTDbutton are enabled.

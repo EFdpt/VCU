@@ -57,7 +57,7 @@ volatile bool RTD = false;
 volatile    e_nodeState current_state   = STAND;
 
 /**
- *  @brief      Return current state on the FSM
+ *  @brief      Return current state on the @ref FSM_page
  *  
  *  @author     Arella Matteo <br/>
  *                  (mail: arella.1646983@studenti.uniroma1.it)
@@ -71,7 +71,7 @@ e_nodeState getState() {
 
 
 /**
- *  @brief      Set current state on the FSM
+ *  @brief      Set current state on the @ref FSM_page
  *  
  *  @author     Arella Matteo <br/>
  *                  (mail: arella.1646983@studenti.uniroma1.it)
@@ -84,9 +84,9 @@ void setState(e_nodeState newState) {
 }
 
 /**
- *  @brief      STAND state task on the FSM: ignition of the car.
+ *  @brief      @ref STAND state task on the FSM: ignition of the car.
  *              If AIR button is pressed and SC voltage value is greater than
- *              #SC_THRES then current state passes to HVON, activating Precharge,
+ *              #SC_THRES then current state passes to @ref HVON, activating Precharge,
  *              AIR- and AIR+.
  *  
  *  @author     Arella Matteo <br/>
@@ -110,14 +110,14 @@ void stand() {
 }
 
 /**
- *  @brief      HV ON state task on the FSM: active high voltage.
+ *  @brief      @ref HVON state task on the FSM: active high voltage.
  *  
  *              If RTD button is pressed, SC voltage value is greater than
  *              #SC_THRES and brake pedal position percentage is greater than
- *              #RTDBK then current state passes to DRIVE, triggering RTDS.
+ *              #RTDBK then current state passes to @ref DRIVE, triggering @ref RTDS.
  *
  *              If SC voltage value is lower than #SC_THRES, (SC undervoltage error),
- *              then current state passes to STAND.
+ *              then current state passes to @ref STAND.
  *  
  *  @author     Arella Matteo <br/>
  *                  (mail: arella.1646983@studenti.uniroma1.it)
@@ -142,12 +142,12 @@ void hvon() {
 }
 
 /**
- *  @brief      DRIVE state task on the FSM.
+ *  @brief      @ref DRIVE state task on the @ref FSM_page.
  *  
  *              If pedals values are consistent (no implausibility) and SC voltage 
  *              value is greater than #SC_THRES then torque or regen (if vehicle 
  *              speed is \f$>\ 5\ km/h\f$) request is sent to inverter; request to
- *              inverter is done through CAN funzionale if online or through analog 
+ *              inverter is done through @ref CAN_funzionale_page if online or through analog 
  *              signals.
  *              
  *              If SC voltage value is lower than #SC_THRES, (SC undervoltage error),

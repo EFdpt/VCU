@@ -145,7 +145,7 @@ Macros</h2></td></tr>
 <tr class="separator:gaf7b7dc9a200cb1404c280bd500fd1551"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga3e1022cd2e2154437b583f7ff83f2960"><td class="memItemLeft" align="right" valign="top">
 #define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___board__model__group.html#ga3e1022cd2e2154437b583f7ff83f2960">APPS_PLAUS_RANGE</a>&#160;&#160;&#160;10</td></tr>
-<tr class="memdesc:ga3e1022cd2e2154437b583f7ff83f2960"><td class="mdescLeft">&#160;</td><td class="mdescRight">Size (bytes) of each ADC buffer. <br /></td></tr>
+<tr class="memdesc:ga3e1022cd2e2154437b583f7ff83f2960"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum percentage deviation of pedal travel between two APPS. <br /></td></tr>
 <tr class="separator:ga3e1022cd2e2154437b583f7ff83f2960"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga6741cba3daf129b6f73eed1b1db09519"><td class="memItemLeft" align="right" valign="top">
 #define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___board__model__group.html#ga6741cba3daf129b6f73eed1b1db09519">TPS1_UPPER_BOUND</a>&#160;&#160;&#160;2482</td></tr>
@@ -238,27 +238,27 @@ volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="e
 <tr class="memdesc:ga0b4151ed3267a5fae4789f4b3ffe7bbd"><td class="mdescLeft">&#160;</td><td class="mdescRight">SC value retrieved directly by analog SC signal (<a class="el" href="group___board__model__group.html#gabbdb157ae4ad39d102935c21fa30d1c5" title="Pin on board dedicated to SC read signal. ">SC_PIN</a>) and filtered after DMA buffer is filled entirely. <br /></td></tr>
 <tr class="separator:ga0b4151ed3267a5fae4789f4b3ffe7bbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaf1d46fb483b2a63c3da25c11688af7c4"><td class="memItemLeft" align="right" valign="top">
-volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___board__model__group.html#gaf1d46fb483b2a63c3da25c11688af7c4">tps1_max</a> = 2482</td></tr>
+volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___board__model__group.html#gaf1d46fb483b2a63c3da25c11688af7c4">tps1_max</a> = <a class="el" href="group___board__model__group.html#ga6741cba3daf129b6f73eed1b1db09519">TPS1_UPPER_BOUND</a></td></tr>
 <tr class="memdesc:gaf1d46fb483b2a63c3da25c11688af7c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">First APPS max output voltage (equals to <a class="el" href="group___board__model__group.html#ga6741cba3daf129b6f73eed1b1db09519" title="First APPS max output voltage (2V) ">TPS1_UPPER_BOUND</a>) <br /></td></tr>
 <tr class="separator:gaf1d46fb483b2a63c3da25c11688af7c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gab7d6ace1f9174e39ed6abbe4aaceb7f4"><td class="memItemLeft" align="right" valign="top">
-volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___board__model__group.html#gab7d6ace1f9174e39ed6abbe4aaceb7f4">tps1_min</a> = 993</td></tr>
+volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___board__model__group.html#gab7d6ace1f9174e39ed6abbe4aaceb7f4">tps1_min</a> = <a class="el" href="group___board__model__group.html#ga9c9aa914f6b372d9ef3f15ce4108da6a">TPS1_LOWER_BOUND</a></td></tr>
 <tr class="memdesc:gab7d6ace1f9174e39ed6abbe4aaceb7f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">First APPS min output voltage (equals to <a class="el" href="group___board__model__group.html#ga9c9aa914f6b372d9ef3f15ce4108da6a" title="First APPS min output voltage (0.8V) ">TPS1_LOWER_BOUND</a>) <br /></td></tr>
 <tr class="separator:gab7d6ace1f9174e39ed6abbe4aaceb7f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga53381436ea8db96c356db8b305bec988"><td class="memItemLeft" align="right" valign="top">
-volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___board__model__group.html#ga53381436ea8db96c356db8b305bec988">tps2_max</a> = 1241</td></tr>
+volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___board__model__group.html#ga53381436ea8db96c356db8b305bec988">tps2_max</a> = <a class="el" href="group___board__model__group.html#gac8be8d89c699c40b79d04c0fdf6238f4">TPS2_UPPER_BOUND</a></td></tr>
 <tr class="memdesc:ga53381436ea8db96c356db8b305bec988"><td class="mdescLeft">&#160;</td><td class="mdescRight">Second APPS max output voltage (equals to <a class="el" href="group___board__model__group.html#gac8be8d89c699c40b79d04c0fdf6238f4" title="Second APPS max output voltage (1V) ">TPS2_UPPER_BOUND</a>) <br /></td></tr>
 <tr class="separator:ga53381436ea8db96c356db8b305bec988"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga4e7715668b19738d8bfd47f2420aff02"><td class="memItemLeft" align="right" valign="top">
-volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___board__model__group.html#ga4e7715668b19738d8bfd47f2420aff02">tps2_min</a> = 497</td></tr>
+volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___board__model__group.html#ga4e7715668b19738d8bfd47f2420aff02">tps2_min</a> = <a class="el" href="group___board__model__group.html#gadfcc723e175ac44e73e38407299ac875">TPS2_LOWER_BOUND</a></td></tr>
 <tr class="memdesc:ga4e7715668b19738d8bfd47f2420aff02"><td class="mdescLeft">&#160;</td><td class="mdescRight">Second APPS min output voltage (equals to <a class="el" href="group___board__model__group.html#gadfcc723e175ac44e73e38407299ac875" title="Second APPS min output voltage (0.4V) ">TPS2_LOWER_BOUND</a>) <br /></td></tr>
 <tr class="separator:ga4e7715668b19738d8bfd47f2420aff02"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga744857a9bc060647cfc4ad47017c5bee"><td class="memItemLeft" align="right" valign="top">
-volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___board__model__group.html#ga744857a9bc060647cfc4ad47017c5bee">brake_max</a> = 0</td></tr>
+volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___board__model__group.html#ga744857a9bc060647cfc4ad47017c5bee">brake_max</a> = <a class="el" href="group___board__model__group.html#ga891de03ab9e1bd9a92ffffe69a1b10ca">BRAKE_UPPER_BOUND</a></td></tr>
 <tr class="memdesc:ga744857a9bc060647cfc4ad47017c5bee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Brake sensor max output voltage (equals to <a class="el" href="group___board__model__group.html#ga891de03ab9e1bd9a92ffffe69a1b10ca" title="Brake sensor max output voltage (TODO: check Voutmax) ">BRAKE_UPPER_BOUND</a>) <br /></td></tr>
 <tr class="separator:ga744857a9bc060647cfc4ad47017c5bee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga779ee9b904930e3cfb165e70edfecd02"><td class="memItemLeft" align="right" valign="top">
-volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___board__model__group.html#ga779ee9b904930e3cfb165e70edfecd02">brake_min</a> = 4095</td></tr>
+volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___board__model__group.html#ga779ee9b904930e3cfb165e70edfecd02">brake_min</a> = <a class="el" href="group___board__model__group.html#ga0aed20cafcc206360abda47b125432c7">BRAKE_LOWER_BOUND</a></td></tr>
 <tr class="memdesc:ga779ee9b904930e3cfb165e70edfecd02"><td class="mdescLeft">&#160;</td><td class="mdescRight">Brake sensor min output voltage (equals to <a class="el" href="group___board__model__group.html#ga0aed20cafcc206360abda47b125432c7" title="Brake sensor min output voltage (TODO: check Voutmin) ">BRAKE_LOWER_BOUND</a>) <br /></td></tr>
 <tr class="separator:ga779ee9b904930e3cfb165e70edfecd02"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gad2658b77f345b15c03759c02d1ba0e81"><td class="memItemLeft" align="right" valign="top">
@@ -269,10 +269,10 @@ volatile int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 volatile int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___board__model__group.html#gafef4d6ed48b3edc5f7a74defba82e7d8">obufn</a></td></tr>
 <tr class="memdesc:gafef4d6ed48b3edc5f7a74defba82e7d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">DMA buffer pointer. <br /></td></tr>
 <tr class="separator:gafef4d6ed48b3edc5f7a74defba82e7d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gabaadbcc3b48e8ec3798741a74a672046"><td class="memItemLeft" align="right" valign="top">
-volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___board__model__group.html#gabaadbcc3b48e8ec3798741a74a672046">buf</a> [4][128 *4]</td></tr>
-<tr class="memdesc:gabaadbcc3b48e8ec3798741a74a672046"><td class="mdescLeft">&#160;</td><td class="mdescRight">DMA buffers: <a class="el" href="group___board__model__group.html#gaabe0f927d44a09f458bd5fe5ab4e2f7f" title="Number of DMA buffers. ">BUFFERS</a> number of buffers each of <a class="el" href="group___board__model__group.html#gaf7b7dc9a200cb1404c280bd500fd1551" title="Length, in bytes, of each DMA buffer. ">BUFFER_LENGTH</a> size; DMA is configured in cyclic mode: after one of <a class="el" href="group___board__model__group.html#gaabe0f927d44a09f458bd5fe5ab4e2f7f" title="Number of DMA buffers. ">BUFFERS</a> is filled then DMA transfer head moves to next buffer in circular indexing. <br /></td></tr>
-<tr class="separator:gabaadbcc3b48e8ec3798741a74a672046"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa785fe4a3446344207127079a33a9ea6"><td class="memItemLeft" align="right" valign="top">
+volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___board__model__group.html#gaa785fe4a3446344207127079a33a9ea6">buf</a> [<a class="el" href="group___board__model__group.html#gaabe0f927d44a09f458bd5fe5ab4e2f7f">BUFFERS</a>][<a class="el" href="group___board__model__group.html#gaf7b7dc9a200cb1404c280bd500fd1551">BUFFER_LENGTH</a>]</td></tr>
+<tr class="memdesc:gaa785fe4a3446344207127079a33a9ea6"><td class="mdescLeft">&#160;</td><td class="mdescRight">DMA buffers: <a class="el" href="group___board__model__group.html#gaabe0f927d44a09f458bd5fe5ab4e2f7f" title="Number of DMA buffers. ">BUFFERS</a> number of buffers each of <a class="el" href="group___board__model__group.html#gaf7b7dc9a200cb1404c280bd500fd1551" title="Length, in bytes, of each DMA buffer. ">BUFFER_LENGTH</a> size; DMA is configured in cyclic mode: after one of <a class="el" href="group___board__model__group.html#gaabe0f927d44a09f458bd5fe5ab4e2f7f" title="Number of DMA buffers. ">BUFFERS</a> is filled then DMA transfer head moves to next buffer in circular indexing. <br /></td></tr>
+<tr class="separator:gaa785fe4a3446344207127079a33a9ea6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Board model implementation file. </p>
@@ -284,7 +284,7 @@ volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="e
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jul 7 2018 20:14:36 for Vehicle Control Unit (VCU) by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jul 9 2018 00:00:02 for Vehicle Control Unit (VCU) by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.14
 </small></address>

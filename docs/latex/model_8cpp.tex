@@ -41,7 +41,7 @@ Include dependency graph for model.\+cpp\+:\nopagebreak
 \#define \mbox{\hyperlink{group___board__model__group_gaf7b7dc9a200cb1404c280bd500fd1551}{B\+U\+F\+F\+E\+R\+\_\+\+L\+E\+N\+G\+TH}}~\mbox{\hyperlink{group___board__model__group_ga602abb8ec84dcb3b6f854a738310ea46}{A\+D\+C\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+ZE}} $\ast$ \mbox{\hyperlink{group___board__model__group_ga065dcfa648ca52ed6214008cb177de36}{A\+D\+C\+\_\+\+C\+H\+A\+N\+N\+E\+LS}}
 \begin{DoxyCompactList}\small\item\em Length, in bytes, of each D\+MA buffer. \end{DoxyCompactList}\item 
 \#define \mbox{\hyperlink{group___board__model__group_ga3e1022cd2e2154437b583f7ff83f2960}{A\+P\+P\+S\+\_\+\+P\+L\+A\+U\+S\+\_\+\+R\+A\+N\+GE}}~10
-\begin{DoxyCompactList}\small\item\em Size (bytes) of each A\+DC buffer. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Maximum percentage deviation of pedal travel between two A\+P\+PS. \end{DoxyCompactList}\item 
 \#define \mbox{\hyperlink{group___board__model__group_ga6741cba3daf129b6f73eed1b1db09519}{T\+P\+S1\+\_\+\+U\+P\+P\+E\+R\+\_\+\+B\+O\+U\+ND}}~2482
 \begin{DoxyCompactList}\small\item\em First A\+P\+PS max output voltage (2V) \end{DoxyCompactList}\item 
 \#define \mbox{\hyperlink{group___board__model__group_ga9c9aa914f6b372d9ef3f15ce4108da6a}{T\+P\+S1\+\_\+\+L\+O\+W\+E\+R\+\_\+\+B\+O\+U\+ND}}~993
@@ -94,23 +94,23 @@ volatile uint16\+\_\+t \mbox{\hyperlink{group___board__model__group_gad7966e70fb
 \begin{DoxyCompactList}\small\item\em Brake pedal position sensor value retrieved directly by analog brake signal (\mbox{\hyperlink{group___board__model__group_gad632b56bf4c6259a390c3db91607078e}{B\+R\+A\+K\+E\+\_\+\+P\+IN}}) and filtered after D\+MA buffer is filled entirely. \end{DoxyCompactList}\item 
 volatile uint16\+\_\+t \mbox{\hyperlink{group___board__model__group_ga0b4151ed3267a5fae4789f4b3ffe7bbd}{S\+C\+\_\+value}} = 0
 \begin{DoxyCompactList}\small\item\em SC value retrieved directly by analog SC signal (\mbox{\hyperlink{group___board__model__group_gabbdb157ae4ad39d102935c21fa30d1c5}{S\+C\+\_\+\+P\+IN}}) and filtered after D\+MA buffer is filled entirely. \end{DoxyCompactList}\item 
-volatile uint16\+\_\+t \mbox{\hyperlink{group___board__model__group_gaf1d46fb483b2a63c3da25c11688af7c4}{tps1\+\_\+max}} = 2482
+volatile uint16\+\_\+t \mbox{\hyperlink{group___board__model__group_gaf1d46fb483b2a63c3da25c11688af7c4}{tps1\+\_\+max}} = \mbox{\hyperlink{group___board__model__group_ga6741cba3daf129b6f73eed1b1db09519}{T\+P\+S1\+\_\+\+U\+P\+P\+E\+R\+\_\+\+B\+O\+U\+ND}}
 \begin{DoxyCompactList}\small\item\em First A\+P\+PS max output voltage (equals to \mbox{\hyperlink{group___board__model__group_ga6741cba3daf129b6f73eed1b1db09519}{T\+P\+S1\+\_\+\+U\+P\+P\+E\+R\+\_\+\+B\+O\+U\+ND}}) \end{DoxyCompactList}\item 
-volatile uint16\+\_\+t \mbox{\hyperlink{group___board__model__group_gab7d6ace1f9174e39ed6abbe4aaceb7f4}{tps1\+\_\+min}} = 993
+volatile uint16\+\_\+t \mbox{\hyperlink{group___board__model__group_gab7d6ace1f9174e39ed6abbe4aaceb7f4}{tps1\+\_\+min}} = \mbox{\hyperlink{group___board__model__group_ga9c9aa914f6b372d9ef3f15ce4108da6a}{T\+P\+S1\+\_\+\+L\+O\+W\+E\+R\+\_\+\+B\+O\+U\+ND}}
 \begin{DoxyCompactList}\small\item\em First A\+P\+PS min output voltage (equals to \mbox{\hyperlink{group___board__model__group_ga9c9aa914f6b372d9ef3f15ce4108da6a}{T\+P\+S1\+\_\+\+L\+O\+W\+E\+R\+\_\+\+B\+O\+U\+ND}}) \end{DoxyCompactList}\item 
-volatile uint16\+\_\+t \mbox{\hyperlink{group___board__model__group_ga53381436ea8db96c356db8b305bec988}{tps2\+\_\+max}} = 1241
+volatile uint16\+\_\+t \mbox{\hyperlink{group___board__model__group_ga53381436ea8db96c356db8b305bec988}{tps2\+\_\+max}} = \mbox{\hyperlink{group___board__model__group_gac8be8d89c699c40b79d04c0fdf6238f4}{T\+P\+S2\+\_\+\+U\+P\+P\+E\+R\+\_\+\+B\+O\+U\+ND}}
 \begin{DoxyCompactList}\small\item\em Second A\+P\+PS max output voltage (equals to \mbox{\hyperlink{group___board__model__group_gac8be8d89c699c40b79d04c0fdf6238f4}{T\+P\+S2\+\_\+\+U\+P\+P\+E\+R\+\_\+\+B\+O\+U\+ND}}) \end{DoxyCompactList}\item 
-volatile uint16\+\_\+t \mbox{\hyperlink{group___board__model__group_ga4e7715668b19738d8bfd47f2420aff02}{tps2\+\_\+min}} = 497
+volatile uint16\+\_\+t \mbox{\hyperlink{group___board__model__group_ga4e7715668b19738d8bfd47f2420aff02}{tps2\+\_\+min}} = \mbox{\hyperlink{group___board__model__group_gadfcc723e175ac44e73e38407299ac875}{T\+P\+S2\+\_\+\+L\+O\+W\+E\+R\+\_\+\+B\+O\+U\+ND}}
 \begin{DoxyCompactList}\small\item\em Second A\+P\+PS min output voltage (equals to \mbox{\hyperlink{group___board__model__group_gadfcc723e175ac44e73e38407299ac875}{T\+P\+S2\+\_\+\+L\+O\+W\+E\+R\+\_\+\+B\+O\+U\+ND}}) \end{DoxyCompactList}\item 
-volatile uint16\+\_\+t \mbox{\hyperlink{group___board__model__group_ga744857a9bc060647cfc4ad47017c5bee}{brake\+\_\+max}} = 0
+volatile uint16\+\_\+t \mbox{\hyperlink{group___board__model__group_ga744857a9bc060647cfc4ad47017c5bee}{brake\+\_\+max}} = \mbox{\hyperlink{group___board__model__group_ga891de03ab9e1bd9a92ffffe69a1b10ca}{B\+R\+A\+K\+E\+\_\+\+U\+P\+P\+E\+R\+\_\+\+B\+O\+U\+ND}}
 \begin{DoxyCompactList}\small\item\em Brake sensor max output voltage (equals to \mbox{\hyperlink{group___board__model__group_ga891de03ab9e1bd9a92ffffe69a1b10ca}{B\+R\+A\+K\+E\+\_\+\+U\+P\+P\+E\+R\+\_\+\+B\+O\+U\+ND}}) \end{DoxyCompactList}\item 
-volatile uint16\+\_\+t \mbox{\hyperlink{group___board__model__group_ga779ee9b904930e3cfb165e70edfecd02}{brake\+\_\+min}} = 4095
+volatile uint16\+\_\+t \mbox{\hyperlink{group___board__model__group_ga779ee9b904930e3cfb165e70edfecd02}{brake\+\_\+min}} = \mbox{\hyperlink{group___board__model__group_ga0aed20cafcc206360abda47b125432c7}{B\+R\+A\+K\+E\+\_\+\+L\+O\+W\+E\+R\+\_\+\+B\+O\+U\+ND}}
 \begin{DoxyCompactList}\small\item\em Brake sensor min output voltage (equals to \mbox{\hyperlink{group___board__model__group_ga0aed20cafcc206360abda47b125432c7}{B\+R\+A\+K\+E\+\_\+\+L\+O\+W\+E\+R\+\_\+\+B\+O\+U\+ND}}) \end{DoxyCompactList}\item 
 volatile int \mbox{\hyperlink{group___board__model__group_gad2658b77f345b15c03759c02d1ba0e81}{bufn}}
 \begin{DoxyCompactList}\small\item\em D\+MA buffer pointer. \end{DoxyCompactList}\item 
 volatile int \mbox{\hyperlink{group___board__model__group_gafef4d6ed48b3edc5f7a74defba82e7d8}{obufn}}
 \begin{DoxyCompactList}\small\item\em D\+MA buffer pointer. \end{DoxyCompactList}\item 
-volatile uint16\+\_\+t \mbox{\hyperlink{group___board__model__group_gabaadbcc3b48e8ec3798741a74a672046}{buf}} \mbox{[}4\mbox{]}\mbox{[}128 $\ast$4\mbox{]}
+volatile uint16\+\_\+t \mbox{\hyperlink{group___board__model__group_gaa785fe4a3446344207127079a33a9ea6}{buf}} \mbox{[}\mbox{\hyperlink{group___board__model__group_gaabe0f927d44a09f458bd5fe5ab4e2f7f}{B\+U\+F\+F\+E\+RS}}\mbox{]}\mbox{[}\mbox{\hyperlink{group___board__model__group_gaf7b7dc9a200cb1404c280bd500fd1551}{B\+U\+F\+F\+E\+R\+\_\+\+L\+E\+N\+G\+TH}}\mbox{]}
 \begin{DoxyCompactList}\small\item\em D\+MA buffers\+: \mbox{\hyperlink{group___board__model__group_gaabe0f927d44a09f458bd5fe5ab4e2f7f}{B\+U\+F\+F\+E\+RS}} number of buffers each of \mbox{\hyperlink{group___board__model__group_gaf7b7dc9a200cb1404c280bd500fd1551}{B\+U\+F\+F\+E\+R\+\_\+\+L\+E\+N\+G\+TH}} size; D\+MA is configured in cyclic mode\+: after one of \mbox{\hyperlink{group___board__model__group_gaabe0f927d44a09f458bd5fe5ab4e2f7f}{B\+U\+F\+F\+E\+RS}} is filled then D\+MA transfer head moves to next buffer in circular indexing. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 

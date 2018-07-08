@@ -18,17 +18,17 @@
  *
  *  IO signals managed from VCU are:
  *      - ANALOG
- *          1. First APPS
- *          2. Second APPS
- *          3. Brake pedal position sensor
- *          4. SC voltage
+ *          1. First APPS .................... [in]
+ *          2. Second APPS ................... [in]
+ *          3. Brake pedal position sensor ... [in]
+ *          4. SC voltage .................... [in]
  *      - DIGITAL
- *          1. AIR+
- *          2. AIR-
- *          3. Precharge
- *          4. RTDS buzzer
- *          5. AIR button
- *          6. RTD button
+ *          1. AIR+ .......................... [out]
+ *          2. AIR- .......................... [out]
+ *          3. Precharge ..................... [out]
+ *          4. RTDS buzzer ................... [out]
+ *          5. AIR button .................... [in]
+ *          6. RTD button .................... [in]
  *
  *  In case of @ref CAN_servizi_page failure both APPS and brake pedal position 
  *  sensor are acquired by analog signals for fault tolerance.

@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>20</zoom_level>
+  <element>
+    <id>UMLSpecialState</id>
+    <coordinates>
+      <x>2780</x>
+      <y>320</y>
+      <w>40</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>type=initial</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>2680</x>
+      <y>460</y>
+      <w>240</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>CAN init</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLSpecialState</id>
+    <coordinates>
+      <x>2760</x>
+      <y>640</y>
+      <w>80</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>type=decision</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2780</x>
+      <y>340</y>
+      <w>60</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2440</x>
+      <y>480</y>
+      <w>360</w>
+      <h>240</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+
+
+
+
+[CAN not initialized]</panel_attributes>
+    <additional_attributes>160.0;100.0;10.0;100.0;10.0;10.0;120.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>2680</x>
+      <y>840</y>
+      <w>240</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>model init</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2780</x>
+      <y>700</y>
+      <w>260</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+[CAN initialized]</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2780</x>
+      <y>900</y>
+      <w>60</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2780</x>
+      <y>520</y>
+      <w>60</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>2640</x>
+      <y>1040</y>
+      <w>320</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>CAN go operational</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2780</x>
+      <y>1100</y>
+      <w>60</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLSpecialState</id>
+    <coordinates>
+      <x>2780</x>
+      <y>1240</y>
+      <w>40</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>type=final</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.baselet.element.old.allinone.ActivityDiagramText</type>
+    <coordinates>
+      <x>340</x>
+      <y>100</y>
+      <w>668</w>
+      <h>743</h>
+    </coordinates>
+    <panel_attributes>title:setup
+Start
+While[CAN not initialized]
+	CAN init
+Model init
+CAN go Operational
+End
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

@@ -15,7 +15,7 @@ var searchData=
   ['brake_5fregen_5fpin',['BRAKE_REGEN_PIN',['../group___board__model__group.html#ga604c7f4c9fe74f1d9877071bbee1c9e0',1,'board_pinout.h']]],
   ['brake_5fupper_5fbound',['BRAKE_UPPER_BOUND',['../group___board__model__group.html#ga891de03ab9e1bd9a92ffffe69a1b10ca',1,'model.cpp']]],
   ['brake_5fvalue',['brake_value',['../group___board__model__group.html#gad7966e70fb4bebc6947eb3fbb059a3c9',1,'model.cpp']]],
-  ['buf',['buf',['../group___board__model__group.html#gabaadbcc3b48e8ec3798741a74a672046',1,'model.cpp']]],
+  ['buf',['buf',['../group___board__model__group.html#gaa785fe4a3446344207127079a33a9ea6',1,'model.cpp']]],
   ['buffer_5flength',['BUFFER_LENGTH',['../group___board__model__group.html#gaf7b7dc9a200cb1404c280bd500fd1551',1,'model.cpp']]],
   ['buffers',['BUFFERS',['../group___board__model__group.html#gaabe0f927d44a09f458bd5fe5ab4e2f7f',1,'model.cpp']]],
   ['bufn',['bufn',['../group___board__model__group.html#gad2658b77f345b15c03759c02d1ba0e81',1,'model.cpp']]],

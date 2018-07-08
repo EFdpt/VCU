@@ -21,6 +21,11 @@
  */
 
 /**
+ *  @defgroup Main_group_module Main module
+ *   @{
+ */
+
+/**
  *  @brief      This function perform basic board setup.
  *              -   It starts initializing both CAN funzionale (with inverter) and
  *                  CAN servizi (with the two SCUs and TCS); if the comunication 
@@ -33,6 +38,10 @@
  *              -   If the configuration over CAN servizi with the frontal SCU was
  *                  successful then VCU (master) send an NMT request to go in
  *                  'Operational' state.
+ *
+ *  @image html setup_activity.svg
+ *  @image latex setup_activity.eps "Setup Activity" width=10cm
+ *  
  *  @author     Arella Matteo <br/>
  *              (mail: arella.1646983@studenti.uniroma1.it)
  */
@@ -50,8 +59,8 @@ void setup() {
 
 /**
  *  @brief      This function is called into endless while main loop.
- *              It takes care of dispatching states of the finite state machine
- *              (TODO: see states)
+ *              It takes care of dispatching states of the @ref FSM_page
+ *              
  *  @author     Arella Matteo <br/>
  *              (mail: arella.1646983@studenti.uniroma1.it)
  */
@@ -59,3 +68,7 @@ __attribute__((__inline__))
 void loop() {
     state_dispatch();
 }
+
+/**
+ *  @}
+ */

@@ -14,6 +14,11 @@
 #include "board_pinout.h"
 
 /**
+ *  @defgroup Common_defines_group Common Defines
+ *   @{
+ */
+
+/**
  *  @def CAN_FUNZ_BAUDRATE
  *  @brief Defines CAN funzionale baudrate
  */
@@ -54,5 +59,9 @@
  *  @brief Defines CAN servizi timeout period for fault check
  */
 #define CAN_SERVIZI_TIMEOUT_PERIOD		30000	// 30ms
+
+/**
+ *  @}
+ */
 
 #endif /* _COMMON_H_ */

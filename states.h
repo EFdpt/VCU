@@ -15,12 +15,12 @@
  *  @page FSM_page Finite State Machine (FSM)
  *  
  *  VCU firmware is based upon 4 states:
- *      - @anchor STAND STAND:  ignition of the car, you return here every time SC is undervoltage
- *      - @anchor HVON HV ON: active high voltage is only accessed from STAND via AIRbutton
+ *      - @anchor STAND "STAND":  ignition of the car, you return here every time SC is undervoltage
+ *      - @anchor HVON "HV ON": active high voltage is only accessed from STAND via AIRbutton
  *                  and SC voltage > 3V
- *      - @anchor DRIVE DRIVE:  the safe driving status, accessible by RTD procedure but also 
+ *      - @anchor DRIVE "DRIVE":  the safe driving status, accessible by RTD procedure but also 
  *                  with pedals implausibility through the return procedure
- *      - @anchor NOTDRIVE NOT DRIVE: error with pedals, the sensors of the pedals are disconnected or out
+ *      - @anchor NOTDRIVE "NOT DRIVE": error with pedals, the sensors of the pedals are disconnected or out
  *                  range. Torque request and braking request are disabled; you enter only
  *                  by pedals implausibility or absence of the brake.
  *
@@ -44,7 +44,7 @@ typedef enum enum_nodeState {
 } e_nodeState;
 
 /**
- *  @brief      Return current state on the FSM
+ *  @brief      Return current state on the @ref FSM_page
  *  
  *  @author     Arella Matteo <br/>
  *                  (mail: arella.1646983@studenti.uniroma1.it)
@@ -54,7 +54,7 @@ typedef enum enum_nodeState {
 e_nodeState getState();
 
 /**
- *  @brief      Set current state on the FSM
+ *  @brief      Set current state on the @ref FSM_page
  *  
  *  @author     Arella Matteo <br/>
  *                  (mail: arella.1646983@studenti.uniroma1.it)

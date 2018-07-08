@@ -33,15 +33,15 @@ Include dependency graph for states.\+cpp\+:\nopagebreak
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{group__stages__group_ga29e04432d3efcac24a5ae62572a6e8f2}{e\+\_\+node\+State}} \mbox{\hyperlink{group__stages__group_ga2802a8c3f0174f4e54dd2381968212a0}{get\+State}} ()
-\begin{DoxyCompactList}\small\item\em Return current state on the F\+SM. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Return current state on the \mbox{\hyperlink{_f_s_m_page}{Finite State Machine (F\+SM)}}. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{group__stages__group_ga47cb7615bbcf2c96cc4a7656f9a76bab}{set\+State}} (\mbox{\hyperlink{group__stages__group_ga29e04432d3efcac24a5ae62572a6e8f2}{e\+\_\+node\+State}} new\+State)
-\begin{DoxyCompactList}\small\item\em Set current state on the F\+SM. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Set current state on the \mbox{\hyperlink{_f_s_m_page}{Finite State Machine (F\+SM)}}. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{group__stages__group_ga506140395cba78bffc95d77985780ca5}{stand}} ()
-\begin{DoxyCompactList}\small\item\em S\+T\+A\+ND state task on the F\+SM\+: ignition of the car. If A\+IR button is pressed and SC voltage value is greater than \mbox{\hyperlink{group__stages__group_ga9688af4f17ae88b4d149269d71b7ff1f}{S\+C\+\_\+\+T\+H\+R\+ES}} then current state passes to H\+V\+ON, activating Precharge, A\+I\+R-\/ and A\+I\+R+. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{_f_s_m_page_STAND}{S\+T\+A\+ND}} state task on the F\+SM\+: ignition of the car. If A\+IR button is pressed and SC voltage value is greater than \mbox{\hyperlink{group__stages__group_ga9688af4f17ae88b4d149269d71b7ff1f}{S\+C\+\_\+\+T\+H\+R\+ES}} then current state passes to \mbox{\hyperlink{_f_s_m_page_HVON}{H\+V\+ON}}, activating Precharge, A\+I\+R-\/ and A\+I\+R+. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{group__stages__group_ga6fada8f571df828c8fe6b920e2558c37}{hvon}} ()
-\begin{DoxyCompactList}\small\item\em HV ON state task on the F\+SM\+: active high voltage. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{_f_s_m_page_HVON}{H\+V\+ON}} state task on the F\+SM\+: active high voltage. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{group__stages__group_ga928e32686c7e00c1ecde24c3da3019f7}{drive}} ()
-\begin{DoxyCompactList}\small\item\em D\+R\+I\+VE state task on the F\+SM. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{_f_s_m_page_DRIVE}{D\+R\+I\+VE}} state task on the \mbox{\hyperlink{_f_s_m_page}{Finite State Machine (F\+SM)}}. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{group__stages__group_ga3ac5d1576c7d3ef76c2dfe724d4849fa}{notdrive}} ()
 \begin{DoxyCompactList}\small\item\em N\+OT D\+R\+I\+VE state task on the F\+SM\+: inconsistent pedals values. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{group__stages__group_gac534eb879fa26941a06ffadeb69d92ff}{state\+\_\+dispatch}} ()
