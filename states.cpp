@@ -9,7 +9,6 @@
 #include "states.h"
 #include "can_funzionale.h"
 #include "can_servizi.h"
-#include "rtds.h"
 #include "model.h"
 #include "common.h"
 
@@ -174,7 +173,7 @@ void drive() {
     if (!get_apps_plausibility()) {
         inverter_torque_request(0);
         // analogWrite(BRAKE_REGEN_PIN, 0);
-        RTD = false
+        RTD = false;
         setState(NOTDRIVE);
     }
 
