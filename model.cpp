@@ -408,12 +408,7 @@ void model_init() {
     ADC->ADC_CR = 2;
 
     pinMode(FAN, OUTPUT);
-    pinMode(AIRcc, OUTPUT);
-    pinMode(AIRGnd, OUTPUT);
-    pinMode(PRE, OUTPUT);
-    pinMode(BUZZER, OUTPUT);
 
-    pinMode(AIRB, INPUT_PULLUP);
     pinMode(RTDB, INPUT_PULLUP);
 
     Serial.begin(SERIAL_BAUDRATE);

@@ -26,36 +26,6 @@
 #define CAN_SERVIZI                 Can0
 
 /**
- *  @def AIRcc
- *  @brief Pin on board dedicated to AIR+
- */
-#define AIRcc                       48
-
-/**
- *  @def AIRGnd
- *  @brief Pin on board dedicated to AIR-
- */
-#define AIRGnd                      49
-
-/**
- *  @def PRE
- *  @brief Pin on board dedicated to PRECHARGE
- */
-#define PRE                         47
-
-/**
- *  @def BUZZER
- *  @brief Pin on board dedicated to buzzer for RTDS
- */
-#define BUZZER                      52
-
-/**
- *  @def AIRB
- *  @brief Pin on board dedicated to AIR button
- */
-#define AIRB                        14
-
-/**
  *  @def RTDB
  *  @brief Pin on board dedicated to RTD button
  */

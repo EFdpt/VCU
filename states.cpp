@@ -95,18 +95,9 @@ void setState(e_nodeState newState) {
 void stand() {
     // model_enable_calibrations();
     RTD = false;
-    digitalWrite(PRE, LOW);
-    digitalWrite(AIRGnd, LOW);
-    digitalWrite(AIRcc, LOW);
     
-    if (digitalRead(AIRB) == LOW && get_SC_value() > SC_THRES) {
-        digitalWrite(PRE, HIGH);
-        digitalWrite(AIRGnd, HIGH);
-        delay(3000);
-        digitalWrite(AIRcc, HIGH);
-        digitalWrite(PRE, LOW);
+    if (get_SC_value() > SC_THRES)
         setState(HVON);
-    }
 }
 
 /**
@@ -128,10 +119,8 @@ void hvon() {
         Il segnale dello SC è maggiore di SCmin
         suono RTD 2 secondi
     */
-    if (get_SC_value() > SC_THRES && get_brake_percentage() > RTDBK && digitalRead(RTDB) == LOW) {
+    if (get_SC_value() > SC_THRES && digitalRead(RTDB) == HIGH) {
 
-        ready_to_drive_sound_start();
-        
         RTD = true;
         // model_disable_calibrations();
         setState(DRIVE);
@@ -185,6 +174,7 @@ void drive() {
     if (!get_apps_plausibility()) {
         inverter_torque_request(0);
         // analogWrite(BRAKE_REGEN_PIN, 0);
+        RTD = false
         setState(NOTDRIVE);
     }
 
