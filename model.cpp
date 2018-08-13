@@ -60,25 +60,25 @@
  *  @def TPS1_ADC_OFFSET
  *  @brief Offset from DMA buffer
  */
-#define TPS1_ADC_OFFSET         0
+#define TPS1_ADC_OFFSET         3
 
 /**
  *  @def TPS2_ADC_OFFSET
  *  @brief Offset from DMA buffer
  */
-#define TPS2_ADC_OFFSET         1
+#define TPS2_ADC_OFFSET         2
 
 /**
  *  @def BRAKE_ADC_OFFSET
  *  @brief Offset from DMA buffer
  */
-#define BRAKE_ADC_OFFSET        2
+#define BRAKE_ADC_OFFSET        1
 
 /**
  *  @def SC_ADC_OFFSET
  *  @brief Offset from DMA buffer
  */
-#define SC_ADC_OFFSET           3
+#define SC_ADC_OFFSET           0
 
 /**
  *  @def BUFFER_LENGTH
@@ -153,57 +153,39 @@ volatile uint16_t   SC_value    = 0;
 
 /**
  * @def     TPS1_UPPER_BOUND
- * @brief   First APPS max output voltage (2V)
+ * @brief   First APPS max output voltage (1.1V)
  */
-#define TPS1_UPPER_BOUND            2482
+#define TPS1_UPPER_BOUND            1365
 
 /**
  * @def     TPS1_LOWER_BOUND
- * @brief   First APPS min output voltage (0.8V)
+ * @brief   First APPS min output voltage (0.4V)
  */
-#define TPS1_LOWER_BOUND            993
+#define TPS1_LOWER_BOUND            496
 
 /**
  * @def     TPS2_UPPER_BOUND
- * @brief   Second APPS max output voltage (1V)
+ * @brief   Second APPS max output voltage (2.35V)
  */
-#define TPS2_UPPER_BOUND            1241
+#define TPS2_UPPER_BOUND            2916
 
 /**
  * @def     TPS2_LOWER_BOUND
- * @brief   Second APPS min output voltage (0.4V)
+ * @brief   Second APPS min output voltage (0.8V)
  */
-#define TPS2_LOWER_BOUND            497
+#define TPS2_LOWER_BOUND            992
 
 /**
  * @def     BRAKE_UPPER_BOUND
- * @brief   Brake sensor max output voltage (TODO: check Voutmax)
+ * @brief   Brake sensor max output voltage (2.85V)
  */
-#define BRAKE_UPPER_BOUND           0
+#define BRAKE_UPPER_BOUND           3536
 
 /**
  * @def     BRAKE_LOWER_BOUND
- * @brief   Brake sensor min output voltage (TODO: check Voutmin)
+ * @brief   Brake sensor min output voltage (2V)
  */
-#define BRAKE_LOWER_BOUND           ADC_MAX
-
-#if 0
-// struct for loading/storing pedals ranges in flash memory
-typedef struct pedals_ranges_s {
-    volatile uint16_t   tps1_max;
-    volatile uint16_t   tps1_low;
-    volatile uint16_t   tps2_max;
-    volatile uint16_t   tps2_low;
-    volatile uint16_t   brake_max;
-    volatile uint16_t   brake_low;
-} pedals_ranges_t;
-
-// pedals ranges' addresses in flash memory
-#define FIRST_RUN_FLAG_ADDR         0
-#define PEDALS_RANGES_FLASH_ADDR    4
-
-DueFlashStorage     dueFlashStorage;
-#endif
+#define BRAKE_LOWER_BOUND           2500
 
 /**
  *  @var    volatile uint16_t tps1_max;
@@ -261,36 +243,6 @@ volatile int        obufn;
  */
 volatile uint16_t   buf[BUFFERS][BUFFER_LENGTH];
 
-#if 0
-volatile bool       calibrate          = false;
-
-static inline void load_pedals_ranges(pedals_ranges_t* ranges) {
-    uint8_t first_time = dueFlashStorage.read(FIRST_RUN_FLAG_ADDR);
-    if (first_time) {
-        ranges -> tps1_low = TPS1_LOWER_BOUND;
-        ranges -> tps1_max = TPS1_UPPER_BOUND;
-        ranges -> tps2_low = TPS2_LOWER_BOUND;
-        ranges -> tps2_max = TPS2_UPPER_BOUND;
-        ranges -> brake_low = BRAKE_LOWER_BOUND;
-        ranges -> brake_max = BRAKE_UPPER_BOUND;
-
-        byte buf[sizeof(pedals_ranges_t)];
-        memcpy(buf, ranges, sizeof(pedals_ranges_t));
-        dueFlashStorage.write(PEDALS_RANGES_FLASH_ADDR, buf, sizeof(pedals_ranges_t));
-        dueFlashStorage.write(FIRST_RUN_FLAG_ADDR, 0);
-    } else {
-        byte* buf = dueFlashStorage.readAddress(PEDALS_RANGES_FLASH_ADDR);
-        memcpy(ranges, buf, sizeof(pedals_ranges_t));
-    }
-}
-
-static inline void store_pedals_ranges(pedals_ranges_t* ranges) {
-    byte buf[sizeof(pedals_ranges_t)];
-    memcpy(buf, ranges, sizeof(pedals_ranges_t));
-    dueFlashStorage.write(PEDALS_RANGES_FLASH_ADDR, buf, sizeof(pedals_ranges_t)); // write byte array to flash
-}
-#endif
-
 /**
  *  @brief      This function filters ADC acquisitions;
  *              - Each ADC buffer data is filtered and an average is done with 
@@ -307,17 +259,6 @@ static inline void filter_data() {
     tps2_value = (tps2_value + filter_buffer(buf[obufn] + TPS2_ADC_OFFSET, ADC_BUFFER_SIZE, ADC_CHANNELS)) / 2;
     brake_value = (brake_value + filter_buffer(buf[obufn] + BRAKE_ADC_OFFSET, ADC_BUFFER_SIZE, ADC_CHANNELS)) / 2;
     SC_value = (SC_value + filter_buffer(buf[obufn] + SC_ADC_OFFSET, ADC_BUFFER_SIZE, ADC_CHANNELS)) / 2;
-
-#if 0
-    if (calibrate) {
-        if (tps1_value < tps1_min) tps1_min = tps1_value;
-        if (tps1_value > tps1_max) tps1_max = tps1_value;
-        if (tps2_value < tps2_min) tps2_min = tps2_value;
-        if (tps2_value > tps2_max) tps2_max = tps2_value;
-        if (brake_value < brake_min) brake_min = brake_value;
-        if (brake_value > brake_max) brake_max = brake_value;
-    }
-#endif
 
     if (tps1_value < tps1_min) tps1_value = tps1_min;
     if (tps1_value > tps1_max) tps1_value = tps1_max;
@@ -394,6 +335,7 @@ void model_init() {
 
     ADC->ADC_MR |=0x80; // free running
 
+    ADC->ADC_CHER = 0x00;
     ADC->ADC_CHER = ADC_CHANNELS_LIST;
 
     NVIC_EnableIRQ(ADC_IRQn);
@@ -409,7 +351,7 @@ void model_init() {
 
     pinMode(FAN, OUTPUT);
 
-    pinMode(RTDB, INPUT_PULLUP);
+    pinMode(RTDB, INPUT);
 
     Serial.begin(SERIAL_BAUDRATE);
 
@@ -441,41 +383,6 @@ __attribute__((__inline__)) volatile bool    get_brake_plausibility() {
 __attribute__((__inline__)) volatile uint16_t get_SC_value() {
     return SC_value;
 }
-
-#if 0
-// load previous calibration from flash & enable calibration
-__attribute__((__inline__))
-void model_enable_calibrations() {
-    pedals_ranges_t     pedals_ranges;
-
-    load_pedals_ranges(&pedals_ranges);
-
-    tps1_low = pedals_ranges.tps1_low;
-    tps1_max = pedals_ranges.tps1_max;
-    tps2_low = pedals_ranges.tps2_low;
-    tps2_max = pedals_ranges.tps2_max;
-    brake_low = pedals_ranges.brake_low;
-    brake_max = pedals_ranges.brake_max;
-
-    calibrate = true;
-}
-
-__attribute__((__inline__))
-void model_disable_calibrations() {
-    pedals_ranges_t     pedals_ranges;
-
-    calibrate = false;
-
-    pedals_ranges.tps1_low = tps1_low;
-    pedals_ranges.tps1_max = tps1_max;
-    pedals_ranges.tps2_low = tps2_low;
-    pedals_ranges.tps2_max = tps2_max;
-    pedals_ranges.brake_low = brake_low;
-    pedals_ranges.brake_max = brake_max;
-
-    store_pedals_ranges(&pedals_ranges);
-}
-#endif
 
 /**
  *  @}

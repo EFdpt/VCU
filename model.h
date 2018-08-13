@@ -115,11 +115,6 @@ volatile bool    get_brake_plausibility();
  */
 volatile uint16_t get_SC_value();
 
-#if 0
-void model_enable_calibrations();
-void model_disable_calibrations();
-#endif
-
 /**
  *  @}
  */

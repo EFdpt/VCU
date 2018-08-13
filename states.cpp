@@ -19,9 +19,9 @@
 
 /**
  *  @def    SC_THRES
- *  @brief  SC voltage minimum value
+ *  @brief  SC voltage minimum value (1.5V)
  */
-#define SC_THRES    600
+#define SC_THRES    1860
 
 /**
  *  @def    RunBK
@@ -162,7 +162,7 @@ void drive() {
                 inverter_regen_request(1613);
             }
 
-            Serial.print("APPS: "); Serial.print(apps_percentage); Serial.print("   BRAKE: "); Serial.println(get_brake_percentage());
+            Serial.print("STATE: DRIVE; APPS: "); Serial.print(apps_percentage); Serial.print("   BRAKE: "); Serial.println(get_brake_percentage());
         }
     }
 
@@ -181,8 +181,10 @@ void drive() {
   /* scatto plausibilità pressione congiunta ACCELERATORE e FRENO
      ciclo di rientro pedale < 5% della corsa
   */
-    while (!get_brake_plausibility())
+    while (!get_brake_plausibility()) {
         Serial.println("   FRENO + ACCELERATORE !!!");
+        inverter_torque_request(0);
+    }
 }
 
 /**

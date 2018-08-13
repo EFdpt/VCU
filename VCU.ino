@@ -64,8 +64,18 @@ void setup() {
  *  @author     Arella Matteo <br/>
  *              (mail: arella.1646983@studenti.uniroma1.it)
  */
+
 __attribute__((__inline__))
 void loop() {
+	uint16_t apps_percentage;
+	Serial.print("CURRENT_STATE: ");
+	Serial.print(getState());
+	Serial.print(", SC : ");
+	Serial.print(get_SC_value());
+	Serial.print(", RTD = ");
+	Serial.print(digitalRead(RTDB));
+	apps_percentage = (get_tps1_percentage() + get_tps2_percentage()) / 2;
+	Serial.print(", APPS: "); Serial.print(apps_percentage); Serial.print("   BRAKE: "); Serial.println(get_brake_percentage());
     state_dispatch();
 }
 
